@@ -85,6 +85,21 @@ export const w5: WeekContent = {
           'De-industrialisation was dramatic, but agriculture was the more obvious failure of the colonial state. Geography created constraints, and colonial priorities (railways over irrigation) made them stick. Colonial institutions and markets decided who gained. Post-independence policy restarted growth but built on colonial inequalities. History has persistent effects through path dependence or political capture.',
         ],
       },
+      {
+        heading: 'Extra: Indian business and industry (from student notes)',
+        paragraphs: [
+          'After the rebellion of 1857 the British Crown took over from the East India Company (1858). Before about 1820 Indian handloom weaving was highly competitive; mechanised British cloth then drove small artisans out. From the 1850s-60s textiles became a source of big business again: cotton mills multiplied, serving demand in India and East Asia, and the American Civil War briefly raised British demand for Indian cotton.',
+          'Indian industry was largely built by business communities whose networks lowered information and contract-enforcement costs and pooled capital where formal institutions were weak: the Parsis of Bombay (cosmopolitan traders, including in opium and cotton, who reinvested in mills; Tata is a Parsi firm), and trading and banking communities such as the Marwaris and Bhatias. Firms were often run by "managing agents". After 1900 investment spread into steel, cement, finance and railways, and the First World War, when European supplies dried up, gave Indian industry a boost.',
+          "Obstacles: Western technology suited high-wage Britain, while in India capital was dear and labour cheap; shareholders had weak protection and conflicts between owners, managers and investors discouraged investment; contracts were costly to enforce; credit was scarce, savings low and foreign investment small; and primary schooling was neglected, so literacy stagnated and skilled labour was scarce outside the cities. Agriculture remained the main employer.",
+        ],
+      },
+      {
+        heading: 'Extra: land systems and farming (from student notes)',
+        paragraphs: [
+          'Under the zamindari (landlord) system, landlords collected the land revenue and rented land to cultivators at high rents, with little incentive to invest; under the ryotwari system, cultivators held the land and paid tax directly to the state. Research by Banerjee and Iyer finds that former landlord areas later had lower agricultural investment and productivity and fewer public goods. The lecture\'s village evidence points the same way: wells spread faster in former ryotwari villages.',
+          'Intensive farming uses a lot of labour on a small area: high output per acre but low output per worker, raised through better rotations and inputs. Extensive farming uses little labour over a large area: low output per acre, high output per worker, and output grows mainly by adding land, which was the colonial Indian pattern.',
+        ],
+      },
     ],
     keyTerms: [
       { term: 'East India Company (EIC)', definition: 'English monopoly trading company chartered in 1600 that became the ruler of much of India.' },
@@ -112,6 +127,19 @@ export const w5: WeekContent = {
         definition: 'From the mid-1960s: high-yielding seeds plus fertiliser, irrigation, credit and guaranteed prices, raising yields.',
       },
       { term: 'Path dependence', definition: 'Early choices or conditions shape later outcomes long after their original cause.' },
+      {
+        term: 'Zamindari system',
+        definition: 'Land revenue collected by landlords who rented land to cultivators; associated with low investment.',
+      },
+      { term: 'Ryotwari system', definition: 'Cultivators held land and paid land tax directly to the state.' },
+      {
+        term: 'Business communities',
+        definition: 'Networks such as the Parsis, Marwaris and Bhatias that supplied trust, information and capital to Indian industry.',
+      },
+      {
+        term: 'Intensive vs extensive farming',
+        definition: 'Intensive: much labour per acre, high yields. Extensive: little labour over much land, growth by adding land.',
+      },
     ],
     readings: ['Allen, R. C. (2011). Global Economic History: A Very Short Introduction, ch. 5 (The great empires).'],
   },
@@ -341,6 +369,83 @@ export const w5: WeekContent = {
           },
         ],
       },
+      {
+        id: 'w5-b4',
+        title: 'Industry and land in India',
+        topicId: 'w5-south-asia',
+        fromNotes: true,
+        exercises: [
+          {
+            id: 'w5b4-01',
+            type: 'choice',
+            prompt: 'How did the zamindari system work?',
+            options: [
+              'Landlords collected the land revenue and rented land to cultivators',
+              'Cultivators held their land and paid tax directly to the state',
+              'Villages owned all land collectively and shared the harvest',
+              'The East India Company farmed the land with hired labourers',
+            ],
+            answer: 0,
+            explanation: 'The second option describes the ryotwari system.',
+          },
+          {
+            id: 'w5b4-02',
+            type: 'truefalse',
+            statement: 'Former landlord (zamindari) areas later had higher agricultural productivity than ryotwari areas.',
+            answer: false,
+            explanation: 'Banerjee and Iyer find lower investment, productivity and public goods in former landlord areas.',
+          },
+          {
+            id: 'w5b4-03',
+            type: 'match',
+            prompt: 'Match the group to its role',
+            pairs: [
+              ['Parsis', 'Bombay traders who built mills'],
+              ['Marwaris', 'Trading and banking network'],
+              ['Managing agents', 'Ran firms for shareholders'],
+            ],
+          },
+          {
+            id: 'w5b4-04',
+            type: 'multi',
+            prompt: 'Which held back Indian industrialisation, according to the notes?',
+            options: [
+              'Capital was dear and labour cheap',
+              'Primary schooling was neglected',
+              'Contracts were costly to enforce',
+              'Credit was scarce and savings low',
+              'A shortage of raw cotton',
+              'Very high tariffs on imported machinery',
+            ],
+            answers: [0, 1, 2, 3],
+            explanation: 'India grew plenty of cotton, and colonial tariffs were low and for revenue only.',
+          },
+          {
+            id: 'w5b4-05',
+            type: 'choice',
+            prompt: 'What is extensive farming?',
+            options: [
+              'Little labour over a large area; output grows by adding land',
+              'Much labour on a small area; output grows through higher yields',
+              'Farming with machines instead of people or animals',
+              'Growing many different crops on the same plot each year',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w5b4-06',
+            type: 'choice',
+            prompt: 'What happened to the government of India after the rebellion of 1857?',
+            options: [
+              'The British Crown took over from the East India Company',
+              'The Mughal emperor regained control of Bengal',
+              'India gained self-government within the empire',
+              'The princely states were all abolished',
+            ],
+            answer: 0,
+          },
+        ],
+      },
     ],
   },
 
@@ -500,6 +605,76 @@ export const w5: WeekContent = {
               'Monsoon rainfall still determines which districts can grow rice',
               'Railway lines today still run along the routes built in colonial times',
               'Courts in India continued to use English law after independence',
+            ],
+            answer: 0,
+          },
+        ],
+      },
+      {
+        id: 'w5-a3',
+        title: 'Think it through',
+        topicId: 'w5-south-asia',
+        exercises: [
+          {
+            id: 'w5a3-01',
+            type: 'open',
+            prompt: 'Did colonial rule make India poor? Give both sides and a verdict.',
+            modelAnswer:
+              "The optimistic view credits the empire with railways, law and integration into world markets, and some research (Donaldson) finds railways raised farm incomes. The critical view stresses the drain of resources and de-industrialisation. The evidence is mixed on timing: India's relative decline began in the 18th century, before formal rule, but was not reversed under it. Colonial policy made things worse where it mattered most: agriculture stagnated (yields below 1600 levels) because the state spent far more on railways than on irrigation, famine relief was minimal, and none of the standard catch-up policies (protective tariffs, industrial banks, mass schooling) were used. A reasonable verdict: colonial rule did not start the decline but locked in agrarian stagnation and inequality; growth resumed only after independence.",
+            keyPoints: [
+              'Optimistic view: railways, law, market integration',
+              'Critical view: drain, de-industrialisation, raw-material exporter',
+              'Decline began before formal rule but was not reversed',
+              'Agriculture neglected: railways over irrigation, yields stagnated',
+              'No standard catch-up policies (tariffs, banks, schooling)',
+            ],
+          },
+          {
+            id: 'w5a3-02',
+            type: 'open',
+            prompt: 'Why did canals do more for Indian farmers than railways? Explain the mechanism.',
+            modelAnswer:
+              'The binding constraint was water. Most rain falls in the summer monsoon and is volatile, so many regions could only grow drought-resistant, low-value millets. Canals relaxed that constraint: more land could be cultivated, more crops per year grown and farmers switched to high-value crops like rice, wheat and cotton, while output became less vulnerable to bad monsoons. Railways improved market access but did not provide water, so cropping patterns did not change, and their income gains were limited to early lines near ports. Canal districts ended up with about 22% higher agricultural income, more in arid areas.',
+            keyPoints: [
+              'Monsoon seasonality and volatility made water the binding constraint',
+              'Canals allowed more land and more crops per year',
+              'Farmers switched from millets to high-value crops',
+              'Railways gave market access but no water; cropping did not change',
+              'Rail gains were limited to early lines; canal gains persisted',
+            ],
+          },
+          {
+            id: 'w5a3-03',
+            type: 'choice',
+            prompt:
+              "Spinning 100 lbs of cotton took 10,000 hours by hand and 125 hours on Roberts' automatic mule. By what factor did labour productivity rise?",
+            options: ['80 times', '8 times', '125 times', '800 times'],
+            answer: 0,
+            explanation: '10,000 / 125 = 80.',
+          },
+          {
+            id: 'w5a3-04',
+            type: 'multi',
+            prompt: 'Which helped the Green Revolution succeed in places like Punjab?',
+            options: [
+              'Canal and well irrigation',
+              'High-yielding seeds with subsidised fertiliser and power',
+              'Guaranteed prices and government procurement',
+              'Low inequality inherited from colonial times',
+              'A land reform giving land to labourers',
+            ],
+            answers: [0, 1, 2, 3],
+            explanation: 'There was no such land reform; the package favoured farmers who already had land and water.',
+          },
+          {
+            id: 'w5a3-05',
+            type: 'choice',
+            prompt: 'Rail gains faded after the early lines, while canal gains persisted. What lesson does this suggest for development policy?',
+            options: [
+              'Relaxing the binding constraint (here water) matters more than market access alone',
+              'Infrastructure spending never changes farm incomes in the long run',
+              'Railways should always be built before any other investment',
+              'Governments should leave irrigation entirely to private landlords',
             ],
             answer: 0,
           },

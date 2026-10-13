@@ -88,6 +88,27 @@ export const w3: WeekContent = {
           'The Little Divergence (Van Zanden 2009) is the divergence within Europe: from the early modern period the North Sea area (England, the Low Countries) pulled ahead of southern and eastern Europe. Explanations include human capital (book production after the printing press, literacy), the European marriage pattern and labour markets, institutions, and trade. The skill premium, the wage of skilled relative to unskilled workers, is used as an indicator of how well a society accumulates skills.',
         ],
       },
+      {
+        heading: 'Steam in numbers',
+        paragraphs: [
+          "The lecture's table of stationary power in Britain (Crafts 2004, from Kanefsky) shows how slowly steam spread. In 1760 steam supplied about 5,000 horsepower out of 85,000 (6%); in 1800, 35,000 of 170,000 (about 20%); in 1830, 160,000 of 340,000, the same as water power; in 1870, about 90%; and in 1907, 98%. Almost a century after Newcomen, water still drove most factories: a classic general-purpose technology whose payoff came late.",
+        ],
+      },
+      {
+        heading: 'Extra: living standards beyond wages (from student notes)',
+        paragraphs: [
+          "Kuznets curve: Simon Kuznets argued that inequality first rises and then falls as an economy industrialises (an inverted U). Agrarian economies are poor but fairly equal; early industrialisation concentrates gains among capital owners and urban workers; later, as more people move into industry and education and welfare spread, inequality falls.",
+          'Household allocation: living standards depend not only on what a household earns but on how resources are shared within it. Main earners had more bargaining power, so women and children could receive less food, health care and schooling than wages or GDP per head suggest.',
+          'Other measures: adult height reflects nutrition and disease in childhood, so historians use heights (for example of soldiers or prisoners) to track living standards. Age heaping, the tendency of people who do not know their exact age to round it to a number ending in 0 or 5, is used to measure numeracy: the more heaping, the less numerate a population.',
+        ],
+      },
+      {
+        heading: 'Extra: explaining the Little Divergence (from student notes)',
+        paragraphs: [
+          'Van Zanden stresses human capital. The printing press (mid-15th century) cut the cost of books dramatically; book production and literacy rose fastest around the North Sea. The European marriage pattern (late marriage, many people never marrying, young women working for wages before marriage) is linked to more investment in skills and to well-functioning labour markets (De Moor & Van Zanden). One argument in the notes is that the Black Death raised wages, which made education more affordable and valuable. A low skill premium suggests skills were relatively abundant.',
+          "Allen offers a different reading: literacy rose because the high-wage, commercial economy of north-western Europe made reading, writing and numeracy valuable and affordable. Globalisation spurred the north while American silver inflated Spain's prices and made its farms and workshops uncompetitive.",
+        ],
+      },
     ],
     keyTerms: [
       {
@@ -138,6 +159,18 @@ export const w3: WeekContent = {
       {
         term: 'Skill premium',
         definition: 'Wage of skilled relative to unskilled labour; an indicator of how well a society builds up skills.',
+      },
+      {
+        term: 'Kuznets curve',
+        definition: 'Inequality first rises and then falls as an economy industrialises (an inverted U).',
+      },
+      {
+        term: 'Age heaping',
+        definition: 'Rounding ages to numbers ending in 0 or 5; a historical measure of (in)numeracy.',
+      },
+      {
+        term: 'European marriage pattern',
+        definition: 'Late marriage, many never marrying and young women working for wages before marriage, typical of north-western Europe.',
       },
     ],
     readings: [
@@ -438,6 +471,85 @@ export const w3: WeekContent = {
           },
         ],
       },
+      {
+        id: 'w3-b5',
+        title: 'Inequality, heights and numeracy',
+        topicId: 'w3-industrial-revolution',
+        fromNotes: true,
+        exercises: [
+          {
+            id: 'w3b5-01',
+            type: 'choice',
+            prompt: 'What does the Kuznets curve describe?',
+            options: [
+              'Inequality first rising, then falling as an economy industrialises',
+              'Inequality falling steadily as an economy industrialises',
+              'Population first rising, then falling as incomes grow',
+              'Wages rising faster than GDP during industrialisation',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w3b5-02',
+            type: 'order',
+            prompt: 'Put the stages behind the Kuznets curve in order',
+            items: [
+              'Poor, agrarian and fairly equal',
+              'Early industry: gains go to capital owners and cities',
+              'Industry, schooling and welfare spread',
+              'Inequality falls again',
+            ],
+          },
+          {
+            id: 'w3b5-03',
+            type: 'choice',
+            prompt: 'Why can household income hide inequality?',
+            options: [
+              'Resources were not shared equally: main earners got more than women and children',
+              'Households hid part of their income from tax collectors and surveys',
+              'Household income is always measured before taxes are paid',
+              'Children usually earned more than their parents in factories',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w3b5-04',
+            type: 'choice',
+            prompt: 'What does the average adult height of a population tell historians?',
+            options: [
+              'How well people were fed and how healthy they were as children',
+              'How much physical labour people did as adults',
+              'How large the share of immigrants in the population was',
+              'How much meat the richest households could afford',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w3b5-05',
+            type: 'choice',
+            prompt: 'What is age heaping, and what is it used to measure?',
+            options: [
+              'Rounding ages to numbers ending in 0 or 5; a measure of numeracy',
+              'Adding years to your age to get a job; a measure of child labour',
+              'Ageing populations heaping up in cities; a measure of urbanisation',
+              'Old people moving in with their children; a measure of poverty',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w3b5-06',
+            type: 'choice',
+            prompt: 'What characterises the European marriage pattern?',
+            options: [
+              'Late marriage, many never marrying, women working for wages before marriage',
+              'Early marriage arranged by parents, with large extended households',
+              'Universal marriage in the teens and very high fertility',
+              'Marriage only allowed after inheriting land from one\'s parents',
+            ],
+            answer: 0,
+          },
+        ],
+      },
     ],
   },
 
@@ -588,6 +700,83 @@ export const w3: WeekContent = {
               'Literacy has nothing to do with income or economic growth',
             ],
             answer: 0,
+          },
+        ],
+      },
+      {
+        id: 'w3-a3',
+        title: 'Think it through',
+        topicId: 'w3-industrial-revolution',
+        exercises: [
+          {
+            id: 'w3a3-01',
+            type: 'choice',
+            prompt:
+              'In 1800 British steam engines supplied 35,000 of 170,000 horsepower of stationary power, nearly a century after Newcomen. What does this illustrate?',
+            options: [
+              'A general-purpose technology pays off slowly, after many improvements',
+              'Steam engines were banned from most factories until 1830',
+              'British inventors had lost interest in steam by 1800',
+              'Water power was always more efficient than steam power',
+            ],
+            answer: 0,
+            explanation: "That's about 20%; steam only matched water power around 1830 and reached 98% by 1907.",
+          },
+          {
+            id: 'w3a3-02',
+            type: 'multi',
+            prompt: 'According to Allen, what made it pay to develop the steam engine in Britain rather than in France or China?',
+            options: [
+              'Britain had far more coal mines that needed draining',
+              'Coal at the pithead was cheap enough to feed wasteful engines',
+              'Labour was expensive relative to energy',
+              'Only British scientists understood atmospheric pressure',
+              'British workers were cheaper than Chinese workers',
+            ],
+            answers: [0, 1, 2],
+            explanation: 'The science was pan-European; the incentives were British.',
+          },
+          {
+            id: 'w3a3-03',
+            type: 'open',
+            prompt: 'Why did the Industrial Revolution happen in Britain rather than China? Use both Allen and Pomeranz.',
+            modelAnswer:
+              "Pomeranz argues that the Yangzi delta and England were broadly similar around 1750 and both faced land constraints; Britain escaped because it had cheap coal close to its industrial regions (China's lay far away in the north-west) and because the Americas supplied land-intensive goods such as cotton, sugar and timber, plus silver. Allen agrees that coal mattered but adds factor prices: British wages were high relative to the cost of capital and energy, so labour-saving machines paid in Britain (an Arkwright mill earned about 40% there, under 1% in India), and Britain's large mining industry made the steam engine worth developing. Allen doubts that Yangzi incomes really matched England's. Both reject purely cultural or institutional explanations of the timing.",
+            keyPoints: [
+              'Pomeranz: Yangzi delta and England similar around 1750 (reciprocal comparison)',
+              'Pomeranz: accessible coal in Britain, far from industry in China',
+              'Pomeranz: New World land-intensive goods and silver relieved land constraints',
+              'Allen: high wages relative to capital and energy made machines profitable',
+              'Allen: big coal-mining sector made the steam engine worth developing',
+            ],
+          },
+          {
+            id: 'w3a3-04',
+            type: 'open',
+            prompt: 'Was the Industrial Revolution good for British workers? Weigh the evidence.',
+            modelAnswer:
+              "In the short run, much less than GDP suggests. During Engels' pause (to about the 1840s) output per worker rose while real wages stagnated, as rapid population growth held wages down and gains went to capital owners (consistent with the rising part of a Kuznets curve). Cities carried an urban penalty of disease and coal smoke, child labour was widespread and housing was poor. In the long run, however, the Industrial Revolution broke the Malthusian trap: after about 1850 real wages and life expectancy rose steadily, and sustained growth eventually made workers far richer than any earlier generation. The answer depends on the time horizon and on which workers you mean.",
+            keyPoints: [
+              "Engels' pause: output rose but real wages stagnated until about the 1840s",
+              'Population growth held wages down; gains went to capital first',
+              'Urban penalty, child labour, pollution and poor housing',
+              'After about 1850 real wages and health improved',
+              'Long run: escape from the Malthusian trap',
+            ],
+          },
+          {
+            id: 'w3a3-05',
+            type: 'choice',
+            prompt:
+              'Van Zanden links the Little Divergence to human capital; some link literacy to Protestant Bible reading. What evidence does Allen use against the religious explanation?',
+            options: [
+              'Catholic Belgium and north-eastern France were as literate as Protestant regions',
+              'Protestant Prussia had the lowest literacy rate in Europe around 1800',
+              'Literacy in England fell sharply after the Reformation began',
+              'Most books printed in the 16th century were about science, not religion',
+            ],
+            answer: 0,
+            explanation: 'Allen attributes the rise in literacy to the high-wage, commercial economy instead.',
           },
         ],
       },

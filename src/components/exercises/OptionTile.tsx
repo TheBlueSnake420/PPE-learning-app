@@ -40,15 +40,15 @@ export function OptionTile({ label, state = 'idle', onPress, disabled, badge, ce
       ]}
     >
       <View style={[styles.row, center && styles.center]}>
-        {badge != null && (
-          <View style={[styles.badge, { borderColor: look.border }]}>
-            {typeof badge === 'string' || typeof badge === 'number' ? (
+        {badge != null &&
+          (typeof badge === 'string' || typeof badge === 'number' ? (
+            <View style={[styles.badge, { borderColor: look.border }]}>
               <Text style={[styles.badgeText, { color: look.text }]}>{badge}</Text>
-            ) : (
-              badge
-            )}
-          </View>
-        )}
+            </View>
+          ) : (
+            // Icon badges (e.g. checkboxes) bring their own shape.
+            <View style={styles.iconBadge}>{badge}</View>
+          ))}
         <Text style={[styles.label, { color: look.text }, center && styles.labelCenter]}>{label}</Text>
       </View>
     </Pressable>
@@ -80,6 +80,12 @@ const styles = StyleSheet.create({
     height: 28,
     borderRadius: 8,
     borderWidth: 2,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  iconBadge: {
+    width: 28,
+    height: 28,
     alignItems: 'center',
     justifyContent: 'center',
   },

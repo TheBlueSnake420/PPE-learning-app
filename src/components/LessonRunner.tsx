@@ -12,6 +12,8 @@ import { type Answer, correctAnswerText, instruction, isCorrect } from './exerci
 import { ChoiceView } from './exercises/ChoiceView';
 import { FillView } from './exercises/FillView';
 import { MatchView } from './exercises/MatchView';
+import { MultiView } from './exercises/MultiView';
+import { OpenView } from './exercises/OpenView';
 import { OrderView } from './exercises/OrderView';
 import { TrueFalseView } from './exercises/TrueFalseView';
 import { ProgressBar } from './ProgressBar';
@@ -42,7 +44,8 @@ const PRAISE = ['Nice!', 'Great job!', 'Correct!', 'Well done!', 'Excellent!'];
 /**
  * Runs a list of exercises Duolingo-style: answer, check, see feedback,
  * continue. Wrong answers come back at the end of the queue until answered
- * correctly (match exercises are not repeated; their mistakes go to review).
+ * correctly. Match and open exercises are not repeated (the answer has just
+ * been shown); their misses go to the review queue instead.
  */
 export function LessonRunner({ items, isReview, onClose, onFinish, label }: Props) {
   const recordAnswer = useProgress((s) => s.recordAnswer);
@@ -65,7 +68,7 @@ export function LessonRunner({ items, isReview, onClose, onFinish, label }: Prop
     feedback(correct ? 'success' : 'error');
     recordAnswer(current.courseId, exercise.id, correct, isReview);
     if (!firstTry.current.has(key)) firstTry.current.set(key, correct);
-    if (correct || exercise.type === 'match') {
+    if (correct || exercise.type === 'match' || exercise.type === 'open') {
       done.current.add(key);
     } else {
       setQueue((q) => [...q, current]);
@@ -116,6 +119,12 @@ export function LessonRunner({ items, isReview, onClose, onFinish, label }: Prop
     case 'match':
       body = <MatchView exercise={exercise} {...viewProps} />;
       break;
+    case 'multi':
+      body = <MultiView exercise={exercise} {...viewProps} />;
+      break;
+    case 'open':
+      body = <OpenView exercise={exercise} {...viewProps} />;
+      break;
   }
 
   return (
@@ -127,7 +136,7 @@ export function LessonRunner({ items, isReview, onClose, onFinish, label }: Prop
         <ProgressBar value={progress} />
       </View>
 
-      <ScrollView ref={scrollRef} contentContainerStyle={styles.content}>
+      <ScrollView ref={scrollRef} contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
         {pos >= items.length && (
           <View style={styles.retryBadge}>
             <Ionicons name="refresh" size={14} color={colors.orange} />
@@ -157,7 +166,9 @@ export function LessonRunner({ items, isReview, onClose, onFinish, label }: Prop
                 ? praise
                 : exercise.type === 'match'
                   ? 'Some mismatches - this one goes to review'
-                  : 'Not quite'}
+                  : exercise.type === 'open'
+                    ? 'Key points missing - this one goes to review'
+                    : 'Not quite'}
             </Text>
           </View>
           {reveal && (

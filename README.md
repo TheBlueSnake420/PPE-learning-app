@@ -3,7 +3,7 @@
 A Duolingo-style study app for PPE at Utrecht University. Android first, built with Expo (React Native + TypeScript).
 
 - **Levels:** Year → Basics / Advanced → course → units → short lessons
-- **Exercises:** multiple choice, true/false, fill in the blank, matching pairs, put in order
+- **Exercises:** multiple choice, true/false, fill in the blank, matching pairs, put in order, select all that apply, and open "think it through" questions (write an answer, compare it with a model answer, tick the key points you covered)
 - **Study material:** per-course topic summaries, key points, key terms, readings and flashcards
 - **Motivation:** XP, daily goal, daily streak, and a mistake-review mode with spaced repetition
 - **Progress** is saved on the phone (no account needed). Uninstalling the app deletes it.

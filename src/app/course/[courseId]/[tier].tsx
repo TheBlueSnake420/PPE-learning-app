@@ -45,7 +45,14 @@ export default function CourseScreen() {
           {units.map((unit, unitIndex) => (
             <View key={unit.id} style={styles.unit}>
               <View style={[styles.unitBanner, { backgroundColor: course.color, borderBottomColor: darken(course.color) }]}>
-                <Text style={styles.unitLabel}>UNIT {unitIndex + 1}</Text>
+                <View style={styles.unitLabelRow}>
+                  <Text style={styles.unitLabel}>UNIT {unitIndex + 1}</Text>
+                  {unit.fromNotes && (
+                    <View style={styles.notesPill}>
+                      <Text style={styles.notesPillText}>FROM STUDENT NOTES</Text>
+                    </View>
+                  )}
+                </View>
                 <Text style={styles.unitTitle}>{unit.title}</Text>
                 {unit.description ? <Text style={styles.unitDescription}>{unit.description}</Text> : null}
               </View>
@@ -58,6 +65,7 @@ export default function CourseScreen() {
                     offset={PATH_OFFSETS[i % PATH_OFFSETS.length]}
                     record={completed[lessonKey(course.id, lesson.id)]}
                     isNext={lesson.id === nextLesson?.id}
+                    notesTag={!!lesson.fromNotes && !unit.fromNotes}
                   />
                 ))}
               </View>
@@ -80,14 +88,18 @@ function LessonNode({
   offset,
   record,
   isNext,
+  notesTag,
 }: {
   course: Course;
   lesson: Lesson;
   offset: number;
   record?: LessonRecord;
   isNext: boolean;
+  /** Mark a lesson built from student notes inside an otherwise slide-based unit. */
+  notesTag: boolean;
 }) {
   const done = !!record;
+  const thinking = lesson.exercises.some((e) => e.type === 'open');
   const bg = done ? colors.gold : course.color;
   const edge = done ? colors.goldDark : darken(course.color);
   const open = () =>
@@ -110,9 +122,10 @@ function LessonNode({
           pressed && styles.nodePressed,
         ]}
       >
-        <Ionicons name={done ? 'checkmark' : isNext ? 'star' : 'book'} size={32} color="#FFFFFF" />
+        <Ionicons name={done ? 'checkmark' : isNext ? 'star' : thinking ? 'bulb' : 'book'} size={32} color="#FFFFFF" />
       </Pressable>
       <Text style={styles.nodeTitle}>{lesson.title}</Text>
+      {notesTag && <Text style={styles.nodeMeta}>from student notes</Text>}
       {record && record.bestAccuracy < 1 && (
         <Text style={styles.nodeMeta}>Best: {Math.round(record.bestAccuracy * 100)}%</Text>
       )}
@@ -153,7 +166,10 @@ function MaterialList({ course }: { course: Course }) {
           style={({ pressed }) => [styles.topicCard, pressed && styles.pressed]}
         >
           <View style={styles.flex}>
-            {topic.week != null && <Text style={[styles.week, { color: course.color }]}>WEEK {topic.week}</Text>}
+            <View style={styles.weekRow}>
+              {topic.week != null && <Text style={[styles.week, { color: course.color }]}>WEEK {topic.week}</Text>}
+              {topic.fromNotes && <Text style={styles.notesTag}>FROM STUDENT NOTES</Text>}
+            </View>
             <Text style={styles.topicTitle}>{topic.title}</Text>
             <Text style={styles.muted}>{topic.summary}</Text>
           </View>
@@ -171,7 +187,12 @@ const styles = StyleSheet.create({
   content: { padding: space.lg, gap: space.lg, paddingBottom: 64 },
   unit: { gap: space.xl },
   unitBanner: { borderRadius: radius.lg, padding: space.lg, borderBottomWidth: 4, gap: 2 },
+  unitLabelRow: { flexDirection: 'row', alignItems: 'center', gap: space.sm, flexWrap: 'wrap' },
   unitLabel: { color: 'rgba(255,255,255,0.85)', fontWeight: '800', fontSize: font.small, letterSpacing: 1 },
+  notesPill: { backgroundColor: 'rgba(255,255,255,0.28)', borderRadius: 8, paddingHorizontal: 8, paddingVertical: 2 },
+  notesPillText: { color: '#FFFFFF', fontWeight: '800', fontSize: 11, letterSpacing: 0.5 },
+  weekRow: { flexDirection: 'row', alignItems: 'center', gap: space.sm, flexWrap: 'wrap' },
+  notesTag: { fontSize: 11, fontWeight: '800', color: colors.orange, letterSpacing: 0.5 },
   unitTitle: { color: '#FFFFFF', fontWeight: '800', fontSize: font.title },
   unitDescription: { color: 'rgba(255,255,255,0.9)', fontSize: font.body },
   path: { alignItems: 'center', gap: space.xl, paddingBottom: space.lg },

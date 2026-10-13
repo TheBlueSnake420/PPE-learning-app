@@ -31,6 +31,8 @@ export interface Unit {
   id: string;
   title: string;
   description?: string;
+  /** Based on other students' notes rather than this year's slides (shown as a badge). */
+  fromNotes?: boolean;
   lessons: Lesson[];
 }
 
@@ -39,6 +41,8 @@ export interface Lesson {
   title: string;
   /** Study topic that covers this lesson, shown as "Read the summary". */
   topicId?: string;
+  /** Based on other students' notes rather than this year's slides (shown as a badge). */
+  fromNotes?: boolean;
   exercises: Exercise[];
 }
 
@@ -84,12 +88,34 @@ export interface OrderExercise extends ExerciseBase {
   items: string[];
 }
 
+/** Select all that apply. `answers` are the indices of every correct option. */
+export interface MultiExercise extends ExerciseBase {
+  type: 'multi';
+  prompt: string;
+  options: string[];
+  answers: number[];
+}
+
+/**
+ * Open "explain" question. The learner writes or thinks through an answer,
+ * reveals the model answer, then ticks the key points they covered. Counts as
+ * correct when at least 60% of the key points were covered.
+ */
+export interface OpenExercise extends ExerciseBase {
+  type: 'open';
+  prompt: string;
+  keyPoints: string[];
+  modelAnswer?: string;
+}
+
 export type Exercise =
   | ChoiceExercise
   | TrueFalseExercise
   | FillExercise
   | MatchExercise
-  | OrderExercise;
+  | OrderExercise
+  | MultiExercise
+  | OpenExercise;
 
 export interface StudyTopic {
   id: string;
@@ -103,6 +129,8 @@ export interface StudyTopic {
   keyTerms?: KeyTerm[];
   /** Literature for this topic, as short citations. */
   readings?: string[];
+  /** Based on other students' notes rather than this year's slides (shown as a notice). */
+  fromNotes?: boolean;
 }
 
 export interface KeyTerm {
@@ -118,6 +146,8 @@ export interface WeekContent {
   topic: StudyTopic;
   basics?: Unit;
   advanced?: Unit;
+  /** The whole week is based on other students' notes (e.g. a lecture not given yet). */
+  fromNotes?: boolean;
 }
 
 export interface Level {

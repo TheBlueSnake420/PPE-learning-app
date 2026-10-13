@@ -81,6 +81,22 @@ export const w6: WeekContent = {
           'Africa\'s population boom, with about 60% still in agriculture, makes raising farm productivity urgent: the continent is a net food importer and cities cannot absorb all young workers. The "flying geese" paradigm (Akamatsu 1962) asks whether industrialisation will spread to Africa as it moved from Japan to the Asian tigers, ASEAN and China.',
         ],
       },
+      {
+        heading: 'Extra: barriers and the slave trades in more detail (from student notes)',
+        paragraphs: [
+          'Frankema summarises four bio-geographic barriers to African growth: erratic rainfall, which made farming vulnerable; poor, quickly exhausted soils; a lack of navigable rivers, which kept transport costs high; and tropical diseases affecting both people and animals, which forced extensive farming and localised trade (except for high-value goods such as gold). Africa also lacked the intense inter-state competition that pushed European states to build fiscal and military capacity.',
+          'The Atlantic trade drew on an existing African institution: slavery shifted from intra-African to trans-oceanic trading. About two-thirds of captives were men, valued for plantation labour; the main destinations were the sugar colonies of Brazil and the Caribbean. Politically fragmented African states supplied captives (often taken in war) in exchange for manufactured goods such as guns, gunpowder, iron and textiles. Crops from the Americas, such as maize and cassava, spread in Africa and improved nutrition.',
+          'The German genocide in South-West Africa (now Namibia) targeted the Herero and Nama peoples (1904-08).',
+        ],
+      },
+      {
+        heading: "Extra: Africa's terms of trade over time (from student notes)",
+        paragraphs: [
+          'In the 19th century industrial Europe\'s demand for palm oil and other cash crops pushed African export prices up while manufactured imports became cheaper, so Africa\'s terms of trade improved. The peak roughly coincided with the Berlin Conference (1884/5), supporting the economic rationale for the scramble: colonial conquest became cheaper just as commodity revenues rose.',
+          'After the First World War the terms of trade fell: the Great Depression and tariffs cut demand, Asian plantations (Malaysia, Indonesia) expanded palm oil supply, and petroleum products replaced palm oil as a lubricant and paraffin replaced it in candles. The Second World War raised demand for minerals such as copper, gold and diamonds. A post-war boom in cocoa and coffee ended in the 1970s with the oil crisis and overproduction. Oil exporters (e.g. Nigeria, Angola) looked much like other cash-crop exporters until the 1970s, then diverged.',
+          'The direction of trade also shifted: in the early 1960s about 70% of African trade was with Europe; by the 2010s Europe\'s share had fallen to about 40%, Asia took around 30% of exports and trade within Africa had doubled.',
+        ],
+      },
     ],
     keyTerms: [
       { term: 'Land abundance', definition: 'Plenty of land relative to people; makes labour, not land, the scarce factor.' },
@@ -118,6 +134,10 @@ export const w6: WeekContent = {
       {
         term: 'Flying geese paradigm',
         definition: 'Akamatsu: industrialisation spreads in waves from leading to follower economies.',
+      },
+      {
+        term: 'Bio-geographic barriers',
+        definition: "Frankema's four: erratic rainfall, poor soils, few navigable rivers and tropical disease.",
       },
     ],
     readings: ['Allen, R. C. (2011). Global Economic History: A Very Short Introduction, ch. 7 (Africa).'],
@@ -366,6 +386,79 @@ export const w6: WeekContent = {
           },
         ],
       },
+      {
+        id: 'w6-b4',
+        title: 'Barriers, prices and oil',
+        topicId: 'w6-africa',
+        fromNotes: true,
+        exercises: [
+          {
+            id: 'w6b4-01',
+            type: 'multi',
+            prompt: "Which are among Frankema's four bio-geographic barriers to African growth?",
+            options: [
+              'Erratic rainfall',
+              'Poor, quickly exhausted soils',
+              'Few navigable rivers',
+              'Tropical diseases of people and animals',
+              'Harsh winters',
+              'A lack of coastline',
+            ],
+            answers: [0, 1, 2, 3],
+          },
+          {
+            id: 'w6b4-02',
+            type: 'choice',
+            prompt: "Roughly when did Africa's 19th-century terms of trade peak?",
+            options: [
+              'Around the 1880s, about the time of the Berlin Conference',
+              'Around 1807, when Britain abolished the slave trade',
+              'Just after the First World War',
+              'During the 1970s oil crisis',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6b4-03',
+            type: 'multi',
+            prompt: "Why did Africa's terms of trade fall after the First World War?",
+            options: [
+              'The Great Depression and tariffs cut demand',
+              'Asian plantations expanded palm oil supply',
+              'Petroleum products replaced palm oil',
+              'Quinine became too expensive to import',
+              'African currencies were revalued upwards',
+            ],
+            answers: [0, 1, 2],
+          },
+          {
+            id: 'w6b4-04',
+            type: 'choice',
+            prompt: "How did the Second World War affect Africa's exports?",
+            options: [
+              'Demand for minerals such as copper, gold and diamonds rose',
+              'All exports collapsed because shipping stopped completely',
+              'Palm oil prices reached their all-time high',
+              'Cocoa exports were banned by the colonial powers',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6b4-05',
+            type: 'truefalse',
+            statement: 'African oil exporters were already growing much faster than other African economies before the 1970s.',
+            answer: false,
+            explanation: 'They looked much like other cash-crop exporters until the 1970s, then diverged.',
+          },
+          {
+            id: 'w6b4-06',
+            type: 'choice',
+            prompt: 'Which peoples were targeted in the German genocide in South-West Africa (1904-08)?',
+            options: ['The Herero and Nama', 'The Zulu and Xhosa', 'The Ashanti and Fante', 'The Hutu and Tutsi'],
+            answer: 0,
+          },
+        ],
+      },
     ],
   },
 
@@ -521,6 +614,89 @@ export const w6: WeekContent = {
             ],
             answer: 0,
             explanation: "Allen also points to expanding output in Africa itself, which pushed prices down further.",
+          },
+        ],
+      },
+      {
+        id: 'w6-a3',
+        title: 'Think it through',
+        topicId: 'w6-africa',
+        exercises: [
+          {
+            id: 'w6a3-01',
+            type: 'open',
+            prompt: 'Why is sub-Saharan Africa poor? Weigh geography against colonialism.',
+            modelAnswer:
+              "Geography set the starting point: tropical disease, the tsetse fly, poor soils, erratic rain and unnavigable rivers kept population density low and ruled out plough agriculture and cheap transport, so (Ethiopia apart) Africa had no advanced agrarian civilisation in 1500. External relations then interacted with these conditions: the slave trades fed insecurity and mistrust, and colonial rule imposed extractive institutions (indirect rule through empowered chiefs, forced labour, settler land seizures) while investing little in schooling. After independence, dependence on primary exports with falling real prices, marketing boards that taxed farmers, and a low-wage technology trap kept incomes low. Geography explains the starting point; colonial institutions and trade patterns help explain why Africa's commercial dynamism did not turn into modern growth.",
+            keyPoints: [
+              'Geography: disease, tsetse, soils, rainfall, rivers, low density',
+              'Allen: no advanced agrarian civilisation in 1500 (except Ethiopia)',
+              'Slave trades: insecurity, mistrust, demographic loss',
+              'Colonial institutions: indirect rule, chiefs, forced labour, land seizures',
+              'After independence: primary exports, falling prices, marketing boards',
+            ],
+          },
+          {
+            id: 'w6a3-02',
+            type: 'open',
+            prompt: 'Explain the economic rationale for the Scramble for Africa and why it came so late.',
+            modelAnswer:
+              "The benefits of control rose with the commercial transition: industrial Europe wanted palm oil, groundnuts and other cash crops, export prices rose between 1835 and 1885, and controlling colonies promised secure supplies and markets for manufactures. Rivalry (Leopold's plans for the Congo) added urgency, and the Berlin Conference set rules to avoid war. The costs had long been prohibitive: tropical Africa was the \"White Man's Grave\". Industrial technology cut those costs: quinine against malaria, the Maxim gun and gunboats, steamboats and the telegraph. With benefits up and costs down, the partition happened quickly after the 1880s.",
+            keyPoints: [
+              'Commercial transition and rising export prices raised the benefits',
+              'Hope of securing supplies and markets for manufactures',
+              "Earlier, disease mortality made conquest too costly (White Man's Grave)",
+              'Quinine, Maxim gun, steamboats and telegraph cut the costs',
+              'Rivalry and the Berlin Conference rules sped up partition',
+            ],
+          },
+          {
+            id: 'w6a3-03',
+            type: 'choice',
+            prompt:
+              'In Kenya in 1902, moving goods by rail cost about 0.09 (per ton-mile) against 11 by head-loading. Roughly what share of the head-loading cost is that?',
+            options: ['Under 1%', 'About 10%', 'About 50%', 'About 90%'],
+            answer: 0,
+            explanation: "0.09 / 11 ≈ 0.8%. In the lecture's table, Ghana's ratio was about 16%.",
+          },
+          {
+            id: 'w6a3-04',
+            type: 'multi',
+            prompt: 'Which are legacies of colonial indirect rule, according to Allen and Mamdani?',
+            options: [
+              'Chiefs with more power than pre-colonial rulers had',
+              'Communal land allocated at the discretion of chiefs',
+              'Forced labour presented as "custom"',
+              'Rigid ethnic categories (as in Rwanda)',
+              'Elected councils governing rural areas',
+              'Universal state primary schooling',
+            ],
+            answers: [0, 1, 2, 3],
+          },
+          {
+            id: 'w6a3-05',
+            type: 'choice',
+            prompt: 'Allen describes African cocoa farming as a "vicious circle". What is the circle?',
+            options: [
+              'Low wages keep export prices down, and low prices keep wages down',
+              'High taxes cause rebellions, and rebellions raise taxes',
+              'Population growth lowers yields, and low yields raise fertility',
+              'Exports fund imports, which then destroy local exporters',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6a3-06',
+            type: 'choice',
+            prompt: 'Which finding most challenges Allen\'s view that "African poverty is not new"?',
+            options: [
+              'West African urban unskilled wages exceeded Beijing\'s in the early 20th century',
+              'Sub-Saharan Africa had the lowest GDP per head of any region in 1820',
+              'Ethiopia was the only advanced agrarian civilisation south of the Sahara',
+              'Malaria still kills hundreds of thousands of African children each year',
+            ],
+            answer: 0,
+            explanation: 'Real-wage evidence (Frankema & van Waijenburg) suggests periods when West African workers were not uniquely poor.',
           },
         ],
       },

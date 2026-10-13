@@ -78,6 +78,14 @@ export const w6: WeekContent = {
           'The globalisation cleavage (Kriesi et al. 2012) divides the winners and losers of globalisation. Economically, some sectors profit from new markets and cheap labour (e.g. ICT) while others suffer (low-skilled industry, agriculture); culturally, growing diversity is perceived by some as a threat. Winners are mainly the higher educated, losers mainly the lower educated, producing competition between a new left and a new right.',
         ],
       },
+      {
+        heading: 'Extra: mapping parties in two dimensions (from student notes)',
+        paragraphs: [
+          "Today's party competition is often mapped on two dimensions: an economic left-right axis and a cultural GAL-TAN axis. Huib Pellikaan's confrontational method places parties by scoring their positions on a limited set of policy statements that divide them: each item scores -1, 0 or +1, adding up to a position between -10 and +10 on each dimension.",
+          "Last year's Dutch map placed GL, PvdA, SP and PvdD on the left and GAL side; D66 on the GAL side, slightly right of centre; the VVD on the right, slightly TAN; CDA and ChristenUnie right of centre and somewhat TAN; the PVV near the economic centre but on the TAN side; and the SGP furthest towards TAN.",
+          'Kriesi et al. add the globalisation conflict as a dimension of integration (cosmopolitan) versus demarcation (nationalist). Greens and Social Democrats sit in the interventionist-cosmopolitan corner; Liberals, Christian Democrats and Conservatives (with business) in the neoliberal-cosmopolitan corner; right-wing populists mobilise the losers of globalisation on the demarcation side, increasingly combining nationalism with interventionist economic positions.',
+        ],
+      },
     ],
     keyTerms: [
       { term: 'Political party (minimal)', definition: 'A group that presents candidates at elections to place them in public office.' },
@@ -95,6 +103,14 @@ export const w6: WeekContent = {
       { term: 'Freezing hypothesis', definition: 'Lipset & Rokkan: 1960s party systems reflected the cleavages of the 1920s.' },
       { term: 'Post-materialism', definition: 'Priority on self-expression, equality and the environment over material security (Inglehart).' },
       { term: 'GAL / TAN', definition: 'Green-alternative-libertarian vs traditional-authoritarian-nationalist.' },
+      {
+        term: 'Confrontational method',
+        definition: "Pellikaan: placing parties by scoring them -1, 0 or +1 on a set of dividing policy statements.",
+      },
+      {
+        term: 'Integration vs demarcation',
+        definition: 'Kriesi et al.: the cultural conflict between cosmopolitan openness and national closure created by globalisation.',
+      },
     ],
     readings: [
       'Lipset, S. M. & Rokkan, S. (eds.) (1967). Party Systems and Voter Alignments. Free Press.',
@@ -329,6 +345,73 @@ export const w6: WeekContent = {
           },
         ],
       },
+      {
+        id: 'w6-b4',
+        title: 'Mapping parties',
+        topicId: 'w6-parties',
+        fromNotes: true,
+        exercises: [
+          {
+            id: 'w6b4-01',
+            type: 'choice',
+            prompt: 'Which two dimensions are commonly used to map parties today?',
+            options: [
+              'Economic left-right and cultural GAL-TAN',
+              'Urban-rural and centre-periphery',
+              'Government-opposition and old-new',
+              'Federal-unitary and presidential-parliamentary',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6b4-02',
+            type: 'choice',
+            prompt: "How does Pellikaan's confrontational method place parties?",
+            options: [
+              'By scoring them -1, 0 or +1 on a set of policy statements that divide them',
+              'By asking voters where they think each party stands',
+              'By counting how often parties mention each issue in their manifestos',
+              'By looking at which parties have governed together in coalitions',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6b4-03',
+            type: 'match',
+            prompt: 'Match the Dutch party to its position on last year\'s map',
+            pairs: [
+              ['GroenLinks', 'Left and GAL'],
+              ['D66', 'Just right of centre, GAL'],
+              ['VVD', 'Right, slightly TAN'],
+              ['SGP', 'Strongly TAN'],
+            ],
+          },
+          {
+            id: 'w6b4-04',
+            type: 'choice',
+            prompt: 'Where did last year\'s map place the PVV?',
+            options: [
+              'Near the economic centre, on the TAN side',
+              'Far right economically, on the GAL side',
+              'Far left economically, on the GAL side',
+              'In the exact centre on both dimensions',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6b4-05',
+            type: 'choice',
+            prompt: 'In Kriesi et al.\'s space, where do right-wing populists mobilise?',
+            options: [
+              'On the demarcation (nationalist) side, among the losers of globalisation',
+              'In the neoliberal-cosmopolitan corner, with business',
+              'In the interventionist-cosmopolitan corner, with the Greens',
+              'In the centre, competing for the median voter',
+            ],
+            answer: 0,
+          },
+        ],
+      },
     ],
   },
 
@@ -488,6 +571,91 @@ export const w6: WeekContent = {
               'There are no elections at all, but several parties are allowed to exist',
               'The dominant party must always govern in a coalition with smaller ones',
               'Only the dominant party may nominate candidates for parliament',
+            ],
+            answer: 0,
+          },
+        ],
+      },
+      {
+        id: 'w6-a3',
+        title: 'Think it through',
+        topicId: 'w6-parties',
+        exercises: [
+          {
+            id: 'w6a3-01',
+            type: 'open',
+            prompt:
+              'Use Lipset and Rokkan to explain the main 20th-century party families in a country like the Netherlands, and explain why its party system has fragmented since.',
+            modelAnswer:
+              'Lipset and Rokkan trace party families to cleavages created by the national and industrial revolutions: church-state conflict produced Christian democratic parties, the owner-worker conflict produced socialist/social democratic parties versus liberals, and the land-industry conflict shaped conservatives and liberals. Because these cleavages were mobilised as suffrage expanded around the 1910s-20s, the party systems "froze". Since then new cleavages (materialist versus post-materialist values, GAL-TAN, globalisation winners versus losers) have produced green, new-left, liberal-progressive and right-populist parties, and with a very low effective threshold under Dutch PR (Duverger) new parties enter parliament easily, so the system has fragmented.',
+            keyPoints: [
+              'Cleavages from the national and industrial revolutions',
+              'Church-state gave Christian democrats; owner-worker gave socialists vs liberals',
+              'Freezing: cleavages mobilised as suffrage expanded',
+              'New cleavages: post-materialism, GAL-TAN, globalisation',
+              'Low threshold under PR lets new parties enter (Duverger)',
+            ],
+          },
+          {
+            id: 'w6a3-02',
+            type: 'open',
+            prompt: "Does Downs's median voter theorem explain party competition in the Netherlands? Why or why not?",
+            modelAnswer:
+              "Downs assumes rational, fully informed voters and vote-maximising parties on a single left-right line, and predicts that in a two-party system both parties converge on the median voter. The Netherlands is a multiparty PR system with a low threshold: new parties can enter easily, so established parties risk losing their flanks if they move to the centre, and parties seek distinct positions instead. Competition also runs on two dimensions (left-right and GAL-TAN), so there is no single median. The theory partly fits large parties courting the centre, but voters often vote on identity, habit or protest. Overall it fits majoritarian systems better than Dutch politics.",
+            keyPoints: [
+              'Assumptions: rationality, full information, one dimension',
+              'Prediction: convergence on the median in two-party systems',
+              'PR with a low threshold: parties differentiate instead',
+              'Two dimensions mean no single median voter',
+              'Partial fit; identity and protest voting violate the assumptions',
+            ],
+          },
+          {
+            id: 'w6a3-03',
+            type: 'multi',
+            prompt: 'Which of these describe cartel parties?',
+            options: [
+              'Oriented towards the state and governing',
+              'Declining membership and party loyalty',
+              'Mainstream parties that alternate in power',
+              'Formed outside parliament by trade unions',
+              'Represent a single social class',
+              'Idea-based challengers of the mainstream',
+            ],
+            answers: [0, 1, 2],
+            explanation: 'The last three describe mass parties and anti-cartel parties.',
+          },
+          {
+            id: 'w6a3-04',
+            type: 'choice',
+            prompt: 'A party wants generous welfare spending but strict limits on immigration. Where does it sit on the two-dimensional map?',
+            options: [
+              'Economically left and culturally TAN',
+              'Economically right and culturally GAL',
+              'Economically left and culturally GAL',
+              'Economically right and culturally TAN',
+            ],
+            answer: 0,
+            explanation: 'In Kriesi et al.\'s terms, the interventionist-nationalist corner.',
+          },
+          {
+            id: 'w6a3-05',
+            type: 'choice',
+            prompt:
+              'With the confrontational method, a party scores +1 on 6 statements, -1 on 2 and 0 on 2 (10 statements in all). What is its position on the -10 to +10 scale?',
+            options: ['+4', '+6', '+8', '-4'],
+            answer: 0,
+            explanation: '6 × (+1) + 2 × (-1) + 2 × 0 = +4.',
+          },
+          {
+            id: 'w6a3-06',
+            type: 'choice',
+            prompt: 'A green party wins seats under PR with a low threshold but would win none under SMP with the same national vote share. Why?',
+            options: [
+              "Duverger's mechanical and psychological effects punish spread-out small parties",
+              'SMP systems legally ban parties founded after the Second World War',
+              'Green voters are always concentrated in a few rural districts',
+              'PR systems hand small parties extra bonus seats on top of their share',
             ],
             answer: 0,
           },

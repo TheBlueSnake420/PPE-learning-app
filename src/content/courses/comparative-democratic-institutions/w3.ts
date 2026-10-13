@@ -74,6 +74,15 @@ export const w3: WeekContent = {
           'Agency problems arise when agents act against their principals\' interests. Adverse selection: the agent has hidden information before being chosen. Moral hazard: the agent has hidden information or actions after being chosen. Ex ante controls (contract design, screening and selection of candidates) help principals pick good agents; ex post controls (monitoring, reporting requirements, institutional checks and extra veto players) reduce the risk that agents misbehave afterwards.',
         ],
       },
+      {
+        heading: "Extra: Strøm's chain in detail (from student notes)",
+        paragraphs: [
+          'Principals delegate to agents because agents have skills, information or time they lack; direct democracy on every decision would take far too long. In a representative democracy there are four steps of delegation: voters to elected representatives; legislators to the head of government (prime minister and cabinet); the head of government to the heads of departments (ministers); and ministers to civil servants. Accountability runs the same chain in reverse: the principal can reward or punish the agent.',
+          'Parliamentary democracy has a single chain: at each link one principal delegates to one agent, and each agent answers to one principal. Presidential democracy has multiple principals and competing agents: voters elect the president and both chambers separately, and civil servants may answer to the president and to congressional committees at the same time.',
+          'Agency loss takes two forms: omission (shirking, failing to act in the principal\'s interest) and commission (sabotage, actively working against it). It stems from hidden information (adverse selection) and hidden action (moral hazard). Four mechanisms contain it: contract design (aligning the agent\'s incentives, e.g. a share of the gains), screening and selection, monitoring and reporting requirements, and institutional checks (putting critical decisions under other actors\' veto).',
+          'Parliamentary democracies rely mainly on ex ante controls, such as parties screening candidates and recruiting ministers from experienced MPs; presidential democracies rely more on ex post controls through checks and balances. The parliamentary chain is simple and efficient, but a single chain is only as strong as its weakest link, and weak ex post monitoring leaves it exposed to moral hazard.',
+        ],
+      },
     ],
     keyTerms: [
       { term: 'Parliamentary system', definition: 'Government emerges from and is accountable to parliament; head of state is a separate person.' },
@@ -91,6 +100,14 @@ export const w3: WeekContent = {
       { term: 'Federalism', definition: 'Constitutionally guaranteed self-rule for territorial units combined with shared rule at the centre.' },
       { term: 'Adverse selection', definition: 'Agency problem from hidden information before the agent is chosen.' },
       { term: 'Moral hazard', definition: 'Agency problem from hidden information or actions after the agent is chosen.' },
+      {
+        term: 'Agency loss',
+        definition: 'The gap between what the principal wants and what the agent does: omission (shirking) or commission (sabotage).',
+      },
+      {
+        term: 'Single vs multiple chains',
+        definition: 'Parliamentary: one principal per agent at each link. Presidential: several principals and competing agents.',
+      },
     ],
     readings: [
       'Strom (2002), on parliamentary democracy as delegation and accountability (seminar reading).',
@@ -401,6 +418,80 @@ export const w3: WeekContent = {
           },
         ],
       },
+      {
+        id: 'w3-b5',
+        title: "Strøm's chain in detail",
+        topicId: 'w3-government',
+        fromNotes: true,
+        exercises: [
+          {
+            id: 'w3b5-01',
+            type: 'order',
+            prompt: 'Put the chain of delegation in a parliamentary democracy in order',
+            items: ['Voters', 'Members of parliament', 'Prime minister and cabinet', 'Individual ministers', 'Civil servants'],
+          },
+          {
+            id: 'w3b5-02',
+            type: 'choice',
+            prompt: 'How many principals does each agent have in a parliamentary chain of delegation?',
+            options: [
+              'One: it is a single chain',
+              'Two: the voters and the head of state',
+              'Several: every chamber is a principal',
+              'None: agents answer only to the courts',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w3b5-03',
+            type: 'match',
+            prompt: 'Match the control mechanism to what it does',
+            pairs: [
+              ['Contract design', "Align the agent's incentives"],
+              ['Screening and selection', 'Pick good agents'],
+              ['Monitoring and reporting', 'Make agents share information'],
+              ['Institutional checks', 'Give others a veto'],
+            ],
+          },
+          {
+            id: 'w3b5-04',
+            type: 'choice',
+            prompt: "A civil servant deliberately obstructs a minister's policy. Which form of agency loss is this?",
+            options: ['Commission (sabotage)', 'Omission (shirking)', 'Adverse selection', 'Divided government'],
+            answer: 0,
+          },
+          {
+            id: 'w3b5-05',
+            type: 'choice',
+            prompt: 'Which controls do parliamentary democracies mainly rely on?',
+            options: [
+              'Ex ante controls, such as screening ministers from experienced MPs',
+              'Ex post controls, such as checks and balances between branches',
+              'Direct democracy, with referendums on most decisions',
+              'Judicial review of every government decision',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w3b5-06',
+            type: 'truefalse',
+            statement: 'In presidential systems a civil servant may have to answer to both the president and congressional committees.',
+            answer: true,
+          },
+          {
+            id: 'w3b5-07',
+            type: 'choice',
+            prompt: 'Why can a single chain of delegation be risky?',
+            options: [
+              'If one link fails, every later link inherits the problem',
+              'It gives voters too many representatives to monitor',
+              'It always produces divided government',
+              'It makes coalition governments impossible',
+            ],
+            answer: 0,
+          },
+        ],
+      },
     ],
   },
 
@@ -539,6 +630,79 @@ export const w3: WeekContent = {
               'National parliaments meet less often because the EU has replaced them',
               'National elections are held without any political parties taking part',
               'Regions make policy, but their politicians are appointed, not elected',
+            ],
+            answer: 0,
+          },
+        ],
+      },
+      {
+        id: 'w3-a3',
+        title: 'Think it through',
+        topicId: 'w3-government',
+        exercises: [
+          {
+            id: 'w3a3-01',
+            type: 'open',
+            prompt: 'Compare the chains of delegation in parliamentary and presidential democracies. Which makes it easier for voters to hold power to account?',
+            modelAnswer:
+              'In parliamentary democracies the chain is single and linear: voters elect parliament, which installs and can dismiss the government, which directs ministers and civil servants; each agent has one principal. Responsibility is clear and the system is efficient, but it relies on ex ante screening and is only as strong as its weakest link, with little ex post monitoring. In presidential democracies voters delegate separately to the president and both chambers, so agents face multiple principals; checks and balances provide strong ex post control but can blur responsibility and cause deadlock. Parliamentary systems make it easier to know whom to blame; presidential systems make it easier for institutions to check each other.',
+            keyPoints: [
+              'Parliamentary: single chain, one principal per agent',
+              'Parliamentary: clear responsibility, relies on ex ante screening',
+              'Presidential: multiple principals and competing agents',
+              'Presidential: strong ex post checks, but blurred responsibility and deadlock',
+              'A reasoned judgement on accountability',
+            ],
+          },
+          {
+            id: 'w3a3-02',
+            type: 'open',
+            prompt: 'A new democracy with deep linguistic divisions asks your advice: majoritarian or consensus model? Give a reasoned recommendation.',
+            modelAnswer:
+              'The majoritarian model (SMP, two parties, single-party cabinets, unitary state) gives decisive, accountable government but risks permanently excluding minorities, who may then reject the system. The consensus model (PR, multiparty coalitions, federalism, bicameralism, rigid constitution, judicial review) shares power and gives each group a voice, which suits a divided society, at the cost of slower decisions and sometimes unstable coalitions. If the language groups are territorially concentrated, federalism can grant self-rule, as in Belgium, though that adds veto players and complexity. Recommendation: mainly consensus features, with safeguards for effective government.',
+            keyPoints: [
+              'Majoritarian: decisive and accountable, but can exclude minorities',
+              'Consensus: power-sharing through PR, coalitions, bicameralism',
+              'Federalism for territorially concentrated groups (e.g. Belgium)',
+              'Costs: slower decisions, more veto players, complex coalitions',
+              'A clear, reasoned recommendation',
+            ],
+          },
+          {
+            id: 'w3a3-03',
+            type: 'multi',
+            prompt: 'Which features belong to the consensus model of democracy?',
+            options: [
+              'Proportional representation',
+              'Coalition cabinets',
+              'Bicameralism',
+              'Strong judicial review',
+              'A flexible constitution',
+              'A central bank controlled by the executive',
+            ],
+            answers: [0, 1, 2, 3],
+          },
+          {
+            id: 'w3a3-04',
+            type: 'choice',
+            prompt: "A US president's party controls the Senate but not the House, and the budget is blocked. Which concept explains this, and what is one way out?",
+            options: [
+              'Divided government with several veto players; negotiate a better-than-status-quo deal',
+              'Unified single-party government; call early elections to break the deadlock',
+              'Minority government; ask the House for a vote of confidence in the president',
+              'Federalism; let the fifty states decide the federal budget among themselves',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w3a3-05',
+            type: 'choice',
+            prompt: 'A minority cabinet occupies the centre of parliament (it holds the median legislator). Why is it hard to defeat?',
+            options: [
+              'Any majority against it would need parties on both sides to agree',
+              'Minority cabinets cannot legally be dismissed by parliament',
+              'The centre party always holds most of the seats',
+              'Opposition parties cannot propose motions of no confidence',
             ],
             answer: 0,
           },

@@ -70,6 +70,13 @@ export const w2: WeekContent = {
           'Agency: civic values (Welzel & Inglehart 2008): development gives people material and cognitive resources, which fosters self-expression values, and people with those values seek democracy. Elite misjudgement: rulers with incomplete information may try to co-opt an opposition they think is weak; if it is stronger, liberalisation can turn into revolution.',
         ],
       },
+      {
+        heading: "Lipset's mechanism and democratic backsliding",
+        paragraphs: [
+          "Lipset's modernisation argument works through social structure: industrialisation, urbanisation, wealth and education together make up socio-economic development, which produces an open class system with a large middle class, which in turn favours both democratic transition and democratic stability.",
+          'Democratic backsliding is the gradual erosion of democratic institutions, often by elected governments themselves: weakening courts and the media, tilting the electoral playing field. The seminar debate on Poland and Hungary shows why measurement matters: a dichotomous minimalist measure like DD may still classify a backsliding country as a democracy, while continuous and substantive measures (Freedom House, V-Dem) can capture the decline.',
+        ],
+      },
     ],
     keyTerms: [
       {
@@ -101,6 +108,10 @@ export const w2: WeekContent = {
       {
         term: 'Democratic survival theory',
         definition: 'Development helps democracies survive but does not make transitions more likely.',
+      },
+      {
+        term: 'Democratic backsliding',
+        definition: 'Gradual erosion of democratic institutions, often by elected governments (e.g. weakening courts and media).',
       },
     ],
     readings: [
@@ -572,6 +583,88 @@ export const w2: WeekContent = {
               'They control the army and can threaten a coup',
             ],
             answer: 0,
+          },
+        ],
+      },
+      {
+        id: 'w2-a3',
+        title: 'Think it through',
+        topicId: 'w2-state-democracy',
+        exercises: [
+          {
+            id: 'w2a3-01',
+            type: 'multi',
+            prompt: 'Which of these would make a country a dictatorship under the minimalist DD measure?',
+            options: [
+              'The head of government is appointed by a king',
+              'Only one party is allowed to compete',
+              'Power has never alternated under the same electoral rules',
+              'The press is heavily censored',
+              'Corruption is widespread',
+              'Turnout is very low',
+            ],
+            answers: [0, 1, 2],
+            explanation: 'DD looks only at elections and alternation; censorship and corruption matter for substantive measures like Freedom House.',
+          },
+          {
+            id: 'w2a3-02',
+            type: 'open',
+            prompt:
+              'A country holds competitive multi-party elections and power has changed hands before, but the governing party has gradually captured the courts and the media. How would DD and Freedom House classify it, and which measure would you use to study democratic backsliding?',
+            modelAnswer:
+              'DD would still call it a democracy: the executive and legislature are elected, several parties compete and alternation has occurred. Freedom House would give a lower score, because civil liberties, the rule of law and the functioning of government have deteriorated. For backsliding, which is gradual erosion, a continuous and substantive measure is more valid, since a dichotomous measure only registers the final break. The cost is lower reliability, because substantive scores rely on judgement. The choice should follow from the research question and the concept of democracy used.',
+            keyPoints: [
+              'DD: still a democracy (elected offices, competition, past alternation)',
+              'Freedom House: lower score (liberties, rule of law, functioning of government)',
+              'Backsliding is gradual, so a continuous measure fits better',
+              'Trade-off: substantive measures are more valid here but less reliable',
+              'Choice depends on the research question and concept',
+            ],
+          },
+          {
+            id: 'w2a3-03',
+            type: 'open',
+            prompt: 'Why do authoritarian regimes hold elections, and what does this mean for minimalist definitions of democracy?',
+            modelAnswer:
+              'Elections help autocrats survive (Gandhi and Przeworski): a landslide signals strength and deters challengers; letting some opposition parties compete channels opposition into less violent forms and divides it; results reveal which groups and areas are discontented, so they can be bought off or punished; and a ruling party distributes jobs and perks. For definitions, this means that "holding elections" is not enough: minimalist measures need criteria like ex ante uncertainty, ex post irreversibility and alternation, and it supports continuous measures or intermediate categories (hybrid regimes).',
+            keyPoints: [
+              'Signal strength with a landslide',
+              'Co-opt, channel and divide the opposition',
+              'Gather information on discontent',
+              'Distribute patronage through a party',
+              'Elections alone do not make a democracy: need real contestation or continuous measures',
+            ],
+          },
+          {
+            id: 'w2a3-04',
+            type: 'order',
+            prompt: "Put Lipset's modernisation mechanism in order",
+            items: [
+              'Industrialisation, urbanisation, wealth, education',
+              'Socio-economic development',
+              'Open class system and a large middle class',
+              'Democratic transition and stability',
+            ],
+          },
+          {
+            id: 'w2a3-05',
+            type: 'choice',
+            prompt: 'A very rich, oil-exporting monarchy stays autocratic for decades. Which theory does this fit better, and why?',
+            options: [
+              'Survival theory: wealth need not cause transitions, and oil may not build a middle class',
+              'Modernisation theory: every rich country democratises sooner or later, whatever the source',
+              'Class theory: a large bourgeoisie always demands democracy, so it must be coming soon',
+              'Civic values theory: oil wealth spreads self-expression values and so leads to democracy',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2a3-06',
+            type: 'choice',
+            prompt: 'Two trained coders independently score the same country and arrive at very different democracy scores. What problem does this reveal?',
+            options: ['Low reliability', 'Low validity', 'A dichotomous measure', 'A minimalist definition'],
+            answer: 0,
+            explanation: 'Reliability is about consistency across repeated measurement; validity is about measuring the right concept.',
           },
         ],
       },

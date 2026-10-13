@@ -19,6 +19,16 @@ export default function TopicScreen() {
         <Text style={styles.title}>{topic.title}</Text>
         <Text style={styles.summary}>{topic.summary}</Text>
 
+        {topic.fromNotes && (
+          <View style={styles.notice}>
+            <Text style={styles.noticeTitle}>Based on student notes</Text>
+            <Text style={styles.noticeText}>
+              This week is built from revision notes by last year's students (and the course book where possible), not
+              from this year's slides. Check it against the lecture once it has been given.
+            </Text>
+          </View>
+        )}
+
         {topic.keyPoints && topic.keyPoints.length > 0 && (
           <View style={[styles.box, { backgroundColor: tint(course.color, 0.88), borderColor: tint(course.color, 0.6) }]}>
             <Text style={styles.boxTitle}>Key points</Text>
@@ -74,6 +84,16 @@ const styles = StyleSheet.create({
   week: { fontSize: font.small, fontWeight: '800', letterSpacing: 0.5 },
   title: { fontSize: font.hero, fontWeight: '800', color: colors.text, marginTop: -space.sm },
   summary: { fontSize: font.large, color: colors.muted, lineHeight: 26 },
+  notice: {
+    borderWidth: 2,
+    borderColor: '#FFD27F',
+    backgroundColor: '#FFF4DE',
+    borderRadius: radius.md,
+    padding: space.md,
+    gap: 4,
+  },
+  noticeTitle: { fontSize: font.body, fontWeight: '800', color: '#B26B00' },
+  noticeText: { fontSize: font.small + 1, color: '#7A4A00', lineHeight: 20 },
   box: { borderWidth: 2, borderRadius: radius.lg, padding: space.lg, gap: space.sm },
   boxTitle: { fontSize: font.large, fontWeight: '800', color: colors.text },
   bulletRow: { flexDirection: 'row', gap: space.sm, alignItems: 'flex-start' },

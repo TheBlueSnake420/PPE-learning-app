@@ -103,6 +103,19 @@ function checkExercise(ex: Exercise): string[] {
       if (ex.items.length < 2 || ex.items.length > 6) problems.push('needs 2-6 items');
       if (new Set(ex.items).size !== ex.items.length) problems.push('duplicate items');
       break;
+    case 'multi': {
+      if (ex.options.length < 3 || ex.options.length > 6) problems.push('needs 3-6 options');
+      if (new Set(ex.options).size !== ex.options.length) problems.push('duplicate options');
+      if (ex.answers.length === 0) problems.push('needs at least one correct option');
+      if (ex.answers.length >= ex.options.length) problems.push('at least one option must be wrong');
+      if (new Set(ex.answers).size !== ex.answers.length) problems.push('duplicate answer indices');
+      if (ex.answers.some((i) => i < 0 || i >= ex.options.length)) problems.push('answer index out of range');
+      break;
+    }
+    case 'open':
+      if (ex.keyPoints.length < 2 || ex.keyPoints.length > 6) problems.push('needs 2-6 key points');
+      if (new Set(ex.keyPoints).size !== ex.keyPoints.length) problems.push('duplicate key points');
+      break;
     case 'truefalse':
       break;
   }

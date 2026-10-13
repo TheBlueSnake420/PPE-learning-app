@@ -76,6 +76,22 @@ export const w4: WeekContent = {
           'The second wave of globalization was boosted by the shipping container (Malcolm McLean, 1956), which cut loading costs by about 97%.',
         ],
       },
+      {
+        heading: "Extra: Japan's path in more detail (from student notes)",
+        paragraphs: [
+          'Under the Tokugawa shogunate (1603-1868) Japan had a largely agrarian economy with little foreign trade. After Perry\'s arrival, the Treaty of Kanagawa (1854) opened ports, and the unequal treaties of 1858 fixed low tariffs. This meant Meiji Japan could not protect infant industries with tariffs until it regained tariff autonomy in 1911: it had to industrialise in the face of cheap imports.',
+          'Meiji milestones: the Tokyo-Yokohama railway (1872), the land-tax reform (1873), the Bank of Japan (1882) and a constitution on the Prussian model (1889). Victory over China in the Sino-Japanese War (1894-95) brought large reparations, which helped Japan adopt the gold standard and a stable currency. After the Russo-Japanese War (1904-05) Japan was recognised as a regional power. During the First World War, when European exporters withdrew, Japanese industry boomed.',
+          'Luck mattered too: silkworm disease devastated silk production in France and Italy, opening world markets to Japanese raw silk, its main export.',
+        ],
+      },
+      {
+        heading: 'Extra: Korea, Taiwan, China and the flying geese (from student notes)',
+        paragraphs: [
+          "Akamatsu's flying-geese model: a follower first imports a manufactured good, then produces it at home (often behind protection), then exports it. As the lead goose (Japan) moves up into more advanced industries, followers take over the labour-intensive ones it leaves behind, such as textiles.",
+          'Japan, South Korea and Taiwan share features: large business groups with strong state support, export-led manufacturing, undervalued currencies and land reform. But Japan industrialised before the Second World War and financed its imports with exports and borrowing, while South Korea and Taiwan industrialised after 1950 with large US aid, protecting infant industries while pushing exports, and South Korea did so after the Korean War.',
+          "China: before 1949 development was slow and labour-intensive. Under Mao, central planning pushed heavy industry but was inefficient and produced the famine of 1959-61. After 1978 Deng Xiaoping's reforms opened the economy: Special Economic Zones where foreign firms could use cheap labour if they brought technology, room for private enterprise and market competition, and a push in education.",
+        ],
+      },
     ],
     keyTerms: [
       { term: 'Absolute advantage', definition: 'Producing more of a good than another country with the same resources.' },
@@ -107,6 +123,14 @@ export const w4: WeekContent = {
       {
         term: 'Meiji Restoration',
         definition: 'Japanese reforms from 1868 that centralised the state and launched a developmental strategy.',
+      },
+      {
+        term: 'Tariff autonomy',
+        definition: "A country's freedom to set its own tariffs; Japan lost it under the unequal treaties and regained it in 1911.",
+      },
+      {
+        term: 'Special Economic Zone (SEZ)',
+        definition: "Area in post-1978 China where foreign firms could operate under special rules, bringing capital and technology.",
       },
     ],
     readings: [
@@ -350,6 +374,100 @@ export const w4: WeekContent = {
           },
         ],
       },
+      {
+        id: 'w4-b4',
+        title: 'Japan and East Asia',
+        topicId: 'w4-globalization',
+        fromNotes: true,
+        exercises: [
+          {
+            id: 'w4b4-01',
+            type: 'order',
+            prompt: 'Put these events in order',
+            items: [
+              'Treaty of Kanagawa opens Japanese ports',
+              'Meiji Restoration',
+              'Tokyo-Yokohama railway opens',
+              'Bank of Japan founded',
+              'Meiji constitution',
+            ],
+            explanation: '1854, 1868, 1872, 1882, 1889.',
+          },
+          {
+            id: 'w4b4-02',
+            type: 'choice',
+            prompt: 'How did Japan finance its move to the gold standard?',
+            options: [
+              'With reparations paid by China after the war of 1894-95',
+              'With loans from the Dutch East India Company',
+              'With silver from its own mines in Korea',
+              'With American aid after the First World War',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w4b4-03',
+            type: 'choice',
+            prompt: 'Why could Meiji Japan not protect its infant industries with tariffs?',
+            options: [
+              'The unequal treaties fixed low tariffs until 1911',
+              'The emperor believed in free trade on principle',
+              'Japan had no customs service to collect tariffs',
+              'Its trading partners were all colonies of Britain',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w4b4-04',
+            type: 'choice',
+            prompt: 'Which stroke of luck boosted Japanese silk exports?',
+            options: [
+              'Silkworm disease devastated French and Italian silk production',
+              'A ban on Chinese silk in Europe after the Opium Wars',
+              'The invention of the power loom in Japan',
+              'A collapse in the price of cotton cloth worldwide',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w4b4-05',
+            type: 'choice',
+            prompt: 'In the flying-geese model, what does a follower economy do with an industry such as textiles?',
+            options: [
+              'Imports the goods, then produces them at home, then exports them',
+              'Exports raw cotton to the leader and buys back the cloth',
+              'Bans imports permanently to keep the industry at home',
+              'Leaves the industry to the leader and specialises in farming',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w4b4-06',
+            type: 'multi',
+            prompt: "Which drove China's growth after 1978?",
+            options: [
+              'Special Economic Zones with foreign firms and technology',
+              'Allowing private firms to compete with state firms',
+              'Opening to foreign markets and investment',
+              'Collective farms of the Great Leap Forward',
+              'Central planning focused on heavy industry',
+            ],
+            answers: [0, 1, 2],
+          },
+          {
+            id: 'w4b4-07',
+            type: 'choice',
+            prompt: "How did South Korea's and Taiwan's industrialisation differ from Japan's?",
+            options: [
+              'They industrialised after 1950 with US aid; Japan began well before WWII',
+              'They industrialised before Japan, which later copied their export-led model',
+              'They relied on free trade, while Japan always protected industry with high tariffs',
+              'They avoided large business groups, which Japan relied on very heavily',
+            ],
+            answer: 0,
+          },
+        ],
+      },
     ],
   },
 
@@ -504,6 +622,85 @@ export const w4: WeekContent = {
               'The domains were bankrupt and asked the emperor to take over their debts',
               'Trade with China had stopped, so Japan needed a single national market',
               'The US treaty of 1858 required Japan to create a central government',
+            ],
+            answer: 0,
+          },
+        ],
+      },
+      {
+        id: 'w4-a3',
+        title: 'Think it through',
+        topicId: 'w4-globalization',
+        exercises: [
+          {
+            id: 'w4a3-01',
+            type: 'choice',
+            prompt: "A country's average export prices rise by 20% while its import prices fall by 10%. What happens to its terms of trade?",
+            options: ['They improve by about a third', 'They improve by exactly 10%', 'They improve by exactly 30%', 'They get worse by about 10%'],
+            answer: 0,
+            explanation: 'ToT = export prices / import prices = 1.20 / 0.90 ≈ 1.33.',
+          },
+          {
+            id: 'w4a3-02',
+            type: 'choice',
+            prompt:
+              'In a day, the Netherlands can make 6 cheese or 3 cloth; Portugal can make 2 cheese or 2 cloth. Who should specialise in cloth?',
+            options: ['Portugal', 'The Netherlands', 'Neither: trade cannot help', 'Both equally'],
+            answer: 0,
+            explanation:
+              'One cloth costs the Netherlands 2 cheese but Portugal only 1 cheese. The Netherlands has an absolute advantage in both, yet both gain from trade.',
+          },
+          {
+            id: 'w4a3-03',
+            type: 'open',
+            prompt: 'Why did 19th-century globalisation help industrialise north-western Europe but de-industrialise much of Asia?',
+            modelAnswer:
+              'Falling transport costs (steamships, the Suez Canal, railways) integrated markets, so prices converged and comparative advantage came into full play. Mechanisation made European manufactures far cheaper, so Asian handicraft producers, whose low wages made the new machines unprofitable for them, were driven out, while rising European demand for raw materials improved the periphery\'s terms of trade and pulled it into exporting primary goods: the Great Specialization. Colonies such as India could not use the standard catch-up policies (tariffs, banks, mass education). Independent Japan shows the alternative: a developmental state that adapted technology to low wages and industrialised.',
+            keyPoints: [
+              'Falling transport costs integrated markets (steamships, Suez, rail)',
+              'Mechanised European goods undercut Asian handicrafts',
+              'Comparative advantage pushed Asia into primary exports (Great Specialization)',
+              "Terms-of-trade booms reinforced the periphery's specialisation",
+              'Colonies could not use catch-up policies; Japan shows what was possible',
+            ],
+          },
+          {
+            id: 'w4a3-04',
+            type: 'open',
+            prompt: "When did globalisation begin? Argue using O'Rourke and Williamson's criteria.",
+            modelAnswer:
+              "It depends on what we measure. Trade volumes grew from 1500 (about 1% a year), so on that criterion globalisation began with the voyages of discovery. But O'Rourke and Williamson argue that true globalisation means market integration, tested by the law of one price. Before 1800 trade consisted of high-value, non-competing goods, and monopolies, coercion and high transport costs prevented price convergence: mark-ups did not fall until the 1820s. Prices converged rapidly in the 19th century, when steamships, the Suez Canal and railways created integrated markets even for bulk goods like wheat. So by their criteria, globalisation began in the 19th century.",
+            keyPoints: [
+              'Distinguish growth in trade volume from market integration',
+              'Law of one price: integration means price convergence',
+              'Before 1800: high-value non-competing goods, monopolies, no convergence',
+              'Convergence from the 1820s; first wave 1860-1914',
+              'Conclusion: globalisation in their sense began in the 19th century',
+            ],
+          },
+          {
+            id: 'w4a3-05',
+            type: 'multi',
+            prompt: 'Which changes would shrink the gap between the Amsterdam and Jakarta price of pepper?',
+            options: [
+              'Faster, cheaper and safer shipping',
+              'Breaking the VOC monopoly',
+              'Lower marine insurance after the safety revolution',
+              'A higher import duty in Amsterdam',
+              'A war closing the route around the Cape',
+            ],
+            answers: [0, 1, 2],
+          },
+          {
+            id: 'w4a3-06',
+            type: 'choice',
+            prompt:
+              'Meiji Japan faced cheap imports under fixed low tariffs, yet it industrialised. What does this suggest about catching up?',
+            options: [
+              'Tariffs help, but schooling, infrastructure and adapting technology can also work',
+              'Free trade alone is enough for any country to industrialise quickly',
+              'Industrialisation is impossible without high tariffs on all imports',
+              'Japan succeeded only because of its colonies, not because of its own policies',
             ],
             answer: 0,
           },

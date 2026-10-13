@@ -76,6 +76,21 @@ export const w2: WeekContent = {
           'Higher farm productivity let more people move to cities. The Industrial Revolution finally ended the Malthusian economy, something Malthus himself could not foresee when he wrote his essay in 1798.',
         ],
       },
+      {
+        heading: 'Why did the West rise? Fundamentals versus immediate causes',
+        paragraphs: [
+          "Allen divides the last 500 years into three eras: the mercantilist era (1500-1800), when states used colonies, tariffs and wars to capture trade and precious metals; 19th-century catch-up, when Western Europe and the US copied Britain with the standard development model; and the 20th century, when only countries that made a planned 'Big Push' closed the gap.",
+          'Explanations of the divergence often start from "fundamentals". Geography affects farming, transport costs (landlocked countries pay more to trade) and disease, and indirectly shapes institutions (for example, where settlers could survive and where land was abundant but labour scarce, which encouraged slavery). Institutions are the rules of the game: formal ones such as laws, constitutions and property rights, and informal ones such as traditions and norms. Culture covers learned behaviour such as trust and openness to trade.',
+          "Allen is sceptical of some popular versions. Weber's Protestant ethic looked plausible in 1905 but the ranking it relied on has not held. Poor peasants are not irrational traditionalists: they respond to prices and adopt new methods when these pay. And while economists credit representative government (England after 1688) with growth, historians find that many absolutist states and empires kept the peace and let trade and regional specialisation grow (\"Smithian growth\"). His conclusion: geography, institutions and culture lurk in the background, but technological change, globalisation and economic policy were the immediate causes of unequal development. He does single out widespread literacy and numeracy as necessary conditions for success since the 17th century.",
+        ],
+      },
+      {
+        heading: "Engel's law and the demographic transition",
+        paragraphs: [
+          "Engel's law: the poorer a household, the larger the share of its income it spends on food. As incomes rise, the food share falls and spending shifts to better food (white bread, meat, beer) and to new goods such as tea, sugar and books, which is what London labourers did in the 18th century.",
+          'The demographic transition model (from student notes) describes four stages: (1) high birth and death rates, so population barely grows (the Malthusian world); (2) death rates fall with better food, sanitation and medicine while birth rates stay high, so population booms; (3) birth rates fall too, as urbanisation and lower child mortality mean fewer children are needed; (4) low birth and death rates and a stable population.',
+        ],
+      },
     ],
     keyTerms: [
       {
@@ -121,6 +136,23 @@ export const w2: WeekContent = {
       {
         term: 'Columbian exchange',
         definition: 'Transfer of crops, animals and diseases between the Americas and the Old World after 1492.',
+      },
+      {
+        term: 'Mercantilism',
+        definition: 'Policy of the 1500-1800 era: using colonies, tariffs and war to capture trade, run export surpluses and accumulate bullion.',
+      },
+      {
+        term: 'Smithian growth',
+        definition: 'Growth from wider markets and regional specialisation, without fundamental technological change.',
+      },
+      {
+        term: 'Formal and informal institutions',
+        definition: 'Formal: written rules such as laws, constitutions and property rights. Informal: traditions and unwritten norms.',
+      },
+      { term: "Engel's law", definition: 'As income rises, the share of income spent on food falls.' },
+      {
+        term: 'Demographic transition',
+        definition: 'Shift from high to low birth and death rates, with a population boom in between when deaths fall first.',
       },
     ],
     readings: [
@@ -374,6 +406,86 @@ export const w2: WeekContent = {
           },
         ],
       },
+      {
+        id: 'w2-b4',
+        title: 'Roots of the divergence',
+        topicId: 'w2-divergence-health-wealth',
+        exercises: [
+          {
+            id: 'w2b4-01',
+            type: 'match',
+            prompt: "Match the period to Allen's era",
+            pairs: [
+              ['1500-1800', 'Mercantilist era'],
+              ['19th century', 'Catch-up via standard model'],
+              ['20th century', 'Big Push industrialisation'],
+            ],
+          },
+          {
+            id: 'w2b4-02',
+            type: 'choice',
+            prompt: 'What was mercantilism?',
+            options: [
+              'Using colonies, tariffs and wars to capture trade and bullion',
+              'A free-trade policy that lowered tariffs across Europe',
+              'Investing state revenues in mass education and railways',
+              'A system of merchant guilds that fixed prices in cities',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b4-03',
+            type: 'choice',
+            prompt: 'What is "Smithian growth"?',
+            options: [
+              'Growth from wider markets and regional specialisation',
+              'Growth from new machines invented by scientists',
+              'Growth from a rising population working more land',
+              'Growth from government planning of heavy industry',
+            ],
+            answer: 0,
+            explanation: 'Allen notes that peaceful empires, not only representative states, could deliver it.',
+          },
+          {
+            id: 'w2b4-04',
+            type: 'truefalse',
+            statement: "Allen accepts Weber's argument that Protestantism explains why northern Europe became rich.",
+            answer: false,
+            explanation: 'He calls it no longer tenable. Even for literacy, Catholic Belgium and north-eastern France matched Protestant England and the Netherlands.',
+          },
+          {
+            id: 'w2b4-05',
+            type: 'choice',
+            prompt: "What does Engel's law say?",
+            options: [
+              'As income rises, the share spent on food falls',
+              'As income rises, people buy less food in total',
+              'Food prices rise faster than wages in growing cities',
+              'Poor households save a larger share of their income',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b4-06',
+            type: 'order',
+            prompt: 'Put the stages of the demographic transition in order',
+            items: [
+              'High birth and death rates',
+              'Death rate falls; population booms',
+              'Birth rate falls as well',
+              'Low birth and death rates',
+            ],
+          },
+          {
+            id: 'w2b4-07',
+            type: 'multi',
+            prompt: 'Which of these does Allen treat as background "fundamentals" rather than immediate causes?',
+            options: ['Geography', 'Institutions', 'Culture', 'Technological change', 'Globalisation', 'Economic policy'],
+            answers: [0, 1, 2],
+            explanation: 'Technology, globalisation and policy were, in his view, the immediate causes of unequal development.',
+          },
+        ],
+      },
     ],
   },
 
@@ -536,6 +648,78 @@ export const w2: WeekContent = {
             ],
             answer: 0,
             explanation: 'This point comes from the seminar discussion of Deaton (2013).',
+          },
+        ],
+      },
+      {
+        id: 'w2-a3',
+        title: 'Think it through',
+        topicId: 'w2-divergence-health-wealth',
+        exercises: [
+          {
+            id: 'w2a3-01',
+            type: 'choice',
+            prompt:
+              'In the 1790s a London gardener earned £37.75 a year; keeping his family at bare-bones subsistence cost just under £10. What was his welfare ratio, roughly?',
+            options: ['About 4', 'About 1', 'About 10', 'About 0.25'],
+            answer: 0,
+            explanation: '37.75 / 10 ≈ 3.8: typical of London, where labourers earned about four times subsistence.',
+          },
+          {
+            id: 'w2a3-02',
+            type: 'choice',
+            prompt: 'In a village, half of all babies die at birth and everyone else lives to exactly 60. What is life expectancy at birth?',
+            options: ['30', '60', '45', '15'],
+            answer: 0,
+            explanation: '(0.5 × 0) + (0.5 × 60) = 30. Yet nobody actually dies at 30.',
+          },
+          {
+            id: 'w2a3-03',
+            type: 'open',
+            prompt: 'Why does Allen call bare-bones subsistence a "poverty trap"? Explain how high wages helped cause the Industrial Revolution.',
+            modelAnswer:
+              'Where wages are at subsistence, labour is so cheap that firms have no reason to invent or adopt machines that save labour, so productivity and wages stay low: a trap. In Britain, commercial success (trade, urbanisation) had pushed wages well above subsistence and high relative to the cost of capital and energy, so labour-saving, coal-using machines became profitable to invent and use. High wages also supported better nutrition, health and schooling, raising literacy and skills. Hence the Industrial Revolution was a result of high wages, not just their cause.',
+            keyPoints: [
+              'Cheap labour removes the incentive to mechanise',
+              'British wages were high relative to capital and energy',
+              'That made labour-saving machines profitable to invent and adopt',
+              'High wages supported nutrition, health and schooling',
+              'The high wages themselves came from commercial success',
+            ],
+          },
+          {
+            id: 'w2a3-04',
+            type: 'open',
+            prompt: 'Evaluate GDP per head as a measure of living standards in the past. When would you use real wages instead?',
+            modelAnswer:
+              'GDP per head is a useful summary of output but misses unpaid and informal work, ignores environmental costs and says nothing about distribution; before about 1950 it is a reconstruction with wide margins of error. Real wages (welfare ratios) show what an ordinary labourer could actually buy and allow comparisons across cities and centuries, so they are the better choice when national accounts are missing or when you care about the typical worker. But they cover only urban wage earners, miss the self-employed, women and children, and keep the basket fixed. Combining measures, including health indicators such as life expectancy and height, gives the fullest picture.',
+            keyPoints: [
+              'GDP misses unpaid/informal work, environmental costs and distribution',
+              'Historical GDP before ~1950 is a reconstruction',
+              'Real wages show what a typical worker could buy, comparable across places',
+              'Real wages miss the self-employed, women, children and rural areas',
+              'Best to combine measures, including health',
+            ],
+          },
+          {
+            id: 'w2a3-05',
+            type: 'multi',
+            prompt: 'Which of these are Malthusian positive checks?',
+            options: ['Famine', 'Epidemic disease', 'War', 'Late marriage', 'Contraception', 'Celibacy'],
+            answers: [0, 1, 2],
+            explanation: 'Positive checks raise deaths; preventive checks (the other three) lower births.',
+          },
+          {
+            id: 'w2a3-06',
+            type: 'choice',
+            prompt: "Household A spends 70% of its income on food, household B 25%. What does Engel's law suggest?",
+            options: [
+              'Household A is almost certainly the poorer one',
+              'Household B eats far less food in total',
+              'Household A lives in a country with cheaper food',
+              'Both households have the same real income',
+            ],
+            answer: 0,
           },
         ],
       },

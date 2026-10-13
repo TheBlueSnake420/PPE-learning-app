@@ -6,7 +6,12 @@ export type Answer =
   | { type: 'truefalse'; value: boolean }
   | { type: 'fill'; word: string }
   | { type: 'order'; items: string[] }
-  | { type: 'match'; mistakes: number };
+  | { type: 'match'; mistakes: number }
+  | { type: 'multi'; indices: number[] }
+  | { type: 'open'; covered: number; total: number };
+
+/** Share of key points an open answer must cover to count as correct. */
+export const OPEN_PASS_SHARE = 0.6;
 
 export function isCorrect(exercise: Exercise, answer: Answer): boolean {
   switch (exercise.type) {
@@ -24,6 +29,14 @@ export function isCorrect(exercise: Exercise, answer: Answer): boolean {
       );
     case 'match':
       return answer.type === 'match' && answer.mistakes === 0;
+    case 'multi':
+      return (
+        answer.type === 'multi' &&
+        answer.indices.length === exercise.answers.length &&
+        exercise.answers.every((i) => answer.indices.includes(i))
+      );
+    case 'open':
+      return answer.type === 'open' && answer.covered >= Math.ceil(answer.total * OPEN_PASS_SHARE);
   }
 }
 
@@ -38,7 +51,10 @@ export function correctAnswerText(exercise: Exercise): string | null {
       return exercise.text.replace('___', exercise.answer);
     case 'order':
       return exercise.items.map((item, i) => `${i + 1}. ${item}`).join('\n');
+    case 'multi':
+      return exercise.answers.map((i) => `• ${exercise.options[i]}`).join('\n');
     case 'match':
+    case 'open':
       return null;
   }
 }
@@ -55,5 +71,9 @@ export function instruction(exercise: Exercise): string {
       return 'Put these in the right order';
     case 'match':
       return 'Tap the matching pairs';
+    case 'multi':
+      return 'Select all that apply';
+    case 'open':
+      return 'Think it through';
   }
 }
