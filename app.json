@@ -1,0 +1,49 @@
+{
+  "expo": {
+    "name": "PPE Study",
+    "slug": "ppe-study",
+    "scheme": "ppestudy",
+    "version": "1.0.0",
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "package": "com.thebluesnake420.ppestudy",
+      "adaptiveIcon": {
+        "backgroundColor": "#E6F4FE",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-status-bar",
+      "expo-font"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "52b8ea1c-bb2a-410f-acfc-1110e19059f4"
+      }
+    },
+    "owner": "rubenvanbeek",
+    "updates": {
+      "url": "https://u.expo.dev/52b8ea1c-bb2a-410f-acfc-1110e19059f4"
+    }
+  }
+}
