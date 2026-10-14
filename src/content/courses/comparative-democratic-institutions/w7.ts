@@ -180,7 +180,7 @@ export const w7: WeekContent = {
           {
             id: 'w7b2-02',
             type: 'fill',
-            text: 'Olson (1965): only ___ incentives, benefits available to members alone, make it rational to join a large group.',
+            text: 'Collective action theory: only ___ incentives, benefits available to members alone, make it rational to join a large group.',
             options: ['selective', 'collective', 'moral', 'fiscal'],
             answer: 'selective',
           },
@@ -210,13 +210,13 @@ export const w7: WeekContent = {
             answers: [0, 1, 2],
           },
           {
-            id: 'w7b2-05',
+            id: 'w7b2-08',
             type: 'match',
-            prompt: 'Match the thinker to the view of interest groups',
+            prompt: 'Match the view of interest groups to its claim',
             pairs: [
-              ['Rousseau', 'Republican (unitarist)'],
-              ['Tocqueville and Dahl', 'Liberal (pluralist)'],
-              ['Schmitter', 'Neo-corporatist'],
+              ['Republican', 'Groups undermine the general will'],
+              ['Pluralist', 'Competing groups protect liberty'],
+              ['Neo-corporatist', 'Peak associations partner the state'],
             ],
           },
           {
@@ -287,7 +287,7 @@ export const w7: WeekContent = {
           {
             id: 'w7b3-04',
             type: 'multi',
-            prompt: 'According to Caramani, what do populism and technocracy have in common?',
+            prompt: 'What do populism and technocracy have in common?',
             options: [
               'They assume a single common good for society',
               'They reject pluralism and party competition',
@@ -359,7 +359,7 @@ export const w7: WeekContent = {
             id: 'w7a1-02',
             type: 'choice',
             prompt:
-              'A climate NGO wins a law that benefits everyone, members or not. What would Olson expect a rational non-member to do?',
+              'A climate NGO wins a law that benefits everyone, members or not. What does the collective action problem predict a rational non-member will do?',
             options: [
               'Enjoy the benefit without joining, unless offered a members-only perk',
               'Join immediately, because the group has proven it is effective',
@@ -371,7 +371,7 @@ export const w7: WeekContent = {
           {
             id: 'w7a1-03',
             type: 'choice',
-            prompt: "What is the republican (Rousseau) objection to interest groups?",
+            prompt: 'What is the republican objection to interest groups?',
             options: [
               'Sectional interests undermine the general will of the people',
               'Groups are too weak to counter the power of the state',
@@ -424,7 +424,7 @@ export const w7: WeekContent = {
             type: 'open',
             prompt: 'Are interest groups good or bad for democracy? Use the republican, pluralist and neo-corporatist views.',
             modelAnswer:
-              'The republican view (Rousseau) sees groups as factions that put sectional interests above the general will. The pluralist view (Tocqueville, Dahl) sees freely competing groups as a source of liberty and a counterweight to concentrated power and to government. The neo-corporatist view (Schmitter) sees a few organised peak associations working with the state as a way to make and implement policy consensually, as with the Dutch social partners. A balanced answer adds that representation is unequal: money, concentrated stakes and the collective action problem (Olson) favour some interests, so the democratic value of groups depends on how open and balanced the system is.',
+              'The republican view sees groups as factions that put sectional interests above the general will. The pluralist view sees freely competing groups as a source of liberty and a counterweight to concentrated power and to government. The neo-corporatist view sees a few organised peak associations working with the state as a way to make and implement policy consensually, as with the Dutch social partners. A balanced answer adds that representation is unequal: money, concentrated stakes and the collective action problem (Olson) favour some interests, so the democratic value of groups depends on how open and balanced the system is.',
             keyPoints: [
               'Republican: sectional interests undermine the general will',
               'Pluralist: competing groups protect liberty and balance power',

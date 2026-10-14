@@ -1,7 +1,7 @@
 import type { WeekContent } from '../../types';
 
 // Week 5 - Colonialism and Development in South Asia (guest lecture, V. D. Ratnoo)
-// Sources: Week 5 lecture; Allen VSI ch. 5.
+// Sources: Week 5 lecture; Allen VSI ch. 5; readings Roy (2019) ch. 4 and Gupta (2019).
 
 export const w5: WeekContent = {
   topic: {
@@ -18,6 +18,8 @@ export const w5: WeekContent = {
       'Agriculture stagnated: output grew slower than population, and yields in the early 1900s were below those of 1600.',
       'The colonial state spent on railways far more than on irrigation, although canals raised farm incomes much more durably.',
       'Commercialisation and the Green Revolution favoured landholders with water and capital, raising inequality.',
+      'Roy: farm output grew only by adding land; yields stagnated because water was scarce and investment risky, not because of "evil" landlords or moneylenders.',
+      'Gupta: agricultural stagnation, not lost textiles, drove the colonial decline; after 1947 planning and the Green Revolution reversed it, and a colonial bias towards higher education favoured services.',
     ],
     sections: [
       {
@@ -100,6 +102,27 @@ export const w5: WeekContent = {
           'Intensive farming uses a lot of labour on a small area: high output per acre but low output per worker, raised through better rotations and inputs. Extensive farming uses little labour over a large area: low output per acre, high output per worker, and output grows mainly by adding land, which was the colonial Indian pattern.',
         ],
       },
+      {
+        heading: 'Reading: why the village stayed poor (Roy 2019, ch. 4 "Unyielding land")',
+        paragraphs: [
+          'Between 1860 and 1920 the cultivated area of British India grew by about 50%, encouraged by trade. Railways integrated markets, exports rose about 500% between 1870 and 1914 (70-80% of them non-manufactured goods), and farm prices rose relative to industrial prices. Cash crops such as wheat, cotton, oilseeds, sugarcane and tobacco led the expansion, and markets for land, credit and labour grew. Merchants got rich; most peasants did not.',
+          'Water and soil set the limits. The monsoon makes one crop easy; anything more needs irrigation, and canals need perennial rivers and investment on a scale only the state could provide. A few vanguard regions got canals: the Punjab canal colonies (about 5 million acres of former pasture, handed out in plots to peasant families, which also secured their loyalty and made Punjab a recruiting ground for the army), the Godavari and Krishna deltas, western UP and Haryana, and Sind. Elsewhere, especially on the dry Deccan plateau, wells were very costly and millets barely paid.',
+          'On average, output grew only by adding land: in 1891-1946 crop output and cultivated area both grew about 0.37% a year, and yield per hectare did not grow at all (food-crop yields fell). Peasants gained only where assured water, access to railways and enough land to sell a surplus came together. Small peasants faced insecure tenancy, famine risk and seasonal unemployment, with farm work for only 220-240 days a year. Land rarely changed hands (1-2% of holdings over several decades): peasants held on to it for security.',
+          'Landless labourers grew from about 15% to 20% of the workforce in 1881-1931, while real wages stayed flat because labour productivity in farming did not rise. Caste-based tied labour and long farm-servant contracts (year-round subsistence in return for guaranteed labour at peak times) declined as migration to plantations, mines and cities opened other options.',
+          'Roy calls the "evil moneylender" and the "evil zamindar" myths. After riots in the Deccan in 1875, officials blamed moneylenders for peasant poverty and passed laws restricting the transfer of land to creditors (1879 in the Deccan, 1900 in Punjab). These laws cut the supply of credit and shifted lending to rich peasants, who tied loans to crop sales, a more exploitative arrangement. Landlord power was declining too: legally fixed rents lost much of their real value as prices rose. His own explanation is limited resources and high risk: in crowded fertile areas holdings were too small, and in dry areas investment in water was too costly and uncertain, so capital went elsewhere. Only the Green Revolution broke the stagnation.',
+        ],
+      },
+      {
+        heading: 'Reading: falling behind and catching up (Gupta 2019)',
+        paragraphs: [
+          "India fell behind long before independence. In 1600, under Akbar, GDP per head was about 60% of Britain's and grain wages over 80% of British wages; both declined from the mid-17th century and stagnated in the 19th, leaving most Indians at bare-bones subsistence from about 1750 to 1950. The decline began before colonial rule and coincided with booming textile exports to Europe: integration into the world economy did not bring prosperity.",
+          'De-industrialisation was real: industrial employment in Bengal fell from about 21% to 9% and urbanisation from 15% to 9% over the 19th century, mainly because British machines made hand-made goods uncompetitive rather than because of trade policy. But industry had never been the main sector, and GDP per head tracked agricultural output, not industrial output. So de-industrialisation cannot explain the decline.',
+          "The main cause was agricultural stagnation: yields of food crops fell. The zamindari settlement of 1793 was meant to make landlords invest, but created absentee landlords; cultivators were too poor to invest and borrowed from moneylenders at high interest. Only about 20% of cultivated land was irrigated in 1935, while railways received about 20% of revenue spending against under 5% for irrigation. Irrigated land could reach wheat yields comparable to Europe's.",
+          'Modern industry grew faster than any other sector (cotton mills with Indian capital; tea and jute with British capital), but from a small base and without a machinery industry: railways created no backward linkages because their equipment came from Britain. Education was neglected: only 17% of Indians were literate in 1947 and primary enrolment was among the lowest in the world, while spending favoured secondary and higher education (about 60% of the education budget went to secondary schooling in 1930) to train an English-speaking elite for the administration.',
+          'Catching up after 1947: a developmental state planned industrialisation, putting capital goods first and steering investment with licences and quotas (the "Licence Raj") and public enterprises. Industry grew 7% a year in 1950-64 and then slowed. Per-head growth of under 2% a year looked poor next to East Asia, but it reversed the colonial stagnation. The Green Revolution raised farm productivity. Pro-business reforms in the 1980s and pro-market reforms after 1991 lifted growth above 4% a year per head.',
+          'Colonial legacies persist. Former landlord regions still have lower yields and fewer public goods, and the elite bias in education gave India an unusually service-led growth path: skilled workers are concentrated in services, while industry relies on workers with little schooling. Colonial Korea and Taiwan, whose rulers invested in irrigation, new rice varieties and primary schooling, show by contrast how much the failures in agriculture and education held India back.',
+        ],
+      },
     ],
     keyTerms: [
       { term: 'East India Company (EIC)', definition: 'English monopoly trading company chartered in 1600 that became the ruler of much of India.' },
@@ -140,8 +163,37 @@ export const w5: WeekContent = {
         term: 'Intensive vs extensive farming',
         definition: 'Intensive: much labour per acre, high yields. Extensive: little labour over much land, growth by adding land.',
       },
+      {
+        term: 'Vanguard regions',
+        definition: 'The few Indian regions, such as the Punjab canal colonies, where water, railways and enough land came together.',
+      },
+      { term: 'Canal colonies', definition: 'Irrigated settlements created in Punjab in 1870-1920 on former pasture land.' },
+      {
+        term: 'Farm-servant contract',
+        definition: 'A worker pledging labour to one employer for years in return for year-round subsistence.',
+      },
+      {
+        term: 'Evil moneylender myth',
+        definition: 'The colonial story blaming moneylenders for rural poverty; laws based on it cut credit to peasants.',
+      },
+      {
+        term: 'Licence Raj',
+        definition: 'The system of industrial licences and trade quotas that steered Indian industry after independence.',
+      },
+      {
+        term: 'Backward linkages',
+        definition: "An industry's demand for inputs from domestic suppliers, e.g. railways buying locally made locomotives.",
+      },
+      {
+        term: 'Service-led growth',
+        definition: 'Growth driven by services rather than manufacturing, as in India since about 1980.',
+      },
     ],
-    readings: ['Allen, R. C. (2011). Global Economic History: A Very Short Introduction, ch. 5 (The great empires).'],
+    readings: [
+      'Allen, R. C. (2011). Global Economic History: A Very Short Introduction, ch. 5 (The great empires).',
+      "Roy, T. (2019). How British Rule Changed India's Economy: The Paradox of the Raj, ch. 4 (Unyielding land). Palgrave Macmillan.",
+      "Gupta, B. (2019). Falling behind and catching up: India's transition from a colonial economy. Economic History Review 72(3): 803-827.",
+    ],
   },
 
   basics: {
@@ -446,6 +498,196 @@ export const w5: WeekContent = {
           },
         ],
       },
+      {
+        id: 'w5-b5',
+        title: 'Reading: unyielding land',
+        topicId: 'w5-south-asia',
+        exercises: [
+          {
+            id: 'w5b5-01',
+            type: 'choice',
+            prompt: 'How did farm output in British India grow between 1891 and 1946?',
+            options: [
+              'Almost only by farming more land; yields barely changed',
+              'Mainly through higher yields from new seed varieties',
+              'Through mechanisation with imported tractors',
+              'It did not grow at all, as farmland shrank',
+            ],
+            answer: 0,
+            explanation: 'Output and area both grew about 0.37% a year; yield per hectare stayed flat and food-crop yields fell.',
+          },
+          {
+            id: 'w5b5-02',
+            type: 'multi',
+            prompt: 'Which conditions did a peasant need to gain from the commercialisation of farming?',
+            options: [
+              'Assured water',
+              'Access to railways',
+              'Enough land to sell a surplus',
+              'A loan from a European bank',
+              'Membership of a trade union',
+            ],
+            answers: [0, 1, 2],
+            explanation: 'Take away one of the three, and peasants gained little and risked losing everything in a famine.',
+          },
+          {
+            id: 'w5b5-03',
+            type: 'choice',
+            prompt: 'What were the Punjab canal colonies?',
+            options: [
+              'Irrigated former pasture settled by peasant families',
+              'British-owned plantations growing tea for export',
+              'Army camps along the border with Afghanistan',
+              'Factory towns built around new textile mills',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w5b5-04',
+            type: 'truefalse',
+            statement: 'Land markets in colonial India were very active: most farmland changed hands at least once a generation.',
+            answer: false,
+            explanation: 'Only 1-2% of holdings changed hands over several decades. Peasants held on to land for security, and family law and debt laws limited sales.',
+          },
+          {
+            id: 'w5b5-05',
+            type: 'choice',
+            prompt: 'Why did real wages of farm labourers stay flat although demand for wage labour grew?',
+            options: [
+              'Labour productivity in farming did not rise',
+              'Laws fixed farm wages at their 1860 levels',
+              'Most labourers were paid only in grain',
+              'Employers brought in cheap labour from China',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w5b5-06',
+            type: 'choice',
+            prompt: 'What did the colonial laws restricting moneylenders (1879, 1900) actually do, according to the reading?',
+            options: [
+              'Cut credit and shifted lending to rich peasants',
+              'Ended rural debt by cancelling all loans',
+              'Created cheap state banks for small farmers',
+              'Let moneylenders seize land more easily',
+            ],
+            answer: 0,
+            explanation: 'Rich peasants tied loans to crop sales and collected interest through prices, a more exploitative arrangement.',
+          },
+          {
+            id: 'w5b5-07',
+            type: 'fill',
+            text: 'The village stayed poor because resources were limited and investing in land carried high ___.',
+            options: ['risk', 'taxes', 'wages', 'tariffs'],
+            answer: 'risk',
+          },
+          {
+            id: 'w5b5-08',
+            type: 'match',
+            prompt: 'Match the concept to its meaning',
+            pairs: [
+              ['Vanguard region', 'Water, rails and land combined'],
+              ['Farm-servant contract', 'Year-round pay for sure labour'],
+              ['Zamindar', 'Landlord collecting rent'],
+              ['Rain-fed farming', 'Farming without irrigation'],
+            ],
+          },
+        ],
+      },
+      {
+        id: 'w5-b6',
+        title: 'Reading: falling behind, catching up',
+        topicId: 'w5-south-asia',
+        exercises: [
+          {
+            id: 'w5b6-01',
+            type: 'choice',
+            prompt: 'When did India start falling behind Britain, according to the reading?',
+            options: [
+              'From the mid-17th century, before colonial rule',
+              'Only after the British Crown took over in 1858',
+              'After independence in 1947, under planning',
+              'During the Great Depression of the 1930s',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w5b6-02',
+            type: 'choice',
+            prompt: "Why can de-industrialisation not explain India's falling GDP per head?",
+            options: [
+              'Industry was small; GDP per head tracked farm output',
+              'Indian industry actually grew fast before 1850',
+              'British imports were too expensive to compete',
+              'Textile workers moved into well-paid factory jobs',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w5b6-03',
+            type: 'truefalse',
+            statement: 'Irrigated land in colonial India could reach wheat yields comparable to those in Europe.',
+            answer: true,
+            explanation: 'The problem was that only about 20% of cultivated land was irrigated in 1935.',
+          },
+          {
+            id: 'w5b6-04',
+            type: 'choice',
+            prompt: 'Which statement describes colonial education policy in India?',
+            options: [
+              'Little primary schooling, heavy spending on higher levels',
+              'Compulsory primary schooling copied from Britain',
+              'Mass literacy campaigns run through village schools',
+              'No public spending on education of any kind',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w5b6-05',
+            type: 'fill',
+            text: 'At independence in 1947, only about ___ of Indians were literate.',
+            options: ['17%', '50%', '5%', '35%'],
+            answer: '17%',
+          },
+          {
+            id: 'w5b6-06',
+            type: 'choice',
+            prompt: 'What was the "Licence Raj"?',
+            options: [
+              'Licences and quotas regulating industry and trade',
+              'British permits for Indian merchants before 1947',
+              'A fee charged to every farmer for canal water',
+              'The licensing of foreign banks after 1991',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w5b6-07',
+            type: 'order',
+            prompt: 'Put the phases of Indian living standards and growth in order',
+            items: [
+              'High point under Akbar, around 1600',
+              'Decline in the 18th century',
+              'Stagnation under Crown rule',
+              'Planned industrialisation after 1947',
+              'Reforms and service-led growth',
+            ],
+          },
+          {
+            id: 'w5b6-08',
+            type: 'choice',
+            prompt: 'Where did colonial Korea and Taiwan differ most from India?',
+            options: [
+              'Investment in farming and primary schooling',
+              'The size of their modern industrial sector',
+              'Their access to British capital markets',
+              'The number of railway lines per head',
+            ],
+            answer: 0,
+            explanation: 'Their industrial sectors were not very different from India\'s at the end of colonial rule.',
+          },
+        ],
+      },
     ],
   },
 
@@ -607,6 +849,97 @@ export const w5: WeekContent = {
               'Courts in India continued to use English law after independence',
             ],
             answer: 0,
+          },
+        ],
+      },
+      {
+        id: 'w5-a4',
+        title: "Reading: explaining India's stagnation",
+        topicId: 'w5-south-asia',
+        exercises: [
+          {
+            id: 'w5a4-01',
+            type: 'choice',
+            prompt: 'Bengal had fertile soil and plenty of water, yet its peasants stayed poor. What is the resource-based explanation?',
+            options: [
+              'Too many people shared the land, so holdings were tiny',
+              'Landlords forbade peasants to irrigate their fields',
+              'Bengal soils were too poor for growing rice',
+              'Railways used up the water for steam engines',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w5a4-02',
+            type: 'choice',
+            prompt: 'Theories blaming landlords or moneylenders for rural poverty face which problem?',
+            options: [
+              'Low yields were universal; landlord power was local and fading',
+              'Landlords and moneylenders did not exist in colonial India',
+              'Moneylenders charged lower interest than banks did',
+              'Peasants had no debts at all before the 1930s',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w5a4-03',
+            type: 'choice',
+            prompt: 'Colonial India built one of the largest irrigation systems in the world, yet only about 20% of farmland was irrigated in 1935. Which choice helps explain this?',
+            options: [
+              'Railways got about 20% of revenue spending, irrigation under 5%',
+              'Irrigation got more money than railways, but it was wasted',
+              'Canal building was left entirely to private investors',
+              'Most public spending went to primary schools instead',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w5a4-04',
+            type: 'truefalse',
+            statement: "India's slow growth in 1950-80 was a failure compared with its own colonial past.",
+            answer: false,
+            explanation: 'It was slow next to East Asia, but it reversed the colonial stagnation: output per worker relative to the UK began to rise after 1950.',
+          },
+          {
+            id: 'w5a4-05',
+            type: 'choice',
+            prompt: "How can colonial education policy help explain India's unusual service-led growth since 1980?",
+            options: [
+              'It produced skilled graduates who went into services',
+              'It trained the engineers needed for heavy industry',
+              'It made primary schooling universal by 1947',
+              'It banned English, protecting local services',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w5a4-06',
+            type: 'multi',
+            prompt: 'Which colonial legacies still shape India today, according to the readings?',
+            options: [
+              'Lower yields in former landlord regions',
+              'Fewer public goods in landlord regions',
+              'A bias towards secondary and higher education',
+              'Skilled workers concentrated in services',
+              'A universal primary school system',
+              'A large machinery industry',
+            ],
+            answers: [0, 1, 2, 3],
+          },
+          {
+            id: 'w5a4-07',
+            type: 'open',
+            prompt: 'Why did Indian agriculture stagnate under colonial rule? Compare an institutional explanation (landlords, moneylenders) with one based on resources and risk, and say which you find more convincing.',
+            modelAnswer:
+              'The institutional explanation says the zamindari settlement created absentee landlords who extracted rent instead of investing, and that moneylenders exploited indebted peasants; former landlord regions still have lower yields and fewer public goods. The resource-and-risk explanation says output grew only by adding land because water was scarce: canals needed perennial rivers and state investment, wells in the dry Deccan were very costly, and in crowded fertile regions holdings were too small to finance improvements, so expected returns were low and risks high. Against the institutional view, stagnant yields were universal while landlord power was regional and declining (fixed rents lost value), and laws against moneylenders reduced credit. Where water did arrive, as in the Punjab canal colonies, farmers invested and gained. So resources and risk explain the general pattern better, while land institutions help explain differences between regions; colonial priorities (railways over irrigation) kept the constraint in place.',
+            keyPoints: [
+              'Institutional view: absentee landlords and exploitative lenders',
+              'Evidence for it: former landlord regions still lag',
+              'Resource view: scarce water, costly wells, tiny holdings, high risk',
+              'Stagnation was universal while landlord power was fading',
+              'Railways over irrigation kept the constraint in place',
+              'A reasoned verdict',
+            ],
           },
         ],
       },

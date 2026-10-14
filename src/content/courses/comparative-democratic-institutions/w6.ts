@@ -1,7 +1,7 @@
 import type { WeekContent } from '../../types';
 
 // Week 6 - Parties and Party Systems (week 5 was pitch week, no lecture)
-// Sources: Week 6 lecture slides (incl. median voter intermezzo).
+// Sources: Week 6 lecture slides (incl. median voter intermezzo); readings Pellikaan et al. (2007) and De Jonge (2021).
 
 export const w6: WeekContent = {
   topic: {
@@ -18,6 +18,8 @@ export const w6: WeekContent = {
       'Four party systems: dominant-party, two-party, multiparty, bipolar.',
       'Lipset & Rokkan: party systems reflect historical cleavages and "froze" in the 1920s.',
       'New cleavages: materialism vs post-materialism (GAL vs TAN) and winners vs losers of globalisation.',
+      'Established parties try to freeze existing lines of conflict; when a new party introduces a new one, the whole system can change, abruptly so in the Netherlands in 2002.',
+      'Radical right success depends on how mainstream parties and the media respond: in Wallonia a dominant left party and a strict cordon sanitaire kept such parties out.',
     ],
     sections: [
       {
@@ -86,6 +88,28 @@ export const w6: WeekContent = {
           'Kriesi et al. add the globalisation conflict as a dimension of integration (cosmopolitan) versus demarcation (nationalist). Greens and Social Democrats sit in the interventionist-cosmopolitan corner; Liberals, Christian Democrats and Conservatives (with business) in the neoliberal-cosmopolitan corner; right-wing populists mobilise the losers of globalisation on the demarcation side, increasingly combining nationalism with interventionist economic positions.',
         ],
       },
+      {
+        heading: "Reading: Fortuyn's legacy and party system change (Pellikaan, De Lange & Van der Meer 2007)",
+        paragraphs: [
+          'The 2002 Dutch election was one of the most volatile in Western European history. The governing "Purple" coalition (PvdA, VVD, D66) fell from almost two-thirds of the seats to one-third, and the new Lijst Pim Fortuyn (LPF) entered parliament with 26 seats; the previous record for a new party was 7. A pure protest explanation is incomplete, because voters had not moved to the right on the left-right scale. The LPF combined a right-wing stance against the multicultural society with left-leaning criticism of neoliberal economic policy, so a multidimensional model is needed.',
+          'Politics is fought along several lines of conflict at once, but only a few become significant: reducing and managing conflict is the essence of politics, and every party must decide which battle it most wants to win. A line of conflict splits the political space in two; a dimension is a scale at right angles to it on which parties take more or less extreme positions. A single dominant line of conflict fits a two-party system; a multiparty system needs several.',
+          'Established parties try to freeze the existing lines of conflict, which links to the freezing hypothesis, but they risk freezing obsolete alignments and losing control when voters care about something new. The real contest in a party system is between those who want to keep the main dimension of competition and those trying to establish a new one. When a (new) party manages to introduce a new line of conflict, all parties must reposition and the party system changes profoundly.',
+          'The Dutch ideological triangle: in the era of pillarisation (separate liberal, socialist, Catholic and Protestant networks of associations, unions and newspapers, held together by elite accommodation known as consociational democracy) competition ran along three lines: economic (state-led versus market economy), ethical (a moral state that legislates on abortion and euthanasia versus a neutral state) and communitarian (collectivist versus individualist). Socialists combined a state-led economy, a neutral state and collectivism; liberals a market economy, a neutral state and individualism; Christian democrats a market economy, a moral state and collectivism. New parties, such as D66 with democratic reform or GroenLinks with the environment, were absorbed into a corner of the triangle.',
+          'The triangle collapsed in two steps. First, the Purple coalition legalised euthanasia and same-sex marriage, and the CDA accepted this to remain an acceptable coalition partner, so the ethical line became obsolete. Second, the communitarian line was redefined. The CDA stressed norms and values in small communities such as the family; Fortuyn asked how culturally different communities should live together and argued for a monocultural society based on Western values: a new cultural line of conflict between a monocultural and a multicultural society. The LPF was state (civic) nationalist, demanding that immigrants integrate into liberal Western values, unlike ethnic nationalists, for whom belonging depends on descent and who call for repatriation.',
+          'The established parties first tried to disqualify Fortuyn by associating him with the extreme right, then copied his proposals after his local election success, which legitimised his agenda: he had won the struggle over the political agenda. Dutch competition became two-dimensional, economic and cultural. Elsewhere (Belgium, Denmark, Norway) radical right parties changed party systems gradually; in the Netherlands, where parties had frozen obsolete alignments for so long, the change was abrupt.',
+        ],
+      },
+      {
+        heading: 'Reading: why no right-wing populism in Wallonia? (De Jonge 2021)',
+        paragraphs: [
+          "Populist radical right parties (PRRPs) succeed in some places but not others. In Belgium the Vlaams Blok/Belang became one of Europe's strongest far-right parties in Flanders (over 10% of the Flemish vote in 1991, 24% in 2004, 18.5% in 2019), while in francophone Wallonia such parties never broke through. Belgium has no national party system: parties and media are split by language, so Flanders and Wallonia can be compared as two separate cases.",
+          "Demand-side explanations (fertile ground among voters) fail: Wallonia has more immigrants and higher unemployment, and Walloon voters are no more tolerant of immigrants than Flemish ones. External supply-side explanations (institutions such as electoral rules) fail too, since both regions use the same PR system. The internal supply side (the parties' own organisation and leadership) helps: the Flemish far right could draw on the networks of the Flemish nationalist movement, while Walloon far-right parties were amateurish and divided. But organisation cannot explain the timing of the breakthrough, the success of a weakly organised party like the LPF, or the failure of a better-organised Walloon attempt.",
+          'Contextual factors: mainstream parties and the media sit between demand and supply. They can act as buffers (damping demand, denying a platform) or as catalysts (politicising immigration, giving radical right parties a stage).',
+          "Party competition: in Wallonia the old economic left-right cleavage still dominates, depillarisation went less far, and traditional parties won about 59% in 2019 against 39% in Flanders. The Socialist Party (PS) kept a traditional left agenda, close ties with its socialist pillar, local \"socialism of proximity\" and clientelism, so it absorbed discontented voters and even brought nationalist politicians into its own ranks. It thus froze the old lines of conflict and kept a new cultural (TAN) dimension from taking hold. In Flanders the social democrats moved to the centre (Third Way), depoliticising economic issues; the Vlaams Blok became the region's \"biggest labour party\" and a TAN dimension came to dominate. Immigration history differed too: Italian workers in Wallonia were integrated through trade unions, while later Moroccan and Turkish guest workers in Flanders lived more apart.",
+          'The cordon sanitaire: in both regions mainstream parties agreed not to cooperate with the far right, but in Flanders the agreement came only after local breakthroughs and soon became porous. Francophone media added a media cordon (cordon sanitaire médiatique): no live airtime during election campaigns for parties hostile to freedom, later made binding by the media regulator. Flemish media never formalised one and gradually became more accommodating, publishing interviews and opinion pieces by far-right leaders.',
+          'Lessons: the success of radical right parties depends on how much political and social ostracism they meet. They can pull mainstream parties towards their positions (a contagion effect), but their ideas spread only if parties and media let them. Demarcation works best when it is early and airtight, stopping such parties before they become big enough to matter.',
+        ],
+      },
     ],
     keyTerms: [
       { term: 'Political party (minimal)', definition: 'A group that presents candidates at elections to place them in public office.' },
@@ -111,8 +135,50 @@ export const w6: WeekContent = {
         term: 'Integration vs demarcation',
         definition: 'Kriesi et al.: the cultural conflict between cosmopolitan openness and national closure created by globalisation.',
       },
+      {
+        term: 'Line of conflict',
+        definition: 'A division that splits the political space in two; only a few of many potential lines become significant.',
+      },
+      {
+        term: 'Dimension of competition',
+        definition: 'A scale at right angles to a line of conflict on which parties take more or less extreme positions.',
+      },
+      {
+        term: 'Ideological triangle',
+        definition: 'The old Dutch space of competition: economic, ethical and communitarian lines between socialists, liberals and Christian democrats.',
+      },
+      {
+        term: 'Pillarisation (verzuiling)',
+        definition: 'Society organised in separate religious and ideological networks (associations, unions, media), each with its own party.',
+      },
+      {
+        term: 'Consociational democracy',
+        definition: 'Politics of accommodation: elites of separate groups cooperate and negotiate to govern a divided society.',
+      },
+      {
+        term: 'Civic vs ethnic nationalism',
+        definition: 'Civic: belonging through citizenship and shared values. Ethnic: belonging through descent.',
+      },
+      {
+        term: 'Populist radical right party (PRRP)',
+        definition: 'A far-right party combining a populist appeal with radical positions, e.g. against immigration; for example the Vlaams Belang.',
+      },
+      {
+        term: 'Demand side vs supply side',
+        definition: "Demand: voters' grievances and attitudes. Supply: institutions (external) and the parties themselves (internal).",
+      },
+      {
+        term: 'Cordon sanitaire',
+        definition: 'Agreement by mainstream parties (or media) to exclude a party from cooperation (or from a platform).',
+      },
+      {
+        term: 'Contagion effect',
+        definition: 'Radical right parties pulling mainstream parties towards their positions, for example on immigration.',
+      },
     ],
     readings: [
+      "Pellikaan, H., de Lange, S. L. & van der Meer, T. (2007). Fortuyn's legacy: party system change in the Netherlands. Comparative European Politics 5: 282-302.",
+      'de Jonge, L. (2021). The curious case of Belgium: why is there no right-wing populism in Wallonia? Government and Opposition 56: 598-614.',
       'Lipset, S. M. & Rokkan, S. (eds.) (1967). Party Systems and Voter Alignments. Free Press.',
       'Downs, A. (1957). An Economic Theory of Democracy. Harper & Row.',
       'Bale, T. (2015). European Politics: A Comparative Introduction. Macmillan International Higher Education.',
@@ -130,19 +196,22 @@ export const w6: WeekContent = {
         topicId: 'w6-parties',
         exercises: [
           {
-            id: 'w6b1-01',
-            type: 'match',
-            prompt: 'Match the author to their definition of a party',
-            pairs: [
-              ['Burke', 'United on a shared principle'],
-              ['Schumpeter', 'Competitive struggle for power'],
-              ['Downs', 'Team seeking office via elections'],
+            id: 'w6b1-08',
+            type: 'choice',
+            prompt: 'Older definitions saw a party as a body united on a shared principle. What do later definitions stress instead?',
+            options: [
+              'A team competing in elections to win office',
+              'A body representing one social class only',
+              'A movement that avoids taking part in elections',
+              'An association that lobbies government from outside',
             ],
+            answer: 0,
+            explanation: 'The competitive view treats parties as teams in a struggle for power and votes, not as bodies defined by shared principles.',
           },
           {
             id: 'w6b1-02',
             type: 'choice',
-            prompt: "Which is NOT one of Huckshorn's four elements of a party?",
+            prompt: 'Which is NOT one of the four elements of a party in the lecture\'s definition?',
             options: ['Ideology', 'Objective', 'Methods', 'Autonomy'],
             answer: 0,
             explanation: 'The four are objective, methods, competition and autonomy (plus implicit coherence).',
@@ -162,7 +231,7 @@ export const w6: WeekContent = {
           {
             id: 'w6b1-04',
             type: 'fill',
-            text: 'Schattschneider: modern democracy is unthinkable save in terms of the ___.',
+            text: 'A classic claim: modern democracy is unthinkable save in terms of the ___.',
             options: ['parties', 'courts', 'media', 'unions'],
             answer: 'parties',
           },
@@ -286,7 +355,7 @@ export const w6: WeekContent = {
           {
             id: 'w6b3-03',
             type: 'choice',
-            prompt: "What is Lipset and Rokkan's freezing hypothesis?",
+            prompt: 'What is the freezing hypothesis?',
             options: [
               "The 1960s party systems reflected the cleavages of the 1920s",
               'Party membership stopped growing after the Second World War',
@@ -298,7 +367,7 @@ export const w6: WeekContent = {
           {
             id: 'w6b3-04',
             type: 'choice',
-            prompt: 'Why did party systems freeze, according to Lipset and Rokkan?',
+            prompt: 'According to cleavage theory, why did party systems freeze?',
             options: [
               'Voters were mobilised as suffrage expanded, leaving none for newcomers',
               'Governments banned new parties to protect the established ones',
@@ -334,7 +403,7 @@ export const w6: WeekContent = {
           {
             id: 'w6b3-07',
             type: 'choice',
-            prompt: 'Who are mainly the "losers" in the globalisation cleavage (Kriesi et al.)?',
+            prompt: 'Who are mainly the "losers" in the globalisation cleavage?',
             options: [
               'Mainly the lower educated, in exposed sectors',
               'Mainly the higher educated, working in ICT',
@@ -366,7 +435,7 @@ export const w6: WeekContent = {
           {
             id: 'w6b4-02',
             type: 'choice',
-            prompt: "How does Pellikaan's confrontational method place parties?",
+            prompt: 'How does the confrontational method place parties?',
             options: [
               'By scoring them -1, 0 or +1 on a set of policy statements that divide them',
               'By asking voters where they think each party stands',
@@ -401,7 +470,7 @@ export const w6: WeekContent = {
           {
             id: 'w6b4-05',
             type: 'choice',
-            prompt: 'In Kriesi et al.\'s space, where do right-wing populists mobilise?',
+            prompt: 'In a space with an economic and an integration-demarcation dimension, where do right-wing populists mobilise?',
             options: [
               'On the demarcation (nationalist) side, among the losers of globalisation',
               'In the neoliberal-cosmopolitan corner, with business',
@@ -412,13 +481,207 @@ export const w6: WeekContent = {
           },
         ],
       },
+      {
+        id: 'w6-b5',
+        title: 'Reading: Fortuyn and party system change',
+        topicId: 'w6-parties',
+        exercises: [
+          {
+            id: 'w6b5-01',
+            type: 'choice',
+            prompt: 'Why was a single left-right scale not enough to explain the 2002 Dutch election?',
+            options: [
+              'The LPF was right-wing on culture but left-leaning on economics',
+              'Most voters had moved far to the right on economics',
+              'Turnout was too low to draw any conclusions at all',
+              'All the established parties had merged before 2002',
+            ],
+            answer: 0,
+            explanation: 'On one left-right scale these positions would cancel out, and voters had not moved to the right.',
+          },
+          {
+            id: 'w6b5-02',
+            type: 'choice',
+            prompt: 'What is the difference between a line of conflict and a dimension?',
+            options: [
+              'A line splits the space in two; a dimension ranks positions',
+              'A line is economic; a dimension is always cultural',
+              'A line concerns voters; a dimension concerns only parties',
+              'There is no difference; the terms are interchangeable',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6b5-03',
+            type: 'truefalse',
+            statement: 'A party system with only one dominant line of conflict tends to have two parties.',
+            answer: true,
+            explanation: 'A multiparty system needs more than one line of conflict.',
+          },
+          {
+            id: 'w6b5-04',
+            type: 'match',
+            prompt: 'Match the party family to a position that sets it apart in the Dutch ideological triangle',
+            pairs: [
+              ['Socialists', 'State-led economy'],
+              ['Liberals', 'Individualist society'],
+              ['Christian democrats', 'Moral state on ethics'],
+            ],
+          },
+          {
+            id: 'w6b5-05',
+            type: 'choice',
+            prompt: 'How did the Purple coalition (1994-2002) make the ethical line of conflict obsolete?',
+            options: [
+              'It settled euthanasia and same-sex marriage; the CDA accepted it',
+              'It banned all debate on ethical issues in parliament',
+              'It let the Christian parties decide all ethical issues',
+              'It moved ethical questions to the European level',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6b5-06',
+            type: 'choice',
+            prompt: 'Which opposition did the new cultural line of conflict of 2002 introduce?',
+            options: [
+              'A monocultural versus a multicultural society',
+              'A state-led versus a market economy',
+              'A moral versus a neutral state',
+              'Centralised versus decentralised government',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6b5-07',
+            type: 'choice',
+            prompt: "How did the established parties' strategy towards Fortuyn backfire?",
+            options: [
+              'Copying his proposals legitimised his agenda',
+              'Ignoring him let him win every single seat',
+              'Banning his party turned him into a martyr',
+              'Governing with him split their own parties apart',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6b5-08',
+            type: 'choice',
+            prompt: 'What kind of nationalism did the LPF represent?',
+            options: [
+              'Civic: newcomers must adopt Western liberal values',
+              'Ethnic: belonging depends on descent, so repatriation',
+              'Regional: more autonomy for the Dutch provinces',
+              'Economic: protecting Dutch firms from imports',
+            ],
+            answer: 0,
+          },
+        ],
+      },
+      {
+        id: 'w6-b6',
+        title: 'Reading: the radical right in Belgium',
+        topicId: 'w6-parties',
+        exercises: [
+          {
+            id: 'w6b6-01',
+            type: 'choice',
+            prompt: 'Why does a demand-side explanation fail to explain the weakness of the radical right in Wallonia?',
+            options: [
+              'Wallonia has more immigrants and unemployment than Flanders',
+              'Wallonia has a different electoral system from Flanders',
+              'Walloon voters are far more tolerant of immigrants',
+              'Wallonia has no media that cover national politics',
+            ],
+            answer: 0,
+            explanation: 'Demand should then be higher in Wallonia, yet the radical right failed there.',
+          },
+          {
+            id: 'w6b6-02',
+            type: 'match',
+            prompt: 'Match the explanation to what it looks at',
+            pairs: [
+              ['Demand side', "Voters' grievances and attitudes"],
+              ['External supply side', 'Institutions such as electoral rules'],
+              ['Internal supply side', "The parties' own organisation"],
+              ['Contextual factors', 'Mainstream parties and the media'],
+            ],
+          },
+          {
+            id: 'w6b6-03',
+            type: 'choice',
+            prompt: 'How did the Walloon Socialist Party (PS) keep the radical right out?',
+            options: [
+              'It kept the economic cleavage central and absorbed discontent',
+              'It formed a coalition with far-right parties to tame them',
+              'It moved to the centre in a Third Way modernisation',
+              'It campaigned against immigration harder than anyone',
+            ],
+            answer: 0,
+            explanation: 'The Third Way move was what the Flemish social democrats did.',
+          },
+          {
+            id: 'w6b6-04',
+            type: 'truefalse',
+            statement: 'The political cordon sanitaire in Flanders stopped the Vlaams Blok from breaking through.',
+            answer: false,
+            explanation: 'It came only after the party had made local gains, and it soon became porous.',
+          },
+          {
+            id: 'w6b6-05',
+            type: 'choice',
+            prompt: 'What is the media cordon sanitaire in francophone Belgium?',
+            options: [
+              'No live airtime during campaigns for anti-democratic parties',
+              'A ban on any reporting about the far right at all',
+              'A rule that every party gets equal airtime',
+              'A ban on foreign media during election campaigns',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6b6-06',
+            type: 'fill',
+            text: 'Because Belgian parties compete within one language group only, Belgium has no national ___ system.',
+            options: ['party', 'electoral', 'federal', 'legal'],
+            answer: 'party',
+          },
+          {
+            id: 'w6b6-07',
+            type: 'choice',
+            prompt: 'What is the contagion effect of radical right parties?',
+            options: [
+              'Mainstream parties shift their positions towards them',
+              'Radical right voters spread to neighbouring countries',
+              'Radical right parties split into smaller groups',
+              'Media coverage of them declines over time',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6b6-08',
+            type: 'multi',
+            prompt: 'Which factors helped keep a radical right party from succeeding in Wallonia?',
+            options: [
+              'A dominant Socialist Party with deep local roots',
+              'A strict media cordon sanitaire',
+              'Weak, divided far-right organisations',
+              'Immigrants integrated early through trade unions',
+              'Lower immigration than in Flanders',
+              'A different electoral system',
+            ],
+            answers: [0, 1, 2, 3],
+            explanation: 'Wallonia actually has more immigrants, and both regions use the same PR system.',
+          },
+        ],
+      },
     ],
   },
 
   advanced: {
     id: 'w6-advanced',
     title: 'Parties: analysis',
-    description: 'Week 6 · Apply Downs, explain party system change',
+    description: 'Week 6 · Apply the median voter theorem, explain party system change',
     lessons: [
       {
         id: 'w6-a1',
@@ -428,7 +691,7 @@ export const w6: WeekContent = {
           {
             id: 'w6a1-01',
             type: 'choice',
-            prompt: 'In a two-party system with most voters near the centre, what does Downs predict?',
+            prompt: 'In a two-party system with most voters near the centre, what does the median voter theorem predict?',
             options: [
               'Both parties converge towards the median voter',
               'Both parties move apart to mobilise their bases',
@@ -478,10 +741,10 @@ export const w6: WeekContent = {
             type: 'choice',
             prompt: 'A party loses two elections, then drops its founding doctrine to appeal to centrist voters. Which ideas explain this best?',
             options: [
-              "Downs' vote-maximisation and the shift to a catch-all party",
-              "Lipset and Rokkan's freezing hypothesis about cleavages",
+              'Vote-maximisation and the shift to a catch-all party',
+              'The freezing hypothesis about historical cleavages',
               'The rise of a cartel party that stops representing voters',
-              "Duverger's psychological effect on strategic voters",
+              'The psychological effect of SMP on strategic voters',
             ],
             answer: 0,
             explanation: "The SPD's Bad Godesberg programme (1959) is the lecture's example.",
@@ -489,7 +752,7 @@ export const w6: WeekContent = {
           {
             id: 'w6a1-06',
             type: 'choice',
-            prompt: 'What does Schattschneider mean by "a conflict of conflicts"?',
+            prompt: 'What does it mean to call politics "a conflict of conflicts"?',
             options: [
               'Of countless potential conflicts only a few become political',
               'Parties always fight each other on every possible issue',
@@ -522,7 +785,7 @@ export const w6: WeekContent = {
           {
             id: 'w6a2-02',
             type: 'choice',
-            prompt: 'A country switches from SMP to list PR. What would Duverger lead you to expect?',
+            prompt: "A country switches from SMP to list PR. What would Duverger's law lead you to expect?",
             options: [
               'More parties and more coalition governments',
               'Fewer parties and single-party governments',
@@ -577,6 +840,96 @@ export const w6: WeekContent = {
         ],
       },
       {
+        id: 'w6-a4',
+        title: 'Reading: explaining party system change',
+        topicId: 'w6-parties',
+        exercises: [
+          {
+            id: 'w6a4-01',
+            type: 'choice',
+            prompt: 'Why did the Dutch party system change abruptly in 2002, while Belgium, Denmark and Norway changed gradually?',
+            options: [
+              'Parties had long frozen obsolete alignments, building pressure',
+              'The Netherlands adopted a new electoral system in 2002',
+              'Dutch voters suddenly moved far to the right on economics',
+              'New parties had been banned in the Netherlands before 2002',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6a4-02',
+            type: 'choice',
+            prompt: 'In 2019 traditional parties won about 59% of the vote in Wallonia but 39% in Flanders. What does this suggest?',
+            options: [
+              'More dealigned voters were available to new parties in Flanders',
+              'Walloon voters were more open to new parties than Flemish ones',
+              'Turnout was much higher in Flanders than in Wallonia',
+              'Electoral rules favoured traditional parties in Wallonia',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6a4-03',
+            type: 'choice',
+            prompt: 'Flemish social democrats moved to the centre in the 1990s, and the Vlaams Blok became the "biggest labour party". Which mechanism does this illustrate?',
+            options: [
+              'Depoliticised economics made room for a cultural cleavage',
+              'Proportional representation lowered the entry threshold',
+              'Media boycotts made the far right more popular',
+              'Pillar organisations recruited workers for the far right',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6a4-04',
+            type: 'truefalse',
+            statement: 'Both readings treat mainstream parties as active players that can freeze or open up lines of conflict, not just as victims of new parties.',
+            answer: true,
+          },
+          {
+            id: 'w6a4-05',
+            type: 'choice',
+            prompt: 'Which case shows that party organisation alone cannot explain radical right success?',
+            options: [
+              'The LPF won big despite weak organisation',
+              'The Vlaams Blok won only after organising',
+              'The PS grew stronger after losing members',
+              'D66 won seats thanks to a strong apparatus',
+            ],
+            answer: 0,
+            explanation: 'The Vlaams Blok was also well organised long before its breakthrough, so organisation cannot explain the timing either.',
+          },
+          {
+            id: 'w6a4-06',
+            type: 'multi',
+            prompt: 'A radical right party is rising. Which responses by mainstream parties and media are likely to help it?',
+            options: [
+              'Copying its proposals',
+              'Giving its leaders regular airtime and op-eds',
+              'Letting cultural issues crowd out economic ones',
+              'A late, porous cordon sanitaire',
+              'Keeping a clear economic left-right agenda',
+              'An early, airtight media cordon',
+            ],
+            answers: [0, 1, 2, 3],
+          },
+          {
+            id: 'w6a4-07',
+            type: 'open',
+            prompt: 'Why did the radical right break through in the Netherlands (2002) and in Flanders but not in Wallonia? Use lines of conflict and the role of mainstream parties and the media.',
+            modelAnswer:
+              'Party competition is structured by a few lines of conflict that established parties try to freeze. When voters care about an issue the main lines ignore, a party that introduces a new line can force everyone to reposition. In the Netherlands the Purple coalition removed the ethical line and the established parties ignored immigration; Fortuyn introduced a cultural line (monocultural versus multicultural society), and when the main parties first demonised and then copied him they legitimised his agenda, so the system changed abruptly. In Flanders the social democrats depoliticised economics, a TAN dimension became dominant, the Vlaams Blok could build on the nationalist movement, the cordon sanitaire came late and leaked, and the media grew accommodating. In Wallonia demand was at least as high, but the PS kept the economic cleavage central and absorbed discontented voters and nationalist politicians, far-right parties were weak and divided, and an early, strict media cordon denied them a platform. Mainstream parties and media thus act as buffers or catalysts.',
+            keyPoints: [
+              'Established parties freeze lines of conflict; a new party can introduce a new one',
+              'Netherlands: ethical line removed, cultural line introduced; copying Fortuyn legitimised it',
+              'Flanders: depoliticised economics, organised far right, porous cordon, accommodating media',
+              'Wallonia: PS kept the economic cleavage and absorbed demand; strict media cordon',
+              'Mainstream parties and media as buffers or catalysts',
+            ],
+          },
+        ],
+      },
+      {
         id: 'w6-a3',
         title: 'Think it through',
         topicId: 'w6-parties',
@@ -585,9 +938,9 @@ export const w6: WeekContent = {
             id: 'w6a3-01',
             type: 'open',
             prompt:
-              'Use Lipset and Rokkan to explain the main 20th-century party families in a country like the Netherlands, and explain why its party system has fragmented since.',
+              'Use cleavage theory and the freezing hypothesis to explain the main 20th-century party families in a country like the Netherlands, and explain why its party system has fragmented since.',
             modelAnswer:
-              'Lipset and Rokkan trace party families to cleavages created by the national and industrial revolutions: church-state conflict produced Christian democratic parties, the owner-worker conflict produced socialist/social democratic parties versus liberals, and the land-industry conflict shaped conservatives and liberals. Because these cleavages were mobilised as suffrage expanded around the 1910s-20s, the party systems "froze". Since then new cleavages (materialist versus post-materialist values, GAL-TAN, globalisation winners versus losers) have produced green, new-left, liberal-progressive and right-populist parties, and with a very low effective threshold under Dutch PR (Duverger) new parties enter parliament easily, so the system has fragmented.',
+              'Cleavage theory traces party families to cleavages created by the national and industrial revolutions: church-state conflict produced Christian democratic parties, the owner-worker conflict produced socialist/social democratic parties versus liberals, and the land-industry conflict shaped conservatives and liberals. Because these cleavages were mobilised as suffrage expanded around the 1910s-20s, the party systems "froze". Since then new cleavages (materialist versus post-materialist values, GAL-TAN, globalisation winners versus losers) have produced green, new-left, liberal-progressive and right-populist parties, and with a very low effective threshold under Dutch PR (Duverger) new parties enter parliament easily, so the system has fragmented.',
             keyPoints: [
               'Cleavages from the national and industrial revolutions',
               'Church-state gave Christian democrats; owner-worker gave socialists vs liberals',

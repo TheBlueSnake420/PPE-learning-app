@@ -1,7 +1,7 @@
 import type { WeekContent } from '../../types';
 
 // Week 2 - The State, Democracy and Dictatorship
-// Sources: Week 2 lecture + seminar slides (Clark, Golder & Golder 2018; Caramani).
+// Sources: Week 2 lecture + seminar slides (Clark, Golder & Golder 2018; Caramani); reading Clark et al. (2018) ch. 5.
 
 export const w2: WeekContent = {
   topic: {
@@ -17,6 +17,7 @@ export const w2: WeekContent = {
       'Minimalist definitions focus on procedures (Dahl: contestation + inclusion); substantive ones add rights and outcomes.',
       'Measures: DD (dichotomous), Polity IV (-10 to +10), Freedom House (rights and liberties). Reliability vs validity.',
       'Transitions: structural explanations (modernisation, survival, civilisation, class, geography) vs agency (values, elite choices).',
+      'Judge a measure by its conceptualisation (minimalist or substantive, dichotomous or continuous), validity, reliability and replicability; the right choice depends on the research question.',
     ],
     sections: [
       {
@@ -77,6 +78,27 @@ export const w2: WeekContent = {
           'Democratic backsliding is the gradual erosion of democratic institutions, often by elected governments themselves: weakening courts and the media, tilting the electoral playing field. The seminar debate on Poland and Hungary shows why measurement matters: a dichotomous minimalist measure like DD may still classify a backsliding country as a democracy, while continuous and substantive measures (Freedom House, V-Dem) can capture the decline.',
         ],
       },
+      {
+        heading: 'Reading: democracy and dictatorship in history (Clark, Golder & Golder, ch. 5)',
+        paragraphs: [
+          'Three terms are often mixed up. A state uses coercion and the threat of force to rule a territory, and usually outlasts governments. A government is the set of people who run the state at a given moment. A regime is the set of rules, norms or institutions that determine how the government is formed and organised and how major decisions are made; regimes are classified as democratic or dictatorial.',
+          'For most of history democracy was seen as dangerous and unstable. In ancient Greece the demos meant the common people, the poor and uneducated, and democracy was feared as mob rule that demagogues could turn into tyranny. A classic typology crossed the number of rulers (one, few, many) with whether they rule for the common good (monarchy, aristocracy, polity) or for themselves (tyranny, oligarchy, democracy). Ancient democracies filled offices by lot; elections were regarded as aristocratic.',
+          'Only after the French and American revolutions did representative government and democracy become synonyms, and the three-way typology gave way to a simple dichotomy: democracy versus dictatorship. The word "dictator" originally named a Roman magistrate given temporary powers in an emergency, and only after the First World War did it become a synonym for autocracy and tyranny.',
+          'Concepts exist in our heads, not in the world. To test theories we need a measure or indicator, a quantification of the concept, and operationalisation is the process of turning an abstract concept into concrete, observable indicators. Empirical tests are only as good as the measures they use.',
+          'Polyarchy is an ideal type with high contestation and high inclusion: real countries can approach it but never fully reach it. The Soviet Union had high inclusion but low contestation, China is low on both, and apartheid South Africa had contestation but very limited inclusion.',
+        ],
+      },
+      {
+        heading: 'Reading: comparing and judging measures of democracy (Clark, Golder & Golder, ch. 5)',
+        paragraphs: [
+          'DD requires an alternation in power under the same electoral rules, because without one we cannot tell an incumbent who keeps winning because it is popular from one that would refuse to give up power. Botswana, ruled by the same party since independence, is therefore coded a dictatorship: the measure prefers to mistake a democracy for a dictatorship rather than the reverse. Malaysia shows why: after the ruling coalition lost its third multiparty election it declared an emergency, rewrote the rules and never lost again. DD ignores inclusion, since almost every country had universal suffrage after 1946.',
+          'Polity scores (from -10 to +10) are a Democracy score minus an Autocracy score. Many scholars code +6 to +10 as democracy, -6 to -10 as dictatorship and the range in between as an "anocracy" or mixed regime. By including constraints on the executive, Polity adds a dimension beyond contestation and inclusion, limited government, and most of the variation in Polity scores comes from it.',
+          'Freedom House scores political rights and civil liberties from 1 to 7, where 1 is most free, and calls countries scoring 1-2.5 Free, 3-5.5 Partly Free and higher Not Free. The three measures agree on the easy cases (the US, Australia and Sweden versus China, Saudi Arabia and North Korea) but disagree on mixed regimes, and empirical results can depend on which measure a study uses.',
+          'Conceptualisation: substantive measures risk circular reasoning. If democracy is defined to include accountability or equality, testing whether democracy produces accountability or equality is a tautology; minimalist measures avoid this. Whether a dichotomy or a continuum fits depends on the question: studying transitions assumes a jump between two distinct regime types, while one side argues democracy is always a matter of degree and the other that a regime cannot be half-democratic.',
+          'Validity: does the measure capture the concept? Too many attributes may leave no real democracies at all and limit the questions you can study; too few may miss key aspects such as inclusion. Aggregation rules matter too: Freedom House weighs all its questions equally, and there are 17 different combinations of Polity attributes that produce a score of 0. The level of measurement can be nominal (named categories that are mutually exclusive and collectively exhaustive, as in DD), ordinal (rank order) or interval (equal units, so differences in scores are meaningful).',
+          "Reliability: does the measurement process give the same result when repeated? Measures based on observable facts (DD) are more reliable than measures based on coders' judgements (Freedom House, Polity); intercoder reliability tests whether different coders agree. A measure can be reliable but not valid, or valid but not reliable. Replicability: can other scholars reproduce the measure from published coding rules and disaggregated data? DD and Polity publish detailed rules; Freedom House long released only aggregate scores. The data access and research transparency (DA-RT) movement asks for data access, production transparency and analytic transparency.",
+        ],
+      },
     ],
     keyTerms: [
       {
@@ -113,6 +135,31 @@ export const w2: WeekContent = {
         term: 'Democratic backsliding',
         definition: 'Gradual erosion of democratic institutions, often by elected governments (e.g. weakening courts and media).',
       },
+      {
+        term: 'Regime',
+        definition: 'The rules, norms or institutions that determine how the government is formed, organised and makes decisions.',
+      },
+      { term: 'Government', definition: 'The set of people who run the state at a given moment.' },
+      { term: 'Demos', definition: 'Greek for "the people"; in ancient times specifically the common people, poor and uneducated.' },
+      {
+        term: 'Operationalisation',
+        definition: 'Turning an abstract concept into concrete, observable measures or indicators.',
+      },
+      { term: 'Measure (indicator)', definition: 'A quantification of the concept or thing we are interested in.' },
+      { term: 'Ideal type', definition: 'A pure model, such as polyarchy, that real cases approach but never fully reach.' },
+      { term: 'Anocracy', definition: 'A mixed regime in the middle of the Polity scale (about -5 to +5).' },
+      {
+        term: 'Nominal, ordinal and interval measures',
+        definition: 'Nominal: named categories. Ordinal: rank order. Interval: equal units, so differences are meaningful.',
+      },
+      {
+        term: 'Replicability',
+        definition: 'Whether other scholars can reproduce how a measure was created, from its coding rules and data.',
+      },
+      {
+        term: 'Intercoder reliability',
+        definition: 'How far different coders applying the same rules give the same scores.',
+      },
     ],
     readings: [
       'Clark, W., Golder, M. & Golder, S. N. (2018). Principles of Comparative Politics, 3rd ed. SAGE/CQ Press.',
@@ -134,7 +181,7 @@ export const w2: WeekContent = {
           {
             id: 'w2b1-01',
             type: 'fill',
-            text: 'Weber: the state successfully claims the monopoly of legitimate physical ___ within a territory.',
+            text: 'The classic definition: the state successfully claims the monopoly of legitimate physical ___ within a territory.',
             options: ['violence', 'taxation', 'authority', 'trade'],
             answer: 'violence',
           },
@@ -148,7 +195,7 @@ export const w2: WeekContent = {
           {
             id: 'w2b1-03',
             type: 'choice',
-            prompt: 'How did Benedict Anderson define the nation?',
+            prompt: 'In the modern understanding used in the course, what is a nation?',
             options: [
               'An imagined political community',
               'A community of shared blood',
@@ -239,14 +286,14 @@ export const w2: WeekContent = {
           {
             id: 'w2b2-03',
             type: 'fill',
-            text: "Dahl's polyarchy has two dimensions: contestation and ___.",
+            text: 'Polyarchy has two dimensions: contestation and ___.',
             options: ['inclusion', 'liberty', 'equality', 'stability'],
             answer: 'inclusion',
           },
           {
             id: 'w2b2-04',
             type: 'choice',
-            prompt: 'Where would apartheid South Africa sit on Dahl\'s two dimensions?',
+            prompt: 'Where would apartheid South Africa sit on the two dimensions of polyarchy (contestation and inclusion)?',
             options: [
               'Some contestation, but very low inclusion',
               'High inclusion, but no contestation',
@@ -272,7 +319,7 @@ export const w2: WeekContent = {
           {
             id: 'w2b2-07',
             type: 'choice',
-            prompt: 'Which is NOT one of Geddes\' types of autocracy?',
+            prompt: 'Which is NOT one of the four standard types of autocracy?',
             options: ['Federal republic', 'Monarchy', 'Military regime', 'Personalist dictatorship'],
             answer: 0,
             explanation: 'The fourth type is the one-party state.',
@@ -364,7 +411,7 @@ export const w2: WeekContent = {
           {
             id: 'w2b4-01',
             type: 'choice',
-            prompt: 'What does modernisation theory (Lipset 1959) claim?',
+            prompt: 'What does modernisation theory claim?',
             options: [
               'Development makes democracy more likely to emerge and survive',
               'Democracy is the main cause of economic growth',
@@ -386,20 +433,20 @@ export const w2: WeekContent = {
             answer: 0,
           },
           {
-            id: 'w2b4-03',
+            id: 'w2b4-07',
             type: 'match',
-            prompt: 'Match the author to the explanation',
+            prompt: 'Match the explanation of democratisation to its core claim',
             pairs: [
-              ['Lipset', 'Modernisation'],
-              ['Barrington Moore', 'No bourgeoisie, no democracy'],
-              ['Huntington (1993)', 'Clash of civilisations'],
-              ['Welzel & Inglehart', 'Self-expression values'],
+              ['Modernisation', 'Development fosters democracy'],
+              ['Class', 'No bourgeoisie, no democracy'],
+              ['Civilisation', 'Democracy requires Westernising'],
+              ['Civic values', 'Self-expression values drive demands'],
             ],
           },
           {
             id: 'w2b4-04',
             type: 'truefalse',
-            statement: 'Lipset saw development as a requisite of democracy: a necessary condition that guarantees democracy.',
+            statement: 'Modernisation theory sees development as a requisite of democracy: a necessary condition that guarantees democracy.',
             answer: false,
             explanation: 'Necessary but not sufficient. Conditions are not causes.',
           },
@@ -418,13 +465,98 @@ export const w2: WeekContent = {
           {
             id: 'w2b4-06',
             type: 'order',
-            prompt: 'Put the causal chain of Welzel & Inglehart (2008) in order',
+            prompt: 'Put the causal chain of the civic-values (agency) argument in order',
             items: [
               'Economic development',
               'More material and cognitive resources',
               'Self-expression values',
               'Demand for democratic institutions',
             ],
+          },
+        ],
+      },
+      {
+        id: 'w2-b5',
+        title: 'Reading: conceptualising democracy',
+        topicId: 'w2-state-democracy',
+        exercises: [
+          {
+            id: 'w2b5-01',
+            type: 'match',
+            prompt: 'Match the term to its meaning',
+            pairs: [
+              ['State', 'Rules a territory by coercion'],
+              ['Government', 'People running the state now'],
+              ['Regime', 'Rules for forming the government'],
+            ],
+          },
+          {
+            id: 'w2b5-02',
+            type: 'choice',
+            prompt: 'How was democracy mostly seen before the 19th century?',
+            options: [
+              'As dangerous rule by the uneducated poor',
+              'As the ideal form of government for all',
+              'As the same thing as elected government',
+              'As a recent invention of the Enlightenment',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b5-03',
+            type: 'truefalse',
+            statement: 'In ancient democracies, filling offices by election was seen as the most democratic method.',
+            answer: false,
+            explanation: 'Offices were filled by lot; elections were regarded as aristocratic.',
+          },
+          {
+            id: 'w2b5-04',
+            type: 'fill',
+            text: 'Turning an abstract concept into concrete, observable indicators is called ___.',
+            options: ['operationalisation', 'conceptualisation', 'aggregation', 'replication'],
+            answer: 'operationalisation',
+          },
+          {
+            id: 'w2b5-05',
+            type: 'choice',
+            prompt: 'Why does the DD measure classify Botswana as a dictatorship?',
+            options: [
+              'Its ruling party has never lost, so alternation is untested',
+              'Botswana does not hold multiparty elections at all',
+              'Botswana has no elected legislature',
+              'Opposition parties are banned by its constitution',
+            ],
+            answer: 0,
+            explanation: 'Without an alternation in power we cannot know whether the incumbents would give up office after losing.',
+          },
+          {
+            id: 'w2b5-06',
+            type: 'choice',
+            prompt: 'How is a Polity score of 0 usually classified?',
+            options: [
+              'An anocracy (mixed regime)',
+              'A full democracy (+6 or higher)',
+              'A full dictatorship (-6 or lower)',
+              'A failed state without a score',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b5-07',
+            type: 'match',
+            prompt: 'Match the level of measurement to an example',
+            pairs: [
+              ['Nominal', 'Democracy or dictatorship'],
+              ['Ordinal', 'More or less democratic'],
+              ['Interval', 'Equal units between scores'],
+            ],
+          },
+          {
+            id: 'w2b5-08',
+            type: 'choice',
+            prompt: 'A measure gives the same score every time it is applied, but the score misses much of what democracy means. The measure is...',
+            options: ['Reliable but not valid', 'Valid but not reliable', 'Both valid and reliable', 'Neither valid nor reliable'],
+            answer: 0,
           },
         ],
       },
@@ -519,7 +651,7 @@ export const w2: WeekContent = {
             id: 'w2a2-01',
             type: 'choice',
             prompt:
-              'A modernising country has a small middle class and a powerful landed elite. What does Barrington Moore predict?',
+              'A modernising country has a small middle class and a powerful landed elite. What does the class explanation ("no bourgeoisie, no democracy") predict?',
             options: [
               'A non-democratic path, such as fascism or communism',
               'Rapid democratisation led by the landed elite',
@@ -556,7 +688,7 @@ export const w2: WeekContent = {
           {
             id: 'w2a2-04',
             type: 'choice',
-            prompt: "What does Huntington's civilisational argument imply for democratisation?",
+            prompt: 'What does the civilisational argument imply for democratisation?',
             options: [
               'Countries democratise only if they Westernise, which can provoke clashes',
               'All countries democratise once they modernise, whatever their culture',
@@ -583,6 +715,98 @@ export const w2: WeekContent = {
               'They control the army and can threaten a coup',
             ],
             answer: 0,
+          },
+        ],
+      },
+      {
+        id: 'w2-a4',
+        title: 'Reading: choosing a measure',
+        topicId: 'w2-state-democracy',
+        exercises: [
+          {
+            id: 'w2a4-01',
+            type: 'choice',
+            prompt: 'You want to test whether democracy increases equality of opportunity. Why is Freedom House a problematic measure here?',
+            options: [
+              'Its scores already include equality: a circular test',
+              'It covers too few countries to test anything',
+              'It only measures whether elections are held',
+              'It is a dichotomous measure of regime type',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2a4-02',
+            type: 'choice',
+            prompt: 'For which research question is a dichotomous measure most natural?',
+            options: [
+              'What causes transitions to democracy?',
+              'How much did democracy erode in Hungary?',
+              'Does more democracy mean more spending?',
+              'How democratic is each EU member state?',
+            ],
+            answer: 0,
+            explanation: 'A transition implies a move from one distinct regime type to another.',
+          },
+          {
+            id: 'w2a4-03',
+            type: 'truefalse',
+            statement: 'The DD measure would rather risk calling a democracy a dictatorship than calling a dictatorship a democracy.',
+            answer: true,
+            explanation: 'That is the logic of the alternation rule, which codes dominant-party systems such as Botswana as dictatorships.',
+          },
+          {
+            id: 'w2a4-04',
+            type: 'choice',
+            prompt: 'There are 17 different combinations of Polity attributes that all produce a score of 0. Which problem does this illustrate?',
+            options: [
+              'Aggregation: very different regimes get the same score',
+              'Reliability: coders never agree on any country',
+              'Replicability: the coding rules are kept secret',
+              'Inclusion: the measure ignores who may vote',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2a4-05',
+            type: 'choice',
+            prompt: 'Why is a measure based on observable facts, like DD, usually more reliable than Freedom House?',
+            options: [
+              'Two coders applying the rules will almost always agree',
+              'Observable facts capture every aspect of democracy',
+              'Freedom House asks too few questions per country',
+              'Observable facts change less often over time',
+            ],
+            answer: 0,
+            explanation: 'Judging whether media are "free" or elections "fair" leaves room for coders to disagree.',
+          },
+          {
+            id: 'w2a4-06',
+            type: 'multi',
+            prompt: 'What does replicability of a democracy measure require?',
+            options: [
+              'Clear, published coding rules',
+              'Scores for each separate attribute',
+              'Transparency about how the data were produced',
+              'Agreement with other democracy measures',
+              'A continuous scale',
+              'A minimalist definition',
+            ],
+            answers: [0, 1, 2],
+          },
+          {
+            id: 'w2a4-07',
+            type: 'open',
+            prompt: 'Should researchers use a minimalist, dichotomous measure (like DD) or a substantive, continuous one (like Freedom House)? Argue with validity, reliability and replicability, and explain how the research question matters.',
+            modelAnswer:
+              "A minimalist dichotomous measure such as DD rests on a few observable facts (an elected executive and legislature, more than one party, alternation in power), so it is highly reliable and easy to replicate, and because it leaves out outcomes it lets us test whether democracy causes growth or equality without circular reasoning. But its validity can be questioned: it ignores inclusion, cannot capture degrees or gradual backsliding, and the alternation rule codes dominant-party democracies such as Botswana as dictatorships. A substantive continuous measure such as Freedom House captures more aspects and differences of degree, but relies on coders' judgements (lower reliability), uses debatable aggregation rules, has been hard to replicate, and builds outcomes into the definition. The choice depends on the question: transitions suit a dichotomy, studying gradual erosion suits a continuum, and research on the effects of democracy should avoid measures that already include those effects.",
+            keyPoints: [
+              'DD: few observable criteria, so reliable and replicable',
+              'DD may lack validity: inclusion, degrees, the alternation rule',
+              'Freedom House: richer and continuous, but subjective and harder to replicate',
+              'Substantive measures make tests of outcomes circular',
+              'The right choice depends on the research question',
+            ],
           },
         ],
       },
@@ -638,7 +862,7 @@ export const w2: WeekContent = {
           {
             id: 'w2a3-04',
             type: 'order',
-            prompt: "Put Lipset's modernisation mechanism in order",
+            prompt: 'Put the modernisation mechanism in order',
             items: [
               'Industrialisation, urbanisation, wealth, education',
               'Socio-economic development',

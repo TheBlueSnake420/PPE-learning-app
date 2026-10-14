@@ -1,7 +1,7 @@
 import type { WeekContent } from '../../types';
 
 // Week 3 - Government and Patterns of Democracy
-// Sources: Week 3 lecture + seminar slides (Strom's delegation and accountability model).
+// Sources: Week 3 lecture + seminar slides (Strom's delegation and accountability model); reading Strøm (2000).
 
 export const w3: WeekContent = {
   topic: {
@@ -18,6 +18,7 @@ export const w3: WeekContent = {
       'Majoritarian democracy (UK) is decisive but volatile; consensus democracy (NL) is broadly supported but slower.',
       'Authority is increasingly dispersed above and below the state (multilevel governance); federalism combines self-rule and shared rule.',
       'Strom: democracy is a chain of delegation from voters (principals) to agents, with problems of adverse selection and moral hazard.',
+      'Parliamentary government (minimal definition): the cabinet can be voted out by a parliamentary majority. Its single chain relies on ex ante screening, which guards against adverse selection but leaves it exposed to moral hazard.',
     ],
     sections: [
       {
@@ -75,12 +76,23 @@ export const w3: WeekContent = {
         ],
       },
       {
-        heading: "Extra: Strøm's chain in detail (from student notes)",
+        heading: "Strøm's chain in detail",
         paragraphs: [
           'Principals delegate to agents because agents have skills, information or time they lack; direct democracy on every decision would take far too long. In a representative democracy there are four steps of delegation: voters to elected representatives; legislators to the head of government (prime minister and cabinet); the head of government to the heads of departments (ministers); and ministers to civil servants. Accountability runs the same chain in reverse: the principal can reward or punish the agent.',
           'Parliamentary democracy has a single chain: at each link one principal delegates to one agent, and each agent answers to one principal. Presidential democracy has multiple principals and competing agents: voters elect the president and both chambers separately, and civil servants may answer to the president and to congressional committees at the same time.',
           'Agency loss takes two forms: omission (shirking, failing to act in the principal\'s interest) and commission (sabotage, actively working against it). It stems from hidden information (adverse selection) and hidden action (moral hazard). Four mechanisms contain it: contract design (aligning the agent\'s incentives, e.g. a share of the gains), screening and selection, monitoring and reporting requirements, and institutional checks (putting critical decisions under other actors\' veto).',
           'Parliamentary democracies rely mainly on ex ante controls, such as parties screening candidates and recruiting ministers from experienced MPs; presidential democracies rely more on ex post controls through checks and balances. The parliamentary chain is simple and efficient, but a single chain is only as strong as its weakest link, and weak ex post monitoring leaves it exposed to moral hazard.',
+        ],
+      },
+      {
+        heading: 'Reading: what makes a democracy parliamentary? (Strøm 2000)',
+        paragraphs: [
+          'Conventional definitions stress parliamentary supremacy or fused powers: the executive emerges from and is responsible to the legislature. They are ambiguous (hybrids such as France and Switzerland are hard to place), empirically shaky (in most parliamentary systems, including Britain and the Netherlands, parliament never actually votes a prime minister into office) and say little about how citizens control policy.',
+          'Minimal definition: parliamentary government is a system in which the prime minister and cabinet are accountable to any parliamentary majority and can be voted out of office by it, through a vote of no confidence. What counts is survival, not origin: the cabinet must be tolerated by the majority. By this definition France, despite its powerful president, is parliamentary and Switzerland is not, and parliamentarism and presidentialism are neither mutually exclusive nor exhaustive.',
+          'Maximal (ideal-type) definition: parliamentary democracy is a single, indirect chain of delegation in which each principal delegates to one agent (or several non-competing ones) and each agent answers to one principal: the singularity principle. Under presidentialism voters elect several competing agents and agents may serve several principals, so delegation looks more like a grid than a chain. An agent is accountable when it must act for the principal and the principal can reward or punish it. On one view voters cannot really instruct politicians, only sanction them: elections are a means to control officials.',
+          'Compared with presidentialism, parliamentary democracy has more indirect delegation, fewer competing agents, fewer institutional checks and a heavy reliance on ex ante screening: parties screen candidates, and ministers usually come from parliament. Ex post control is weaker. The no-confidence vote is a blunt instrument, committees have little capacity to monitor ("police patrols" by the principal itself, or "fire alarms" raised by others), and a prime minister who can call early elections can time them for party advantage.',
+          'The trade-off: a single chain is simple, which brings efficiency, fewer conflicting demands on agents and clear incentives to monitor and to make an effort. But it is only as strong as its weakest link, offers less competition and constraint, lets principals learn less about their agents, and moves coalition bargaining behind closed doors, so politics is less transparent. Parliamentarism therefore guards well against adverse selection but is exposed to moral hazard; presidentialism is the reverse. Multiparty parliamentary systems have more influential parties, but partisan vetoes are less enforceable than institutional ones (a party can only threaten to leave the coalition), so they lose some simplicity without gaining the information benefits of presidentialism.',
+          'Two modern challenges. The decay of screening devices: class and other group identities give voters weaker cues, outsiders without a traditional political career win office, and the political agenda changes so fast that past experience predicts less. Diverted accountabilities: politicians increasingly answer directly to voters as well as to parliament, as when a prime minister pledges to resign below a set vote share whatever the seat count, or in the Dutch norm that a new coalition needs fresh elections. Agents with several principals make parliamentarism more like presidentialism.',
         ],
       },
     ],
@@ -108,9 +120,29 @@ export const w3: WeekContent = {
         term: 'Single vs multiple chains',
         definition: 'Parliamentary: one principal per agent at each link. Presidential: several principals and competing agents.',
       },
+      {
+        term: 'Parliamentary government (minimal)',
+        definition: 'The cabinet is accountable to any parliamentary majority and can be removed by a vote of no confidence.',
+      },
+      {
+        term: 'Singularity principle',
+        definition: 'Each principal delegates to one agent (or non-competing agents), and each agent answers to one principal.',
+      },
+      {
+        term: 'Police-patrol vs fire-alarm oversight',
+        definition: 'Principals actively checking their agents, versus relying on others to raise the alarm when something goes wrong.',
+      },
+      {
+        term: 'Decay of screening devices',
+        definition: 'Ex ante screening works less well as group identities and past experience become weaker guides to politicians.',
+      },
+      {
+        term: 'Diverted accountability',
+        definition: 'Politicians answering directly to voters as well as to parliament, giving agents several principals.',
+      },
     ],
     readings: [
-      'Strom (2002), on parliamentary democracy as delegation and accountability (seminar reading).',
+      'Strøm, K. (2000). Delegation and accountability in parliamentary democracies. European Journal of Political Research 37: 261-289.',
       'Caramani, Comparative Politics (course textbook).',
     ],
   },
@@ -352,7 +384,7 @@ export const w3: WeekContent = {
           {
             id: 'w3b4-01',
             type: 'choice',
-            prompt: 'How do Hooghe, Marks and Schakel define multilevel governance?',
+            prompt: 'How is multilevel governance defined?',
             options: [
               'Dispersion of authority to jurisdictions within or beyond the state',
               'Government by a coalition of parties from different regions',
@@ -401,7 +433,7 @@ export const w3: WeekContent = {
           {
             id: 'w3b4-06',
             type: 'choice',
-            prompt: "In Strom's model, who are the ultimate principals in a democracy?",
+            prompt: 'In the chain of delegation, who are the ultimate principals in a democracy?',
             options: ['Voters', 'Prime ministers', 'Civil servants', 'Judges'],
             answer: 0,
           },
@@ -422,7 +454,6 @@ export const w3: WeekContent = {
         id: 'w3-b5',
         title: "Strøm's chain in detail",
         topicId: 'w3-government',
-        fromNotes: true,
         exercises: [
           {
             id: 'w3b5-01',
@@ -489,6 +520,98 @@ export const w3: WeekContent = {
               'It makes coalition governments impossible',
             ],
             answer: 0,
+          },
+        ],
+      },
+      {
+        id: 'w3-b6',
+        title: 'Reading: what makes a democracy parliamentary?',
+        topicId: 'w3-government',
+        exercises: [
+          {
+            id: 'w3b6-01',
+            type: 'choice',
+            prompt: 'What is the minimal definition of parliamentary government?',
+            options: [
+              'The cabinet can be removed by a parliamentary majority',
+              'Parliament elects the prime minister by majority vote',
+              'All ministers must also be members of parliament',
+              'The head of state is a hereditary monarch',
+            ],
+            answer: 0,
+            explanation: 'What matters is survival (accountability), not origin: most parliaments never vote a prime minister into office.',
+          },
+          {
+            id: 'w3b6-02',
+            type: 'truefalse',
+            statement: 'Under the minimal definition, France counts as parliamentary even though it has a powerful directly elected president.',
+            answer: true,
+            explanation: 'Its prime minister and cabinet answer to the National Assembly. Switzerland is not parliamentary, because its executive does not depend on parliamentary confidence.',
+          },
+          {
+            id: 'w3b6-03',
+            type: 'choice',
+            prompt: 'What is the singularity principle of ideal-type parliamentary democracy?',
+            options: [
+              'Each principal has one agent; each agent one principal',
+              'Only one party at a time may be in government',
+              'Parliament has a single chamber with one leader',
+              'Voters elect a single representative for the nation',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w3b6-04',
+            type: 'match',
+            prompt: 'Match the control mechanism to its description',
+            pairs: [
+              ['Police-patrol oversight', 'The principal checks actively'],
+              ['Fire-alarm oversight', 'Others raise the alarm'],
+              ['Screening', 'Choosing agents before delegating'],
+              ['Institutional checks', 'Another actor can veto'],
+            ],
+          },
+          {
+            id: 'w3b6-05',
+            type: 'choice',
+            prompt: 'Which agency problem is parliamentary democracy best equipped to handle?',
+            options: ['Adverse selection', 'Moral hazard', 'Collective action', 'Free riding'],
+            answer: 0,
+            explanation: 'Its strong ex ante screening (parties, ministers recruited from parliament) helps pick good agents; weak ex post monitoring leaves it exposed to moral hazard.',
+          },
+          {
+            id: 'w3b6-06',
+            type: 'choice',
+            prompt: 'Why does the power to call early elections weaken ex post electoral accountability?',
+            options: [
+              'Election timing can be chosen for party advantage',
+              'Voters cannot vote at all in early elections',
+              'Early elections always return the same parties',
+              'Parliament cannot meet during election campaigns',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w3b6-07',
+            type: 'multi',
+            prompt: 'Which are weaknesses of parliamentary democracy compared with presidentialism?',
+            options: [
+              'A chain only as strong as its weakest link',
+              'Less competition between agents',
+              'Less transparent coalition bargaining',
+              'Principals learn less about their agents',
+              'Higher decision costs',
+              'Weaker incentives for agents to make an effort',
+            ],
+            answers: [0, 1, 2, 3],
+            explanation: 'Low decision costs and incentives for effort are advantages of the simple parliamentary chain.',
+          },
+          {
+            id: 'w3b6-08',
+            type: 'fill',
+            text: 'Politicians answering directly to voters as well as to parliament is the problem of ___ accountabilities.',
+            options: ['diverted', 'divided', 'delegated', 'direct'],
+            answer: 'diverted',
           },
         ],
       },
@@ -632,6 +755,98 @@ export const w3: WeekContent = {
               'Regions make policy, but their politicians are appointed, not elected',
             ],
             answer: 0,
+          },
+        ],
+      },
+      {
+        id: 'w3-a4',
+        title: 'Reading: applying the chain of delegation',
+        topicId: 'w3-government',
+        exercises: [
+          {
+            id: 'w3a4-01',
+            type: 'choice',
+            prompt: 'A coalition collapses mid-term. Parliament could form a new cabinet, yet in the Netherlands fresh elections are now expected first. What does this illustrate?',
+            options: [
+              'Diverted accountability: politicians also answer to voters',
+              'Decay of screening: parties pick worse candidates',
+              'Moral hazard: ministers hide what they are doing',
+              'Adverse selection: voters choose the wrong party',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w3a4-02',
+            type: 'choice',
+            prompt: 'A prime minister pledges to resign if the party falls below a set vote share, whatever the seat distribution. Why does this complicate parliamentary government?',
+            options: [
+              'The PM now answers to voters as well as to parliament',
+              'The pledge makes elections less competitive',
+              'Parliament can no longer hold a no-confidence vote',
+              'The pledge hands power to the head of state',
+            ],
+            answer: 0,
+            explanation: 'In the case in the reading, the pledge led to a minority cabinet with a very narrow parliamentary base.',
+          },
+          {
+            id: 'w3a4-03',
+            type: 'choice',
+            prompt: 'Voters increasingly elect outsiders without a party career, and class says less about how people vote. Which challenge does this pose for parliamentarism?',
+            options: [
+              'Screening before delegation gives weaker information',
+              'Parliament gains too much power over the cabinet',
+              'Presidents become too dependent on parliament',
+              'Coalitions become minimal winning more often',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w3a4-04',
+            type: 'truefalse',
+            statement: 'In a coalition government, every party is a veto player whose veto is as enforceable as that of a second chamber.',
+            answer: false,
+            explanation: 'A coalition party can only threaten to leave, and a surplus party in an oversized coalition cannot do so credibly.',
+          },
+          {
+            id: 'w3a4-05',
+            type: 'choice',
+            prompt: 'A country switches from a parliamentary to a presidential constitution with many checks and balances, and its legislature soon becomes gridlocked. Which argument does this support?',
+            options: [
+              'A simple single chain encourages efficiency and effort',
+              'Presidential systems guard best against shirking',
+              'More veto players speed up policy change',
+              'Parliamentary systems suffer most from deadlock',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w3a4-06',
+            type: 'multi',
+            prompt: 'Which of these are ex post controls that a parliament can use over the cabinet?',
+            options: [
+              'Questions and hearings in parliament',
+              'Reporting requirements and audits',
+              'Committees of inquiry',
+              'A vote of no confidence',
+              'Recruiting ministers from experienced MPs',
+              'Party screening of candidates',
+            ],
+            answers: [0, 1, 2, 3],
+            explanation: 'Recruitment and screening happen before delegation: they are ex ante controls.',
+          },
+          {
+            id: 'w3a4-07',
+            type: 'open',
+            prompt: 'Compare how parliamentary and presidential democracy deal with adverse selection and moral hazard. Which would you recommend for a new democracy with weak parties, and why?',
+            modelAnswer:
+              'Parliamentary democracy is a single, indirect chain: voters choose MPs, MPs sustain a cabinet, ministers direct civil servants, and each agent answers to one principal. It relies on ex ante control: parties screen candidates and ministers are recruited from experienced MPs, which guards against adverse selection. Ex post control is weak: the no-confidence vote is blunt, committees have little oversight capacity and election dates can be manipulated, so it is exposed to moral hazard, and the chain is only as strong as its weakest link. Presidential democracy has competing agents and multiple principals with checks and balances, which give principals more information and constrain agents (good against moral hazard), at the cost of efficiency and possible gridlock. In a new democracy with weak parties, the screening that parliamentarism depends on works poorly, which argues for strong ex post checks such as independent committees and courts; but presidentialism risks deadlock, so a reasoned answer weighs these risks for the context.',
+            keyPoints: [
+              'Parliamentary: single chain, ex ante screening by parties',
+              'Good against adverse selection, weak against moral hazard',
+              'Presidential: competing agents and checks, good against moral hazard',
+              'Costs of presidentialism: less efficiency, risk of gridlock',
+              'Weak parties undermine screening: a reasoned recommendation',
+            ],
           },
         ],
       },

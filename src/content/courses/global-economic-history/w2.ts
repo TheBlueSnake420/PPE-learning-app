@@ -1,7 +1,7 @@
 import type { WeekContent } from '../../types';
 
 // Week 2 - The Great Divergence in Health and Wealth
-// Sources: Week 2 lecture + seminar; Allen, Global Economic History (VSI), ch. 1-2.
+// Sources: Week 2 lecture + seminar; Allen, Global Economic History (VSI), ch. 1-2; Deaton (2013) ch. 2.
 
 export const w2: WeekContent = {
   topic: {
@@ -18,6 +18,7 @@ export const w2: WeekContent = {
       'Before c. 1800 life expectancy was 30-40, mainly because so many infants died.',
       'In the Malthusian economy, extra output led to more people rather than richer people.',
       'Gradual farming advances (new crops, rotation, enclosure) and then the Industrial Revolution broke the Malthusian trap.',
+      'Deaton: the fall in mortality after 1850 came mainly from public health (clean water, sanitation, the germ theory), not from medicine or food alone; new knowledge first widens health gaps, then spreads.',
     ],
     sections: [
       {
@@ -91,6 +92,33 @@ export const w2: WeekContent = {
           'The demographic transition model (from student notes) describes four stages: (1) high birth and death rates, so population barely grows (the Malthusian world); (2) death rates fall with better food, sanitation and medicine while birth rates stay high, so population booms; (3) birth rates fall too, as urbanisation and lower child mortality mean fewer children are needed; (4) low birth and death rates and a stable population.',
         ],
       },
+      {
+        heading: 'Reading: measuring life and death (Deaton, The Great Escape, ch. 2)',
+        paragraphs: [
+          "Life expectancy at birth is a period measure: it assumes that today's risk of dying at each age will apply for the rest of a newborn's life. A one-year epidemic such as the 1918 flu therefore makes it collapse for that year, and when death rates keep falling, today's figure understates how long babies will actually live. US life expectancy rose from about 47 in 1900 to 78 in 2006.",
+          'Death rates by age follow a typical curve, which Deaton compares to a "swoosh": high in infancy, lowest in the early teens, then rising steadily with age. Where many children die, the average is not the typical lifespan: people who survive childhood go on to live much longer. In England, life expectancy at age 15 was higher than at birth until about 1900.',
+          'Because saving a baby adds far more years than saving an old person, life expectancy weighs deaths of the young much more heavily. Choosing it as the yardstick of progress is therefore an ethical judgement, not a neutral fact: by this measure the US did better before 1950 than after, and poor countries, whose gains come mostly among children, seem to be catching up.',
+          'The epidemiological transition, or "ageing of death": as infectious diseases recede, deaths shift from children to old people dying of chronic diseases such as heart disease and cancer. Measuring all this requires a complete vital registration system (every birth and death recorded) plus censuses, which is itself a sign of state capacity. Sweden had one in the 18th century; many poor countries still do not, and surveys of mothers fill the gap.',
+        ],
+      },
+      {
+        heading: 'Reading: foragers, farmers and the first inequalities (Deaton)',
+        paragraphs: [
+          'For most of human history people lived as hunter-gatherers. They ate a varied diet and walked a lot, but life expectancy was only about 20-30 years. Bands were remarkably equal: without ways to store food, sharing a big kill worked as insurance, and Deaton suggests our strong sense of fairness may go back to this. It was no paradise, though: violence within and between groups was common.',
+          'The Neolithic revolution, the switch to farming about 10,000 years ago, was less a step up than an adaptation to harder foraging as large game ran out. Farming allowed food storage, property, rulers and priests, and with them inequality. Crowded settlements and domesticated animals brought new infectious diseases such as smallpox, measles and tuberculosis, and sanitation became harder. Life expectancy did not rise for thousands of years: higher productivity meant more people, not longer lives (the Malthusian equilibrium).',
+          'The lesson Deaton draws: wellbeing has not improved steadily or for everyone, and inequality is largely a product of civilisation.',
+        ],
+      },
+      {
+        heading: 'Reading: why did people start living longer? (Deaton)',
+        paragraphs: [
+          'From 1550 to 1750 English ducal families lived no longer than ordinary people, although they ate far more: disease, not food, set the limit. After 1750 a health gradient (the better-off living longer) opened up, reaching nearly 20 years by 1850. The elite were the first to use new and expensive knowledge, such as variolation (deliberate infection with smallpox material to give a mild case and lifelong immunity; the safer vaccination followed around 1800), quinine and other imported remedies. The general pattern: new knowledge first creates health inequalities, then spreads and gets cheaper so that everyone gains.',
+          'Between 1850 and 1950 life expectancy in England and Wales rose from about 40 to almost 70, mostly because fewer children died. Medicine cannot explain this: death rates from many diseases were already falling before effective treatments existed. The McKeown thesis concluded that better nutrition and living standards were the cause. A related nutrition argument describes a trap in which small, underfed workers could not work enough to buy more food, until rising incomes and better diets set off a virtuous circle of bigger, healthier and more productive people.',
+          'Deaton argues food alone is not enough. The timing is wrong: child mortality fell almost at the same time across north-western Europe, although economic growth started at different dates; and well-fed aristocrats and monks did not outlive others in earlier centuries. What matters is net nutrition, what the body keeps after fighting disease. The main credit goes to public health: first sanitation and clean water, then measures based on the germ theory of disease, such as vaccination and hygiene.',
+          'Early industrial cities were deadlier than the countryside because drinking water was contaminated with sewage (the faecal-oral route of infection). The sanitary movement worked from the wrong "miasma" theory (foul smells cause disease) but still cleaned up cities. In the London cholera outbreak of 1854, deaths could be compared between households served by two water companies, one drawing water below the sewage outlets: an early natural experiment showing that cholera spreads through water.',
+          'Knowledge was free, but using it was not. Water supplies and sewers cost money and needed engineering, monitoring and state capacity, and politics decided who got them: in British industrial cities the factory owners who paid the taxes had little interest in clean water for workers, and it came only after the Reform Acts gave working men the vote. Behaviour also had to change (hand-washing, safe handling of food and waste), which took decades. Science itself responded to need: the deadly industrial cities created both the demand for the germ theory and the conditions to discover it.',
+        ],
+      },
     ],
     keyTerms: [
       {
@@ -154,6 +182,31 @@ export const w2: WeekContent = {
         term: 'Demographic transition',
         definition: 'Shift from high to low birth and death rates, with a population boom in between when deaths fall first.',
       },
+      {
+        term: 'Period life expectancy',
+        definition: "Life expectancy calculated as if today's death risk at each age will last for a newborn's whole life.",
+      },
+      {
+        term: 'Epidemiological transition',
+        definition: 'Shift from infectious diseases killing mostly children to chronic diseases killing mostly old people.',
+      },
+      {
+        term: 'Vital registration',
+        definition: 'Complete official recording of all births and deaths; a marker of state capacity.',
+      },
+      { term: 'Neolithic revolution', definition: 'The switch from foraging to settled farming, from about 10,000 years ago.' },
+      { term: 'Health gradient', definition: 'The pattern that richer, higher-status people have better health and live longer.' },
+      {
+        term: 'Variolation',
+        definition: 'Deliberate infection with smallpox material to cause a mild case and lasting immunity; older than vaccination.',
+      },
+      {
+        term: 'McKeown thesis',
+        definition: 'Mortality fell before effective medicine existed, so better nutrition and living standards must explain it.',
+      },
+      { term: 'Net nutrition', definition: 'The nutrition the body actually keeps after losses to disease and fever.' },
+      { term: 'Germ theory of disease', definition: 'Micro-organisms cause infectious diseases; it replaced the miasma theory.' },
+      { term: 'Miasma theory', definition: 'The mistaken belief that foul smells and bad air cause disease.' },
     ],
     readings: [
       'Allen, R. C. (2011). Global Economic History: A Very Short Introduction, ch. 1. Oxford University Press.',
@@ -486,6 +539,103 @@ export const w2: WeekContent = {
           },
         ],
       },
+      {
+        id: 'w2-b5',
+        title: 'Reading: the escape from early death',
+        topicId: 'w2-divergence-health-wealth',
+        exercises: [
+          {
+            id: 'w2b5-01',
+            type: 'choice',
+            prompt: 'US life expectancy at birth collapsed in 1918 because of the flu. Why does this overstate the risk for babies born that year?',
+            options: [
+              "It assumes the epidemic's death rates last a lifetime",
+              'It only counts the deaths of adults over age 65',
+              'It leaves out babies who were born in hospitals',
+              "It is based on the previous decade's census data",
+            ],
+            answer: 0,
+            explanation: 'Period measures freeze the death risks of one year. The epidemic lasted about a year, so most of these babies never faced it again.',
+          },
+          {
+            id: 'w2b5-02',
+            type: 'truefalse',
+            statement: 'Where many children die, most adults die at an age close to life expectancy at birth.',
+            answer: false,
+            explanation: 'Those who survive childhood live much longer than the average suggests. In England, life expectancy at 15 was higher than at birth until about 1900.',
+          },
+          {
+            id: 'w2b5-03',
+            type: 'fill',
+            text: 'The shift from infectious diseases killing children to chronic diseases killing old people is the ___ transition.',
+            options: ['epidemiological', 'demographic', 'industrial', 'nutritional'],
+            answer: 'epidemiological',
+          },
+          {
+            id: 'w2b5-04',
+            type: 'choice',
+            prompt: 'Why is using life expectancy as THE measure of progress an ethical choice rather than a neutral one?',
+            options: [
+              'It weighs deaths of the young far more than deaths of the old',
+              'It only counts deaths caused by infectious diseases',
+              'It ignores the differences between men and women',
+              'It relies on surveys of mothers instead of death records',
+            ],
+            answer: 0,
+            explanation: 'Saving a baby adds many more years than saving an old person. By this yardstick the US did better before 1950 than after.',
+          },
+          {
+            id: 'w2b5-05',
+            type: 'multi',
+            prompt: 'What came with the switch from foraging to farming (the Neolithic revolution)?',
+            options: [
+              'Food storage and property',
+              'More inequality within communities',
+              'New crowd diseases such as smallpox',
+              'A lasting rise in life expectancy',
+              'Equal sharing of every large kill',
+            ],
+            answers: [0, 1, 2],
+            explanation: 'Life expectancy did not rise for thousands of years; equal sharing was typical of foragers, who could not store food.',
+          },
+          {
+            id: 'w2b5-06',
+            type: 'choice',
+            prompt: 'From 1550 to 1750 English dukes lived no longer than ordinary people, although they ate far more. What does this suggest?',
+            options: [
+              'Disease, not food, limited life expectancy',
+              'Aristocrats ate an unhealthy amount of meat',
+              'Parish records exaggerated commoners\' deaths',
+              'Wealth only mattered once hospitals existed',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b5-07',
+            type: 'match',
+            prompt: 'Match the concept to its meaning',
+            pairs: [
+              ['Health gradient', 'The better-off live longer'],
+              ['Net nutrition', 'Food kept after fighting disease'],
+              ['Variolation', 'Inoculation with smallpox matter'],
+              ['Miasma theory', 'Foul smells cause disease'],
+            ],
+          },
+          {
+            id: 'w2b5-08',
+            type: 'choice',
+            prompt: 'According to the reading, what deserves most credit for the fall in child mortality after 1850?',
+            options: [
+              'Public health: clean water, sanitation, germ theory',
+              'New medicines such as antibiotics and sulfa drugs',
+              'Higher food intake from rising wages on its own',
+              'More hospitals and more trained family doctors',
+            ],
+            answer: 0,
+            explanation: 'Mortality was falling before effective drugs existed, and food alone cannot explain the timing.',
+          },
+        ],
+      },
     ],
   },
 
@@ -648,6 +798,99 @@ export const w2: WeekContent = {
             ],
             answer: 0,
             explanation: 'This point comes from the seminar discussion of Deaton (2013).',
+          },
+        ],
+      },
+      {
+        id: 'w2-a4',
+        title: 'Reading: explaining the mortality decline',
+        topicId: 'w2-divergence-health-wealth',
+        exercises: [
+          {
+            id: 'w2a4-01',
+            type: 'choice',
+            prompt: 'Deaths from a disease were falling long before an effective drug existed, and kept falling at the same pace afterwards. What does this suggest?',
+            options: [
+              'Something other than the drug drove the decline',
+              'The drug was the main cause of the whole decline',
+              'Death records from before the drug are worthless',
+              'The disease grew more dangerous after the drug',
+            ],
+            answer: 0,
+            explanation: 'This is the evidence behind the McKeown thesis.',
+          },
+          {
+            id: 'w2a4-02',
+            type: 'choice',
+            prompt: 'Child mortality fell almost simultaneously across north-western Europe, although economic growth began at different dates. Which explanation does this weaken?',
+            options: [
+              'Rising incomes and better food as the main cause',
+              'Public health measures spreading across Europe',
+              'The spread of the germ theory of disease',
+              'Better statistics from vital registration',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2a4-03',
+            type: 'truefalse',
+            statement: 'Because the germ theory was free knowledge, cities could put it into practice as soon as it was known.',
+            answer: false,
+            explanation: 'Water supplies and sewers cost money, needed engineering, monitoring and state capacity, and depended on politics; behaviour took decades to change.',
+          },
+          {
+            id: 'w2a4-04',
+            type: 'choice',
+            prompt: 'In British industrial cities, clean drinking water for workers came only after the Reform Acts. Why?',
+            options: [
+              'Working men could now vote, shifting the political balance',
+              'The Acts made pipes and sewers much cheaper to build',
+              'Factory owners stopped needing river water for power',
+              'Doctors had only then proved cholera spread by water',
+            ],
+            answer: 0,
+            explanation: 'Factory owners paid the taxes and had little interest in clean water for workers. Removing one inequality (no vote) helped remove another (no clean water).',
+          },
+          {
+            id: 'w2a4-05',
+            type: 'choice',
+            prompt: "In 1854 two London water companies supplied the same streets, one drawing water below the sewage outlets. Why was comparing their customers' cholera deaths so convincing?",
+            options: [
+              'Similar households differed mainly in their water',
+              "One company's customers were all much richer",
+              'Cholera deaths had never been counted before',
+              'The miasma theory predicted the same result',
+            ],
+            answer: 0,
+            explanation: 'It was a natural experiment. Even so, other explanations (such as one company serving richer customers) had to be ruled out.',
+          },
+          {
+            id: 'w2a4-06',
+            type: 'multi',
+            prompt: 'What did it take to turn the germ theory into lower death rates?',
+            options: [
+              'Money for water supplies and sewers',
+              'Engineering skills and monitoring',
+              'State capacity and competent officials',
+              'Changes in everyday behaviour',
+              'Effective antibiotics for cholera',
+              'A shift of people back to the countryside',
+            ],
+            answers: [0, 1, 2, 3],
+          },
+          {
+            id: 'w2a4-07',
+            type: 'open',
+            prompt: 'Deaton argues that "escapes make for inequality". Explain this with examples from England after 1750 and from Europe after 1850. Is such inequality a bad sign?',
+            modelAnswer:
+              'New knowledge and techniques (variolation, imported medicines, later the germ theory) first reach those who are rich and well informed, so they pull ahead. English aristocrats gained nearly 20 years of life expectancy over commoners between 1750 and 1850, and after 1850 north-western Europe pulled ahead of southern and eastern Europe and the rest of the world. Over time the knowledge spreads, gets cheaper and leads to measures for everyone (vaccination, sanitation), so gaps narrow: Italy and Portugal caught up with England in the 20th century. New inequality can therefore signal that general improvement is coming, but diffusion is not automatic: it needs money, state capacity and political will.',
+            keyPoints: [
+              'New knowledge reaches the rich and informed first',
+              'Example: aristocrats versus commoners in England after 1750',
+              'Example: leading versus lagging countries after 1850',
+              'Gaps narrow as knowledge spreads and gets cheaper',
+              'Diffusion needs money, state capacity and politics',
+            ],
           },
         ],
       },

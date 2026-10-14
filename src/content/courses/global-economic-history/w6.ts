@@ -1,7 +1,7 @@
 import type { WeekContent } from '../../types';
 
 // Week 6 - African Development in the Long Run
-// Sources: Week 6 lecture; Allen VSI ch. 7 (Africa).
+// Sources: Week 6 lecture; Allen VSI ch. 7 (Africa); readings Frankema (2021) and Frankema & Meier zu Selhausen (2026).
 
 export const w6: WeekContent = {
   topic: {
@@ -18,6 +18,8 @@ export const w6: WeekContent = {
       'Colonisation of the interior came late, made possible by quinine, the Maxim gun, steamboats and the telegraph.',
       'Indirect rule through chiefs, settler land seizures and extractive regimes (Congo Free State) left harmful legacies.',
       'Railways and mission schools had lasting effects; at independence Africa was still specialised in primary exports.',
+      'Africa was not stuck at subsistence: growth came in cycles tied to trade, and it became the poorest region only after about 1975. Underneath, deep transitions (population boom, urbanisation, changing land and labour markets) continue.',
+      'In the mineral transition oil and minerals replaced crops. Crop exports mostly collapsed through violence and fiscal predation, not Dutch disease, but they rarely recovered in mineral economies.',
     ],
     sections: [
       {
@@ -97,6 +99,28 @@ export const w6: WeekContent = {
           'The direction of trade also shifted: in the early 1960s about 70% of African trade was with Europe; by the 2010s Europe\'s share had fallen to about 40%, Asia took around 30% of exports and trade within Africa had doubled.',
         ],
       },
+      {
+        heading: 'Reading: growth, reversals and deep transitions (Frankema 2021)',
+        paragraphs: [
+          "Sub-Saharan Africa is the poorest world region today, but it was not a rock-bottom subsistence economy in the 1950s: GDP per head of about $900-1,000 was well above the world's poorest levels of $300-400. It became the poorest region only in the last quarter of the 20th century, when Asia accelerated and Africa fell into a long depression. Its history is one of recurring cycles of growth and contraction (growth reversals), not permanent stagnation.",
+          'The roots lie in low agricultural productivity and geographic barriers to integration: extremely varied and erratic rainfall, poor soils, few navigable rivers and tropical diseases of people, animals and crops, which favoured fragmentation over integration. This is no geographic determinism, but it helps explain the volatility.',
+          'Growth followed trade. The 19th-century commercial transition from slave exports to commodity exports (palm oil, groundnuts, gum) was driven by rising terms of trade and made colonial rule feasible: trade taxes paid for colonial states, so more trade meant more state capacity. After the mid-1880s export prices fell, and colonial governments pushed specialisation in a few primary exports so that growing volumes made up for falling prices. Rough estimates suggest income per head grew for about eight decades (1870-1950); the deepest setback came after 1970.',
+          'Much early colonial growth was "coerced growth": forced labour carried loads, dug mines, built railways and worked plantations. Real wages rose in British West Africa but stayed near subsistence in British East Africa, and parts of Central Africa suffered a population collapse.',
+          'Varieties of colonial capitalism: trade economies (coastal West Africa, Uganda), where African farmers produced the exports and governments mainly taxed trade; labour reserves (East, Southern and Portuguese Africa), where head and hut taxes, pass laws, land alienation and native reserves pushed Africans into wage work for European mines, farms and firms; and concession-company areas (the Belgian Congo, French Equatorial Africa), where chartered companies held administrative power. Such typologies have limits: policies changed over time, and most charters were withdrawn.',
+          'From the 1940s colonial states spent more on schools, health and infrastructure; child mortality fell, population growth accelerated and light manufacturing grew (from about 3% of GDP in Tanzania to 16% in Zimbabwe around 1960). After independence many states pursued import-substituting industrialisation and five-year plans. But food production per head stagnated: the Green Revolution largely bypassed Africa (its wheat and rice varieties did not suit African ecologies, though improved maize did), and policy favoured the cities (urban bias). Cheap oil-dollar loans in the 1970s became a debt crisis in the 1980s, and structural adjustment programmes (spending cuts, trade liberalisation, privatisation) hit rural areas hard. Common threads in the crises: "states without nations" inside colonial borders, fights over export revenues that fed patronage and corruption, and Cold War interference.',
+          'Deep transitions continue underneath the cycles. Population growth above 3% a year for decades (about 4 billion people expected by 2100, from roughly 5 to 150 people per km²) is making land the scarce factor and closing the old land-extensive growth path. Cities and a vast informal sector (70-90% of employment) are growing; coerced labour has given way to self-employment; land is moving from customary communal tenure to individual property, with overlapping claims and conflict; and an education revolution has spread basic skills, though access remains unequal. Frankema warns against assuming that colonial institutions simply persist: they have changed profoundly. Since 1995 growth has revived (about 5% a year, 2% per head) and trade has turned towards Asia.',
+        ],
+      },
+      {
+        heading: "Reading: Africa's mineral transition (Frankema & Meier zu Selhausen)",
+        paragraphs: [
+          'Sub-Saharan Africa (excluding South Africa) went through two trade transitions: the commercial transition of the 19th century, when tropical crops such as palm oil, groundnuts and rubber replaced slave exports, and the mineral transition of the 20th and 21st centuries, when oil and other minerals replaced crops. Counting a country as a mineral exporter when minerals make up over half its exports, there were 6 in the 1950s and 24 in the 2010s (9 of them oil exporters), home to about 54% of the population.',
+          "Minerals grew slowly at first, led by copper from the Central African Copperbelt after 1900: their share of exports rose from about 4% in 1900 to 32% in 1960. Oil, first exported in the late 1950s, overtook both crops and other minerals in the 1970s and made up 65% of exports by 1980. Under colonial rule mining and export agriculture grew together (crowding in): mines needed food, and railways built for mines also carried crops, though often with coerced labour.",
+          'Price scissors: crop and mineral prices moved together for most of the 20th century but diverged twice, in the 1970s (oil) and after about 2000 (other minerals such as gold, copper and cobalt), while crop prices stayed near their long-run floor. The idea that surplus labour quickly expands supply whenever prices rise, pulling them back down, fits crops but not minerals. A tenfold rise in gold prices between 2000 and 2020 has drawn millions into artisanal and small-scale mining.',
+          'Resource-curse arguments link mineral wealth to volatile revenues, Dutch disease, corruption and conflict. Mining could affect export agriculture through five channels: Dutch disease (a stronger currency makes crops less competitive), private reallocation of capital and labour towards mining and cities, a fiscal-political shift in which governments rely on mineral revenue and neglect farming, ecological damage, and crowding in through useful linkages.',
+          "The key finding comes from 32 collapses of crop exports since 1966. Their main causes were political violence (14 cases, such as Rwanda's coffee after the 1994 genocide) and fiscal predation or state divestment (12, such as Ghana's cocoa marketing board paying farmers a shrinking share of the world price, about 65% in the early 1960s and 32% by the early 1980s, or forced villagisation in Tanzania). Price busts explain 6 and Dutch disease only 3. Yet minerals mattered for recovery: about 69% of collapsed crop sectors recovered fully in countries without major mining, against 6% in mineral economies, because governments counting on mineral revenue had little reason to rebuild what farming needed. The mineral transition shaped recovery rather than causing the decline.",
+        ],
+      },
     ],
     keyTerms: [
       { term: 'Land abundance', definition: 'Plenty of land relative to people; makes labour, not land, the scarce factor.' },
@@ -139,8 +163,51 @@ export const w6: WeekContent = {
         term: 'Bio-geographic barriers',
         definition: "Frankema's four: erratic rainfall, poor soils, few navigable rivers and tropical disease.",
       },
+      {
+        term: 'Growth reversals',
+        definition: 'Recurring cycles in which periods of growth are followed by contraction, typical of African economic history.',
+      },
+      {
+        term: 'Coerced growth',
+        definition: 'Early colonial growth built on forced labour for porterage, mining, railways and plantations.',
+      },
+      {
+        term: 'Labour reserve',
+        definition: 'Colonial type in which taxes, pass laws and land seizures pushed Africans into wage work for European enterprises.',
+      },
+      {
+        term: 'Concession company',
+        definition: 'A chartered company given control over land, labour and resources, sometimes with powers to tax and use force.',
+      },
+      { term: 'Urban bias', definition: 'Policies that favour cities at the expense of farmers, e.g. low fixed crop prices.' },
+      {
+        term: 'Structural adjustment programme',
+        definition: 'IMF/World Bank conditions in the 1980s-90s: spending cuts, trade liberalisation and privatisation.',
+      },
+      { term: 'Informal sector', definition: 'Unregistered work outside state regulation and taxation; 70-90% of African jobs.' },
+      { term: 'Mineral transition', definition: 'The shift in African exports from tropical crops to oil and other minerals.' },
+      {
+        term: 'Price scissors',
+        definition: 'Prices of two groups of goods diverging, as mineral prices rose away from crop prices after 1970 and 2000.',
+      },
+      {
+        term: 'Resource curse',
+        definition: 'The claim that mineral wealth brings volatility, Dutch disease, corruption or conflict and slows development.',
+      },
+      {
+        term: 'Artisanal and small-scale mining',
+        definition: 'Labour-intensive mining by individuals or small groups, booming with high gold prices.',
+      },
+      {
+        term: 'Fiscal predation',
+        definition: 'Over-taxing a sector (e.g. through marketing boards) until producers abandon it.',
+      },
     ],
-    readings: ['Allen, R. C. (2011). Global Economic History: A Very Short Introduction, ch. 7 (Africa).'],
+    readings: [
+      'Allen, R. C. (2011). Global Economic History: A Very Short Introduction, ch. 7 (Africa).',
+      'Frankema, E. (2021). African economic development: growth, reversals, and deep transitions. In The Cambridge Economic History of the Modern World, vol. 2, ch. 10. Cambridge University Press.',
+      "Frankema, E. & Meier zu Selhausen, F. (2026). Africa's mineral transition in long-term perspective. African Economic History Working Paper 86.",
+    ],
   },
 
   basics: {
@@ -459,6 +526,191 @@ export const w6: WeekContent = {
           },
         ],
       },
+      {
+        id: 'w6-b5',
+        title: 'Reading: growth and reversals',
+        topicId: 'w6-africa',
+        exercises: [
+          {
+            id: 'w6b5-01',
+            type: 'choice',
+            prompt: 'When did sub-Saharan Africa become the poorest region of the world, according to the reading?',
+            options: [
+              'In the last quarter of the 20th century',
+              'Already by 1500, before the slave trades',
+              'During the scramble for Africa, 1880-1900',
+              'Right after independence around 1960',
+            ],
+            answer: 0,
+            explanation: 'Around 1950 African GDP per head was well above the poorest levels; Africa fell behind when Asia accelerated and Africa entered a long depression.',
+          },
+          {
+            id: 'w6b5-02',
+            type: 'truefalse',
+            statement: 'African income per head stagnated throughout the colonial period.',
+            answer: false,
+            explanation: 'Rough estimates suggest growth for about eight decades (1870-1950), though much of it was coerced growth. The deepest setback came after 1970.',
+          },
+          {
+            id: 'w6b5-03',
+            type: 'match',
+            prompt: 'Match the type of colonial economy to its description',
+            pairs: [
+              ['Trade economy', 'African farmers grow the exports'],
+              ['Labour reserve', 'Africans pushed into wage work'],
+              ['Concession area', 'Companies hold state powers'],
+            ],
+          },
+          {
+            id: 'w6b5-04',
+            type: 'choice',
+            prompt: 'Why did colonial states depend so much on export growth?',
+            options: [
+              'Trade taxes paid for the colonial state',
+              'Trade was the only way to end famines',
+              'Metropolitan voters demanded free trade',
+              'African rulers insisted on it in treaties',
+            ],
+            answer: 0,
+            explanation: 'The more trade there was to tax, the more colonial governments could invest.',
+          },
+          {
+            id: 'w6b5-05',
+            type: 'choice',
+            prompt: 'Why did the Green Revolution largely bypass sub-Saharan Africa?',
+            options: [
+              'Its wheat and rice varieties did not suit African ecologies',
+              'African governments banned all imported seed varieties',
+              'Africa already had the highest yields in the world',
+              'Fertiliser was cheaper in Africa than anywhere else',
+            ],
+            answer: 0,
+            explanation: 'Improved maize varieties did spread. Poor market integration, storage and fertiliser supply, and urban bias did not help.',
+          },
+          {
+            id: 'w6b5-06',
+            type: 'multi',
+            prompt: 'Which are "deep transitions" in African economies since about 1950?',
+            options: [
+              'A population boom that makes land scarcer',
+              'Rapid urbanisation',
+              'A move from coerced labour to self-employment',
+              'A shift from communal to individual land rights',
+              'A return to land-extensive farming',
+              'Falling school enrolment',
+            ],
+            answers: [0, 1, 2, 3],
+          },
+          {
+            id: 'w6b5-07',
+            type: 'fill',
+            text: 'In many African economies the ___ sector accounts for 70-90% of employment.',
+            options: ['informal', 'mining', 'manufacturing', 'public'],
+            answer: 'informal',
+          },
+          {
+            id: 'w6b5-08',
+            type: 'choice',
+            prompt: 'What did the structural adjustment programmes of the 1980s-90s involve?',
+            options: [
+              'Spending cuts, trade liberalisation and privatisation',
+              'Large new subsidies for farmers and for food',
+              'Nationalising mines and foreign-owned banks',
+              'Higher tariffs to protect infant industries',
+            ],
+            answer: 0,
+          },
+        ],
+      },
+      {
+        id: 'w6-b6',
+        title: 'Reading: the mineral transition',
+        topicId: 'w6-africa',
+        exercises: [
+          {
+            id: 'w6b6-01',
+            type: 'order',
+            prompt: 'Put the main phases of African export specialisation in order',
+            items: ['Slave exports', 'Tropical crops (commercial transition)', 'Copper from the Copperbelt', 'Oil overtakes all other exports'],
+          },
+          {
+            id: 'w6b6-02',
+            type: 'fill',
+            text: 'The number of African mineral exporters rose from 6 in the 1950s to ___ in the 2010s.',
+            options: ['24', '12', '40', '6'],
+            answer: '24',
+            explanation: 'Nine of them export oil; together they hold about 54% of the population.',
+          },
+          {
+            id: 'w6b6-03',
+            type: 'choice',
+            prompt: 'What were the "price scissors" of the 1970s and the 2000s?',
+            options: [
+              'Mineral prices rising away from crop prices',
+              'Crop prices rising away from mineral prices',
+              'All commodity prices falling at the same time',
+              'Manufactured goods getting dearer than food',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6b6-04',
+            type: 'choice',
+            prompt: 'Which of these describes Dutch disease as a channel from mining to agriculture?',
+            options: [
+              'A stronger currency makes crop exports less competitive',
+              'Mining pollution poisons the soil of nearby farms',
+              'Governments stop investing in roads and seed',
+              'Workers leave farms for jobs in mining towns',
+            ],
+            answer: 0,
+            explanation: 'The others are the ecological, fiscal-political and factor-reallocation channels.',
+          },
+          {
+            id: 'w6b6-05',
+            type: 'choice',
+            prompt: 'What caused most collapses of African crop exports since 1966?',
+            options: [
+              'Political violence and fiscal predation',
+              'Dutch disease from new mines and oil',
+              'Falling world prices for tropical crops',
+              'Droughts and other climate shocks',
+            ],
+            answer: 0,
+            explanation: 'Of 32 cases: violence 14, fiscal predation or divestment 12, price busts 6, Dutch disease only 3.',
+          },
+          {
+            id: 'w6b6-06',
+            type: 'truefalse',
+            statement: 'Collapsed crop-export sectors were about as likely to recover in mineral economies as elsewhere.',
+            answer: false,
+            explanation: 'Full recovery happened in about 69% of cases without major mining, but only about 6% in mineral economies.',
+          },
+          {
+            id: 'w6b6-07',
+            type: 'match',
+            prompt: 'Match the concept to its meaning',
+            pairs: [
+              ['Resource curse', 'Minerals hold back development'],
+              ['Fiscal predation', 'Taxing farmers out of a crop'],
+              ['Crowding in', 'Mining helps other sectors grow'],
+              ['Artisanal mining', 'Small-scale, labour-intensive digging'],
+            ],
+          },
+          {
+            id: 'w6b6-08',
+            type: 'choice',
+            prompt: 'Why does the idea that surplus labour keeps commodity prices low fit crops better than minerals?',
+            options: [
+              'Mineral prices stayed high despite millions of new miners',
+              'Crop prices rose fastest of all goods after 2000',
+              'Mining needs no labour, so labour cannot matter',
+              'There is no surplus labour anywhere in Africa',
+            ],
+            answer: 0,
+          },
+        ],
+      },
     ],
   },
 
@@ -614,6 +866,97 @@ export const w6: WeekContent = {
             ],
             answer: 0,
             explanation: "Allen also points to expanding output in Africa itself, which pushed prices down further.",
+          },
+        ],
+      },
+      {
+        id: 'w6-a4',
+        title: 'Reading: cycles, minerals and recovery',
+        topicId: 'w6-africa',
+        exercises: [
+          {
+            id: 'w6a4-01',
+            type: 'choice',
+            prompt: 'Around 1950 African GDP per head was about $900-1,000, well above the poorest levels of $300-400. Which view does this challenge?',
+            options: [
+              'That Africa was always stuck at bare subsistence',
+              'That colonial rule had no effect on African growth',
+              'That Asia was richer than Africa in 1950',
+              'That African statistics are entirely unreliable',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6a4-02',
+            type: 'choice',
+            prompt: "Tanzania's cashew exports vanished during forced villagisation in the 1970s, while cotton survived. Why was cashew hit harder?",
+            options: [
+              'Cashew trees cannot move; cotton is replanted every year',
+              'Cashew needed more irrigation than the villages had',
+              'Cotton prices boomed while cashew prices collapsed',
+              'The state banned cashew to promote cotton exports',
+            ],
+            answer: 0,
+            explanation: 'Tree crops are long-term investments, so forced relocation destroyed them; annual crops are more mobile.',
+          },
+          {
+            id: 'w6a4-03',
+            type: 'choice',
+            prompt: 'Why might a collapsed crop sector recover far less often in a mineral economy, even if mining did not cause the collapse?',
+            options: [
+              'States living off mineral revenue neglect rebuilding farming',
+              'Mines buy up all farmland, so none is left for crops',
+              'Mineral exporters are banned from exporting crops',
+              'Farmers in mineral economies earn too much to farm',
+            ],
+            answer: 0,
+            explanation: 'Sudan is the exception that fits: after losing most of its oil in 2011, it reinvested in cotton.',
+          },
+          {
+            id: 'w6a4-04',
+            type: 'truefalse',
+            statement: "Frankema argues that Africa's institutions have stayed essentially the same since colonial times.",
+            answer: false,
+            explanation: 'Labour, land, capital and education markets changed profoundly, though not necessarily in ways that promote growth.',
+          },
+          {
+            id: 'w6a4-05',
+            type: 'choice',
+            prompt: "Why does rapid population growth close Africa's old land-extensive growth path?",
+            options: [
+              'Land becomes scarce while labour becomes abundant',
+              'Fewer people are left to clear new land',
+              'Population growth pushes up world crop prices',
+              'Larger families refuse to work for wages',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w6a4-06',
+            type: 'multi',
+            prompt: 'Which features did many post-independence African crises share?',
+            options: [
+              '"States without nations" inside colonial borders',
+              'Fights over export revenues feeding patronage',
+              'Cold War interference in local conflicts',
+              'A shortage of land for farming',
+              'Over-rapid industrialisation',
+            ],
+            answers: [0, 1, 2],
+          },
+          {
+            id: 'w6a4-07',
+            type: 'open',
+            prompt: 'Is mineral wealth a curse for African development? Use the price trends of crops and minerals and the evidence on how crop exports collapsed and recovered.',
+            modelAnswer:
+              "Resource-curse arguments say minerals bring volatile revenues, Dutch disease, corruption and conflict. The long-run evidence is mixed. Mining and export agriculture grew together under colonial rule, and since the 1970s (oil) and again since 2000 (other minerals) mineral prices have risen away from crop prices, so minerals have driven much of Africa's export revenue. Most collapses of crop exports since 1966 were caused by political violence and fiscal predation (marketing boards, forced villagisation), with Dutch disease the main cause in only 3 of 32 cases, so minerals did not usually cause agricultural decline. But recovery was far less likely in mineral economies (about 6% against 69%), because governments counting on mineral revenue had little reason to rebuild farming infrastructure. So minerals are not a curse in the simple crowding-out sense, but they can lock in the neglect of agriculture, on which most Africans depend; the outcome depends on institutions and policy.",
+            keyPoints: [
+              'Resource-curse channels: volatility, Dutch disease, corruption, conflict',
+              'Mineral prices diverged upwards from crop prices (1970s, 2000s)',
+              'Collapses mainly caused by violence and fiscal predation, rarely Dutch disease',
+              'Recovery much less likely in mineral economies (about 6% vs 69%)',
+              'A verdict that depends on institutions and policy',
+            ],
           },
         ],
       },
