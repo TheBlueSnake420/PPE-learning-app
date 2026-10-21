@@ -1,102 +1,184 @@
 import type { WeekContent } from '../../types';
 
-// Week 7 - Interest Groups and Challenges to Party Government (not lectured yet)
-// Sources: revision notes by last year's students (their "week 6"), incl. the
-// populism/technocracy/party government table from Caramani (2017).
+// Week 7 - Interest Groups and Challenges to Party Government
+// Sources: Week 7 lecture slides; reading Caramani (2017). The Pedersen index comes from last
+// year's student notes.
 
 export const w7: WeekContent = {
-  fromNotes: true,
   topic: {
     id: 'w7-interest-groups',
     week: 7,
     title: 'Interest Groups and Challenges to Party Government',
     summary:
-      'What interest groups are and how they act, why people join them, how democracies should treat them, and how dealignment, populism and technocracy challenge party government.',
+      'What interest groups are and how they act, why people join them, how democracies should treat them, how voters and parties are changing, and how populism and technocracy challenge party government.',
     keyPoints: [
-      'Interest groups try to influence government without contesting elections.',
-      'Repertoires: inside lobbying, outside lobbying (protest), political exchange and private interest government.',
-      'Collective action problem (Olson): rational individuals free-ride, so groups need selective incentives.',
-      'Three normative views: republican (Rousseau), pluralist (Tocqueville, Dahl) and neo-corporatist (Schmitter).',
-      'Voters are dealigning and more volatile; party systems are fragmenting.',
-      'Populism (will) and technocracy (reason) both reject party government, but in opposite ways (Caramani).',
+      'Interest groups are membership organisations that appeal to government but do not take part in elections; where groups and parties blur, look for functional equivalents.',
+      'Repertoires: inside lobbying, outside lobbying (contentious politics), political exchange and private interest government.',
+      'Collective action problem: rational individuals free-ride, so groups offer selective incentives such as insurance (the Ghent system) or a sense of community.',
+      'Three normative views: republican (groups undermine the general will), pluralist (competing groups protect liberty) and neo-corporatist (a few peak groups cooperate with the state).',
+      'Are party systems still frozen? Demand side: dealignment, volatility and falling satisfaction with democracy. Supply side: fragmentation and new types of party.',
+      "Low satisfaction matters for turnout and for losers' consent; extreme wealth and disinformation add new pressures.",
+      'Populism (the will of the people) and technocracy (expertise) both reject party government: one common good, no pluralism, no mediation, no accountability.',
+      'Party government balances responsiveness and responsibility through competition, mandates and compromise.',
     ],
     sections: [
       {
         heading: 'What are interest groups?',
         paragraphs: [
-          'Classic definitions see interest groups as associations that make claims on other groups in society (Bentley 1908; Truman 1951). A narrower definition: membership organisations that try to influence government but do not take part in elections (Wilson 1990). Examples: trade unions, employers\' associations, Greenpeace, medical associations, the NRA.',
-          'Typical properties: voluntary membership, an organisational (bureaucratic) structure, and the representation of interests. The line with parties is not always sharp: where union density is low, unions may be weak or state-controlled, and groups can claim to serve a public interest or defend a private one.',
+          "Classic definitions see interest groups as associations that make claims on other groups in society (Bentley 1908; Truman 1951). An updated definition separates them from parties: membership organisations that appeal to government but do not take part in elections (Wilson 1990). Examples include trade unions, employers' associations, Greenpeace, medical associations and the NRA.",
+          'Their formal properties are voluntary membership, a bureaucratic structure of decision-making, and the representation of interests.',
+          'What if interest groups and parties (or other organisations) are not clearly separated? Then look for functional equivalents: organisations that perform the same function, because the institutional context shapes how interests are best represented. Ambiguities arise from political contexts (union density means something very different in China than in France) and from the line between public and private interests. A normative puzzle remains: can a pluralist democracy regulate interest groups without questioning the right of association?',
         ],
       },
       {
         heading: 'What interest groups do',
         paragraphs: [
-          'Direct (inside) lobbying: personal access to decision-makers, e.g. business lobbyists in Brussels or Washington.',
-          'Contentious politics (outside lobbying): public campaigns and demonstrations, as social movements do.',
-          'Political exchange: groups trade information, support and resources for influence on policy, e.g. unions and employers negotiating the minimum wage with the government.',
-          'Private interest government: groups take on public functions themselves, e.g. self-governing bodies in agriculture that regulate the quality and quantity of production.',
+          'Direct (inside) lobbying: personal access to decision-makers, such as business lobbyists in Brussels or Washington.',
+          'Contentious politics (outside lobbying): public demonstrations and campaigns by social movements, such as Extinction Rebellion.',
+          'Political exchange: groups offer information, support, resources or social peace in exchange for influence on policy, as when unions and employers negotiate the minimum wage with the government.',
+          'Private interest government: groups take on public functions and so become part of policy networks, as with self-governing bodies in agriculture that regulate the quality and quantity of food production.',
         ],
       },
       {
         heading: 'Why join? The collective action problem',
         paragraphs: [
-          'If a group wins a policy, everyone with that interest benefits, members or not. So why pay to join? Mancur Olson (The Logic of Collective Action, 1965) argued that rational individuals free-ride, and that only selective incentives (benefits available to members alone) overcome this. A famous example is the Ghent system, in which unions administer unemployment insurance, so membership brings a personal benefit; union density is high where it exists.',
-          'People also join for other reasons: a sense of community, finding participation meaningful in itself, overestimating the cost of not joining, and groups can draw on funding beyond membership fees.',
-          'Representation is unequal: some interests have far more money, some are more concentrated and easier to organise, and some are easier for governments to understand and deal with.',
+          'If a group wins a policy, everyone with that interest benefits, members or not. So why join if you can free-ride? This is the logic of rational choice: start from individual cost-benefit calculations. On this view only selective incentives, benefits for members alone, motivate rational individuals to join (Olson 1965): for example insurance, as in the Ghent system where unions administer unemployment insurance, or a sense of community.',
+          'People also join because they misperceive the costs, because the costs of doing nothing seem higher, because of incentives from their social network, or because they experience participation not as a cost but as a benefit that gives meaning. Groups also have other sources of money besides membership fees.',
+          'Interest representation is unequal: some interests have far more financial resources, some are influential even without organising, and some organisations are easier for governments to understand. Should governments correct these inequalities with subsidies or access, or by restricting financial support to certain groups?',
         ],
       },
       {
         heading: 'Good or bad for democracy? Three views',
         paragraphs: [
-          'Republican (unitarist) view, Rousseau: interest associations promote sectional interests and undermine the general will of the people.',
-          'Liberal (pluralist) view, Tocqueville and Dahl: conflicting interests are normal, and freely competing groups are a source of liberty and a counterweight to dominant interests and to government.',
-          'Neo-corporatist view, Schmitter: between the two. Society is seen as an organic whole in which a limited number of hierarchically organised groups (peak associations of employers and unions) cooperate structurally with the state. The structural involvement of the social partners in Dutch socio-economic policy is an example.',
+          'Republican (unitarist) view, associated with Rousseau: interest associations undermine the general will (la volonté générale) of the people by promoting sectional interests.',
+          'Liberal (pluralist) view, associated with Tocqueville and Dahl: conflicting interests are accepted, and interest groups are a source of liberty. Competing associations are counterweights to dominant interests, to government and to the majority, and civil organisations such as interest groups are "schools of democracy".',
+          '(Neo-)corporatist view, associated with Schmitter: an organic understanding of the political system as a body politic whose organs perform different but complementary functions; in each functional sector a balanced set of groups works with the state. Corporatism is normative: it calls for the involvement of civil society (as in Catholic social thought) or, in its authoritarian form, a functionally organised state (Fascist Italy). Neo-corporatism is empirical: structural cooperation between government and only some, hierarchically organised groups, which exchange their support for government policy for influence on policy-making or on the provision of public services. Examples are the structural involvement of the social partners in Austrian and Dutch socio-economic policy.',
         ],
       },
       {
-        heading: 'Pressures on party government',
+        heading: 'Are party systems still frozen? Voters',
         paragraphs: [
-          'Demand side (voters): dealignment means voting is less tied to cleavage identities such as class, religion or region; preferences become more individual, weakening the link between parties and voters. Volatility, the extent to which voters switch parties between elections, rises, and switches increasingly happen within the left or right bloc. A standard measure is the Pedersen index: half the sum of all parties\' absolute changes in vote share. Satisfaction with democracy depends on economic performance, which party is in power, the quality of governance (corruption) and voters\' age and education; dissatisfied citizens vote less.',
-          'Supply side (parties and elites): fragmentation, i.e. more parties, depending on the age of the democracy, the electoral system and how much power parliament has. Many new parties are splinters of established ones, some are built around a personality rather than an ideology (the PVV is a Dutch example), and some fill an ideological gap; new parties often lack the organisation to last. Causes include rapid social change since the war and established parties having shaped the rules that kept them in power. Catch-all and cartel parties also weakened ties to voters.',
+          'Politics is a "conflict of conflicts": of the billions of potential conflicts in society only a few become significant, and every party must decide which battle it most wants to win. The question now is whether the party systems, and the cleavages they were built on, are still frozen. Pressures come from the demand side (voters: dealignment, volatility, satisfaction with democracy) and the supply side (parties and elites: fragmentation and new types of party, after the catch-all and cartel parties).',
+          "Dealignment means that a voter's preferences are less related to her position on either side of a cleavage. Preferences become less collective and more individual, the link between parties and \"their\" voters is severed, and political competition is destabilised. Causes include new parties, declining political trust, and the individualisation and de-pillarisation of society.",
+          'Volatility is the extent to which voters switch their vote from one election to the next, making results harder to predict. We may overestimate it, because much of the switching happens within the left or right bloc rather than between them. We may also underestimate it, because it is hard to measure from aggregate results alone. Explanations point to sociology (class systems are not what they were in the 20th century) or to institutions (parties have not kept up with their voters\' changing circumstances).',
         ],
       },
       {
-        heading: 'Will versus reason: populism, technocracy, party government',
+        heading: 'Are party systems still frozen? Parties',
         paragraphs: [
-          'Caramani (2017) contrasts two critiques of party government. Populism claims political action should follow the will of the people; technocracy claims it should follow expertise, identifying objective solutions through rational and scientific procedures. Technocracy grew out of the organisational revolution of industrialisation (scientific management, specialisation) and the bureaucratisation of state and market.',
-          'They share a lot: both are anti-political and anti-party, assume one common good for society, reject pluralism and ideology, want unmediated representation, and offer no real mechanism of accountability, ignoring checks and balances.',
-          'They differ in how they identify the common good (the people or the leader versus experts), in legitimacy (will versus rational speculation), in their relation to voters (direct, continuous mobilisation versus excluding the masses), in representation (populists act as delegates and stress descriptive and symbolic representation; technocrats act as trustees with weak descriptive representation) and in focus (responsiveness versus responsibility).',
-          'Party government, by contrast, assumes a pluralist society with subjective interests, mediates them through competing parties, gains legitimacy from competition and mandates, aggregates by compromise and is held accountable vertically (voters) and horizontally (other institutions). The notes conclude that populists and technocrats tend to converge: populists in office need expertise, and technocrats cannot ignore voters.',
+          'Fragmentation: are there more and more parliamentary parties? Yes, but it depends on the age of the democracy (older democracies see fewer new parliamentary parties), the electoral system, and how much power parliament has to affect policy compared with lobbies and interest groups. And yes, but: many new parties are a flash in the pan; they often lack the organisational skills to last, since getting into parliament once and staying there for several terms take different skills; and many "new" parties come from established ones, through splinters, splits or mergers.',
+          'Causes are again sociological (massive social change since the Second World War: why would party systems not follow?) or institutional: established parties helped design the electoral and other rules that kept them in power ("turkeys voting for Christmas").',
+          'Types of party keep evolving: fairly new parties built around big personalities rather than ideologies win big; in response to political turmoil a new kind of "sensible", "responsible" centre party appears; and other parties move into empty ideological space. The lecture asks why people start a new interest group or a new party to represent an interest, using agrarian interests in the Netherlands as an example.',
+        ],
+      },
+      {
+        heading: 'Satisfaction with democracy and legitimacy',
+        paragraphs: [
+          'Satisfaction with democracy is measured with questions such as "On a scale of 1-10, how satisfied are you with how democracy works in your country?" Its decline is linked to a country\'s economic performance, which party is in power, the quality of governance and corruption, and the age and education of respondents.',
+          "Satisfaction matters, first, for voter turnout, and second, for the legitimacy of lost elections: losers' consent, the willingness of those whose side lost to accept the result. The protests after the US elections of 2016 and 2020 show it under strain.",
+          'Big tech adds pressure. It is a difference in degree: extreme wealth in elections (campaign finance, such as billionaires spending millions against a proposed billionaire tax) and in government (access to lucrative government contracts). And it is a difference in kind: misinformation and disinformation on social media (deepfakes, troll farms, bot armies), while AI makes it cheaper to produce content and target it at key groups of voters, so that "bad actors can do a lot more with a lot less".',
+        ],
+      },
+      {
+        heading: 'Reading: party government and its two critics (Caramani 2017)',
+        paragraphs: [
+          'Representative democracy is mainly party government. Parties structure the vote: they articulate interests, aggregate them into more or less coherent ideologies and formulate programmes. In the responsible party model, two or more parties offer distinct programmes, voters choose between them, and the vote works as a mandate or "contract" on which the winners are later held to account. The model fits the proportional systems of Western Europe better than the United States, where parties are less cohesive and competition is district-based.',
+          'Representation can follow two models. In the delegate model, representatives act on a mandate; it assumes voters have the time and expertise to judge, choice is based on programmes, control is prospective, and the focus is responsiveness (input legitimacy). In the trustee model, representatives act independently; it assumes voters lack time or expertise, choice is based on competence and trust, control is retrospective accountability, and the focus is responsibility, making good long-term decisions (output legitimacy). Party government tries to balance responsiveness and responsibility.',
+          'Parties are attacked from two sides. The populist critique says they are no longer responsive: they moved from society to the state (cartel parties) and lost touch with people\'s problems. The technocratic critique says they are irresponsible, or over-responsive: they chase opinion polls and short-term electoral gains instead of governing well. Three developments feed both critiques: electoralism (parties focused on winning votes and office), complex multilevel governance (international bodies, agencies and networks that feel distant and technical), and mediatization (new media let outsiders bypass parties and set the agenda, while constant scrutiny pushes parties towards quick, sellable results).',
+        ],
+      },
+      {
+        heading: 'Reading: what populism and technocracy share',
+        paragraphs: [
+          'Populism is a form of representation claiming that political action must follow the unconstrained will of the people; technocracy claims that experts should identify and implement objective solutions to society\'s problems. Both present themselves as anti-political and anti-party, standing above party politics, which they see as the pursuit of particular interests.',
+          'They share four features. (1) A unitary common interest: there is one general good for society as a whole, which can be discovered. (2) A non-pluralist view: politics means doing what is good for all, not choosing between competing visions, so they claim to be anti-ideological and see no need for binding programmes; they are judged on results (output), not on a mandate. (3) Unmediated representation: anything between the people and the elite, such as parties and representative institutions, distorts the general interest, so both rely on an elite that is left free to act. (4) No accountability: neither vertical (voters sanctioning representatives) nor horizontal (constraints such as the rule of law, checks and balances and international treaties).',
+        ],
+      },
+      {
+        heading: 'Reading: how populism and technocracy differ',
+        paragraphs: [
+          'They differ in how the common interest is found. Populism finds it in the will of the people, which is often "putative": defined or interpreted by the leaders themselves. Its focus is responsiveness. Technocracy finds it through rational speculation and scientific procedures, because ordinary people lack the time, skills and information. Its focus is responsibility, in a full trustee model.',
+          'Descriptive representation is strong in populism (people trust leaders because "they are like us", so leaders stress their ordinariness in dress, speech and lifestyle) and weak in technocracy (people trust experts because "they are not like us"). Symbolic representation is strong in populism, which relies on an organic image of the people as one body, emotion and myths, and largely absent in technocracy, whose image of society is a machine or system to be managed. Populism incorporates the masses and mobilises their consent continuously through plebiscites, polls, social media and acclamation; technocracy excludes them and involves them only indirectly.',
+          'Populists act in theory as delegates of the people, but because leaders interpret the people\'s will, the mandate is "disguised" and they end up acting as trustees; votes serve to renew consent, not to give instructions. Populist majoritarianism is illiberal (unconstrained by checks and balances) rather than authoritarian, while technocracy in its extreme form is authoritarian because it does not rest on majority support; the EU\'s "democratic deficit" reflects a technocratic perception of it. Neither accepts a legitimate opposition: for populism the opposition is corrupt, for technocracy irrational.',
+          'Party government differs from both: there is no external common good but plural, subjective interests and cleavages; representation is mediated by parties; accountability is vertical and horizontal; legitimacy comes from competition; authorization comes from a mandate; and diverse interests are aggregated through compromise, with an image of society closer to a market. Descriptive representation is intermediate.',
+        ],
+      },
+      {
+        heading: 'Reading: correctives or alternatives?',
+        paragraphs: [
+          'Neither challenge is new. Populism runs from the Russian narodniks and the US People\'s Party in the late 19th century, Bonapartism and fascism, to Latin American leaders such as Perón and Vargas and recent parties on the right and left. Technocracy grew out of industrialisation (Taylorism and scientific management) and the bureaucratisation of state and market, and today appears in the regulatory state, independent agencies and non-partisan expert cabinets such as Italy\'s Monti government of 2011-12.',
+          'So far the challenge has stayed within liberal democracy, unlike between the world wars. Populists now organise as parties and enter elections and governments, and experts are co-opted by parties or found parties themselves, so both can act as correctives of party government rather than replacements. Parties are caught in a stranglehold between demands for more responsiveness and for more responsibility, and convergence is possible: populists acquire expertise once in office, and technocrats cannot ignore voters. Established parties have long-term assets (organisations, competent personnel, familiarity with the state, campaign experience, public funding and broad visions for the whole of society), so there are good reasons to expect party government to weather this challenge too.',
+        ],
+      },
+      {
+        heading: 'Extra: measuring volatility (from student notes)',
+        paragraphs: [
+          "A standard measure of electoral volatility is the Pedersen index: half the sum of all parties' absolute changes in vote share between two elections. If party A goes from 30% to 20%, B from 25% to 35% and C stays at 45%, the index is (10 + 10 + 0) / 2 = 10.",
+        ],
+      },
+      {
+        heading: 'The exam',
+        paragraphs: [
+          'The CDI exam is on Monday 2 November 2026, 08:30-10:00, in the Educatorium (Utrecht Science Park); check MyTimetable for the final room. It is a knowledge exam with 3 open questions, each made up of 2 or 3 sub-questions with a total limit of 400 words per question (good answers can be shorter), and 15 multiple-choice questions with one correct answer each and no penalty for wrong answers. Next week is a guest lecture on the EU.',
         ],
       },
     ],
     keyTerms: [
-      { term: 'Interest group', definition: 'Membership organisation that seeks to influence government without contesting elections.' },
+      { term: 'Interest group', definition: 'Membership organisation that appeals to government but does not take part in elections.' },
+      {
+        term: 'Functional equivalent',
+        definition: 'An organisation performing the same function as an interest group or party where the two are not clearly separated.',
+      },
       { term: 'Inside lobbying', definition: 'Seeking influence through direct, personal access to decision-makers.' },
       { term: 'Outside lobbying', definition: 'Seeking influence through public campaigns and protest (contentious politics).' },
       { term: 'Political exchange', definition: 'Groups trade information, support and resources for policy influence.' },
       { term: 'Private interest government', definition: 'Interest groups carrying out public functions themselves, such as self-regulation.' },
-      { term: 'Collective action problem', definition: 'Individuals can enjoy a group\'s gains without contributing, so they free-ride.' },
-      { term: 'Selective incentives', definition: 'Benefits only members receive, which make joining rational (Olson).' },
+      { term: 'Collective action problem', definition: "Individuals can enjoy a group's gains without contributing, so they free-ride." },
+      { term: 'Selective incentives', definition: 'Benefits only members receive, which make joining rational.' },
       { term: 'Ghent system', definition: 'Unemployment insurance run by trade unions, which boosts union membership.' },
       { term: 'Pluralism', definition: 'View that many freely competing groups protect liberty and balance power.' },
-      { term: 'Neo-corporatism', definition: 'Structured cooperation between the state and a few peak associations of employers and unions.' },
-      { term: 'Dealignment', definition: 'Weakening of the link between social cleavage identities and voting.' },
+      {
+        term: 'Neo-corporatism',
+        definition: 'Structural cooperation between government and a few hierarchically organised groups, trading support for influence.',
+      },
+      { term: 'Dealignment', definition: "A voter's preferences becoming less tied to her side of a cleavage." },
       { term: 'Electoral volatility', definition: 'The extent to which voters switch parties between elections (e.g. Pedersen index).' },
-      { term: 'Populism', definition: 'Representation claiming that politics must follow the will of the people.' },
+      { term: 'Flash-in-the-pan party', definition: 'A new party that enters parliament but does not last.' },
+      { term: "Losers' consent", definition: 'Acceptance of an election result by those whose side lost.' },
+      {
+        term: 'Responsible party model',
+        definition: 'Parties offer distinct programmes; the vote acts as a mandate on which the winners are held to account.',
+      },
+      {
+        term: 'Delegate vs trustee',
+        definition: 'Delegate: acts on a mandate (responsiveness). Trustee: acts on own judgement (responsibility).',
+      },
+      {
+        term: 'Input vs output legitimacy',
+        definition: "Input: following citizens' preferences. Output: producing good results.",
+      },
+      {
+        term: 'Vertical vs horizontal accountability',
+        definition: 'Vertical: voters can sanction rulers. Horizontal: courts, checks and balances and treaties constrain them.',
+      },
+      { term: 'Populism', definition: 'Representation claiming that politics must follow the unconstrained will of the people.' },
       { term: 'Technocracy', definition: 'Representation claiming that experts should identify and implement objective solutions.' },
+      {
+        term: 'Disguised mandate',
+        definition: "Populist leaders claim to follow the people's will but interpret it themselves.",
+      },
       { term: 'Party government', definition: 'Parties represent competing interests and govern on the basis of mandates and accountability.' },
     ],
     readings: [
       'Olson, M. (1965). The Logic of Collective Action. Harvard University Press.',
-      'Caramani, D. (2017). Will vs. Reason: The Populist and Technocratic Forms of Political Representation and Their Critique to Party Government. American Political Science Review 111(1).',
+      'Caramani, D. (2017). Will vs. Reason: The Populist and Technocratic Forms of Political Representation and Their Critique to Party Government. American Political Science Review 111(1): 54-67.',
     ],
   },
 
   basics: {
     id: 'w7-basics',
     title: 'Groups and challengers',
-    description: 'Week 7 · Interest groups, populism, technocracy',
+    description: 'Week 7 · Interest groups, party systems, populism, technocracy',
     lessons: [
       {
         id: 'w7-b1',
@@ -138,7 +220,7 @@ export const w7: WeekContent = {
             type: 'choice',
             prompt: 'Which is an example of private interest government?',
             options: [
-              'A farmers\' board regulating the quality of food production',
+              "A farmers' board regulating the quality of food production",
               'A union organising a national strike against pension cuts',
               'A lobbyist meeting an MEP in Brussels',
               'An NGO petition with a million signatures',
@@ -158,6 +240,19 @@ export const w7: WeekContent = {
             statement: 'Voluntary membership is one of the typical properties of an interest group.',
             answer: true,
           },
+          {
+            id: 'w7b1-07',
+            type: 'choice',
+            prompt: 'Where interest groups and parties are not clearly separated, what does the lecture suggest?',
+            options: [
+              'Look for functional equivalents that do the same job',
+              'Treat every organisation as a political party',
+              'Ignore the groups and study only elections',
+              'Classify them by the size of their membership',
+            ],
+            answer: 0,
+            explanation: 'The institutional context shapes how interests are best represented, so compare functions rather than labels.',
+          },
         ],
       },
       {
@@ -170,10 +265,10 @@ export const w7: WeekContent = {
             type: 'choice',
             prompt: 'What is the collective action problem?',
             options: [
-              'People can enjoy a group\'s gains without joining, so they free-ride',
+              "People can enjoy a group's gains without joining, so they free-ride",
               'Groups with many members cannot agree on a common position',
               'Governments refuse to talk to groups that are too large',
-              'Members always vote against their group\'s leaders',
+              "Members always vote against their group's leaders",
             ],
             answer: 0,
           },
@@ -201,7 +296,7 @@ export const w7: WeekContent = {
             type: 'multi',
             prompt: 'Besides selective incentives, why do people join interest groups?',
             options: [
-              'A sense of community',
+              'Incentives from their social network',
               'Participation feels meaningful in itself',
               'Overestimating the cost of not joining',
               'It is legally required in all democracies',
@@ -236,12 +331,26 @@ export const w7: WeekContent = {
             type: 'choice',
             prompt: 'Why are some interests better represented than others?',
             options: [
-              'They have more money, more concentrated stakes or easier access to government',
+              'They have more money or are easier for governments to understand',
               'They have more members, so they always win in pluralist systems',
               'Governments are legally obliged to favour the largest groups',
               'Diffuse interests are always better organised than concentrated ones',
             ],
             answer: 0,
+            explanation: 'Some interests are also influential without organising at all.',
+          },
+          {
+            id: 'w7b2-09',
+            type: 'choice',
+            prompt: 'What is the difference between corporatism and neo-corporatism?',
+            options: [
+              'Corporatism is a normative ideal; neo-corporatism describes practice',
+              'Corporatism is democratic; neo-corporatism is always authoritarian',
+              'Corporatism involves unions; neo-corporatism only involves firms',
+              'There is no difference: the terms mean exactly the same',
+            ],
+            answer: 0,
+            explanation: 'Neo-corporatism describes structural cooperation between government and some hierarchically organised groups, as with the Austrian and Dutch social partners.',
           },
         ],
       },
@@ -308,11 +417,12 @@ export const w7: WeekContent = {
               'Both act as trustees using their own judgement',
             ],
             answer: 0,
+            explanation: 'In practice populist leaders interpret the people\'s will themselves, so their mandate is "disguised".',
           },
           {
             id: 'w7b3-06',
             type: 'choice',
-            prompt: 'On what does party-system fragmentation depend, according to the notes?',
+            prompt: 'On what does party-system fragmentation depend, according to the lecture?',
             options: [
               'The age of the democracy, the electoral system and the power of parliament',
               'The size of the country, its climate and its dominant religion',
@@ -326,6 +436,277 @@ export const w7: WeekContent = {
             type: 'truefalse',
             statement: 'Many new parties are splinters of established parties.',
             answer: true,
+            explanation: 'Many "new" parties come from splinters, splits or mergers of established parties.',
+          },
+        ],
+      },
+      {
+        id: 'w7-b4',
+        title: 'Voters, parties and legitimacy',
+        topicId: 'w7-interest-groups',
+        exercises: [
+          {
+            id: 'w7b4-01',
+            type: 'choice',
+            prompt: 'Why might we overestimate the rise in electoral volatility?',
+            options: [
+              'Many switchers move within the left or right bloc',
+              'Most voters have never switched party in their lives',
+              'Turnout has risen in nearly every democracy',
+              'Polls exaggerate how many people actually vote',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w7b4-02',
+            type: 'choice',
+            prompt: 'Why might we underestimate electoral volatility?',
+            options: [
+              'It is hard to measure from aggregate election results',
+              'Volatile voters always abstain from voting',
+              'New parties are left out of the statistics',
+              'It can only be measured in two-party systems',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w7b4-03',
+            type: 'multi',
+            prompt: 'Which caveats does the lecture add to the claim that party systems are fragmenting?',
+            options: [
+              'Many new parties are a flash in the pan',
+              'Getting in and staying in parliament need different skills',
+              'Many new parties come from splits or mergers of old ones',
+              'New parties usually win a majority at once',
+              'Fragmentation has stopped in every democracy',
+            ],
+            answers: [0, 1, 2],
+          },
+          {
+            id: 'w7b4-04',
+            type: 'choice',
+            prompt: 'What is the institutional explanation for why fragmentation came late?',
+            options: [
+              'Established parties designed the rules that kept them in power',
+              'New parties were merged into the old ones as soon as they formed',
+              'Governments banned new parties from receiving any donations',
+              'Voters were not allowed to choose their party leaders directly',
+            ],
+            answer: 0,
+            explanation: 'The lecture calls it "turkeys voting for Christmas": parties would not vote for rules that endanger them.',
+          },
+          {
+            id: 'w7b4-05',
+            type: 'multi',
+            prompt: 'Which factors help explain falling satisfaction with democracy?',
+            options: [
+              'Economic performance',
+              'Which party is in power',
+              'Quality of governance and corruption',
+              'Age and education of respondents',
+              'The number of interest groups',
+              'The size of the country',
+            ],
+            answers: [0, 1, 2, 3],
+          },
+          {
+            id: 'w7b4-06',
+            type: 'choice',
+            prompt: "What is losers' consent?",
+            options: [
+              'Accepting an election result even when your side lost',
+              'Losing parties joining the new coalition government',
+              'Voters giving up some rights in return for security',
+              'The losing candidate choosing the next prime minister',
+            ],
+            answer: 0,
+            explanation: 'Low satisfaction with democracy puts it under strain, as protests after the 2016 and 2020 US elections show.',
+          },
+          {
+            id: 'w7b4-07',
+            type: 'choice',
+            prompt: 'Why does the lecture call AI-driven disinformation a difference in kind rather than only in degree?',
+            options: [
+              'It lets bad actors do far more with far less',
+              'It only means more money is spent on elections',
+              'It is legal everywhere, unlike lobbying',
+              'It only affects local and regional elections',
+            ],
+            answer: 0,
+            explanation: 'Extreme wealth in elections and government is a difference in degree; cheap, targeted disinformation (deepfakes, troll farms, bot armies) is new.',
+          },
+        ],
+      },
+      {
+        id: 'w7-b5',
+        title: 'Reading: party government and its critics',
+        topicId: 'w7-interest-groups',
+        exercises: [
+          {
+            id: 'w7b5-01',
+            type: 'choice',
+            prompt: 'In the responsible party model, how do voters control government?',
+            options: [
+              'They choose between programmes that act as a mandate',
+              'They elect independent experts to run each ministry',
+              'They vote directly on every law in referendums',
+              'They select the head of government by lot',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w7b5-02',
+            type: 'match',
+            prompt: 'Match the term to its meaning',
+            pairs: [
+              ['Delegate model', 'Voters have time and expertise'],
+              ['Trustee model', 'Voters lack time and expertise'],
+              ['Responsiveness', "Acting on voters' preferences"],
+              ['Responsibility', 'Good long-term decisions'],
+            ],
+          },
+          {
+            id: 'w7b5-03',
+            type: 'choice',
+            prompt: 'What is the populist critique of parties?',
+            options: [
+              'They are out of touch, closer to the state than the people',
+              'They chase opinion polls and govern irresponsibly',
+              'They are too ideological and refuse to compromise',
+              'They give experts too little say over policy',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w7b5-04',
+            type: 'choice',
+            prompt: 'What is the technocratic critique of parties?',
+            options: [
+              'They chase short-term popularity instead of good policy',
+              'They have moved away from the people towards the state',
+              'They represent too few social groups in parliament',
+              'They let referendums decide too many questions',
+            ],
+            answer: 0,
+            explanation: 'From this angle parties are over-responsive, not under-responsive.',
+          },
+          {
+            id: 'w7b5-05',
+            type: 'multi',
+            prompt: 'Which developments feed both critiques of party government?',
+            options: ['Electoralism', 'Complex multilevel governance', 'Mediatization', 'Compulsory voting', 'Proportional representation'],
+            answers: [0, 1, 2],
+          },
+          {
+            id: 'w7b5-06',
+            type: 'fill',
+            text: "Output legitimacy comes from good results; ___ legitimacy comes from following citizens' preferences.",
+            options: ['input', 'output', 'legal', 'charismatic'],
+            answer: 'input',
+          },
+          {
+            id: 'w7b5-07',
+            type: 'truefalse',
+            statement: 'The responsible party model fits the United States, with its district-based competition, better than the PR systems of Western Europe.',
+            answer: false,
+            explanation: 'It fits Western European PR systems best; US parties are less structured and cohesive, and competition is district-based.',
+          },
+        ],
+      },
+      {
+        id: 'w7-b6',
+        title: 'Reading: populism versus technocracy',
+        topicId: 'w7-interest-groups',
+        exercises: [
+          {
+            id: 'w7b6-01',
+            type: 'choice',
+            prompt: 'Why do populism and technocracy both reject binding party programmes?',
+            options: [
+              'They see the right solution as obvious, not a matter of choice',
+              'Programmes are too expensive to print and distribute',
+              'Voters are not allowed to read party programmes',
+              'Parties must leave all programmes to interest groups',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w7b6-02',
+            type: 'choice',
+            prompt: 'Why does populism lack vertical accountability, according to the reading?',
+            options: [
+              'People and leader are "one", so sanctioning would be self-sanction',
+              'Populists abolish elections as soon as they win power',
+              'Courts can overturn every populist decision',
+              'Experts, not voters, choose populist leaders',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w7b6-03',
+            type: 'match',
+            prompt: 'Each row is one form of representation: match its legitimacy to its focus',
+            pairs: [
+              ['Will of the people', 'Responsiveness'],
+              ['Rational speculation', 'Responsibility'],
+              ['Competition', 'Accountability'],
+            ],
+          },
+          {
+            id: 'w7b6-04',
+            type: 'choice',
+            prompt: 'How does descriptive representation differ between populism and technocracy?',
+            options: [
+              'Strong in populism, weak in technocracy',
+              'Weak in populism, strong in technocracy',
+              'Strong in both, because both claim the people',
+              'Absent in both, because both reject parties',
+            ],
+            answer: 0,
+            explanation: 'People trust populists because "they are like us" and technocrats because "they are not like us".',
+          },
+          {
+            id: 'w7b6-05',
+            type: 'choice',
+            prompt: 'What does the "disguised mandate" of populism mean?',
+            options: [
+              "Leaders claim to follow the people but interpret its will themselves",
+              'Voters secretly give experts a mandate to rule for them',
+              'Parties hide their real programmes from the voters',
+              'Courts disguise political decisions as legal ones',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w7b6-06',
+            type: 'choice',
+            prompt: 'How do populism and technocracy see the opposition?',
+            options: [
+              'Populism: corrupt. Technocracy: irrational',
+              'Populism: irrational. Technocracy: corrupt',
+              'Both: a legitimate alternative government',
+              'Both: a necessary check on their power',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w7b6-07',
+            type: 'choice',
+            prompt: 'Which images of society go with each form of representation?',
+            options: [
+              'Populism a body; technocracy a machine; party government a market',
+              'Populism a machine; technocracy a market; party government a body',
+              'Populism a market; technocracy a body; party government a machine',
+              'All three picture society as one organic body',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w7b6-08',
+            type: 'truefalse',
+            statement: 'In its extreme form technocracy is authoritarian, while populist majoritarianism is illiberal rather than authoritarian.',
+            answer: true,
+            explanation: 'Populism rests on the majority but ignores checks and balances; technocracy does not need majority support at all.',
           },
         ],
       },
@@ -346,7 +727,7 @@ export const w7: WeekContent = {
             id: 'w7a1-01',
             type: 'choice',
             prompt:
-              'A farmers\' union stops organising tractor protests and instead joins a board that sets food-quality standards. Which shift is this?',
+              "A farmers' union stops organising tractor protests and instead joins a board that sets food-quality standards. Which shift is this?",
             options: [
               'From outside lobbying to private interest government',
               'From inside lobbying to contentious politics',
@@ -383,10 +764,10 @@ export const w7: WeekContent = {
           {
             id: 'w7a1-04',
             type: 'choice',
-            prompt: "Party vote shares go from A 30%, B 25%, C 45% to A 20%, B 35%, C 45%. What is the Pedersen volatility index?",
+            prompt: 'Party vote shares go from A 30%, B 25%, C 45% to A 20%, B 35%, C 45%. What is the Pedersen volatility index?',
             options: ['10', '20', '5', '45'],
             answer: 0,
-            explanation: 'Half the sum of absolute changes: (10 + 10 + 0) / 2 = 10.',
+            explanation: "Half the sum of absolute changes: (10 + 10 + 0) / 2 = 10. (The Pedersen index comes from last year's student notes.)",
           },
           {
             id: 'w7a1-05',
@@ -403,7 +784,7 @@ export const w7: WeekContent = {
           {
             id: 'w7a1-06',
             type: 'choice',
-            prompt: 'Why might populists and technocrats converge over time, according to the notes?',
+            prompt: 'Why might populists and technocrats converge over time?',
             options: [
               'Populists in office need expertise, and technocrats cannot ignore voters',
               'Both are banned from forming parties, so they merge',
@@ -411,6 +792,96 @@ export const w7: WeekContent = {
               'Both lose interest in power once they enter government',
             ],
             answer: 0,
+          },
+        ],
+      },
+      {
+        id: 'w7-a3',
+        title: 'Reading: challenges to party government',
+        topicId: 'w7-interest-groups',
+        exercises: [
+          {
+            id: 'w7a3-01',
+            type: 'choice',
+            prompt: 'A cabinet of non-party experts takes office during a debt crisis to push through unpopular reforms. Which form of representation is this, and what does it stress?',
+            options: [
+              'Technocracy, stressing responsibility over responsiveness',
+              'Populism, stressing the will of the people',
+              'Party government, stressing the mandate',
+              'Neo-corporatism, stressing peak associations',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w7a3-02',
+            type: 'choice',
+            prompt: 'A leader holds frequent referendums and online polls, calling each result "the will of the people". What do these votes mainly do in the populist form of representation?',
+            options: [
+              'Renew consent and mobilise support, not give a mandate',
+              'Give voters detailed control over every policy',
+              'Select the experts who will draft the laws',
+              'Hold the government horizontally accountable',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w7a3-03',
+            type: 'choice',
+            prompt: 'Why are parties caught in a "stranglehold" between populism and technocracy?',
+            options: [
+              'They face demands for more responsiveness and more responsibility at once',
+              'They must choose between two coalition partners at every election',
+              'They are squeezed between national and European parliaments',
+              'They lose members both to interest groups and to social movements',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w7a3-04',
+            type: 'truefalse',
+            statement: 'The reading concludes that populism and technocracy are likely to replace party government.',
+            answer: false,
+            explanation: 'So far both operate within liberal democracy, mostly as correctives; parties have long-term assets that should help them weather the challenge.',
+          },
+          {
+            id: 'w7a3-05',
+            type: 'multi',
+            prompt: 'Which assets give established parties an advantage over populist newcomers and experts?',
+            options: [
+              'Articulated party organisations',
+              'Competent political personnel',
+              'Experience with campaigns and communication',
+              'Broad visions addressing all of society',
+              'A single charismatic leader',
+              'Independence from public funding',
+            ],
+            answers: [0, 1, 2, 3],
+          },
+          {
+            id: 'w7a3-06',
+            type: 'choice',
+            prompt: 'How does mediatization make it harder for parties to govern responsibly?',
+            options: [
+              'Constant scrutiny pushes them towards quick, sellable results',
+              'It removes all media coverage of government decisions',
+              'It gives parties full control over the political agenda',
+              'It makes election campaigns cheaper for every party',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w7a3-07',
+            type: 'open',
+            prompt: 'Are populist and technocratic actors a threat to democracy or a corrective to party government? Use responsiveness, responsibility, accountability and the role of parties.',
+            modelAnswer:
+              'Both challenge party government from opposite sides. Populism demands more responsiveness: it claims parties have moved towards the state and lost touch, and it offers a leader who embodies the will of the people. Technocracy demands more responsibility: it claims parties chase polls and short-term gains, and it offers experts who find objective solutions. As ideal types both are threats: they assume one common good, deny pluralism and a legitimate opposition, bypass intermediary institutions and escape vertical and horizontal accountability; populist majoritarianism is illiberal and extreme technocracy authoritarian. In practice, however, they currently operate within liberal democracy: populists form parties and win elections, experts are co-opted by parties or found their own, and both force parties to respond to real weaknesses. Parties remain best placed to balance responsiveness and responsibility, thanks to their organisations, personnel, experience and broad visions, so the challenge works mainly as a corrective, as long as checks and balances hold.',
+            keyPoints: [
+              'Populism demands responsiveness; technocracy demands responsibility',
+              'As ideal types both reject pluralism, mediation and accountability',
+              'Populism is illiberal; extreme technocracy is authoritarian',
+              'In practice both operate within democracy and can act as correctives',
+              'Parties are best placed to balance the two, if checks and balances hold',
+            ],
           },
         ],
       },
@@ -424,7 +895,7 @@ export const w7: WeekContent = {
             type: 'open',
             prompt: 'Are interest groups good or bad for democracy? Use the republican, pluralist and neo-corporatist views.',
             modelAnswer:
-              'The republican view sees groups as factions that put sectional interests above the general will. The pluralist view sees freely competing groups as a source of liberty and a counterweight to concentrated power and to government. The neo-corporatist view sees a few organised peak associations working with the state as a way to make and implement policy consensually, as with the Dutch social partners. A balanced answer adds that representation is unequal: money, concentrated stakes and the collective action problem (Olson) favour some interests, so the democratic value of groups depends on how open and balanced the system is.',
+              'The republican view sees groups as factions that put sectional interests above the general will. The pluralist view sees freely competing groups as a source of liberty, a counterweight to dominant interests, government and the majority, and "schools of democracy". The neo-corporatist view sees a few hierarchically organised groups working structurally with the state, exchanging support for influence, as a way to make and implement policy consensually, as with the Dutch and Austrian social partners. A balanced answer adds that representation is unequal: money, influence without organisation, the collective action problem and easier access for some groups favour some interests, so the democratic value of groups depends on how open and balanced the system is.',
             keyPoints: [
               'Republican: sectional interests undermine the general will',
               'Pluralist: competing groups protect liberty and balance power',
@@ -438,7 +909,7 @@ export const w7: WeekContent = {
             type: 'open',
             prompt: 'Compare populism and technocracy as critiques of party government.',
             modelAnswer:
-              'Both reject party government: they assume one common good, deny pluralism, want unmediated representation and offer no real accountability. They differ in how the common good is found: populism through the will of the people (often voiced by a leader), technocracy through expertise and rational procedures. Populists mobilise the people continuously and act as delegates with strong descriptive and symbolic representation; technocrats exclude the masses, act as trustees and stress responsibility over responsiveness. Party government instead accepts conflicting interests, aggregates them through competition and compromise, and is held accountable by voters and institutions.',
+              'Both reject party government: they assume one common good, deny pluralism, want unmediated representation and offer no real accountability. They differ in how the common good is found: populism through the will of the people (often voiced by a leader), technocracy through expertise and rational procedures. Populists mobilise the people continuously and claim to act as delegates, with strong descriptive and symbolic representation; technocrats exclude the masses, act as trustees and stress responsibility over responsiveness. Party government instead accepts conflicting interests, aggregates them through competition and compromise, and is held accountable by voters and institutions.',
             keyPoints: [
               'Shared: one common good, anti-pluralist, anti-party',
               'Shared: unmediated, with no real accountability',
@@ -465,7 +936,8 @@ export const w7: WeekContent = {
           {
             id: 'w7a2-04',
             type: 'choice',
-            prompt: 'In country Z, union membership is compulsory and the unions are controlled by the state. Why are they hard to classify as interest groups?',
+            prompt:
+              'In country Z, union membership is compulsory and the unions are controlled by the state. Why are they hard to classify as interest groups?',
             options: [
               'They lack voluntary membership and independence from the state',
               'They represent workers rather than businesses',
