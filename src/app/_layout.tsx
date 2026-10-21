@@ -4,12 +4,16 @@ import { useEffect } from 'react';
 import { View } from 'react-native';
 
 import { contentKeys } from '@/content';
+import { useReminderSync } from '@/lib/notifications';
 import { useHydrated, useProgress } from '@/store/progress';
 import { colors } from '@/theme';
 
 export default function RootLayout() {
   // Wait for saved progress before rendering so screens never flash empty stats.
   const hydrated = useHydrated();
+
+  // Streak reminders follow saved progress, so they start once it has loaded.
+  useReminderSync(hydrated);
 
   // Content updates can remove lessons or exercises; forget progress that points at them.
   useEffect(() => {

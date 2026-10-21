@@ -3,7 +3,7 @@
     "name": "PPE Study",
     "slug": "ppe-study",
     "scheme": "ppestudy",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "runtimeVersion": {
       "policy": "appVersion"
     },
@@ -15,6 +15,7 @@
     },
     "android": {
       "package": "com.thebluesnake420.ppestudy",
+      "permissions": ["android.permission.SCHEDULE_EXACT_ALARM", "android.permission.USE_EXACT_ALARM"],
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/android-icon-foreground.png",
@@ -30,7 +31,14 @@
     "plugins": [
       "expo-router",
       "expo-status-bar",
-      "expo-font"
+      "expo-font",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/notification-icon.png",
+          "color": "#FF9600"
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

@@ -4,6 +4,7 @@ import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
 import { addDays, today } from '@/lib/dates';
+import { REMINDER_TIMES } from '@/lib/reminders';
 
 export const XP_PER_LESSON = 10;
 export const XP_PERFECT_BONUS = 5;
@@ -54,12 +55,19 @@ interface ProgressState {
   lessons: Record<string, LessonRecord>;
   /** Keyed by `${courseId}/${exerciseId}`. */
   reviews: Record<string, ReviewItem>;
+  /** Streak reminder notifications. */
+  remindersEnabled: boolean;
+  /** Enabled reminder times ("HH:MM"), a subset of REMINDER_TIMES. */
+  reminderTimes: string[];
 
   /** Record one answer. In a review session, correct answers promote the item. */
   recordAnswer: (courseId: string, exerciseId: string, correct: boolean, isReview: boolean) => void;
   completeLesson: (courseId: string, lessonId: string, accuracy: number) => SessionResult;
   completeReview: (correctCount: number) => SessionResult;
   setDailyGoal: (xp: number) => void;
+  setRemindersEnabled: (enabled: boolean) => void;
+  toggleReminderTime: (time: string) => void;
+  /** Resets learning progress; settings (daily goal, reminders) stay. */
   resetProgress: () => void;
   /** Drop saved lessons and review items whose content no longer exists. */
   pruneOrphans: (validLessons: Set<string>, validExercises: Set<string>) => void;
@@ -74,6 +82,8 @@ const initialData = {
   lastActiveDay: null as string | null,
   lessons: {} as Record<string, LessonRecord>,
   reviews: {} as Record<string, ReviewItem>,
+  remindersEnabled: true,
+  reminderTimes: [...REMINDER_TIMES],
 };
 
 export const lessonKey = (courseId: string, lessonId: string) => `${courseId}/${lessonId}`;
@@ -144,7 +154,17 @@ export const useProgress = create<ProgressState>()(
 
         setDailyGoal: (xp) => set({ dailyGoal: xp }),
 
-        resetProgress: () => set({ ...initialData, dailyGoal: get().dailyGoal }),
+        setRemindersEnabled: (enabled) => set({ remindersEnabled: enabled }),
+
+        toggleReminderTime: (time) => {
+          const times = get().reminderTimes;
+          set({ reminderTimes: times.includes(time) ? times.filter((t) => t !== time) : [...times, time].sort() });
+        },
+
+        resetProgress: () => {
+          const { dailyGoal, remindersEnabled, reminderTimes } = get();
+          set({ ...initialData, dailyGoal, remindersEnabled, reminderTimes });
+        },
 
         pruneOrphans: (validLessons, validExercises) => {
           const { lessons, reviews } = get();
@@ -163,7 +183,7 @@ export const useProgress = create<ProgressState>()(
       name: 'ppe-progress',
       version: 1,
       storage: createJSONStorage(() => AsyncStorage),
-      partialize: ({ totalXp, xpByDay, dailyGoal, streak, longestStreak, lastActiveDay, lessons, reviews }) => ({
+      partialize: ({
         totalXp,
         xpByDay,
         dailyGoal,
@@ -172,6 +192,19 @@ export const useProgress = create<ProgressState>()(
         lastActiveDay,
         lessons,
         reviews,
+        remindersEnabled,
+        reminderTimes,
+      }) => ({
+        totalXp,
+        xpByDay,
+        dailyGoal,
+        streak,
+        longestStreak,
+        lastActiveDay,
+        lessons,
+        reviews,
+        remindersEnabled,
+        reminderTimes,
       }),
     },
   ),

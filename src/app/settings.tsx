@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { Button } from '@/components/Button';
 import { OptionTile } from '@/components/exercises/OptionTile';
+import { ReminderSettings } from '@/components/ReminderSettings';
 import { DAILY_GOALS, useProgress } from '@/store/progress';
 import { colors, font, radius, space } from '@/theme';
 
@@ -26,6 +27,9 @@ export default function SettingsScreen() {
         ))}
       </View>
 
+      <Text style={styles.heading}>Streak reminders</Text>
+      <ReminderSettings />
+
       <Text style={styles.heading}>Statistics</Text>
       <View style={styles.stats}>
         <Stat label="Total XP" value={progress.totalXp} />
@@ -41,7 +45,7 @@ export default function SettingsScreen() {
       </Text>
 
       <Text style={styles.heading}>Reset</Text>
-      <Text style={styles.muted}>Deletes all XP, streaks, completed lessons and review items. Your daily goal stays.</Text>
+      <Text style={styles.muted}>Deletes all XP, streaks, completed lessons and review items. Your daily goal and reminders stay.</Text>
       <Button
         title={confirmReset ? 'Tap again to confirm' : 'Reset progress'}
         variant={confirmReset ? 'red' : 'white'}

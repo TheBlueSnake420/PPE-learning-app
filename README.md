@@ -6,6 +6,7 @@ A Duolingo-style study app for PPE at Utrecht University. Android first, built w
 - **Exercises:** multiple choice, true/false, fill in the blank, matching pairs, put in order, select all that apply, and open "think it through" questions (write an answer, compare it with a model answer, tick the key points you covered)
 - **Study material:** per-course topic summaries, key points, key terms, readings and flashcards
 - **Motivation:** XP, daily goal, daily streak, and a mistake-review mode with spaced repetition
+- **Streak reminders:** local notifications at 16:00, 20:00, 22:00 and 23:45 while the streak is at risk (change the times or turn them off in Settings)
 - **Progress** is saved on the phone (no account needed). Uninstalling the app deletes it.
 
 ## Project layout
@@ -14,6 +15,7 @@ A Duolingo-style study app for PPE at Utrecht University. Android first, built w
 src/app/            Screens (Expo Router: every file is a route)
 src/components/     UI pieces, the lesson engine and the exercise types
 src/content/        All course content + the content model (types.ts)
+src/lib/            Helpers: dates, reminder planning, notifications
 src/store/          Saved progress (XP, streak, lessons, review queue)
 source-material/    Your slides and readings - git-ignored, never committed
 ```
@@ -60,3 +62,7 @@ npx eas-cli@latest update --channel preview --environment preview --message "Add
 ```
 
 The app downloads the update in the background; close and reopen it (sometimes twice) to see the new content. A new APK is only needed when native packages or `app.json` change.
+
+When you do build a new APK for a native change, raise `version` in `app.json` first. Updates only reach installed apps with the same version, so the old APK never receives code that needs the new native parts.
+
+The reminders use Android's exact-alarm permission (`USE_EXACT_ALARM`) so the 23:45 reminder isn't delayed past midnight. That is fine for a sideloaded APK, but Google Play only allows it for alarm and calendar apps, so drop it before publishing there.
