@@ -1,0 +1,616 @@
+import type { WeekContent } from '../../types';
+
+// Week 2 - Utilitarianism
+// Sources: readings Mill, Utilitarianism ch. 2 "What Utilitarianism Is" (excerpt) and
+// Goodin (1995) "Government house utilitarianism"; the week 2 reading questions. No lecture slides yet.
+
+export const w2: WeekContent = {
+  topic: {
+    id: 'w2-utilitarianism',
+    week: 2,
+    title: 'Utilitarianism',
+    summary:
+      'The greatest happiness principle, how its classic defence answers the standard objections, and why utilitarianism may work better as a guide for public policy than for private life.',
+    keyPoints: [
+      'Greatest happiness principle: actions are right as they tend to promote happiness (pleasure and the absence of pain) and wrong as they tend to produce the reverse.',
+      'Pleasures differ in quality, not just quantity. Competent judges, who know both, prefer the higher pleasures of the intellect, feelings and imagination.',
+      'The standard is the greatest happiness of all, not the agent\'s own. The agent must be strictly impartial between their own happiness and that of others.',
+      'The standard tells us what is right; it does not require that our motive is always the general good. Motive matters for judging the person, not the act.',
+      'We need not calculate before each act: humanity\'s experience is stored in subordinate (secondary) rules, which the first principle can improve and arbitrate.',
+      'Government house utilitarianism: utilitarianism is most plausible as a guide for public officials, who must and should govern through general rules.',
+      'At the policy level the objections that utilitarianism asks too much, asks too little and is too impersonal lose most of their force.',
+    ],
+    sections: [
+      {
+        heading: 'Reading: the greatest happiness principle (Mill)',
+        paragraphs: [
+          'Utility, or the greatest happiness principle, holds that actions are right in proportion as they tend to promote happiness, and wrong as they tend to produce the reverse. Happiness means pleasure and the absence of pain. Behind it lies a theory of life: pleasure and freedom from pain are the only things desirable as ends, and everything else is desirable either for the pleasure in it or as a means to pleasure and the prevention of pain.',
+          'Using "utility" as the opposite of pleasure is a popular misunderstanding: from Epicurus to Bentham, utilitarians meant pleasure itself, together with exemption from pain.',
+        ],
+      },
+      {
+        heading: 'Reading: the swine objection and higher pleasures (Mill)',
+        paragraphs: [
+          'The swine objection: a life with no higher end than pleasure is a doctrine worthy only of pigs. Reply: it is the accusers who degrade human nature, by assuming humans can only enjoy what pigs enjoy. Humans have faculties beyond animal appetites, and once aware of them do not count anything as happiness that leaves them unsatisfied.',
+          'Pleasures differ in kind, so quality counts as well as quantity. The test: of two pleasures, the more desirable is the one that (nearly) everyone who has experienced both clearly prefers, regardless of any feeling of moral obligation. If competent judges would not give it up for any amount of the other, it is superior in quality. Such judges prefer a life using the higher faculties: few would agree to become an animal, a fool or a selfish person, even if promised they would be more satisfied. The explanation is a sense of dignity.',
+          'This confuses happiness with contentment, a being with low capacities is more easily satisfied. Hence the famous line that it is better to be a human being dissatisfied than a pig satisfied, and better to be Socrates dissatisfied than a fool satisfied: the fool and the pig only know their own side of the comparison.',
+          'Objection: people capable of higher pleasures often choose lower ones. Reply: this is weakness of character, choosing the nearer good while knowing it is worth less. And people who sink into lower pleasures have usually already lost the capacity for higher ones: that capacity is a tender plant that dies without nourishment. On which pleasure is better, the verdict of competent judges (or their majority) is final; there is no other tribunal, even for quantity.',
+        ],
+      },
+      {
+        heading: 'Reading: impartiality and the general happiness (Mill)',
+        paragraphs: [
+          'The utilitarian standard is not the agent\'s own greatest happiness but the greatest amount of happiness altogether. Even if a noble character were not happier for its nobility, it makes others happier, so utilitarianism calls for cultivating it. The ultimate end is an existence as free as possible from pain and as rich as possible in enjoyments, in quantity and quality, for all mankind and, as far as possible, all sentient creatures.',
+          'Between their own happiness and that of others, utilitarianism requires the agent to be as strictly impartial as a disinterested and benevolent spectator. The golden rule (do as you would be done by, love your neighbour as yourself) expresses its spirit. To approach this ideal, laws and social arrangements should bring each person\'s interest into harmony with the interest of the whole, and education and opinion should link each person\'s happiness to the good of all.',
+          'Can people do without happiness? Happiness is not constant rapture but a life of many varied pleasures and few, passing pains, without expecting more than life can give. Its main ingredients are tranquillity and excitement. What mostly spoils life is selfishness and a lack of mental cultivation; the great sources of suffering, such as poverty and disease, can largely be removed by human effort. Self-sacrifice deserves honour only when it increases the happiness of others: a sacrifice that adds nothing to total happiness is wasted.',
+        ],
+      },
+      {
+        heading: 'Reading: demandingness, virtue and rules (Mill)',
+        paragraphs: [
+          'Demandingness: it is too much to require that people always act from the motive of promoting the general interest. Reply: this confuses the rule of action with the motive. Ethics says what our duties are, not that duty must be our only motive; most good actions are rightly done from other motives. Someone who saves a drowning person does right whatever the motive. The morality of an act depends on the intention (what the agent wills to do), not on the motive (the feeling behind it), although motives matter when we judge the person. Most actions benefit particular individuals, and only the rare public benefactor needs to think about society as a whole.',
+          'Coldness and virtue: utilitarianism supposedly makes people cold by ignoring the qualities of the person who acts. Reply: judging actions and judging persons are different things. No ethical standard calls an action good because a good person does it. Utilitarians value many qualities besides virtue and know that a right action need not show a virtuous character, but they hold that in the long run the best proof of good character is good actions.',
+          'Expediency: the "expedient" in the bad sense means what serves the agent\'s own interest or a short-term aim at the cost of a much more useful rule. Lying to get out of an embarrassment is expedient in this sense, but it weakens trust in human assertion, which is hugely useful, so it is not truly useful. Exceptions to truthfulness (withholding information from a criminal, bad news from someone gravely ill) should be recognised and their limits defined, and utility is the way to weigh them.',
+          'No time to calculate: humanity has had its whole history to learn the effects of actions, and that experience is stored in the received moral rules. These subordinate (secondary) principles guide everyday action; the first principle explains them and lets us improve them, just as sailors go to sea with the nautical almanac already calculated. Where secondary rules conflict, utility serves as a common umpire, which systems with many independent moral laws lack.',
+          'Other objections answered in the reading: utilitarianism is not "godless" (if God wants his creatures\' happiness, it is deeply religious), and the risk that people make convenient exceptions for themselves exists under every moral theory.',
+        ],
+      },
+      {
+        heading: 'Reading: government house utilitarianism (Goodin)',
+        paragraphs: [
+          'Varieties of utilitarianism are usually told apart by what the calculus chooses: actions (act-utilitarianism), rules (rule-utilitarianism) or motives and dispositions (motive-utilitarianism). Goodin proposes a different distinction: who uses the calculus. Applying it to personal conduct is very different from public officials applying it to social policy, and the differences neutralise in the public sphere most objections that work against utilitarianism in private life. This fits the tradition: the classical utilitarians saw it mainly as a guide for legislators and administrators.',
+          'The name echoes a derisive label for the view that enlightened (colonial) rulers may govern by utilitarian principles hidden from those they rule. Goodin says this aspect is not what attracts him to the view.',
+          'Argument from necessity: officials decide under uncertainty. They know averages and aggregates, not individual circumstances. Seat belt laws save more lives than they cost on aggregate, but nobody knows in advance who will be trapped by a belt. Their instruments are also blunt and compliance imperfect. So, if utilitarian at all, they must use general rules: something like rule-utilitarianism rather than act-utilitarianism.',
+          'Argument from desirability: governing through general laws is also better. General, predictable laws let people form secure expectations and make long-term plans, which yields great utility. And few, general rules can be internalised, so people regulate themselves, saving enforcement costs. Where justice says general rules are "only fair", utilitarianism says they are "only prudent".',
+        ],
+      },
+      {
+        heading: 'Reading: three objections blunted (Goodin)',
+        paragraphs: [
+          'Asks too much: utilitarianism seems to demand endless sacrifice, as in the famine relief argument. The problem stems from lack of coordination: an individual must take others\' actions as given and so ends up doing their share too. Officials can make everyone contribute through binding coordination schemes, so each person\'s burden is far smaller. If suffering is so great that even shared sacrifices are large, that is a tragedy, and there is no reason the rich should escape it. Societies have no psychological limits as individuals do, and claiming one cannot bear to give up luxuries is less an excuse than a confession of meagre moral agency.',
+          'Asks too little: nothing seems forbidden in itself, such as violating rights to maximise utility. At the personal level the utilitarian answer may even be right in extreme cases. But at the policy level the problem hardly arises: rules that maximise utility over the long run largely match what deontologists demand. Policies become public knowledge, and people adjust their expectations. A policy of punishing innocent people would destroy deterrence, because punishment only deters if it falls on the guilty.',
+          'Too impersonal: critics say some duties are agent-relative, like the duty to feed one\'s own child. Utilitarianism can justify assigning special responsibilities to particular people when that does most good. And at the macro level impersonality is exactly what we want: an official must not favour their own children in disaster relief or give contracts to friends. Duties at this level are second-order (to see to it that something is done), not first-order (to do it oneself), and duties to see to good outcomes fit utilitarianism perfectly.',
+          'Two replies to critics. Should we then leave as much as possible to markets? Markets use information better, but externalities, public goods and scale effects still require central coordination. Could officials secretly break rules when that pays? Keeping secret a practice of keeping secrets is hard, and discovery would badly damage expectations, so there is a strong presumption against it.',
+        ],
+      },
+    ],
+    keyTerms: [
+      { term: 'Greatest happiness principle', definition: 'Actions are right as they tend to promote happiness and wrong as they tend to produce its reverse.' },
+      { term: 'Swine objection', definition: 'The charge that a morality built on pleasure is fit only for pigs.' },
+      { term: 'Higher and lower pleasures', definition: 'Pleasures differ in quality; those of the intellect, feelings and imagination are higher than bodily ones.' },
+      { term: 'Competent judges', definition: 'People who have experienced both pleasures; their preference settles which is higher in quality.' },
+      { term: 'Impartiality (utilitarian)', definition: 'Weighing your own happiness exactly like anyone else\'s, as a disinterested, benevolent spectator.' },
+      { term: 'Motive vs intention', definition: 'Intention is what the agent wills to do and fixes the morality of the act; motive is the feeling behind it and bears on the agent\'s worth.' },
+      { term: 'Subordinate (secondary) rules', definition: 'Received moral rules that store experience of what promotes happiness, applying the first principle in daily life.' },
+      { term: 'Act-, rule- and motive-utilitarianism', definition: 'Using the utility calculus to choose actions, general rules, or motives and dispositions.' },
+      { term: 'Government house utilitarianism', definition: 'Utilitarianism as a guide for public officials making policy, rather than for personal conduct.' },
+      { term: 'Argument from necessity', definition: 'Officials lack detailed information and have blunt tools, so they must govern through general rules.' },
+      { term: 'Argument from desirability', definition: 'General rules are better: they make life predictable and can be internalised, cutting enforcement costs.' },
+      { term: 'Agent-relative duty', definition: 'A duty whose content depends on who the agent is, such as a parent\'s duty to their own child.' },
+      { term: 'First- vs second-order duty', definition: 'A duty to do something yourself versus a duty to see to it that it is done.' },
+    ],
+    readings: [
+      'Mill, J.S. (1861). Utilitarianism, ch. 2: What Utilitarianism Is (excerpt).',
+      'Goodin, R.E. (1995). Government house utilitarianism. In Utilitarianism as a Public Philosophy, ch. 4. Cambridge University Press.',
+    ],
+  },
+
+  basics: {
+    id: 'w2-basics',
+    title: 'Utilitarianism',
+    description: 'Week 2 · Happiness, pleasures and public policy',
+    lessons: [
+      {
+        id: 'w2-b1',
+        title: 'Reading: the greatest happiness principle',
+        topicId: 'w2-utilitarianism',
+        exercises: [
+          {
+            id: 'w2b1-01',
+            type: 'choice',
+            prompt: 'What does the greatest happiness principle say?',
+            options: [
+              'Actions are right as they tend to promote happiness',
+              'Actions are right when done from a sense of duty',
+              'Actions are right when they follow God\'s commands',
+              'Actions are right when they express a good character',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b1-02',
+            type: 'fill',
+            text: 'In this theory, happiness means pleasure and the absence of ___.',
+            options: ['pain', 'duty', 'desire', 'virtue'],
+            answer: 'pain',
+          },
+          {
+            id: 'w2b1-03',
+            type: 'choice',
+            prompt: 'What is the swine objection?',
+            options: [
+              'A morality based on pleasure is fit only for pigs',
+              'Utilitarians treat people as if they were animals',
+              'Animals should count as much as humans in ethics',
+              'Pleasure-seeking makes people lazy and greedy',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b1-04',
+            type: 'choice',
+            prompt: 'How is the swine objection answered?',
+            options: [
+              'Humans have higher faculties, so their happiness includes higher pleasures',
+              'Pigs are in fact just as happy as humans, so the comparison is a compliment',
+              'Pleasure is not what utilitarians care about; they care only about duty',
+              'The objection is accepted: the theory only covers bodily pleasures',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b1-05',
+            type: 'choice',
+            prompt: 'What decides which of two pleasures is higher in quality?',
+            options: [
+              'The preference of people who have experienced both',
+              'The amount of pleasure each one produces in total',
+              'The view of philosophers who study human nature',
+              'The pleasure that is cheaper and safer to obtain',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b1-06',
+            type: 'truefalse',
+            statement: 'On this view it is better to be a human being dissatisfied than a pig satisfied.',
+            answer: true,
+            explanation: 'Happiness is not the same as contentment: beings with low capacities are more easily satisfied.',
+          },
+          {
+            id: 'w2b1-07',
+            type: 'choice',
+            prompt: 'Why do some people who could enjoy higher pleasures choose lower ones?',
+            options: [
+              'Weakness of character, or the capacity for higher ones has withered',
+              'Lower pleasures are in fact higher in quality once you try them',
+              'Competent judges disagree, so there is no real difference between them',
+              'Higher pleasures are only available to philosophers and the rich',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b1-08',
+            type: 'match',
+            prompt: 'Match the term to its meaning',
+            pairs: [
+              ['Quantity of pleasure', 'How much or how intense'],
+              ['Quality of pleasure', 'What kind of pleasure'],
+              ['Contentment', 'Being easily satisfied'],
+            ],
+          },
+        ],
+      },
+      {
+        id: 'w2-b2',
+        title: 'Reading: answering the objections',
+        topicId: 'w2-utilitarianism',
+        exercises: [
+          {
+            id: 'w2b2-01',
+            type: 'choice',
+            prompt: 'Whose happiness is the utilitarian standard?',
+            options: [
+              'The greatest amount of happiness of all concerned',
+              'The agent\'s own happiness, in the long run',
+              'The happiness of the agent\'s family and friends',
+              'The happiness of the agent\'s fellow citizens',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b2-02',
+            type: 'fill',
+            text: 'The agent must be as strictly impartial as a disinterested and benevolent ___.',
+            options: ['spectator', 'judge', 'ruler', 'neighbour'],
+            answer: 'spectator',
+          },
+          {
+            id: 'w2b2-03',
+            type: 'choice',
+            prompt: 'How is the objection "utilitarianism demands that we always act from concern for the general good" answered?',
+            options: [
+              'It confuses the rule of action with the motive behind it',
+              'It is accepted: every action must aim at the general good',
+              'Utilitarianism only applies to governments, not to persons',
+              'People already act from concern for the general good',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b2-04',
+            type: 'truefalse',
+            statement: 'On this view, someone who saves a drowning person only to get paid has acted wrongly.',
+            answer: false,
+            explanation: 'The act is right whatever the motive; the motive matters for how we judge the person.',
+          },
+          {
+            id: 'w2b2-05',
+            type: 'match',
+            prompt: 'Match the concept to its role',
+            pairs: [
+              ['Intention', 'Fixes the morality of the act'],
+              ['Motive', 'Bears on the worth of the agent'],
+              ['Character', 'Best shown by good actions over time'],
+            ],
+          },
+          {
+            id: 'w2b2-06',
+            type: 'choice',
+            prompt: 'How is the objection "there is no time to calculate the effects of every action" answered?',
+            options: [
+              'Experience is stored in subordinate rules that guide everyday choices',
+              'People must calculate anyway, however long the calculation may take',
+              'Only governments need to calculate, since individuals follow orders',
+              'Calculation is unnecessary because happiness cannot be measured',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b2-07',
+            type: 'choice',
+            prompt: 'Why is telling a convenient lie not truly useful on this view?',
+            options: [
+              'It weakens trust in what people say, which is hugely valuable',
+              'It always makes the person who was lied to unhappy in the end',
+              'Lying is forbidden by God, whatever its consequences may be',
+              'Lies are always found out, so they never succeed in practice',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b2-08',
+            type: 'truefalse',
+            statement: 'A sacrifice that does not increase anyone\'s happiness is, on this view, wasted.',
+            answer: true,
+            explanation: 'Self-sacrifice is honoured only when it adds to the happiness of others.',
+          },
+        ],
+      },
+      {
+        id: 'w2-b3',
+        title: 'Reading: government house utilitarianism',
+        topicId: 'w2-utilitarianism',
+        exercises: [
+          {
+            id: 'w2b3-01',
+            type: 'match',
+            prompt: 'Match the variety of utilitarianism to what the calculus chooses',
+            pairs: [
+              ['Act-utilitarianism', 'Individual actions'],
+              ['Rule-utilitarianism', 'General rules of conduct'],
+              ['Motive-utilitarianism', 'Motives and dispositions'],
+            ],
+          },
+          {
+            id: 'w2b3-02',
+            type: 'choice',
+            prompt: 'What new distinction does government house utilitarianism introduce?',
+            options: [
+              'Who uses the utilitarian calculus: individuals or public officials',
+              'What the calculus is used to choose: actions, rules or motives',
+              'Which pleasures count: higher ones or also the lower ones',
+              'Whose happiness counts: citizens only or all of humanity',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b3-03',
+            type: 'choice',
+            prompt: 'What is the argument from necessity?',
+            options: [
+              'Officials know only aggregates and have blunt tools, so they must use general rules',
+              'Officials must act quickly in emergencies, so they cannot follow any general rules',
+              'Officials are necessary because individuals never act on utilitarian principles',
+              'Officials must obey the law, so utilitarian reasoning is not open to them',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b3-04',
+            type: 'choice',
+            prompt: 'What does the seat belt example show?',
+            options: [
+              'Policy can save lives on aggregate without knowing who gains or loses',
+              'Seat belts cost more lives than they save, so laws should not require them',
+              'Individual drivers know best whether wearing a seat belt is right for them',
+              'Laws only work when every single person complies with them perfectly',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b3-05',
+            type: 'multi',
+            prompt: 'Why are general rules desirable, on utilitarian grounds?',
+            options: [
+              'People can predict the law and plan their lives',
+              'Few, general rules can be internalised',
+              'Self-regulation saves enforcement costs',
+              'General rules allow officials to make exceptions freely',
+              'General rules guarantee perfect compliance',
+            ],
+            answers: [0, 1, 2],
+          },
+          {
+            id: 'w2b3-06',
+            type: 'fill',
+            text: 'Where justice says governing by general rules is "only fair", utilitarianism says it is "only ___".',
+            options: ['prudent', 'legal', 'natural', 'kind'],
+            answer: 'prudent',
+          },
+          {
+            id: 'w2b3-07',
+            type: 'truefalse',
+            statement: 'The classical utilitarians mainly saw their theory as a guide for legislators and administrators.',
+            answer: true,
+            explanation: 'Government house utilitarianism presents itself as faithful to that tradition.',
+          },
+        ],
+      },
+      {
+        id: 'w2-b4',
+        title: 'Reading: three objections blunted',
+        topicId: 'w2-utilitarianism',
+        exercises: [
+          {
+            id: 'w2b4-01',
+            type: 'match',
+            prompt: 'Match the objection to the reply at the policy level',
+            pairs: [
+              ['Asks too much', 'Coordination spreads the burden'],
+              ['Asks too little', 'Good rules respect rights'],
+              ['Too impersonal', 'Impartial officials are what we want'],
+            ],
+          },
+          {
+            id: 'w2b4-02',
+            type: 'choice',
+            prompt: 'Why does utilitarianism ask too much of individuals, on this view?',
+            options: [
+              'They must make up for others who do not do their share',
+              'They must calculate the consequences of every action',
+              'They must give up all pleasures, higher and lower',
+              'They must obey every rule without any exceptions',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b4-03',
+            type: 'choice',
+            prompt: 'Why would a policy of punishing innocent people fail even on utilitarian terms?',
+            options: [
+              'Policies become known, and punishment only deters if it targets the guilty',
+              'Innocent people are always able to prove their innocence in the end',
+              'Judges would refuse to carry out such a policy in every single case',
+              'Punishment never deters anyone, so it can never be justified at all',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b4-04',
+            type: 'match',
+            prompt: 'Match the type of duty to its example',
+            pairs: [
+              ['First-order duty', 'Feeding your own child yourself'],
+              ['Second-order duty', 'Seeing to it that the hungry are fed'],
+            ],
+          },
+          {
+            id: 'w2b4-05',
+            type: 'choice',
+            prompt: 'An official gives a public contract to a friend rather than the lowest bidder. What does this show about impersonality?',
+            options: [
+              'In public office, impersonality is a duty, not a flaw',
+              'Personal loyalty should always come before policy',
+              'Officials have no special responsibilities at all',
+              'Utilitarianism allows favouritism if friends are happy',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b4-06',
+            type: 'truefalse',
+            statement: 'The reading concludes that most matters should be left to markets, since officials do a worse utilitarian job.',
+            answer: false,
+            explanation: 'Markets handle information well, but externalities, public goods and scale effects still require central coordination.',
+          },
+          {
+            id: 'w2b4-07',
+            type: 'choice',
+            prompt: 'Why is there a strong presumption against officials secretly breaking rules?',
+            options: [
+              'A practice of secret exceptions is hard to hide and ruinous if found out',
+              'Secret exceptions are always illegal and would be overturned in court',
+              'Officials never have enough information to know when to break a rule',
+              'Breaking a rule can never increase utility, even in a single case',
+            ],
+            answer: 0,
+          },
+        ],
+      },
+    ],
+  },
+
+  advanced: {
+    id: 'w2-advanced',
+    title: 'Utilitarianism: analysis',
+    description: 'Week 2 · Applying and defending utilitarianism',
+    lessons: [
+      {
+        id: 'w2-a1',
+        title: 'Reading: utilitarianism at work',
+        topicId: 'w2-utilitarianism',
+        exercises: [
+          {
+            id: 'w2a1-01',
+            type: 'choice',
+            prompt: 'A policy gives 1,000 people a gain of 2 units of happiness each and costs 100 people 5 units each. What is the net effect?',
+            options: ['+1,500 units', '+2,500 units', '-500 units', '+1,995 units'],
+            answer: 0,
+            explanation: '1,000 × 2 = 2,000 gained; 100 × 5 = 500 lost; 2,000 − 500 = 1,500.',
+          },
+          {
+            id: 'w2a1-02',
+            type: 'choice',
+            prompt: 'Why can the higher-pleasures view not simply add up units of pleasure like the calculation above?',
+            options: [
+              'A higher pleasure can outweigh any quantity of a lower one',
+              'Pleasure cannot be measured at all, so no sums are possible',
+              'Only the agent\'s own pleasures count in the calculation',
+              'Pains do not count, only pleasures are added up',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2a1-03',
+            type: 'choice',
+            prompt: 'A judge could prevent a deadly riot by convicting one innocent person. How would government house utilitarianism respond?',
+            options: [
+              'As a policy, punishing the innocent destroys deterrence, so do not',
+              'Convict the innocent person, since more lives are saved than lost',
+              'Leave the decision to the market, which uses information better',
+              'Follow the judge\'s personal feelings, since motives decide morality',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2a1-04',
+            type: 'choice',
+            prompt: 'A rich country\'s government raises foreign aid through taxes instead of relying on voluntary giving. Which argument supports this?',
+            options: [
+              'Coordination spreads the burden, so it asks less of each person',
+              'Taxes are more fun to pay than voluntary donations to charity',
+              'Governments know exactly which individuals need help abroad',
+              'Voluntary giving is always wrong because it is supererogatory',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2a1-05',
+            type: 'multi',
+            prompt: 'Which features of utilitarianism do the replies to objections reveal?',
+            options: [
+              'Quality of pleasure counts, not just quantity',
+              'Everyone\'s happiness counts equally, including the agent\'s',
+              'It judges acts, not motives, but values good character',
+              'It works through secondary rules in daily life',
+              'It forbids all self-sacrifice',
+              'It only counts the happiness of humans',
+            ],
+            answers: [0, 1, 2, 3],
+            explanation: 'Self-sacrifice is honoured when it increases happiness, and the end includes, as far as possible, all sentient creatures.',
+          },
+          {
+            id: 'w2a1-06',
+            type: 'choice',
+            prompt: 'Two received moral rules conflict, say keeping a promise and preventing harm. What does the utilitarian offer that rival theories lack?',
+            options: [
+              'A common umpire: utility decides between the rules',
+              'A rule that promises must always be kept',
+              'A ranking of rules fixed by religious authority',
+              'The freedom to choose whichever rule one prefers',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2a1-07',
+            type: 'choice',
+            prompt: 'Why might the demandingness of the famine relief argument trouble a person but not a government?',
+            options: [
+              'A government can make everyone contribute their share',
+              'Governments have no moral duties of any kind',
+              'Governments care only about their own citizens',
+              'Individuals have unlimited resources to give',
+            ],
+            answer: 0,
+          },
+        ],
+      },
+      {
+        id: 'w2-a2',
+        title: 'Think it through',
+        topicId: 'w2-utilitarianism',
+        exercises: [
+          {
+            id: 'w2a2-01',
+            type: 'open',
+            prompt: 'Which objections to utilitarianism does "What Utilitarianism Is" answer, and what do the replies tell you about the theory?',
+            modelAnswer:
+              'Objections: it is a doctrine for swine; happiness is unattainable and people can do without it; it is too demanding because we must always act for the general good; it makes people cold and ignores character and virtue; it is godless; it is mere expediency; there is no time to calculate; and people will make convenient exceptions. The replies show that pleasures differ in quality as well as quantity, judged by competent judges; that the standard is the general happiness, weighed impartially; that it judges acts by their consequences and intention, not by motive, while still valuing character and virtue (good character is best shown by good actions); and that it works in practice through subordinate rules, with utility as umpire when they conflict.',
+            keyPoints: [
+              'Swine objection: higher and lower pleasures',
+              'Impartiality: general happiness, not the agent\'s own',
+              'Demandingness: rule of action vs motive',
+              'Virtue: judging acts vs judging persons',
+              'Subordinate rules: no need to calculate each time',
+            ],
+          },
+          {
+            id: 'w2a2-02',
+            type: 'open',
+            prompt: 'Explain the arguments from necessity and from desirability, and what government house utilitarianism implies for public policy.',
+            modelAnswer:
+              'Necessity: officials decide under uncertainty, knowing only averages and aggregates, and their tools are blunt with imperfect compliance; so they cannot fine-tune to individuals and must govern through general rules, which pushes them towards indirect (rule-) utilitarianism. Desirability: general rules are also better, because they make the law predictable so people can plan, and because few general rules can be internalised, so people regulate themselves and enforcement costs fall. Implications: policies should be general, public and stable; burdens of shared duties such as aid should be coordinated and enforced so that each contributes a fair share; rules should in practice protect rights, since punishing the innocent or breaking rules in secret would undermine expectations; and officials should act impartially, seeing to it that good outcomes are achieved.',
+            keyPoints: [
+              'Necessity: aggregate knowledge, blunt instruments',
+              'Desirability: predictability and internalised rules',
+              'Policy through general, public rules',
+              'Coordination of shared duties (e.g. aid)',
+              'Rights respected and officials impartial',
+            ],
+          },
+          {
+            id: 'w2a2-03',
+            type: 'open',
+            prompt: 'Is utilitarianism more convincing as a public philosophy than as a personal morality? Argue both sides.',
+            modelAnswer:
+              'For: the classic objections lose force at the policy level. Coordination solves demandingness, because the burden is shared; general rules that maximise utility over time protect rights, because systematic violations backfire once known; and impersonality is a virtue in officials, who should not favour family or friends. Policy-making also really does deal in aggregates. Against: tragic cases can still require large sacrifices; the argument relies on empirical claims (that rights-violating policies always backfire) that might fail; secret exceptions are discouraged but not ruled out; aggregating gains and losses can still sacrifice minorities; and the label recalls rulers governing by principles hidden from the governed. A good answer takes a reasoned position.',
+            keyPoints: [
+              'Demandingness solved by coordination',
+              'Rights protected by general, public rules',
+              'Impersonality fits the role of officials',
+              'Weaknesses: empirical assumptions, secret exceptions, minorities',
+              'A reasoned verdict',
+            ],
+          },
+          {
+            id: 'w2a2-04',
+            type: 'multi',
+            prompt: 'Which statements fit government house utilitarianism?',
+            options: [
+              'Officials should, and must, govern by general rules',
+              'Responsibilities can be assigned to particular people for utility\'s sake',
+              'Some agent-relative duties at the macro level, like campaign promises, may bind',
+              'Officials should calculate the best act case by case',
+              'Personal and public morality must use exactly the same reasoning',
+            ],
+            answers: [0, 1, 2],
+          },
+          {
+            id: 'w2a2-05',
+            type: 'choice',
+            prompt: 'A tax rule raises total welfare by 10,000 units, but its exceptions for hard cases would add 500 units while making the rule unpredictable, costing 2,000 units in lost planning. Should the exceptions be added, on government house reasoning?',
+            options: [
+              'No: the net effect of the exceptions is −1,500 units',
+              'Yes: the exceptions add 500 units to the total',
+              'Yes: hard cases must always be treated individually',
+              'No: rules may never be changed once they are made',
+            ],
+            answer: 0,
+            explanation: '500 gained − 2,000 lost = −1,500. Predictability is itself a source of utility.',
+          },
+        ],
+      },
+    ],
+  },
+};
