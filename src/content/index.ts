@@ -1,12 +1,13 @@
 import { comparativeDemocraticInstitutions } from './courses/comparative-democratic-institutions';
 import { ethicsPublicPolicy } from './courses/ethics-public-policy';
 import { globalEconomicHistory } from './courses/global-economic-history';
+import { microeconomics } from './courses/microeconomics';
 import type { Course, Exercise, Lesson, Level, Tier, Unit } from './types';
 
 export * from './types';
 
 /** All courses in the app. To add a course, create its folder and list it here. */
-export const courses: Course[] = [globalEconomicHistory, comparativeDemocraticInstitutions, ethicsPublicPolicy];
+export const courses: Course[] = [globalEconomicHistory, comparativeDemocraticInstitutions, ethicsPublicPolicy, microeconomics];
 
 export const TIERS: Tier[] = ['basics', 'advanced'];
 
