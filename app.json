@@ -3,7 +3,7 @@
     "name": "PPE Study",
     "slug": "ppe-study",
     "scheme": "ppestudy",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "runtimeVersion": {
       "policy": "appVersion"
     },
@@ -17,7 +17,7 @@
       "package": "com.thebluesnake420.ppestudy",
       "permissions": ["android.permission.SCHEDULE_EXACT_ALARM", "android.permission.USE_EXACT_ALARM"],
       "adaptiveIcon": {
-        "backgroundColor": "#E6F4FE",
+        "backgroundColor": "#12224A",
         "foregroundImage": "./assets/android-icon-foreground.png",
         "backgroundImage": "./assets/android-icon-background.png",
         "monochromeImage": "./assets/android-icon-monochrome.png"

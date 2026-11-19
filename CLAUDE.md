@@ -33,6 +33,8 @@ The app ships as an APK via EAS Build (`preview` profile). Content-only changes 
 
 The web version (for iPhone users) is a static export on EAS Hosting: `npx expo export --platform web`, then `eas deploy --prod`. It does not update over the air: export and deploy again after every content or app change. Static export only builds pages for known URLs, so each dynamic route re-exports a `generateStaticParams` from `src/lib/staticParams.ts`; a new dynamic route needs one too, or opening its URL directly gives "Not Found". Pages are pre-rendered in Node, so code that runs at import time must not touch `window` or browser storage, and the first render on web must match the pre-rendered HTML (see `useHydrated`). `src/app/+html.tsx` holds the page shell and home-screen meta tags.
 
+The app icon (owl, sun, shield, "PPE" banner) is drawn in code by `scripts/make-icon.js`, which renders every icon PNG; see its header for how to run it. A new icon needs a new APK.
+
 Streak reminders are local notifications (expo-notifications): `src/lib/reminders.ts` plans them (pure, no native calls), `src/lib/notifications.ts` schedules them and re-syncs on app start, on foreground and when the streak changes.
 
 ## Progress and rewards
