@@ -42,6 +42,8 @@ export default function RootLayout() {
         />
         <Stack.Screen name="review" options={{ headerShown: false, presentation: 'fullScreenModal' }} />
         <Stack.Screen name="settings" options={{ title: 'Settings' }} />
+        <Stack.Screen name="profile" options={{ title: 'Profile' }} />
+        <Stack.Screen name="mistakes" options={{ title: 'Review mistakes' }} />
       </Stack>
     </>
   );

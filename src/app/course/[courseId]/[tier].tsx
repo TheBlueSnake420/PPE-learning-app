@@ -3,9 +3,10 @@ import { router, Stack, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
+import { Button } from '@/components/Button';
 import { NotFound } from '@/components/NotFound';
 import { getCourse, isTier, lessonsInTrack, tierLabel, type Course, type Lesson } from '@/content';
-import { lessonKey, useProgress, type LessonRecord } from '@/store/progress';
+import { lessonKey, reviewCountsByCourse, useProgress, type LessonRecord } from '@/store/progress';
 import { colors, darken, font, radius, space, tint } from '@/theme';
 
 type Tab = 'lessons' | 'material';
@@ -42,6 +43,8 @@ export default function CourseScreen() {
 
       {tab === 'lessons' ? (
         <ScrollView contentContainerStyle={styles.content}>
+          <CompletedBanner course={course} />
+          <CourseMistakes course={course} />
           {units.map((unit, unitIndex) => (
             <View key={unit.id} style={styles.unit}>
               <View style={[styles.unitBanner, { backgroundColor: course.color, borderBottomColor: darken(course.color) }]}>
@@ -74,6 +77,7 @@ export default function CourseScreen() {
           {!nextLesson && (
             <Text style={styles.allDone}>You've completed every lesson in this track. Keep reviewing to stay sharp!</Text>
           )}
+          <MarkCompleted course={course} />
         </ScrollView>
       ) : (
         <MaterialList course={course} />
@@ -129,6 +133,64 @@ function LessonNode({
       {record && record.bestAccuracy < 1 && (
         <Text style={styles.nodeMeta}>Best: {Math.round(record.bestAccuracy * 100)}%</Text>
       )}
+    </View>
+  );
+}
+
+/** Shown at the top of a course marked as completed, with a way to undo it. */
+function CompletedBanner({ course }: { course: Course }) {
+  const completedOn = useProgress((s) => s.completedCourses[course.id]);
+  const setCourseCompleted = useProgress((s) => s.setCourseCompleted);
+  if (!completedOn) return null;
+  return (
+    <View style={[styles.completedBanner, { borderColor: course.color, backgroundColor: tint(course.color) }]}>
+      <Ionicons name="checkmark-circle" size={26} color={darken(course.color, 0.2)} />
+      <View style={styles.flex}>
+        <Text style={[styles.completedTitle, { color: darken(course.color, 0.4) }]}>Course completed</Text>
+        <Text style={styles.muted}>Its mistakes are left out of "Review all".</Text>
+      </View>
+      <Pressable onPress={() => setCourseCompleted(course.id, false)} hitSlop={10}>
+        <Text style={[styles.undo, { color: darken(course.color, 0.3) }]}>UNDO</Text>
+      </Pressable>
+    </View>
+  );
+}
+
+/** Entry point for reviewing this course's saved mistakes. */
+function CourseMistakes({ course }: { course: Course }) {
+  const reviews = useProgress((s) => s.reviews);
+  const count = reviewCountsByCourse(reviews)[course.id];
+  if (!count) return null;
+  const due = count.due > 0;
+  return (
+    <Pressable
+      onPress={() => router.push({ pathname: '/review', params: { courseId: course.id } })}
+      style={({ pressed }) => [styles.mistakes, due && styles.mistakesDue, pressed && styles.pressed]}
+    >
+      <Ionicons name="barbell" size={22} color={due ? colors.red : colors.faint} />
+      <Text style={styles.mistakesText}>
+        {due
+          ? `Review ${count.due} mistake${count.due === 1 ? '' : 's'} from this course`
+          : `Practise ${count.total} saved mistake${count.total === 1 ? '' : 's'} early`}
+      </Text>
+      <Ionicons name="chevron-forward" size={20} color={colors.faint} />
+    </Pressable>
+  );
+}
+
+/** At the end of the lesson path: mark the whole course as completed. */
+function MarkCompleted({ course }: { course: Course }) {
+  const completed = useProgress((s) => !!s.completedCourses[course.id]);
+  const setCourseCompleted = useProgress((s) => s.setCourseCompleted);
+  if (completed) return null;
+  return (
+    <View style={styles.markCard}>
+      <Text style={styles.markTitle}>Finished this course?</Text>
+      <Text style={styles.muted}>
+        Mark it as completed to move it to your completed courses. Its lessons stay available, and its mistakes are left
+        out of "Review all".
+      </Text>
+      <Button title="Mark course as completed" variant="white" onPress={() => setCourseCompleted(course.id, true)} />
     </View>
   );
 }
@@ -240,6 +302,38 @@ const styles = StyleSheet.create({
   },
   pressed: { borderBottomWidth: 2, marginTop: 2 },
   flex: { flex: 1, gap: 2 },
+  completedBanner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: space.md,
+    borderWidth: 2,
+    borderRadius: radius.lg,
+    padding: space.md,
+  },
+  completedTitle: { fontSize: font.large, fontWeight: '800' },
+  undo: { fontWeight: '900', fontSize: font.small, letterSpacing: 0.5 },
+  mistakes: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: space.md,
+    borderWidth: 2,
+    borderBottomWidth: 4,
+    borderColor: colors.border,
+    borderRadius: radius.lg,
+    padding: space.md,
+  },
+  mistakesDue: { borderColor: '#FFB2B2' },
+  mistakesText: { flex: 1, fontSize: font.body, fontWeight: '700', color: colors.text },
+  markCard: {
+    borderWidth: 2,
+    borderColor: colors.border,
+    borderStyle: 'dashed',
+    borderRadius: radius.lg,
+    padding: space.lg,
+    gap: space.sm,
+    marginTop: space.lg,
+  },
+  markTitle: { fontSize: font.large, fontWeight: '800', color: colors.text },
   week: { fontSize: font.small, fontWeight: '800', letterSpacing: 0.5 },
   topicTitle: { fontSize: font.large, fontWeight: '800', color: colors.text },
   muted: { fontSize: font.body - 1, color: colors.muted, lineHeight: 20 },

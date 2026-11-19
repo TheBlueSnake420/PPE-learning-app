@@ -3,20 +3,25 @@ import { router } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import { BoostCard } from '@/components/BoostCard';
 import { ProgressBar } from '@/components/ProgressBar';
+import { RankBadge } from '@/components/RankBadge';
 import { StatPill } from '@/components/StatPill';
 import { getLevels, lessonsInTrack, type Level } from '@/content';
 import { today } from '@/lib/dates';
-import { currentStreak, dueReviews, lessonKey, useProgress } from '@/store/progress';
+import { rankFor } from '@/lib/ranks';
+import { currentStreak, dueActiveReviews, lessonKey, useProgress } from '@/store/progress';
 import { colors, font, radius, space } from '@/theme';
 
 export default function Home() {
   const progress = useProgress();
   const streak = currentStreak(progress);
   const xpToday = progress.xpByDay[today()] ?? 0;
-  const due = dueReviews(progress.reviews).length;
+  const due = dueActiveReviews(progress.reviews, progress.completedCourses).length;
+  const saved = Object.keys(progress.reviews).length;
   const goalMet = xpToday >= progress.dailyGoal;
   const levels = getLevels();
+  const { rank } = rankFor(progress.totalXp);
 
   return (
     <SafeAreaView style={styles.screen} edges={['top']}>
@@ -25,6 +30,9 @@ export default function Home() {
         <View style={styles.stats}>
           <StatPill icon="flame" value={streak} color={colors.orange} dim={streak === 0} />
           <StatPill icon="flash" value={progress.totalXp} color={colors.gold} dim={progress.totalXp === 0} />
+          <Pressable onPress={() => router.push('/profile')} hitSlop={8} accessibilityLabel={`Profile, rank ${rank.name}`}>
+            <RankBadge rank={rank} size={32} />
+          </Pressable>
           <Pressable onPress={() => router.push('/settings')} hitSlop={10} accessibilityLabel="Settings">
             <Ionicons name="settings-outline" size={24} color={colors.muted} />
           </Pressable>
@@ -32,6 +40,8 @@ export default function Home() {
       </View>
 
       <ScrollView contentContainerStyle={styles.content}>
+        <BoostCard />
+
         <View style={styles.card}>
           <View style={styles.goalHeader}>
             <Text style={styles.cardTitle}>{goalMet ? 'Daily goal reached!' : 'Daily goal'}</Text>
@@ -43,8 +53,8 @@ export default function Home() {
         </View>
 
         <Pressable
-          onPress={() => router.push('/review')}
-          disabled={due === 0}
+          onPress={() => router.push('/mistakes')}
+          disabled={saved === 0}
           style={({ pressed }) => [styles.card, styles.reviewCard, due > 0 && styles.reviewActive, pressed && styles.pressed]}
         >
           <View style={[styles.reviewIcon, { backgroundColor: due > 0 ? colors.red : colors.border }]}>
@@ -53,10 +63,14 @@ export default function Home() {
           <View style={styles.flex}>
             <Text style={styles.cardTitle}>Review mistakes</Text>
             <Text style={styles.muted}>
-              {due > 0 ? `${due} exercise${due === 1 ? '' : 's'} ready to review` : 'All caught up - no mistakes due'}
+              {due > 0
+                ? `${due} exercise${due === 1 ? '' : 's'} ready to review`
+                : saved > 0
+                  ? 'All caught up - review by course'
+                  : 'No mistakes saved yet'}
             </Text>
           </View>
-          {due > 0 && <Ionicons name="chevron-forward" size={22} color={colors.faint} />}
+          {saved > 0 && <Ionicons name="chevron-forward" size={22} color={colors.faint} />}
         </Pressable>
 
         <Text style={styles.sectionTitle}>Choose a level</Text>
@@ -116,7 +130,7 @@ const styles = StyleSheet.create({
     borderBottomColor: colors.border,
   },
   appName: { fontSize: font.title, fontWeight: '900', color: colors.green },
-  stats: { flexDirection: 'row', alignItems: 'center', gap: space.lg },
+  stats: { flexDirection: 'row', alignItems: 'center', gap: space.md },
   content: { padding: space.lg, gap: space.md, paddingBottom: space.xxl },
   card: {
     borderWidth: 2,

@@ -1,5 +1,5 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
-import { router } from 'expo-router';
+import { router, useLocalSearchParams } from 'expo-router';
 import { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -9,20 +9,32 @@ import { CompleteView } from '@/components/CompleteView';
 import { LessonRunner, type QueueItem, type RunResult } from '@/components/LessonRunner';
 import { findExercise, getCourse } from '@/content';
 import { shuffle } from '@/lib/shuffle';
-import { dueReviews, useProgress, type SessionResult } from '@/store/progress';
+import { dueActiveReviews, dueReviews, useProgress, type ReviewItem, type SessionResult } from '@/store/progress';
 import { colors, font, space } from '@/theme';
 
 const MAX_REVIEW_ITEMS = 12;
 
+/**
+ * Without a course: everything due in courses not marked as completed.
+ * With a course: that course's due items, or, if none are due yet, all of its
+ * saved mistakes (practising early, e.g. before an exam).
+ */
+function pickReviews(courseId: string | undefined): ReviewItem[] {
+  const { reviews, completedCourses } = useProgress.getState();
+  if (!courseId) return dueActiveReviews(reviews, completedCourses);
+  const due = dueReviews(reviews).filter((r) => r.courseId === courseId);
+  return due.length > 0 ? due : Object.values(reviews).filter((r) => r.courseId === courseId);
+}
+
 export default function ReviewScreen() {
+  const { courseId } = useLocalSearchParams<{ courseId?: string }>();
   const completeReview = useProgress((s) => s.completeReview);
   const [finished, setFinished] = useState<{ session: SessionResult; accuracy: number } | null>(null);
 
   // Build the queue once when the screen opens; answering changes the store.
   const [items] = useState<QueueItem[]>(() => {
-    const due = dueReviews(useProgress.getState().reviews);
     const found: QueueItem[] = [];
-    for (const r of shuffle(due)) {
+    for (const r of shuffle(pickReviews(courseId))) {
       const course = getCourse(r.courseId);
       const exercise = course && findExercise(course, r.exerciseId);
       if (exercise) found.push({ courseId: r.courseId, exercise });
@@ -63,7 +75,7 @@ export default function ReviewScreen() {
       isReview
       onClose={() => router.back()}
       onFinish={onFinish}
-      label={(item) => getCourse(item.courseId)?.shortTitle}
+      label={courseId ? undefined : (item) => getCourse(item.courseId)?.shortTitle}
     />
   );
 }

@@ -19,6 +19,9 @@ export const colors = {
   gold: '#FFC800',
   goldDark: '#E5A800',
   orange: '#FF9600',
+  /** XP boosts. */
+  purple: '#A560E8',
+  purpleBg: '#F3E8FD',
 };
 
 export const radius = { sm: 10, md: 14, lg: 18, pill: 999 };

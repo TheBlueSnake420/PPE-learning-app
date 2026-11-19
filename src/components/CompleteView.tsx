@@ -3,9 +3,11 @@ import type { ComponentProps } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+import { BOOST_MINUTES } from '@/lib/boost';
 import type { SessionResult } from '@/store/progress';
 import { colors, font, radius, space } from '@/theme';
 import { Button } from './Button';
+import { RankBadge } from './RankBadge';
 
 interface Props {
   title: string;
@@ -31,10 +33,30 @@ export function CompleteView({ title, result, accuracy, onContinue }: Props) {
           <Tile label="Day streak" value={`${result.streak}`} icon="flame" color={colors.orange} />
         </View>
 
+        {result.multiplier > 1 && (
+          <Text style={styles.boostApplied}>Includes your {result.multiplier}x XP boost</Text>
+        )}
+
         {result.streakExtended && (
           <Text style={styles.streakNote}>
             {result.streak === 1 ? 'You started a streak!' : `Streak extended to ${result.streak} days!`}
           </Text>
+        )}
+
+        {result.newBoost && (
+          <View style={styles.boostBox}>
+            <Ionicons name="rocket" size={22} color={colors.purple} />
+            <Text style={styles.boostText}>
+              {result.newBoost.multiplier}x XP boost for the next {BOOST_MINUTES} minutes
+            </Text>
+          </View>
+        )}
+
+        {result.rankUp && (
+          <View style={styles.rankBox}>
+            <RankBadge rank={result.rankUp} size={44} />
+            <Text style={styles.rankText}>New rank: {result.rankUp.name}!</Text>
+          </View>
         )}
       </View>
       <View style={styles.footer}>
@@ -99,5 +121,27 @@ const styles = StyleSheet.create({
   },
   tileValue: { fontSize: font.title, fontWeight: '800' },
   streakNote: { marginTop: space.md, color: colors.orange, fontWeight: '700', fontSize: font.body },
+  boostApplied: { color: colors.purple, fontWeight: '700', fontSize: font.body },
+  boostBox: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: space.sm,
+    alignSelf: 'stretch',
+    backgroundColor: colors.purpleBg,
+    borderRadius: radius.md,
+    padding: space.md,
+  },
+  boostText: { flex: 1, color: colors.purple, fontWeight: '800', fontSize: font.body },
+  rankBox: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: space.md,
+    alignSelf: 'stretch',
+    borderWidth: 2,
+    borderColor: colors.border,
+    borderRadius: radius.md,
+    padding: space.md,
+  },
+  rankText: { flex: 1, color: colors.text, fontWeight: '800', fontSize: font.large },
   footer: { padding: space.lg },
 });

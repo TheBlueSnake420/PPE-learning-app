@@ -32,3 +32,9 @@ Student notes: `source-material/` also holds revision notes by last year's stude
 The app ships as an APK via EAS Build (`preview` profile). Content-only changes can go out with `eas update --channel preview --environment preview`; changes to native packages or app.json need a new build. The runtime version follows `version` in app.json (policy `appVersion`): bump it for every native change, so OTA updates never reach an APK without the matching native code.
 
 Streak reminders are local notifications (expo-notifications): `src/lib/reminders.ts` plans them (pure, no native calls), `src/lib/notifications.ts` schedules them and re-syncs on app start, on foreground and when the streak changes.
+
+## Progress and rewards
+
+Progress is saved by zustand `persist` in `src/store/progress.ts` (storage version 1, no migrate function). Add new fields with defaults in `initialData` and `partialize`; never bump the version without writing a migration, or saved progress is lost.
+
+The XP levelling system is called "rank" in code and UI, because "level" already means a year and tier (Year 1 · Basics). The rank table is `RANKS` in `src/lib/ranks.ts`; XP boosts (duration and steps up to 10x) are in `src/lib/boost.ts`. Both are pure and can be changed freely.
