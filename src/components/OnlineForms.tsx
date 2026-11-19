@@ -44,7 +44,11 @@ export function JoinForm({ onJoined }: { onJoined?: () => void }) {
   );
 }
 
-/** Two steps: enter an email address and get a 6-digit code, then enter the code. */
+// Supabase sends 6-digit codes by default; the length can be set to 6-10 in the dashboard.
+const CODE_MIN = 6;
+const CODE_MAX = 10;
+
+/** Two steps: enter an email address and get a code, then enter the code. */
 export function EmailCodeForm({
   sendCode,
   verifyCode,
@@ -102,13 +106,15 @@ export function EmailCodeForm({
       />
       {sent && (
         <>
-          <Text style={styles.hint}>We sent a 6-digit code to {email.trim()}. It can take a minute to arrive.</Text>
+          <Text style={styles.hint}>
+            We sent a code to {email.trim()}. It can take a minute to arrive, so check your spam folder too.
+          </Text>
           <Field
             value={code}
             onChangeText={(t) => setCode(t.replace(/\D/g, ''))}
-            placeholder="6-digit code"
+            placeholder="Code from the email"
             keyboardType="number-pad"
-            maxLength={6}
+            maxLength={CODE_MAX}
             accessibilityLabel="Code from the email"
             onSubmitEditing={verify}
           />
@@ -117,7 +123,7 @@ export function EmailCodeForm({
       {error && <Text style={styles.error}>{error}</Text>}
       {sent ? (
         <>
-          <Button title={busy ? 'Checking…' : verifyLabel} onPress={verify} disabled={busy || code.length < 6} />
+          <Button title={busy ? 'Checking…' : verifyLabel} onPress={verify} disabled={busy || code.length < CODE_MIN} />
           <Button
             title="Use another address"
             variant="white"

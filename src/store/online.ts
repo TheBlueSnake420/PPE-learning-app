@@ -173,8 +173,26 @@ async function refreshStanding() {
   useProgress.setState({ otherDevicesXp: Number(row?.other_devices_xp ?? 0) });
 }
 
+/** The signed-in account. On launch a screen can ask before the login is restored, so restore it here. */
+async function currentAccount(): Promise<AccountInfo | null> {
+  const { account } = useOnline.getState();
+  if (account) return account;
+  await whenHydrated();
+  const { data } = await supabase.auth.getSession();
+  const restored = accountFrom(data.session);
+  useOnline.setState({ account: restored });
+  return restored;
+}
+
 async function doSync() {
-  const { account, deviceId } = useOnline.getState();
+  let account: AccountInfo | null;
+  try {
+    account = await currentAccount();
+  } catch (error) {
+    console.warn('Could not restore the online account', error);
+    return;
+  }
+  const { deviceId } = useOnline.getState();
   if (!account) return;
   useOnline.setState({ status: 'syncing' });
   try {
@@ -233,17 +251,10 @@ function whenHydrated(): Promise<void> {
 export function useOnlineSync(enabled: boolean) {
   useEffect(() => {
     if (!enabled) return;
-    let alive = true;
     let timer: ReturnType<typeof setTimeout> | undefined;
 
-    whenHydrated()
-      .then(() => supabase.auth.getSession())
-      .then(({ data }) => {
-        if (!alive) return;
-        useOnline.setState({ account: accountFrom(data.session) });
-        void syncNow();
-      })
-      .catch((error) => console.warn('Could not restore the online account', error));
+    // Restores the login (see currentAccount) and uploads XP earned since the last launch.
+    void syncNow();
 
     // Only store the session here: Supabase advises against awaiting its calls in this callback.
     const { data: auth } = supabase.auth.onAuthStateChange((_event, session) => {
@@ -259,7 +270,6 @@ export function useOnlineSync(enabled: boolean) {
     });
 
     return () => {
-      alive = false;
       clearTimeout(timer);
       auth.subscription.unsubscribe();
       unsubProgress();
