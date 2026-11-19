@@ -338,3 +338,6 @@ const styles = StyleSheet.create({
   topicTitle: { fontSize: font.large, fontWeight: '800', color: colors.text },
   muted: { fontSize: font.body - 1, color: colors.muted, lineHeight: 20 },
 });
+
+// Web export: pre-render a page for each of these (see src/lib/staticParams.ts).
+export { courseTierParams as generateStaticParams } from '@/lib/staticParams';

@@ -11,11 +11,13 @@ import { AppState, Platform } from 'react-native';
 const SUPABASE_URL = 'https://bimlpzcorczqitmrrfuz.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_vq7Cco0kU8-ViuzNy5XR5A_SJVhL08t';
 
-// AsyncStorage keeps the login between launches. It is already part of the app's native code,
-// so this works with an over-the-air update (the Expo guide's expo-sqlite would need a new APK).
+// On phones, AsyncStorage keeps the login between launches. It is already part of the app's
+// native code, so this works with an over-the-air update (the Expo guide's expo-sqlite would need
+// a new APK). On the web, Supabase's default storage is used: the browser's localStorage, or
+// memory while the web export pre-renders pages in Node, where there is no window.
 export const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY, {
   auth: {
-    storage: AsyncStorage,
+    ...(Platform.OS !== 'web' ? { storage: AsyncStorage } : {}),
     autoRefreshToken: true,
     persistSession: true,
     detectSessionInUrl: false,

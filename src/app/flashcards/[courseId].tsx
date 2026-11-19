@@ -104,3 +104,6 @@ const styles = StyleSheet.create({
   },
   next: { flex: 1 },
 });
+
+// Web export: pre-render a page for each of these (see src/lib/staticParams.ts).
+export { courseParams as generateStaticParams } from '@/lib/staticParams';

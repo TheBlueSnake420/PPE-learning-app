@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from 'react';
+import { Platform } from 'react-native';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
@@ -310,9 +311,13 @@ export function reviewCountsByCourse(reviews: Record<string, ReviewItem>): Recor
   return counts;
 }
 
-/** True once saved progress has been loaded from storage. */
+/**
+ * True once saved progress has been loaded from storage. On the web every page is pre-rendered
+ * without saved progress, so the first render there must also say false (or React reports a
+ * hydration mismatch); the effect below switches to true right after.
+ */
 export function useHydrated(): boolean {
-  const [hydrated, setHydrated] = useState(() => useProgress.persist.hasHydrated());
+  const [hydrated, setHydrated] = useState(() => Platform.OS !== 'web' && useProgress.persist.hasHydrated());
   useEffect(() => {
     if (hydrated) return;
     const unsub = useProgress.persist.onFinishHydration(() => setHydrated(true));

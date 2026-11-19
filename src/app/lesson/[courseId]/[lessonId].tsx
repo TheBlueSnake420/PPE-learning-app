@@ -39,3 +39,6 @@ export default function LessonScreen() {
 
   return <LessonRunner items={items} isReview={false} onClose={() => router.back()} onFinish={onFinish} />;
 }
+
+// Web export: pre-render a page for each of these (see src/lib/staticParams.ts).
+export { lessonParams as generateStaticParams } from '@/lib/staticParams';

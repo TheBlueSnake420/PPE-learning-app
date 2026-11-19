@@ -41,7 +41,7 @@ export function ReminderSettings() {
   }, [refreshPermission]);
 
   if (!remindersSupported) {
-    return <Text style={styles.muted}>Reminders work in the Android app, not in this web preview.</Text>;
+    return <Text style={styles.muted}>Reminders work in the Android app, not in the web version.</Text>;
   }
 
   const blocked = permission?.status === 'denied';

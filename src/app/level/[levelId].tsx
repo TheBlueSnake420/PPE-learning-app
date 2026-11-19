@@ -111,3 +111,6 @@ const styles = StyleSheet.create({
     marginTop: space.sm,
   },
 });
+
+// Web export: pre-render a page for each of these (see src/lib/staticParams.ts).
+export { levelParams as generateStaticParams } from '@/lib/staticParams';

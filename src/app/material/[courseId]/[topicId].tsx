@@ -105,3 +105,6 @@ const styles = StyleSheet.create({
   termName: { fontSize: font.body, fontWeight: '800', color: colors.text },
   reading: { fontSize: font.body - 1, color: colors.muted, lineHeight: 22, fontStyle: 'italic' },
 });
+
+// Web export: pre-render a page for each of these (see src/lib/staticParams.ts).
+export { topicParams as generateStaticParams } from '@/lib/staticParams';
