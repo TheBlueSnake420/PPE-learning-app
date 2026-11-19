@@ -1,8 +1,9 @@
 import type { WeekContent } from '../../types';
 
 // Week 2 - Utilitarianism
-// Sources: readings Mill, Utilitarianism ch. 2 "What Utilitarianism Is" (excerpt) and
-// Goodin (1995) "Government house utilitarianism"; the week 2 reading questions. No lecture slides yet.
+// Sources: lecture "Classical Utilitarianism" (19 Nov 2026; given in week 1 as the preview of
+// week 2), readings Mill, Utilitarianism ch. 2 "What Utilitarianism Is" (excerpt) and
+// Goodin (1995) "Government house utilitarianism"; the week 2 reading questions.
 
 export const w2: WeekContent = {
   topic: {
@@ -10,8 +11,13 @@ export const w2: WeekContent = {
     week: 2,
     title: 'Utilitarianism',
     summary:
-      'The greatest happiness principle, how its classic defence answers the standard objections, and why utilitarianism may work better as a guide for public policy than for private life.',
+      'The greatest happiness principle and the commitments behind it, how it can (or cannot) be defended, the main objections, and why utilitarianism may work better as a guide for public policy than for private life.',
     keyPoints: [
+      'Classical utilitarianism is committed to consequentialism, act utilitarianism, hedonism, impartiality, maximisation and aggregation, and a teleological structure: the right is defined by the good.',
+      'Act utilitarianism asks whether an action leads to the greatest happiness; rule utilitarianism asks whether it accords with rules that do.',
+      'Quantitative hedonism counts only the amount of pleasure; qualitative hedonism holds that some pleasures are better in kind. Today preference satisfaction is the more common theory of value.',
+      'First principles cannot be proven. The proof from what people actually desire to what is desirable is accused of equivocation, and of moving from one\'s own happiness to everyone\'s.',
+      'Main objections: the separateness of persons, cases such as the trolley problem and the doctor\'s dilemma, and integrity.',
       'Greatest happiness principle: actions are right as they tend to promote happiness (pleasure and the absence of pain) and wrong as they tend to produce the reverse.',
       'Pleasures differ in quality, not just quantity. Competent judges, who know both, prefer the higher pleasures of the intellect, feelings and imagination.',
       'The standard is the greatest happiness of all, not the agent\'s own. The agent must be strictly impartial between their own happiness and that of others.',
@@ -21,6 +27,49 @@ export const w2: WeekContent = {
       'At the policy level the objections that utilitarianism asks too much, asks too little and is too impersonal lose most of their force.',
     ],
     sections: [
+      {
+        heading: 'Lecture: the core of classical utilitarianism',
+        paragraphs: [
+          'The theoretical core is the greatest happiness principle: actions are right in proportion as they tend to promote happiness, and wrong as they tend to produce the reverse of happiness. It is a normative ethical theory: it says which actions are right and which states of affairs are good, and it evaluates actions only by their consequences.',
+          'Jeremy Bentham (1748-1832) was a lawyer who wanted to reform an unjust and unclear legal system. In his Introduction to the Principles of Morals and Legislation, the principle of utility sets both the ends and the means of the law. John Stuart Mill (1806-1873) combined utilitarianism with liberalism. He opposed irrational conservatism, was politically active and argued for the liberation of women.',
+          'What drove them? They were against unjust and unclear laws and conventions, against moralities based on "intuition" (common sense, a moral sense, conscience), which in their eyes offer no principle at all, and against religious moral theories. They were in favour of a progressive, clear and consistent basic principle, of impartiality, and of a secular basis for morality.',
+        ],
+      },
+      {
+        heading: 'Lecture: six commitments',
+        paragraphs: [
+          'Classical utilitarianism is committed to consequentialism, act utilitarianism, hedonism, impartiality, maximisation and aggregation, and a teleological structure of morality.',
+          'Consequentialism: it evaluates actions, not character, and only by their consequences, not by the reasons for acting.',
+          'Act vs rule utilitarianism. Act utilitarianism asks: does this action lead to the greatest happiness? Rule utilitarianism asks: does the action accord with rules that lead to the greatest happiness? For the act utilitarian, rules are convenient, but sometimes you should break them, so there are no absolute prohibitions. Rule utilitarianism gives rules a more fundamental role. The lecture distinguishes two concepts of rules: a rule of thumb, and rules that constitute a practice. Promising is an example of the second: without the rules there is no practice of promising at all. Bentham was clearly an act utilitarian; whether Mill was is debated.',
+          'Hedonism: happiness means pleasant mental states. Quantitative hedonism (Bentham) counts only the amount of pleasure: prejudice apart, a simple game like push-pin is worth as much as music and poetry if it gives as much pleasure. Pleasure is measured by its intensity, duration, certainty, proximity, fecundity, purity and extent, which the lecture says should be taken with a grain of salt. Qualitative hedonism (Mill) holds that some pleasures are better in kind than others. It answered critics, but also Bentham, and leaves room for individual development. The lecture linked it to Mill\'s own life: a strict education, a depression, and poetry. Hedonism is no longer the standard theory of value in utilitarianism. More common now is preference satisfaction (welfare), which is also the input for the economic idea of efficiency.',
+          'Impartiality: everyone counts equally, and that includes yourself, as in Singer\'s essay. This has implications for how we judge close relationships.',
+          'Maximisation and aggregation: "the greatest happiness for the greatest number". Aggregative: what matters is the total sum. Maximising: the biggest possible quantity. Example: a group outing to the funfair or to the movies. At the movies everybody is happy; at the funfair the total happiness score is highest, but some are very unhappy. The utilitarian chooses the funfair. The implication: one person\'s pain can be compensated by the happiness of others.',
+          'Teleological structure (telos = goal): the right (actions, rules) is defined by the good (situations, states of affairs). On a teleological view, actions are right because they achieve some goal; on a non-teleological view, they are right because they meet some condition. Example: how should people take political decisions? Teleological answer: use the procedure that produces the best results. Non-teleological answer: use the procedure that treats everyone as an equal.',
+        ],
+      },
+      {
+        heading: 'Lecture: utilitarianism and public policy',
+        paragraphs: [
+          'In theory, utilitarianism was meant for public policy from the start (Bentham) and is defended as a public philosophy today (Goodin, this week\'s reading). In practice it lives on in the idea of efficiency, in cost-benefit analysis and in quality-adjusted life years (QALYs) used in health care.',
+        ],
+      },
+      {
+        heading: 'Lecture: defending the first principle',
+        paragraphs: [
+          'Why should we promote everyone\'s happiness? The forerunners of the classical utilitarians appealed to God\'s will. The general problem is how to defend a first principle at all.',
+          'Bentham\'s defence: other principles are applied inconsistently, so in the end we fall back on the principle of utility, or they are not really principles at all and are despotic or anarchic. A more recent version of this defence: other principles are just based on emotions.',
+          'Mill\'s defence starts from the point that no first principle can be proven by reasoning, whether of knowledge or of conduct. Factual first premises can appeal to the senses and to inner consciousness; can questions about ends appeal to the same faculties? His proof: the only proof that something is visible is that people see it, and that a sound is audible that people hear it; in the same way, the only evidence that something is desirable is that people actually desire it. And to think of something as desirable and to think of it as pleasant are the same thing. So he offers empirical evidence for a moral principle.',
+          'In short: we want happiness, so we ought to bring it about. Two problems. First, the "ought": the word "desirable" is used equivocally, sliding from "can be desired" (like visible) to "ought to be desired". Second, whose happiness: if each person wants their own happiness, why should they promote everyone\'s? Possible answers: we are happy when others are happy (Bentham), or if you want happiness for yourself you cannot deny it to others (Mill). Whether these convince is left open. The lecture\'s tip: rewrite the argument in your own words without the words desire and desirable.',
+        ],
+      },
+      {
+        heading: 'Lecture: objections',
+        paragraphs: [
+          'The separateness of persons (Rawls). Utilitarians maximise and aggregate happiness. One person may sacrifice something now for their own later benefit. Utilitarianism applies the same reasoning to a group, so some people\'s rights may be violated for the aggregate happiness of the group. But what is suitable for an individual is not suitable for a group: a society is not one whole but consists of separate persons, and sacrificing individuals like this cannot be justified.',
+          'Cases. The lecture showed the trolley problem, a runaway tram that will kill five people unless it is switched onto a track where it kills one, and a variant with a footbridge. (The slides only show pictures; in the usual footbridge version the tram can only be stopped by pushing a person off the bridge.) It also named the doctor\'s dilemma and asked what the utilitarian response would be, pointing to John Harris\'s "The Survival Lottery". (Not on the slides: the usual version of the dilemma is a doctor who could kill one healthy patient and use the organs to save five; Harris\'s survival lottery imagines randomly selecting people to be killed so their organs can save more lives.)',
+          'Integrity (Bernard Williams). From the utilitarian point of view it does not matter who does something, only what happens. That leaves no room for integrity or for real moral dilemmas. The lecture\'s example is the job in the evil laboratory. (Not on the slides: in the usual telling, a chemist who opposes chemical and biological weapons is offered a job researching them; if he refuses, someone else will take it and pursue the research more zealously.)',
+        ],
+      },
       {
         heading: 'Reading: the greatest happiness principle (Mill)',
         paragraphs: [
@@ -76,6 +125,17 @@ export const w2: WeekContent = {
     ],
     keyTerms: [
       { term: 'Greatest happiness principle', definition: 'Actions are right as they tend to promote happiness and wrong as they tend to produce its reverse.' },
+      { term: 'Consequentialism', definition: 'Judging actions (not character) only by their consequences, not by the reasons for acting.' },
+      { term: 'Act vs rule utilitarianism', definition: 'Does this action lead to the greatest happiness, or does it accord with rules that lead to the greatest happiness?' },
+      { term: 'Rule of thumb vs constitutive rule', definition: 'A convenient guide that may be broken, versus a rule that makes a practice (such as promising) possible.' },
+      { term: 'Quantitative vs qualitative hedonism', definition: 'Only the amount of pleasure counts, versus some pleasures being better in kind than others.' },
+      { term: 'Preference satisfaction', definition: 'Welfare as getting what you prefer; now more common in utilitarianism than hedonism, and the basis of efficiency.' },
+      { term: 'Maximisation and aggregation', definition: 'Aiming at the biggest possible total sum of happiness, so one person\'s pain can be outweighed by others\' gains.' },
+      { term: 'Teleological structure', definition: 'The right is defined by the good: actions are right because they achieve a goal, not because they meet a condition.' },
+      { term: 'Mill\'s proof', definition: 'The only evidence that something is desirable is that people desire it; people desire happiness, so happiness is desirable.' },
+      { term: 'Equivocation of "desirable"', definition: 'Sliding from "able to be desired" to "ought to be desired", the main charge against Mill\'s proof.' },
+      { term: 'Separateness of persons', definition: 'Objection: trading one person\'s loss for others\' gains treats society as one whole, but persons are separate.' },
+      { term: 'Integrity objection', definition: 'Utilitarianism holds that it does not matter who does something, leaving no room for integrity or moral dilemmas.' },
       { term: 'Swine objection', definition: 'The charge that a morality built on pleasure is fit only for pigs.' },
       { term: 'Higher and lower pleasures', definition: 'Pleasures differ in quality; those of the intellect, feelings and imagination are higher than bodily ones.' },
       { term: 'Competent judges', definition: 'People who have experienced both pleasures; their preference settles which is higher in quality.' },
@@ -100,6 +160,217 @@ export const w2: WeekContent = {
     title: 'Utilitarianism',
     description: 'Week 2 · Happiness, pleasures and public policy',
     lessons: [
+      {
+        id: 'w2-b5',
+        title: 'Lecture: classical utilitarianism',
+        topicId: 'w2-utilitarianism',
+        exercises: [
+          {
+            id: 'w2b5-01',
+            type: 'choice',
+            prompt: 'By what does classical utilitarianism judge an action?',
+            options: [
+              'Only its consequences for happiness',
+              'The reasons for which it is done',
+              'The character of the person acting',
+              'Whether it follows God\'s commands',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b5-02',
+            type: 'multi',
+            prompt: 'Which commitments belong to classical utilitarianism, according to the lecture?',
+            options: [
+              'Consequentialism',
+              'Hedonism',
+              'Impartiality',
+              'A teleological structure',
+              'Absolute prohibitions',
+              'Special duties to family',
+            ],
+            answers: [0, 1, 2, 3],
+          },
+          {
+            id: 'w2b5-03',
+            type: 'match',
+            prompt: 'Match the view to its claim',
+            pairs: [
+              ['Act utilitarianism', 'This action must lead to the greatest happiness'],
+              ['Rule utilitarianism', 'The action must fit rules that lead to the greatest happiness'],
+              ['Consequentialism', 'Only the outcomes of an action count'],
+            ],
+          },
+          {
+            id: 'w2b5-04',
+            type: 'truefalse',
+            statement: 'For an act utilitarian, some rules may never be broken.',
+            answer: false,
+            explanation: 'Rules are convenient, but if breaking one leads to more happiness, you should break it: there are no absolute prohibitions.',
+          },
+          {
+            id: 'w2b5-05',
+            type: 'choice',
+            prompt: 'Why is promising an example of rules that "constitute a practice"?',
+            options: [
+              'Without its rules there is no such thing as a promise',
+              'Keeping promises usually leads to the most happiness',
+              'Promises are legally binding contracts in most cases',
+              'People rarely think about consequences when promising',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b5-06',
+            type: 'match',
+            prompt: 'Match the theory of value to its claim',
+            pairs: [
+              ['Quantitative hedonism', 'Only the amount of pleasure counts'],
+              ['Qualitative hedonism', 'Some pleasures are better in kind'],
+              ['Preference satisfaction', 'Welfare is getting what you prefer'],
+            ],
+          },
+          {
+            id: 'w2b5-07',
+            type: 'multi',
+            prompt: 'Which are dimensions for measuring pleasure in quantitative hedonism?',
+            options: ['Intensity', 'Duration', 'Certainty', 'Fecundity', 'Nobility', 'Popularity'],
+            answers: [0, 1, 2, 3],
+          },
+          {
+            id: 'w2b5-08',
+            type: 'choice',
+            prompt: 'In the funfair-or-movies example, why does the utilitarian choose the funfair?',
+            options: [
+              'It gives the highest total happiness, even if some are unhappy',
+              'Everyone in the group will be at least somewhat happy there',
+              'Most members of the group voted in favour of the funfair',
+              'No one in the group will be very unhappy at the funfair',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b5-09',
+            type: 'fill',
+            text: 'Classical utilitarianism has a ___ structure: the right is defined by the good.',
+            options: ['teleological', 'procedural', 'contractual', 'egalitarian'],
+            answer: 'teleological',
+          },
+          {
+            id: 'w2b5-10',
+            type: 'truefalse',
+            statement: 'Utilitarian impartiality means that your own happiness does not count.',
+            answer: false,
+            explanation: 'Everyone counts equally, and that includes yourself.',
+          },
+        ],
+      },
+      {
+        id: 'w2-b6',
+        title: 'Lecture: defence and objections',
+        topicId: 'w2-utilitarianism',
+        exercises: [
+          {
+            id: 'w2b6-01',
+            type: 'multi',
+            prompt: 'What motivated the classical utilitarians?',
+            options: [
+              'Reforming unjust and unclear laws',
+              'A clear, consistent basic principle',
+              'A secular basis for morality',
+              'Trust in common-sense moral intuitions',
+              'Grounding morality in religion',
+            ],
+            answers: [0, 1, 2],
+          },
+          {
+            id: 'w2b6-02',
+            type: 'multi',
+            prompt: 'Where does utilitarian thinking show up in public policy practice?',
+            options: [
+              'Cost-benefit analysis',
+              'Quality-adjusted life years (QALYs)',
+              'The idea of efficiency',
+              'Absolute human rights',
+              'Trial by jury',
+            ],
+            answers: [0, 1, 2],
+          },
+          {
+            id: 'w2b6-03',
+            type: 'choice',
+            prompt: 'What problem does every first principle face?',
+            options: [
+              'It cannot be proven by reasoning from something more basic',
+              'It always conflicts with at least one other first principle',
+              'It can only be accepted by people who are already religious',
+              'It is too vague to be applied in any concrete situation',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b6-04',
+            type: 'order',
+            prompt: 'Put the steps of the proof of the greatest happiness principle in order',
+            items: [
+              'The only proof that something is visible is that people see it',
+              'Likewise, the only evidence that something is desirable is that people desire it',
+              'People do in fact desire happiness',
+              'So happiness is desirable, and we ought to promote it',
+            ],
+          },
+          {
+            id: 'w2b6-05',
+            type: 'choice',
+            prompt: 'What is the equivocation the proof is accused of?',
+            options: [
+              '"Desirable" slides from "can be desired" to "ought to be desired"',
+              '"Happiness" slides from pleasure to preference satisfaction',
+              '"Visible" is used for objects, "desirable" only for actions',
+              '"Proof" means logical proof in one place, evidence in another',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b6-06',
+            type: 'choice',
+            prompt: 'What does the separateness of persons objection say?',
+            options: [
+              'Sacrificing some for the group is unlike one person trading now for later',
+              'Utilitarianism wrongly counts every person\'s happiness as equally important',
+              'Happiness is private, so it cannot be measured or compared across people',
+              'People are too different to agree on any single principle for society',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b6-07',
+            type: 'choice',
+            prompt: 'What is the integrity objection to utilitarianism?',
+            options: [
+              'It ignores that it matters who does something',
+              'It lets people lie whenever that is convenient',
+              'It demands that we give away most of our income',
+              'It cannot compare different kinds of pleasure',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2b6-08',
+            type: 'truefalse',
+            statement: 'The doctor\'s dilemma is used as an objection to utilitarianism.',
+            answer: true,
+            explanation: 'If only the number of lives counts, killing one patient to save five with their organs looks required. That is what makes it an objection; the lecture asked how a utilitarian might respond.',
+          },
+          {
+            id: 'w2b6-09',
+            type: 'fill',
+            text: 'Hedonism is no longer the standard theory of value in utilitarianism; more common now is ___ satisfaction.',
+            options: ['preference', 'pleasure', 'virtue', 'duty'],
+            answer: 'preference',
+          },
+        ],
+      },
       {
         id: 'w2-b1',
         title: 'Reading: the greatest happiness principle',
@@ -447,6 +718,109 @@ export const w2: WeekContent = {
     description: 'Week 2 · Applying and defending utilitarianism',
     lessons: [
       {
+        id: 'w2-a3',
+        title: 'Lecture: testing utilitarianism',
+        topicId: 'w2-utilitarianism',
+        exercises: [
+          {
+            id: 'w2a3-01',
+            type: 'choice',
+            prompt: 'A runaway tram will kill five people unless you pull a lever that sends it onto a side track, where it kills one. What does classical utilitarianism say?',
+            options: [
+              'Pull the lever: one death is better than five',
+              'Do nothing: you may never cause a death yourself',
+              'Either is fine: the choice is morally neutral',
+              'Ask the six people which outcome they prefer',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2a3-02',
+            type: 'choice',
+            prompt: 'A utilitarian wants to resist the verdict in the doctor\'s dilemma (kill one healthy patient to save five). Which reply fits the theory best?',
+            options: [
+              'A known practice of this kind would destroy trust in doctors and cost lives',
+              'Killing an innocent person is always wrong, whatever the consequences',
+              'The doctor has a special duty to the patient in front of them',
+              'The five patients are responsible for their own illnesses',
+            ],
+            answer: 0,
+            explanation: 'Only the first reply appeals to consequences. It resembles the reading\'s point that policies become public knowledge and change expectations, and a rule-utilitarian focus on rules rather than single acts.',
+          },
+          {
+            id: 'w2a3-03',
+            type: 'choice',
+            prompt: 'A chemist who opposes weapons research is offered a job in such a lab. If he refuses, someone more zealous will take it. What does act utilitarianism say?',
+            options: [
+              'Take the job: the outcome is better if he does it',
+              'Refuse: he must not do work he finds abhorrent',
+              'Refuse: his own happiness counts for the most',
+              'Either way: the outcome will be exactly the same',
+            ],
+            answer: 0,
+            explanation: 'The integrity objection: utilitarianism treats it as irrelevant that he is the one who acts.',
+          },
+          {
+            id: 'w2a3-04',
+            type: 'choice',
+            prompt: 'Which answer to "how should political decisions be taken?" is non-teleological?',
+            options: [
+              'Use the procedure that treats everyone as an equal',
+              'Use the procedure that produces the best results',
+              'Use the procedure that maximises total welfare',
+              'Use the procedure that wastes the least time',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2a3-05',
+            type: 'truefalse',
+            statement: 'For a rule utilitarian, breaking a promise can be wrong even when breaking this one promise would produce slightly more happiness.',
+            answer: true,
+            explanation: 'The question is whether the action accords with rules that lead to the greatest happiness, and promising only exists as a practice through its rules.',
+          },
+          {
+            id: 'w2a3-06',
+            type: 'choice',
+            prompt: 'A health service funds the treatments that gain the most QALYs per euro. Which commitment of utilitarianism does this reflect most?',
+            options: [
+              'Maximisation and aggregation',
+              'The separateness of persons',
+              'Qualitative hedonism',
+              'Absolute prohibitions',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2a3-07',
+            type: 'choice',
+            prompt: 'The proof says that the only evidence that something is desirable is that people desire it. Which example best exposes the problem?',
+            options: [
+              'People desire revenge, yet that does not show they ought to',
+              'People see colours, so colours must be visible to everyone',
+              'People desire happiness, so happiness is something they want',
+              'People sometimes desire things they cannot actually obtain',
+            ],
+            answer: 0,
+            explanation: 'It separates "is desired" from "ought to be desired", which is exactly the equivocation.',
+          },
+          {
+            id: 'w2a3-08',
+            type: 'open',
+            prompt: 'Explain the separateness of persons objection with the funfair example, and give a utilitarian reply.',
+            modelAnswer:
+              'The utilitarian chooses the funfair because total happiness is highest there, even though some people are very unhappy: their unhappiness is outweighed by the others\' greater happiness. The objection: such trade-offs make sense within one life, where I accept a cost now for my own later benefit. But the unhappy people at the funfair are not compensated; others enjoy the gain. Treating the group as one whole that can trade losses against gains ignores that it consists of separate persons, and in serious cases this would justify violating some people\'s rights for the total. Utilitarian replies: everyone\'s happiness was counted equally, so no one was ignored (impartiality); and rules that protect individuals tend to maximise happiness in the long run, especially for policy (rule utilitarianism, government house utilitarianism). A good answer judges whether these replies meet the objection or only reduce how often it bites.',
+            keyPoints: [
+              'Funfair: highest total, some very unhappy',
+              'Within one life vs between persons',
+              'The losers are not compensated',
+              'Reply: impartiality, or protective rules maximise in the long run',
+              'An evaluation of the reply',
+            ],
+          },
+        ],
+      },
+      {
         id: 'w2-a1',
         title: 'Reading: utilitarianism at work',
         topicId: 'w2-utilitarianism',
@@ -608,6 +982,20 @@ export const w2: WeekContent = {
             ],
             answer: 0,
             explanation: '500 gained − 2,000 lost = −1,500. Predictability is itself a source of utility.',
+          },
+          {
+            id: 'w2a2-06',
+            type: 'open',
+            prompt: 'Rewrite the proof of the greatest happiness principle in your own words, without the words "desire" and "desirable". Does it support the principle?',
+            modelAnswer:
+              'Rewritten: just as the only way to show that something can be seen is that people see it, the only way to show that something is worth pursuing is that people actually pursue it. People pursue happiness, so happiness is worth pursuing, and we ought to promote it. Without the loaded words the gap becomes visible. "Can be seen" describes a capacity, while "worth pursuing" is normative, so the analogy with visible and audible breaks down: what people do pursue does not show what they ought to pursue (the is-ought gap from week 1). Second, each person pursues their own happiness, while the principle asks everyone to promote everyone\'s happiness. The suggested bridges (we are happy when others are happy; if you claim happiness for yourself you cannot deny it to others) need extra premises that can be questioned. In the proof\'s favour: first principles cannot be proven by reasoning, so pointing to what people in fact value may be the best evidence available. A good answer ends with a verdict.',
+            keyPoints: [
+              'A rewrite without "desire" and "desirable"',
+              'The equivocation: can be desired vs ought to be desired',
+              'Link to the is-ought gap',
+              'From one\'s own happiness to everyone\'s',
+              'Fair point: first principles cannot be proven',
+            ],
           },
         ],
       },

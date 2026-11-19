@@ -1,16 +1,22 @@
 import type { WeekContent } from '../../types';
 
-// Week 1 - Famine, affluence and morality
-// Sources: reading Singer (1972) and the week 1 reading questions. No lecture slides yet.
+// Week 1 - Introduction to ethics; famine, affluence and morality
+// Sources: lecture "Welcome and Introduction" (16 Nov 2026), seminar A slides (arguments and
+// Singer), the course syllabus, reading Singer (1972) and the week 1 reading questions.
 
 export const w1: WeekContent = {
   topic: {
     id: 'w1-famine-affluence',
     week: 1,
-    title: 'Famine, affluence and morality',
+    title: 'Introduction to ethics; famine and affluence',
     summary:
-      'Do people in rich countries do wrong when they fail to help the starving? The argument that preventing suffering is a duty, not charity, and what that would demand of us.',
+      'What makes a question ethical, why facts alone cannot answer it, and how philosophers argue about it. Then a first argument: preventing suffering is a duty, not charity, and what that would demand of us.',
     keyPoints: [
+      'Normative questions ask what someone should do or which policy to adopt; descriptive questions ask what is the case. Not every normative question is moral: questions of strategy and etiquette are normative too.',
+      'Moral claims are overriding, unconditional and universal.',
+      'The is-ought gap: no prescriptive conclusion follows from descriptive statements alone, so ethics proceeds by argument, not by opinion.',
+      'Philosophical ethics has three branches: applied ethics, normative ethics and meta-ethics. This course covers normative and applied ethics.',
+      'An argument is valid if its conclusion follows from its premises. To establish the conclusion, its premises must also be true or well supported.',
       'Starting assumption: suffering and death from lack of food, shelter and medical care are bad.',
       'Principle: if we can prevent something bad without sacrificing anything of comparable moral importance, we ought to do it. The shallow pond example illustrates it.',
       'Distance makes no moral difference, and neither does the number of others who could help but do not.',
@@ -19,6 +25,44 @@ export const w1: WeekContent = {
       'The strong version of the principle demands giving until the point of marginal utility; even the moderate version would require a radical change in how affluent people live.',
     ],
     sections: [
+      {
+        heading: 'Lecture: what makes a question ethical?',
+        paragraphs: [
+          'Do I have a duty to help alleviate poverty? Do businesses have social responsibilities beyond seeking profit? Should governments give both parents the same amount of parental leave? What these questions share is that they are normative: they ask what someone should do, or which policy a government should adopt. Evaluative questions, such as whether the current Dutch law on parental leave is justified, are normative too. Descriptive questions, by contrast, ask what is the case.',
+          'Not every normative question is a moral one. Which tram or bus gets me home soonest is a question of strategy. Whether to serve my guests first or last when pouring the tea is a question of etiquette. Whether it is justified to experiment on animals to produce medicines is a question of morality. The lecture lists three features of moral claims: they are overriding, unconditional and universal. A strategic "ought", by contrast, only holds if you have the goal in question (getting home soon).',
+        ],
+      },
+      {
+        heading: 'Lecture: answering ethical questions',
+        paragraphs: [
+          'Descriptive questions are answered by observation, whether simple (is it raining?) or complex (what is the effect of strikes on incomes?), and theories are tested against data. For normative questions, empirical facts are not enough. Take the duty to help alleviate poverty: poverty rates, what poverty means for daily life, what charitable giving achieves and how much people give now are all relevant facts. But once we know all of them, the question still stands.',
+          'This is the is-ought gap: prescriptive statements (what ought to be done) cannot be derived from descriptive statements (what is the case) alone. So how do we answer ethical questions? By critical reasoning. An argument gives reasons for believing a conclusion, and that makes it different from an opinion. An opinion only reports your own view: it gives no reasons, and there is no need for others to believe it.',
+          'Ethical arguments draw on values, virtues, rights and obligations, and principles, and several theories are in conversation with one another. Singer\'s essay is an example of a simple argument for radical change.',
+        ],
+      },
+      {
+        heading: 'Lecture: why ethics cannot be avoided',
+        paragraphs: [
+          'Can you do without ethical thought? Hardly: it is deeply ingrained in daily life, in our emotions and in our conversations. The lecture adds the inescapability of agency. We have a capacity for practical reason, and every action implies a reason to act, so as agents we are always in the realm of ethics. For policy advice this means a choice has to be made: not acting is a choice as well.',
+        ],
+      },
+      {
+        heading: 'Lecture: ethics, public policy and philosophy',
+        paragraphs: [
+          'Public policy is "anything a government chooses to do or not to do" (Dye 1972): it is done by a public authority, for the public good. Examples are welfare schemes, market regulation, environmental laws and immigration policy. So the ethics of public policy is much broader than medical ethics.',
+          'Everyday ethics is thinking about what to do. Philosophical ethics is thinking about thinking about what to do, so it is doubly reflective. It works through theories, conceptual questions and reflection on the practice of ethical reasoning itself.',
+          'It has three branches. Applied ethics asks what agents should do in specific situations; it includes medical, business and environmental ethics. Normative ethics asks what makes an action right. Meta-ethics asks what the status of moral claims is. No branch is a mere application of another: cases enrich and challenge theories, and meta-ethics reflects on ethics itself. This course focuses on normative and applied ethics.',
+        ],
+      },
+      {
+        heading: 'Lecture: three theories and the course',
+        paragraphs: [
+          'The course studies three normative theories. Utilitarianism: an action is right if and only if it promotes the best consequences, compared with the alternatives. Kantianism: an action is right if and only if it is done for reasons that everyone could accept as a universal law. Virtue ethics: an action is right if and only if it is what a virtuous agent would do.',
+          'The goal is not to have an answer ready for every question, or a theory ready to apply to every case, but expertise in ethical reasoning about public policy: constructing, analysing and evaluating moral arguments. Part 1 (weeks 1-4) covers the normative theories and their implications for policy. Part 2 (weeks 5-7) looks closely at three policy areas: business ethics (corporate social responsibility), human rights, and the moral limits of markets.',
+          'Each week has one lecture, which previews the next week\'s topic, and two seminars for close reading and philosophical skills. The long Wednesday seminar has extra time for skills. The reading questions help you focus, but they are not all you need to know.',
+          'Assessment: an individual paper (50%) that analyses a normative theory and applies it to a policy case, in 2,500 words, due on Brightspace on 18 December 2026 at 17:00. A written exam (50%): closed book, open essay questions answered by hand, testing knowledge and understanding of the theories in the mandatory readings, on Monday 25 January 2027, 8:30-10:30, in the Educatorium (room Gamma). A mock exam appears on Brightspace before the winter break, and the last lecture (week 7) is a wrap-up with time for questions. Generative AI may not be used for the paper or the exam.',
+        ],
+      },
       {
         heading: 'Reading: the core argument (Singer 1972)',
         paragraphs: [
@@ -60,8 +104,27 @@ export const w1: WeekContent = {
           'Philosophers, finally, are competent to take a position here: the facts about suffering are not in dispute. Taking the conclusion seriously means acting on it.',
         ],
       },
+      {
+        heading: 'Seminar: arguments in philosophy',
+        paragraphs: [
+          'An argument is a statement (a claim or conclusion) supported by other statements (reasons or premises). Classic example: all human beings are mortal; Socrates is a human being; so Socrates is mortal. The conclusion follows from the premises, so the argument is valid. If the premises are also true or well supported, the argument is true as well (elsewhere this is often called a sound argument).',
+          'An invalid argument: Socrates is a human being; human beings sometimes like cheese; so Socrates likes cheese. The conclusion does not follow. An untrue argument: it has not rained all week; when it does not rain, the roads are dry; so the roads are dry. The conclusion would follow, but a premise is not true: roads can be wet without rain.',
+          'Arguments can be complex. Sub-premises can support one premise, and an intermediate conclusion (C1) can serve, together with further premises, as a premise for the final conclusion (C2).',
+          'Reading philosophical texts: read actively, with a pen or pencil; summarise the main and supporting arguments; highlight and define the main concepts; and write down both your questions of understanding and your questions for discussion.',
+          'Crafting a moral argument (e.g. should the government invest in nuclear energy, ban cigarettes or introduce a universal basic income?): decide on an answer based on reasons, write the argument as a scheme (P1, P2, ... C) and check that it is valid, then rewrite it in ordinary prose. To evaluate someone else\'s argument, first reconstruct it as a scheme, then ask: does the conclusion follow from the premises? Are premises missing? Are the premises sufficiently supported, or does it rest on unwarranted assumptions? Which objections should it still consider?',
+          'Discussion questions on Singer from the seminar: is it wrong to spend money on clothes you do not need to keep warm, and what about an expensive but excellent school, or a comfortable pension? Is the child-in-the-pond analogy convincing? If no one else does anything, does your duty change at some point? And the close reading focused on duty and supererogation.',
+        ],
+      },
     ],
     keyTerms: [
+      { term: 'Normative vs descriptive question', definition: 'A normative question asks what should be done or which policy to adopt (including whether something is justified); a descriptive question asks what is the case.' },
+      { term: 'Features of moral claims', definition: 'Moral claims are overriding, unconditional and universal, unlike claims of strategy or etiquette.' },
+      { term: 'Is-ought gap', definition: 'Prescriptive statements cannot be derived from descriptive statements alone.' },
+      { term: 'Argument vs opinion', definition: 'An argument gives reasons for believing a conclusion; an opinion only reports your view, without reasons or a claim that others should share it.' },
+      { term: 'Inescapability of agency', definition: 'Every action implies a reason to act, so as agents we are always in the realm of ethics.' },
+      { term: 'Public policy', definition: '"Anything a government chooses to do or not to do" (Dye 1972): done by a public authority, for the public good.' },
+      { term: 'Applied, normative and meta-ethics', definition: 'What agents should do in specific situations; what makes an action right; what the status of moral claims is.' },
+      { term: 'Valid argument', definition: 'An argument whose conclusion follows from its premises. Whether the premises are true is a separate question.' },
       { term: 'Principle of preventing bad occurrences', definition: 'If we can prevent something bad without sacrificing anything of comparable moral importance, we ought to do it.' },
       { term: 'Strong vs moderate version', definition: 'The moderate version only allows us to keep what is "morally significant", not what is of "comparable moral importance".' },
       { term: 'Shallow pond example', definition: 'Saving a child drowning in a shallow pond at the cost of muddy clothes: the cost is trivial, so we ought to do it.' },
@@ -76,9 +139,197 @@ export const w1: WeekContent = {
 
   basics: {
     id: 'w1-basics',
-    title: 'Famine and affluence',
-    description: 'Week 1 · Duty, charity and distance',
+    title: 'Introduction to ethics',
+    description: 'Week 1 · Ethical questions, arguments and famine relief',
     lessons: [
+      {
+        id: 'w1-b3',
+        title: 'Lecture: ethical questions',
+        topicId: 'w1-famine-affluence',
+        exercises: [
+          {
+            id: 'w1b3-01',
+            type: 'choice',
+            prompt: 'Which of these is a descriptive question?',
+            options: [
+              'What is the effect of strikes on incomes?',
+              'Should parents get equal parental leave?',
+              'Is the Dutch parental leave law justified?',
+              'Do I have a duty to help end poverty?',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w1b3-02',
+            type: 'truefalse',
+            statement: 'Evaluative questions, such as whether a current law is justified, are a kind of normative question.',
+            answer: true,
+          },
+          {
+            id: 'w1b3-03',
+            type: 'match',
+            prompt: 'Match each normative question to its kind',
+            pairs: [
+              ['Which tram gets me home soonest?', 'Strategy'],
+              ['Should I pour my guests\' tea first or last?', 'Etiquette'],
+              ['May we test medicines on animals?', 'Morality'],
+            ],
+          },
+          {
+            id: 'w1b3-04',
+            type: 'multi',
+            prompt: 'Which features of moral claims does the lecture name?',
+            options: ['Overriding', 'Unconditional', 'Universal', 'Empirical', 'Optional'],
+            answers: [0, 1, 2],
+          },
+          {
+            id: 'w1b3-05',
+            type: 'choice',
+            prompt: 'Why can facts about poverty not settle, on their own, whether you have a duty to help?',
+            options: [
+              'Facts about what is cannot by themselves show what ought to be',
+              'Statistics about poverty are often unreliable or out of date',
+              'Duties only concern people we personally know and see',
+              'Charitable giving has been shown to have no real effect',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w1b3-06',
+            type: 'fill',
+            text: 'That no prescriptive statement follows from descriptive statements alone is called the is-___ gap.',
+            options: ['ought', 'fact', 'value', 'must'],
+            answer: 'ought',
+          },
+          {
+            id: 'w1b3-07',
+            type: 'choice',
+            prompt: 'What makes an argument different from an opinion?',
+            options: [
+              'It gives reasons that should lead others to accept the conclusion',
+              'It is stated with more confidence and conviction than an opinion',
+              'It reports what the speaker personally believes to be true',
+              'It is always based on scientific data and observation',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w1b3-08',
+            type: 'truefalse',
+            statement: 'According to the lecture, a policy adviser can stay out of ethics by sticking to the facts.',
+            answer: false,
+            explanation: 'Every action implies a reason to act, and policy advice means making a choice; not acting is a choice too.',
+          },
+          {
+            id: 'w1b3-09',
+            type: 'choice',
+            prompt: 'What does "the inescapability of agency" mean?',
+            options: [
+              'Every action implies a reason to act, so we are always in ethics',
+              'People can never escape the consequences of what they have done',
+              'Governments must always act, since doing nothing is not allowed',
+              'Agents always act from self-interest, whatever they may claim',
+            ],
+            answer: 0,
+          },
+        ],
+      },
+      {
+        id: 'w1-b4',
+        title: 'Lecture: ethics as a discipline',
+        topicId: 'w1-famine-affluence',
+        exercises: [
+          {
+            id: 'w1b4-01',
+            type: 'choice',
+            prompt: 'How does the lecture define public policy?',
+            options: [
+              'Anything a government chooses to do or not to do',
+              'Laws passed by parliament after a public debate',
+              'Health care decisions made by the state',
+              'Any rule a public or private body adopts',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w1b4-02',
+            type: 'truefalse',
+            statement: 'The ethics of public policy is mainly a matter of medical ethics.',
+            answer: false,
+            explanation: 'Public policy also covers welfare schemes, market regulation, environmental laws, immigration and much more.',
+          },
+          {
+            id: 'w1b4-03',
+            type: 'choice',
+            prompt: 'Why is philosophical ethics called "doubly reflective"?',
+            options: [
+              'It thinks about how we should think about what to do',
+              'It considers both individual and government action',
+              'It checks every moral claim against the facts twice',
+              'It reflects on the past and the future at the same time',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w1b4-04',
+            type: 'match',
+            prompt: 'Match the branch of ethics to its question',
+            pairs: [
+              ['Applied ethics', 'What should agents do in specific situations?'],
+              ['Normative ethics', 'What makes an action right?'],
+              ['Meta-ethics', 'What is the status of moral claims?'],
+            ],
+          },
+          {
+            id: 'w1b4-05',
+            type: 'match',
+            prompt: 'Match the theory to its test for right action',
+            pairs: [
+              ['Utilitarianism', 'It promotes the best consequences'],
+              ['Kantianism', 'Its reasons could be a universal law'],
+              ['Virtue ethics', 'A virtuous agent would do it'],
+            ],
+          },
+          {
+            id: 'w1b4-06',
+            type: 'truefalse',
+            statement: 'On the lecture\'s view, applied ethics is simply the application of normative theories to cases.',
+            answer: false,
+            explanation: 'No branch is a mere application of another: cases enrich and challenge theories.',
+          },
+          {
+            id: 'w1b4-07',
+            type: 'fill',
+            text: 'Business ethics and environmental ethics are parts of ___ ethics.',
+            options: ['applied', 'normative', 'meta-', 'virtue'],
+            answer: 'applied',
+          },
+          {
+            id: 'w1b4-08',
+            type: 'choice',
+            prompt: 'What does the course aim to give you?',
+            options: [
+              'Skill in constructing, analysing and evaluating moral arguments',
+              'A ready answer to every policy question that might come up',
+              'One correct theory that can be applied to every case',
+              'A complete overview of Dutch public policy and law',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w1b4-09',
+            type: 'choice',
+            prompt: 'What does the individual paper ask you to do?',
+            options: [
+              'Analyse a normative theory and apply it to a policy case',
+              'Summarise each of the readings from the first four weeks',
+              'Compare two of the policy domains from the second part',
+              'Review and grade a paper written by a fellow student',
+            ],
+            answer: 0,
+          },
+        ],
+      },
       {
         id: 'w1-b1',
         title: 'Reading: the core argument',
@@ -256,14 +507,210 @@ export const w1: WeekContent = {
           },
         ],
       },
+      {
+        id: 'w1-b5',
+        title: 'Seminar: arguments',
+        topicId: 'w1-famine-affluence',
+        exercises: [
+          {
+            id: 'w1b5-01',
+            type: 'choice',
+            prompt: 'What is an argument, as the seminar defines it?',
+            options: [
+              'A claim supported by other statements, its premises',
+              'A disagreement between two people about a claim',
+              'A strongly held view on a controversial question',
+              'A claim that is backed up by scientific evidence',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w1b5-02',
+            type: 'choice',
+            prompt: 'When is an argument valid?',
+            options: [
+              'When its conclusion follows from its premises',
+              'When all of its premises are actually true',
+              'When most people accept its conclusion',
+              'When it has at least two separate premises',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w1b5-03',
+            type: 'choice',
+            prompt: '"Socrates is a human being. Human beings sometimes like cheese. So Socrates likes cheese." What is wrong with this argument?',
+            options: [
+              'It is invalid: the conclusion does not follow',
+              'It is valid, but its first premise is false',
+              'Nothing: it is both valid and true',
+              'It is circular: the conclusion is a premise',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w1b5-04',
+            type: 'truefalse',
+            statement: 'An argument can be valid even if one of its premises is false.',
+            answer: true,
+            explanation: 'Validity only concerns whether the conclusion follows. "When it does not rain, the roads are dry" makes the seminar\'s rain example valid but untrue.',
+          },
+          {
+            id: 'w1b5-05',
+            type: 'fill',
+            text: 'In a complex argument, an intermediate ___ (C1) can serve as a premise for the final one (C2).',
+            options: ['conclusion', 'objection', 'opinion', 'example'],
+            answer: 'conclusion',
+          },
+          {
+            id: 'w1b5-06',
+            type: 'multi',
+            prompt: 'Which reading strategies does the seminar recommend for philosophical texts?',
+            options: [
+              'Read actively, with a pen or pencil',
+              'Summarise the main and supporting arguments',
+              'Highlight and define the main concepts',
+              'Note questions of understanding and for discussion',
+              'Read only the introduction and conclusion',
+              'Skip the examples to save time',
+            ],
+            answers: [0, 1, 2, 3],
+          },
+          {
+            id: 'w1b5-07',
+            type: 'order',
+            prompt: 'Put the steps for crafting a moral argument in order',
+            items: [
+              'Choose a question and an answer, based on reasons',
+              'Write the argument as a scheme (P1, P2, ... C)',
+              'Check that the scheme is valid',
+              'Rewrite the argument in ordinary prose',
+              'Let others reconstruct and evaluate it',
+            ],
+          },
+          {
+            id: 'w1b5-08',
+            type: 'multi',
+            prompt: 'Which questions help you evaluate someone else\'s argument?',
+            options: [
+              'Does the conclusion follow from the premises?',
+              'Are some premises missing?',
+              'Are the premises sufficiently supported?',
+              'Which objections should it still consider?',
+              'Is the author an expert on the topic?',
+              'Do most people agree with the conclusion?',
+            ],
+            answers: [0, 1, 2, 3],
+          },
+        ],
+      },
     ],
   },
 
   advanced: {
     id: 'w1-advanced',
-    title: 'Famine and affluence: analysis',
-    description: 'Week 1 · Testing and applying the argument',
+    title: 'Introduction to ethics: analysis',
+    description: 'Week 1 · Building, testing and applying arguments',
     lessons: [
+      {
+        id: 'w1-a3',
+        title: 'Lecture and seminar: reasoning about ethics',
+        topicId: 'w1-famine-affluence',
+        exercises: [
+          {
+            id: 'w1a3-01',
+            type: 'choice',
+            prompt: '"Smoking causes most lung cancer, so the government ought to ban cigarettes." What does this argument need to be valid?',
+            options: [
+              'A normative premise linking the facts to what government ought to do',
+              'More precise statistics on how many smokers get lung cancer',
+              'Evidence that a ban would actually reduce smoking rates',
+              'A survey showing that most citizens support a ban',
+            ],
+            answer: 0,
+            explanation: 'The is-ought gap: from facts alone no "ought" follows. A premise such as "the government ought to prevent major causes of serious illness" is missing. Evidence that a ban works matters for whether the premises are true, not for validity.',
+          },
+          {
+            id: 'w1a3-02',
+            type: 'choice',
+            prompt: 'Someone says: "In my view animal testing is fine, and that\'s all there is to it." Why is this not yet an argument?',
+            options: [
+              'It reports a view but gives no reasons to accept it',
+              'It is about animals, so it is not a moral question',
+              'It is a descriptive claim, not a normative one',
+              'It is valid, but it rests on a false premise',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w1a3-03',
+            type: 'choice',
+            prompt: '"If you want to get home soon, you should take tram 22." Which feature of moral claims does this "should" lack?',
+            options: [
+              'It is not unconditional: it depends on your goal',
+              'It is not descriptive: it says what you should do',
+              'It is not normative: it is about trams, not people',
+              'It is not an argument: it gives no premises at all',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w1a3-04',
+            type: 'match',
+            prompt: 'Classify each question',
+            pairs: [
+              ['Do strikes raise workers\' incomes?', 'Descriptive'],
+              ['Is the Dutch parental leave law justified?', 'Normative and moral'],
+              ['Which bus gets me home fastest?', 'Normative, not moral'],
+            ],
+          },
+          {
+            id: 'w1a3-05',
+            type: 'choice',
+            prompt: 'A policy is defended because "it produces the best outcomes compared with the alternatives". Which theory\'s test is this?',
+            options: ['Utilitarianism', 'Kantianism', 'Virtue ethics', 'Meta-ethics'],
+            answer: 0,
+          },
+          {
+            id: 'w1a3-06',
+            type: 'choice',
+            prompt: 'A minister says: "I\'m not taking a moral position, I\'m just leaving the law as it is." What would the lecture reply?',
+            options: [
+              'Not acting is also a choice that needs moral reasons',
+              'Ministers should leave ethics to the philosophers',
+              'Leaving a law unchanged is always morally neutral',
+              'Only new laws need a moral justification',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w1a3-07',
+            type: 'multi',
+            prompt: 'Which of these are normative claims?',
+            options: [
+              'Governments ought to tax sugary drinks',
+              'The Dutch law on parental leave is unjust',
+              'Experimenting on animals is never justified',
+              'Most Dutch people support a sugar tax',
+              'Charitable giving fell last year',
+            ],
+            answers: [0, 1, 2],
+          },
+          {
+            id: 'w1a3-08',
+            type: 'open',
+            prompt: 'Construct a valid argument for (or against) a universal basic income as a scheme of premises and a conclusion. Which premise would an opponent attack?',
+            modelAnswer:
+              'Example scheme. P1: The government ought to ensure that everyone can meet their basic needs. P2: If the government ought to ensure something, it ought to adopt the best available way of ensuring it. P3: A universal basic income is the best available way to ensure that everyone can meet their basic needs. C: The government ought to implement a universal basic income. P2 is easy to forget, but without it the argument is not valid. P1 is a normative premise, needed because of the is-ought gap; P3 is largely empirical and needs support (costs, effects on work, alternatives such as targeted benefits). An opponent could attack P1 (the government\'s duty is narrower) or, more likely, P3. A good answer checks validity, names the missing premise and says what support each premise needs.',
+            keyPoints: [
+              'Premises and conclusion written out separately',
+              'At least one normative premise (is-ought gap)',
+              'Validity checked; hidden premises made explicit',
+              'Weakest premise identified, with the support it needs',
+            ],
+          },
+        ],
+      },
       {
         id: 'w1-a1',
         title: 'Reading: testing the argument',
@@ -419,6 +866,20 @@ export const w1: WeekContent = {
               'Strength: the victims are equally harmed whoever fails to act',
               'Weakness: unfair burden on those who do comply',
               'Possible solution: fair shares through coordination',
+            ],
+          },
+          {
+            id: 'w1a2-06',
+            type: 'open',
+            prompt: 'A seminar question: is it wrong to spend money on clothes you don\'t need to keep warm? What about an expensive but excellent school, or a comfortable pension? Answer with the principle from the reading.',
+            modelAnswer:
+              'The principle says we ought to prevent something bad if we can do so without sacrificing anything of comparable moral importance (strong version) or anything morally significant (moderate version). Fashionable clothes fail both tests: nothing significant is lost by wearing old clothes, while the money could prevent starvation, so on this argument spending it on clothes is wrong. A school and a pension are harder. Education and security in old age are arguably morally significant, so the moderate version might allow some spending on them. But the question is about the expensive extra: an excellent rather than an adequate school, a comfortable rather than a sufficient pension. On the strong version it is hard to say that extra is as important as the lives the money could save. A good answer separates the necessary part from the extra, shows how the two versions differ, and takes a position on whether this conclusion counts against the principle or against our habits.',
+            keyPoints: [
+              'The test: anything of comparable moral importance (or morally significant)?',
+              'Clothes: nothing significant lost, so wrong',
+              'School and pension: necessary part vs expensive extra',
+              'Strong and moderate versions can give different answers',
+              'A reasoned verdict',
             ],
           },
         ],

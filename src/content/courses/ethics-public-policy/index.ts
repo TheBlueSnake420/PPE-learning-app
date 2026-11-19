@@ -7,8 +7,10 @@ import { w5 } from './w5';
 import { w6 } from './w6';
 import { w7 } from './w7';
 
-// Block 2. All weeks are built from the assigned readings and reading questions; no lecture
-// slides are available yet. When they arrive, add lecture sections and lessons to each week.
+// Block 2. Every week is built from the assigned readings and reading questions. Lecture and
+// seminar slides are added as they arrive: each lecture previews the next week, so the lecture
+// given in week N goes into week N + 1 (the introduction lecture is in week 1). So far: the
+// introduction lecture and seminar A slides (w1) and the utilitarianism lecture (w2).
 export const ethicsPublicPolicy = courseFromWeeks(
   {
     id: 'ethics-public-policy',
