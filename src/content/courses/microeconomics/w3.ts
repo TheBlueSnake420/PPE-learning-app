@@ -1,13 +1,13 @@
 import type { WeekContent } from '../../types';
 
-// Week 3 - Strategic interactions, social dilemmas, and the rules of the game
+// Teaching week 2 - Strategic interactions, social dilemmas, and the rules of the game
 // Sources: The Economy 2.0: Microeconomics (CORE Econ 2023), Units 4 and 5. No lecture slides yet.
 // Calculus extensions are left out. Pay-off numbers are taken from the book's running examples.
 
 export const w3: WeekContent = {
   topic: {
     id: 'w3-games-institutions',
-    week: 3,
+    week: 2,
     title: 'Social dilemmas and the rules of the game',
     summary:
       'Game theory (best responses, Nash equilibrium, prisoners\' dilemma, public goods, ultimatum and coordination games), how social preferences, norms and institutions shape cooperation, and how institutions and power decide who gets what in the Angela and Bruno model.',
@@ -159,7 +159,7 @@ export const w3: WeekContent = {
   basics: {
     id: 'w3-basics',
     title: 'Games and institutions',
-    description: 'Week 3 · Nash equilibrium, dilemmas, power and fairness',
+    description: 'Week 2 · Nash equilibrium, dilemmas, power and fairness',
     lessons: [
       {
         id: 'w3-b1',
@@ -597,7 +597,7 @@ export const w3: WeekContent = {
   advanced: {
     id: 'w3-advanced',
     title: 'Games and institutions: analysis',
-    description: 'Week 3 · Solving games, measuring inequality',
+    description: 'Week 2 · Solving games, measuring inequality',
     lessons: [
       {
         id: 'w3-a1',

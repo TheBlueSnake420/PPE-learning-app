@@ -1,6 +1,6 @@
 import type { WeekContent } from '../../types';
 
-// Week 6 - Market successes and failures; the firm and its employees
+// Teaching week 5 - Market successes and failures; the firm and its employees
 // Sources: The Economy 2.0: Microeconomics (CORE Econ 2023), Unit 10 and Unit 6 (sections 6.1-6.3
 // and 6.6, as set in the syllabus). No lecture slides yet. Calculus extensions are left out.
 // The Min's Music demand curve (WTP $15 for the first listener, $0 at 10,000) is derived from the
@@ -9,7 +9,7 @@ import type { WeekContent } from '../../types';
 export const w6: WeekContent = {
   topic: {
     id: 'w6-market-failure',
-    week: 6,
+    week: 5,
     title: 'Market failures and the firm',
     summary:
       'When private decisions affect others: external costs and benefits, why they cause market failure, and remedies (bargaining, regulation, taxes, compensation); public goods, shared resources and excludability; hidden actions and hidden attributes; the limits of markets; and inside the firm: owners, managers, workers and incomplete contracts.',
@@ -166,7 +166,7 @@ export const w6: WeekContent = {
   basics: {
     id: 'w6-basics',
     title: 'Market failures and the firm',
-    description: 'Week 6 · Externalities, public goods, information, firms',
+    description: 'Week 5 · Externalities, public goods, information, firms',
     lessons: [
       {
         id: 'w6-b1',
@@ -652,7 +652,7 @@ export const w6: WeekContent = {
   advanced: {
     id: 'w6-advanced',
     title: 'Market failures and the firm: analysis',
-    description: 'Week 6 · Pollution, public goods and information',
+    description: 'Week 5 · Pollution, public goods and information',
     lessons: [
       {
         id: 'w6-a1',

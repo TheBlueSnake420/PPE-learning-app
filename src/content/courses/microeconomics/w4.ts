@@ -1,13 +1,13 @@
 import type { WeekContent } from '../../types';
 
-// Week 4 - The firm and its customers
+// Teaching week 3 - The firm and its customers
 // Sources: The Economy 2.0: Microeconomics (CORE Econ 2023), Unit 7. No lecture slides yet.
 // Calculus extensions are left out. The Beautiful Cars demand curve is P = 40,000 - 400Q.
 
 export const w4: WeekContent = {
   topic: {
     id: 'w4-firm-customers',
-    week: 4,
+    week: 3,
     title: 'The firm and its customers',
     summary:
       'How a firm selling a differentiated product chooses price and quantity: isoprofit curves and the demand curve, costs and economies of scale, elasticity and marginal revenue, MR = MC, consumer and producer surplus, deadweight loss, strategic pricing and competition policy.',
@@ -124,7 +124,7 @@ export const w4: WeekContent = {
   basics: {
     id: 'w4-basics',
     title: 'The firm and its customers',
-    description: 'Week 4 · Prices, costs, elasticity and surplus',
+    description: 'Week 3 · Prices, costs, elasticity and surplus',
     lessons: [
       {
         id: 'w4-b1',
@@ -466,7 +466,7 @@ export const w4: WeekContent = {
   advanced: {
     id: 'w4-advanced',
     title: 'The firm and its customers: analysis',
-    description: 'Week 4 · Profit maximisation and strategy',
+    description: 'Week 3 · Profit maximisation and strategy',
     lessons: [
       {
         id: 'w4-a1',

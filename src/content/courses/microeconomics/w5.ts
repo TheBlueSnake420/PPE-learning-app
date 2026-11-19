@@ -1,13 +1,13 @@
 import type { WeekContent } from '../../types';
 
-// Week 5 - Supply and demand: markets with many buyers and sellers
+// Teaching week 4 - Supply and demand: markets with many buyers and sellers
 // Sources: The Economy 2.0: Microeconomics (CORE Econ 2023), Unit 8. No lecture slides yet.
 // Calculus extensions are left out.
 
 export const w5: WeekContent = {
   topic: {
     id: 'w5-supply-demand',
-    week: 5,
+    week: 4,
     title: 'Supply and demand',
     summary:
       'Markets with many buyers and sellers of identical goods: demand and supply curves, the market-clearing price, competitive equilibrium and price-taking, firms\' supply curves, gains from trade, supply and demand shocks, short-run and long-run equilibria, cartels, taxes and price controls.',
@@ -132,7 +132,7 @@ export const w5: WeekContent = {
   basics: {
     id: 'w5-basics',
     title: 'Supply and demand',
-    description: 'Week 5 · Equilibrium, price-taking, shocks and policy',
+    description: 'Week 4 · Equilibrium, price-taking, shocks and policy',
     lessons: [
       {
         id: 'w5-b1',
@@ -470,7 +470,7 @@ export const w5: WeekContent = {
   advanced: {
     id: 'w5-advanced',
     title: 'Supply and demand: analysis',
-    description: 'Week 5 · Adjustment, competition and policy',
+    description: 'Week 4 · Adjustment, competition and policy',
     lessons: [
       {
         id: 'w5-a1',

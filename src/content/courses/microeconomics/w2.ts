@@ -1,12 +1,13 @@
 import type { WeekContent } from '../../types';
 
-// Week 2 - Doing the best you can: scarcity, wellbeing and working hours
-// Sources: The Economy 2.0: Microeconomics (CORE Econ 2023), Unit 3. No lecture slides yet.
+// Teaching week 1 (lecture 19 Nov) - Doing the best you can: scarcity, wellbeing and working hours
+// Sources: The Economy 2.0: Microeconomics (CORE Econ 2023), Unit 3; lecture slides week 1 (Unit 3).
+// The file is w2 because Unit 2 (w1) comes first; IDs stay as they are.
 
 export const w2: WeekContent = {
   topic: {
     id: 'w2-scarcity-wellbeing',
-    week: 2,
+    week: 1,
     title: 'Scarcity, wellbeing and working hours',
     summary:
       'The constrained choice model: preferences (indifference curves, MRS), the feasible set (budget constraint, MRT), the best choice where MRS = MRT, and how income and substitution effects explain working hours over time, across countries and between men and women.',
@@ -16,6 +17,7 @@ export const w2: WeekContent = {
       'The marginal rate of substitution (MRS) is the trade-off you are willing to make: the absolute slope of the indifference curve.',
       'The budget constraint c = w(24 − t) bounds the feasible set. Its absolute slope, the marginal rate of transformation (MRT), equals the wage: the opportunity cost of an hour of free time.',
       'In a constrained choice problem the best choice is on the feasible frontier where MRS = MRT: the indifference curve is tangent to the budget constraint.',
+      'Lecture: with a utility function, MRS = MU_x / MU_y; with two goods and prices, MRT = p_x / p_y, so the best choice satisfies MU_x / MU_y = p_x / p_y. Perfect substitutes often give a corner solution; perfect complements are only useful in fixed combinations.',
       'A wage rise has an income effect (more free time) and a substitution effect (free time is dearer, so less of it). Hours fall if the income effect dominates. Unearned income has only an income effect.',
       'The model helps explain rising hours before 1870 and falling hours in the 20th century; the Veblen effect links inequality to longer hours; a gender wage gap can produce a gender division of paid and unpaid work.',
       'The model is a simplification: people behave "as if" they optimise through trial and error; culture, politics and employers also shape hours.',
@@ -38,11 +40,35 @@ export const w2: WeekContent = {
         ],
       },
       {
+        heading: 'Lecture: utility functions and marginal utility',
+        paragraphs: [
+          'The lecture lists four properties of standard indifference curves: they slope downward; they are smooth, convex and continuous; they do not cross; and they get flatter to the right.',
+          'A common example is the Cobb-Douglas utility function U(x, y) = x^α · y^β. It gives convex indifference curves and represents goods that are imperfect substitutes. The marginal utility of a good is the extra utility from one more unit of it, holding the other good constant (the partial derivative): MU_x = αx^(α−1) · y^β and MU_y = βx^α · y^(β−1). The MRS is the ratio of the marginal utilities: MRS = MU_x / MU_y = αy / (βx).',
+          'Karim\'s preferences are described by U(t, c) = (t − 6)² · (c − 45), with t hours of free time and c consumption. The points 15 h and €540, 16 h and €446, 17 h and €376, 18 h and €323, 19 h and €282, and 20 h and €250 all give a utility of about 40,095, so they lie on one indifference curve. His marginal utilities are MU_t = 2(t − 6)(c − 45) and MU_c = (t − 6)², so MRS = MU_t / MU_c = 2(c − 45) / (t − 6).',
+          'Arc and point MRS: moving from 15 to 16 hours, Karim gives up 540 − 446 = €94, an arc MRS of 94 (Δc/Δt between two points). The point MRS at 15 hours and €540 is 2 × 495 / 9 = 110: the slope of the tangent to the indifference curve at that point. Because the curve is convex, the tangent flattens as free time increases, so the MRS diminishes: at 20 hours and €250 it is 2 × 205 / 14 ≈ 29.',
+        ],
+      },
+      {
+        heading: 'Lecture: perfect substitutes and perfect complements',
+        paragraphs: [
+          'Not all preferences give smooth, bowed indifference curves. With perfect one-to-one substitutes (the lecture\'s example: nights out and nights playing a video game), indifference curves are straight lines. The best choice is then often a corner solution: you spend all your money on the cheaper good.',
+          'With perfect complements, goods only give utility in a fixed combination: one right shoe and one left shoe make a pair, and an extra right shoe on its own adds nothing. The indifference curves are L-shaped, with their corners on the line where the two goods are in the right proportion.',
+        ],
+      },
+      {
         heading: 'The feasible set and the budget constraint',
         paragraphs: [
           'If Karim takes t hours of free time, he works 24 − t hours, so his maximum consumption is c = w(24 − t): his budget constraint. At €30 an hour it is c = 30(24 − t), a downward-sloping line with slope −30. Points above it are not feasible; points on or below it form the feasible set. Points below it are feasible but wasteful: he could have more of one good without giving up the other. The budget constraint is the feasible frontier.',
           'The marginal rate of transformation (MRT) is the rate at which one good can be turned into the other along the frontier: here the wage, €30 per hour. It is also the opportunity cost of an hour of free time. If the wage rose to €35, the constraint would become steeper (slope −35).',
           'So there are two trade-offs: the MRS, which Karim is willing to make (slope of the indifference curve), and the MRT, which he is constrained to make (slope of the frontier).',
+        ],
+      },
+      {
+        heading: 'Lecture: the budget constraint with two goods',
+        paragraphs: [
+          'With income M spent on two goods x and y at prices p_x and p_y, the budget constraint is M = p_x · x + p_y · y. It is the feasible frontier; everything on or inside it is the feasible set. Example: M = €100, p_x = €5 and p_y = €10 give 100 = 5x + 10y, or y = 10 − ½x. The slope is dy/dx = −½ = −p_x / p_y.',
+          'The absolute value of this slope is the MRT: the rate at which you can trade one good for the other in the market. The best choice is on the highest attainable indifference curve, where MRS = MRT: your willingness to give up y for x equals your ability to trade y for x, so MU_x / MU_y = p_x / p_y.',
+          'For Karim, the MRT is dc/dt: the wage (€30, or €45 after a rise). The lecture adds two assumptions behind his model: he does not care about the future, so he saves nothing, and he cannot borrow, so his spending cannot exceed his earnings. In the summer job example, consumption is C = 90(70 − t) and the best choice satisfies MU_t / MU_c = w.',
         ],
       },
       {
@@ -109,6 +135,11 @@ export const w2: WeekContent = {
       { term: 'Marginal rate of substitution (MRS)', definition: 'The trade-off a person is willing to make between two goods: the absolute slope of the indifference curve.' },
       { term: 'Convex preferences', definition: 'Indifference curves get flatter to the right (diminishing MRS): mixtures are preferred to extremes.' },
       { term: 'Marginal utility', definition: 'The extra utility from a one-unit increase in a good.' },
+      { term: 'Cobb-Douglas utility function', definition: 'U(x, y) = x^α · y^β: convex indifference curves, imperfect substitutes; MRS = αy / (βx).' },
+      { term: 'Arc vs point MRS', definition: 'The trade-off between two points on an indifference curve (Δy/Δx) versus the slope of the tangent at one point (MU_x / MU_y).' },
+      { term: 'Perfect substitutes', definition: 'Goods that can replace each other at a fixed rate: straight-line indifference curves, often a corner solution.' },
+      { term: 'Perfect complements', definition: 'Goods that only give utility in fixed combinations, like left and right shoes: L-shaped indifference curves.' },
+      { term: 'Corner solution', definition: 'A best choice at the end of the budget constraint, spending everything on one good.' },
       { term: 'Budget constraint', definition: 'All combinations of goods that exactly use up one\'s resources, e.g. c = w(24 − t).' },
       { term: 'Feasible set / frontier', definition: 'All attainable combinations; the frontier is its upper boundary.' },
       { term: 'Marginal rate of transformation (MRT)', definition: 'How much of one good must be given up for one more unit of the other: the absolute slope of the feasible frontier.' },
@@ -128,7 +159,7 @@ export const w2: WeekContent = {
   basics: {
     id: 'w2-basics',
     title: 'Scarcity and choice',
-    description: 'Week 2 · Preferences, budget constraints, MRS = MRT',
+    description: 'Week 1 · Preferences, budget constraints, MRS = MRT',
     lessons: [
       {
         id: 'w2-b1',
@@ -471,13 +502,82 @@ export const w2: WeekContent = {
           },
         ],
       },
+      {
+        id: 'w2-b5',
+        title: 'Lecture: utility functions and prices',
+        topicId: 'w2-scarcity-wellbeing',
+        exercises: [
+          {
+            id: 'w2b5-01',
+            type: 'choice',
+            prompt: 'Karim\'s utility is U(t, c) = (t − 6)² · (c − 45). What is his utility at 15 hours of free time and €540?',
+            options: ['40,095', '4,455', '44,550', '40,500'],
+            answer: 0,
+            explanation: '(15 − 6)² × (540 − 45) = 81 × 495 = 40,095.',
+          },
+          {
+            id: 'w2b5-02',
+            type: 'choice',
+            prompt: 'For U(t, c) = (t − 6)² · (c − 45), what is the marginal utility of consumption, MU_c?',
+            options: ['(t − 6)²', '2(t − 6)(c − 45)', '(c − 45)', '2(t − 6)'],
+            answer: 0,
+            explanation: 'Holding t constant, utility rises by (t − 6)² for each extra euro of consumption.',
+          },
+          {
+            id: 'w2b5-03',
+            type: 'choice',
+            prompt: 'With MU_t = 2(t − 6)(c − 45) and MU_c = (t − 6)², what is Karim\'s MRS = MU_t / MU_c?',
+            options: ['2(c − 45) / (t − 6)', '(t − 6) / (2(c − 45))', '2(t − 6)(c − 45)', '(c − 45) / (t − 6)²'],
+            answer: 0,
+          },
+          {
+            id: 'w2b5-04',
+            type: 'match',
+            prompt: 'Match the type of preferences to its description',
+            pairs: [
+              ['Cobb-Douglas utility', 'Convex curves, imperfect substitutes'],
+              ['Perfect substitutes', 'Straight lines, often a corner solution'],
+              ['Perfect complements', 'L-shaped curves, fixed combinations'],
+            ],
+          },
+          {
+            id: 'w2b5-05',
+            type: 'truefalse',
+            statement: 'With perfect complements such as left and right shoes, an extra right shoe on its own adds no utility.',
+            answer: true,
+          },
+          {
+            id: 'w2b5-06',
+            type: 'choice',
+            prompt: 'Income is €100, p_x = €5 and p_y = €10. What is the budget constraint, solved for y?',
+            options: ['y = 10 − ½x', 'y = 20 − 2x', 'y = 10 − 2x', 'y = 20 − ½x'],
+            answer: 0,
+            explanation: '100 = 5x + 10y, so y = 10 − ½x.',
+          },
+          {
+            id: 'w2b5-07',
+            type: 'choice',
+            prompt: 'What is the MRT in that example?',
+            options: ['½, the price ratio p_x / p_y', '2, the price ratio p_y / p_x', '10, income divided by p_y', '20, income divided by p_x'],
+            answer: 0,
+            explanation: 'The MRT is the absolute slope of the budget constraint, which equals the price ratio p_x / p_y.',
+          },
+          {
+            id: 'w2b5-08',
+            type: 'fill',
+            text: 'At the best choice with two goods, MU_x / MU_y = ___.',
+            options: ['p_x / p_y', 'p_y / p_x', 'M / p_y', 'x / y'],
+            answer: 'p_x / p_y',
+          },
+        ],
+      },
     ],
   },
 
   advanced: {
     id: 'w2-advanced',
     title: 'Scarcity and choice: analysis',
-    description: 'Week 2 · Calculations and explanations of hours',
+    description: 'Week 1 · Calculations and explanations of hours',
     lessons: [
       {
         id: 'w2-a1',
@@ -625,6 +725,77 @@ export const w2: WeekContent = {
               'Laws that forbid men to do domestic work',
             ],
             answers: [0, 1, 2],
+          },
+        ],
+      },
+      {
+        id: 'w2-a4',
+        title: 'Lecture: calculating with utility',
+        topicId: 'w2-scarcity-wellbeing',
+        exercises: [
+          {
+            id: 'w2a4-01',
+            type: 'choice',
+            prompt: 'Using MRS = 2(c − 45) / (t − 6), what is Karim\'s point MRS at 15 hours of free time and €540?',
+            options: ['110', '94', '55', '220'],
+            answer: 0,
+            explanation: '2 × (540 − 45) / (15 − 6) = 990 / 9 = 110.',
+          },
+          {
+            id: 'w2a4-02',
+            type: 'choice',
+            prompt: 'Moving from 15 to 16 hours gives an arc MRS of 94 (540 − 446), but the point MRS at 15 hours is 110. Why do they differ?',
+            options: [
+              'The arc is an average over a curve that keeps flattening',
+              'The arc MRS is measured along the budget constraint',
+              'The point MRS leaves out the consumption of goods',
+              'One of the two numbers must have been miscalculated',
+            ],
+            answer: 0,
+            explanation: 'The point MRS is the slope of the tangent at 15 hours. Because the curve is convex, it is steeper there than the average slope between 15 and 16 hours.',
+          },
+          {
+            id: 'w2a4-03',
+            type: 'choice',
+            prompt: 'What is Karim\'s point MRS at 20 hours of free time and €250?',
+            options: ['About 29', 'About 110', 'About 41', 'About 15'],
+            answer: 0,
+            explanation: '2 × (250 − 45) / (20 − 6) = 410 / 14 ≈ 29: the MRS diminishes as free time rises.',
+          },
+          {
+            id: 'w2a4-04',
+            type: 'choice',
+            prompt: 'For a Cobb-Douglas utility function U(x, y) = x^α · y^β, what is the MRS (MU_x / MU_y)?',
+            options: ['αy / (βx)', 'βx / (αy)', 'αx / (βy)', 'α / β'],
+            answer: 0,
+            explanation: 'MU_x = αx^(α−1) · y^β and MU_y = βx^α · y^(β−1); dividing leaves αy / (βx).',
+          },
+          {
+            id: 'w2a4-05',
+            type: 'choice',
+            prompt: 'U(x, y) = x · y, so MRS = y / x. Income is €100, p_x = €5 and p_y = €10. Using MRS = p_x / p_y and the budget constraint, what is the best choice?',
+            options: ['x = 10, y = 5', 'x = 5, y = 10', 'x = 20, y = 0', 'x = 10, y = 10'],
+            answer: 0,
+            explanation: 'y / x = 5 / 10 gives x = 2y. Then 5(2y) + 10y = 100, so y = 5 and x = 10.',
+          },
+          {
+            id: 'w2a4-06',
+            type: 'choice',
+            prompt: 'Two goods are perfect one-to-one substitutes and x is cheaper than y. What is the best choice?',
+            options: [
+              'Spend all income on x: a corner solution',
+              'Spend half of the income on each good',
+              'Buy equal quantities of x and y',
+              'Spend all income on y, the dearer good',
+            ],
+            answer: 0,
+          },
+          {
+            id: 'w2a4-07',
+            type: 'truefalse',
+            statement: 'In Karim\'s model, the MRT between free time and consumption equals his hourly wage.',
+            answer: true,
+            explanation: 'Each extra hour of free time costs one hour of earnings, so the absolute slope dc/dt is the wage.',
           },
         ],
       },

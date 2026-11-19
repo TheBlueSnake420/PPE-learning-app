@@ -1,8 +1,8 @@
 import type { WeekContent } from '../../types';
 
-// Week 1 - Technology and incentives
+// Teaching week 1 (intro seminar 17 Nov) - Technology and incentives
 // Sources: The Economy 2.0: Microeconomics (CORE Econ 2023), Unit 2; course syllabus 2026-2027.
-// No lecture slides yet. Calculus extensions in the book are left out.
+// Unit 2 has no lecture (it is covered in the first seminar). Calculus extensions are left out.
 
 export const w1: WeekContent = {
   topic: {
@@ -26,7 +26,7 @@ export const w1: WeekContent = {
         heading: 'About this course',
         paragraphs: [
           'Microeconomics (PP1V18004, 7.5 EC) studies how individuals, households, firms and governments behave in markets, and which institutions can solve problems such as opportunistic behaviour, market failures and pollution. It covers consumer theory, the theory of the firm, perfect and imperfect competition, game theory and the moral limits of markets, using graphs and simple algebra. Each week has one lecture and two seminars, built on the textbook The Economy 2.0: Microeconomics (CORE Econ): parts of Units 2-8 and Unit 10.',
-          'Schedule: week 1 Unit 2; week 2 Unit 3; week 3 Units 4-5; week 4 Unit 7; week 5 Unit 8; week 6 Unit 10 plus Unit 6 sections 6.1-6.3 and 6.6. An interdisciplinary event on the moral limits of markets takes place on 14 January.',
+          'Schedule: Unit 2 is covered in the first seminar (17 November, intro plus exercises), followed by five weeks of lectures: week 1 Unit 3 (19 November), week 2 Units 4-5 (26 November), week 3 Unit 7 (3 December), week 4 Unit 8 (10 December) and week 5 Unit 10 plus Unit 6 sections 6.1-6.3 and 6.6 (17 December). The Remindo tests are due on 25 November, 2, 9 and 16 December and 13 January; the draft group paper is due on 18 December at 13:00. An interdisciplinary event on the moral limits of markets takes place on 14 January.',
           'Assessment: five weekly multiple-choice tests in Remindo (the best four count for 10%), a group paper on a real-life case (30%), and a closed-book final exam with open questions on all teaching weeks (60%), in Remindo on Friday 29 January 2027 from 17:00, scheduled for 3 hours. The seminar slides also count as exam material.',
         ],
       },
