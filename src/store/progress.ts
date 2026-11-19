@@ -74,6 +74,8 @@ interface ProgressState {
   completedCourses: Record<string, string>;
   /** Display name on the profile. */
   profileName: string;
+  /** XP the online account earned on other devices; counts towards the rank. */
+  otherDevicesXp: number;
 
   /** Record one answer. In a review session, correct answers promote the item. */
   recordAnswer: (courseId: string, exerciseId: string, correct: boolean, isReview: boolean) => void;
@@ -104,6 +106,7 @@ const initialData = {
   boost: null as Boost | null,
   completedCourses: {} as Record<string, string>,
   profileName: '',
+  otherDevicesXp: 0,
 };
 
 export const lessonKey = (courseId: string, lessonId: string) => `${courseId}/${lessonId}`;
@@ -129,8 +132,8 @@ export const useProgress = create<ProgressState>()(
           streak = state.lastActiveDay === addDays(day, -1) ? state.streak + 1 : 1;
           streakExtended = true;
         }
-        const before = rankFor(state.totalXp);
-        const after = rankFor(state.totalXp + xp);
+        const before = rankFor(totalXpOf(state));
+        const after = rankFor(totalXpOf(state) + xp);
         set({
           totalXp: state.totalXp + xp,
           xpByDay: { ...state.xpByDay, [day]: (state.xpByDay[day] ?? 0) + xp },
@@ -243,6 +246,7 @@ export const useProgress = create<ProgressState>()(
         boost,
         completedCourses,
         profileName,
+        otherDevicesXp,
       }) => ({
         totalXp,
         xpByDay,
@@ -257,10 +261,16 @@ export const useProgress = create<ProgressState>()(
         boost,
         completedCourses,
         profileName,
+        otherDevicesXp,
       }),
     },
   ),
 );
+
+/** XP for the rank: this device's XP plus what the online account earned on other devices. */
+export function totalXpOf(state: Pick<ProgressState, 'totalXp' | 'otherDevicesXp'>): number {
+  return state.totalXp + state.otherDevicesXp;
+}
 
 /** The streak as it stands today: it lapses if neither today nor yesterday had activity. */
 export function currentStreak(state: Pick<ProgressState, 'streak' | 'lastActiveDay'>): number {

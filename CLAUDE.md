@@ -38,3 +38,7 @@ Streak reminders are local notifications (expo-notifications): `src/lib/reminder
 Progress is saved by zustand `persist` in `src/store/progress.ts` (storage version 1, no migrate function). Add new fields with defaults in `initialData` and `partialize`; never bump the version without writing a migration, or saved progress is lost.
 
 The XP levelling system is called "rank" in code and UI, because "level" already means a year and tier (Year 1 · Basics). The rank table is `RANKS` in `src/lib/ranks.ts`; XP boosts (duration and steps up to 10x) are in `src/lib/boost.ts`. Both are pure and can be changed freely.
+
+## Online (leaderboards)
+
+Backend: Supabase (free plan). `supabase/schema.sql` holds all tables, row level security and functions; the owner pastes it into the dashboard SQL Editor (re-runnable). The client is `src/lib/supabase.ts` (public URL and publishable key; never add a secret key or the DB password) and `src/store/online.ts`. Studying stays offline; each device uploads its XP per day (idempotent upserts keyed by user, device and day), and leaderboards are computed server-side. Session storage uses AsyncStorage, not expo-sqlite, so online changes ship as OTA updates. Email sign-in uses 6-digit codes, which need `{{ .Token }}` in the Supabase email templates and custom SMTP for addresses outside the project team.

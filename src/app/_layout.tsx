@@ -5,6 +5,7 @@ import { View } from 'react-native';
 
 import { contentKeys } from '@/content';
 import { useReminderSync } from '@/lib/notifications';
+import { useOnlineSync } from '@/store/online';
 import { useHydrated, useProgress } from '@/store/progress';
 import { colors } from '@/theme';
 
@@ -14,6 +15,9 @@ export default function RootLayout() {
 
   // Streak reminders follow saved progress, so they start once it has loaded.
   useReminderSync(hydrated);
+
+  // Online account and leaderboard XP sync (no-op until the player joins).
+  useOnlineSync(hydrated);
 
   // Content updates can remove lessons or exercises; forget progress that points at them.
   useEffect(() => {
@@ -44,6 +48,9 @@ export default function RootLayout() {
         <Stack.Screen name="settings" options={{ title: 'Settings' }} />
         <Stack.Screen name="profile" options={{ title: 'Profile' }} />
         <Stack.Screen name="mistakes" options={{ title: 'Review mistakes' }} />
+        <Stack.Screen name="leaderboard" options={{ title: 'Leaderboard' }} />
+        <Stack.Screen name="account" options={{ title: 'Online account' }} />
+        <Stack.Screen name="admin" options={{ title: 'Admin' }} />
       </Stack>
     </>
   );

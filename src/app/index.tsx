@@ -10,7 +10,8 @@ import { StatPill } from '@/components/StatPill';
 import { getLevels, lessonsInTrack, type Level } from '@/content';
 import { today } from '@/lib/dates';
 import { rankFor } from '@/lib/ranks';
-import { currentStreak, dueActiveReviews, lessonKey, useProgress } from '@/store/progress';
+import { useOnline } from '@/store/online';
+import { currentStreak, dueActiveReviews, lessonKey, totalXpOf, useProgress } from '@/store/progress';
 import { colors, font, radius, space } from '@/theme';
 
 export default function Home() {
@@ -21,7 +22,11 @@ export default function Home() {
   const saved = Object.keys(progress.reviews).length;
   const goalMet = xpToday >= progress.dailyGoal;
   const levels = getLevels();
-  const { rank } = rankFor(progress.totalXp);
+  const totalXp = totalXpOf(progress);
+  const { rank } = rankFor(totalXp);
+  const onlineName = useOnline((s) => s.profile?.displayName);
+  const weekPlace = useOnline((s) => s.weekPlace);
+  const weekXp = useOnline((s) => s.weekXp);
 
   return (
     <SafeAreaView style={styles.screen} edges={['top']}>
@@ -29,7 +34,7 @@ export default function Home() {
         <Text style={styles.appName}>PPE Study</Text>
         <View style={styles.stats}>
           <StatPill icon="flame" value={streak} color={colors.orange} dim={streak === 0} />
-          <StatPill icon="flash" value={progress.totalXp} color={colors.gold} dim={progress.totalXp === 0} />
+          <StatPill icon="flash" value={totalXp} color={colors.gold} dim={totalXp === 0} />
           <Pressable onPress={() => router.push('/profile')} hitSlop={8} accessibilityLabel={`Profile, rank ${rank.name}`}>
             <RankBadge rank={rank} size={32} />
           </Pressable>
@@ -71,6 +76,26 @@ export default function Home() {
             </Text>
           </View>
           {saved > 0 && <Ionicons name="chevron-forward" size={22} color={colors.faint} />}
+        </Pressable>
+
+        <Pressable
+          onPress={() => router.push('/leaderboard')}
+          style={({ pressed }) => [styles.card, styles.reviewCard, pressed && styles.pressed]}
+        >
+          <View style={[styles.reviewIcon, { backgroundColor: colors.gold }]}>
+            <Ionicons name="podium" size={24} color="#FFFFFF" />
+          </View>
+          <View style={styles.flex}>
+            <Text style={styles.cardTitle}>Leaderboard</Text>
+            <Text style={styles.muted}>
+              {!onlineName
+                ? 'Join to compete with other players'
+                : weekPlace
+                  ? `#${weekPlace} this week · ${weekXp} XP`
+                  : 'Earn XP this week to get on the board'}
+            </Text>
+          </View>
+          <Ionicons name="chevron-forward" size={22} color={colors.faint} />
         </Pressable>
 
         <Text style={styles.sectionTitle}>Choose a level</Text>

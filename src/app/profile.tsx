@@ -1,6 +1,7 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { router } from 'expo-router';
 import type { ComponentProps } from 'react';
-import { ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { BoostCard } from '@/components/BoostCard';
 import { ProgressBar } from '@/components/ProgressBar';
@@ -8,7 +9,8 @@ import { RankBadge } from '@/components/RankBadge';
 import { getCourse } from '@/content';
 import { today } from '@/lib/dates';
 import { RANK_TIERS, RANKS, rankFor } from '@/lib/ranks';
-import { currentStreak, useProgress } from '@/store/progress';
+import { useOnline } from '@/store/online';
+import { currentStreak, totalXpOf, useProgress } from '@/store/progress';
 import { colors, font, radius, space } from '@/theme';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -20,7 +22,10 @@ function formatDay(key: string): string {
 
 export default function ProfileScreen() {
   const progress = useProgress();
-  const status = rankFor(progress.totalXp);
+  const online = useOnline((s) => s.profile);
+  const account = useOnline((s) => s.account);
+  const totalXp = totalXpOf(progress);
+  const status = rankFor(totalXp);
   const { rank, next } = status;
   const records = Object.values(progress.lessons);
   const completed = Object.entries(progress.completedCourses)
@@ -31,19 +36,42 @@ export default function ProfileScreen() {
     <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
       <View style={styles.header}>
         <RankBadge rank={rank} size={88} />
-        <TextInput
-          value={progress.profileName}
-          onChangeText={progress.setProfileName}
-          onEndEditing={() => progress.setProfileName(progress.profileName.trim())}
-          placeholder="Add your name"
-          placeholderTextColor={colors.faint}
-          maxLength={30}
-          style={styles.name}
-          accessibilityLabel="Your name"
-        />
+        {online ? (
+          <Text style={styles.name}>{online.displayName}</Text>
+        ) : (
+          <TextInput
+            value={progress.profileName}
+            onChangeText={progress.setProfileName}
+            onEndEditing={() => progress.setProfileName(progress.profileName.trim())}
+            placeholder="Add your name"
+            placeholderTextColor={colors.faint}
+            maxLength={30}
+            style={styles.name}
+            accessibilityLabel="Your name"
+          />
+        )}
         <Text style={[styles.rankName, { color: RANK_TIERS[rank.tier].color }]}>{rank.name}</Text>
-        <Text style={styles.muted}>{progress.totalXp.toLocaleString('en-GB')} XP in total</Text>
+        <Text style={styles.muted}>{totalXp.toLocaleString('en-GB')} XP in total</Text>
       </View>
+
+      <Pressable onPress={() => router.push('/account')} style={styles.accountCard}>
+        <Ionicons
+          name={online ? 'cloud-done' : 'cloud-outline'}
+          size={24}
+          color={online ? colors.green : colors.faint}
+        />
+        <View style={styles.flex}>
+          <Text style={styles.cardTitle}>Online account</Text>
+          <Text style={styles.small}>
+            {!online
+              ? 'Not on the leaderboards yet'
+              : account?.isAnonymous
+                ? 'Guest account on this device · add an email to keep it'
+                : `Signed in as ${account?.email ?? online.displayName}`}
+          </Text>
+        </View>
+        <Ionicons name="chevron-forward" size={20} color={colors.faint} />
+      </Pressable>
 
       <View style={styles.card}>
         {next ? (
@@ -54,7 +82,7 @@ export default function ProfileScreen() {
             </View>
             <ProgressBar value={status.progress} color={RANK_TIERS[next.tier].color} />
             <Text style={styles.small}>
-              {progress.totalXp.toLocaleString('en-GB')} / {next.minXp.toLocaleString('en-GB')} XP ·{' '}
+              {totalXp.toLocaleString('en-GB')} / {next.minXp.toLocaleString('en-GB')} XP ·{' '}
               {status.xpToNext.toLocaleString('en-GB')} to go
             </Text>
           </>
@@ -162,6 +190,16 @@ const styles = StyleSheet.create({
     gap: space.sm,
   },
   row: { flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' },
+  accountCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: space.md,
+    borderWidth: 2,
+    borderBottomWidth: 4,
+    borderColor: colors.border,
+    borderRadius: radius.lg,
+    padding: space.lg,
+  },
   cardTitle: { fontSize: font.large, fontWeight: '800', color: colors.text },
   heading: { fontSize: font.title, fontWeight: '800', color: colors.text, marginTop: space.md },
   muted: { fontSize: font.body - 1, color: colors.muted, lineHeight: 20 },

@@ -1,15 +1,14 @@
-import { useState } from 'react';
 import { ScrollView, StyleSheet, Text, View } from 'react-native';
 
-import { Button } from '@/components/Button';
+import { ConfirmTwice } from '@/components/ConfirmTwice';
 import { OptionTile } from '@/components/exercises/OptionTile';
 import { ReminderSettings } from '@/components/ReminderSettings';
+import { resetOnlineXp } from '@/store/online';
 import { DAILY_GOALS, useProgress } from '@/store/progress';
 import { colors, font, space } from '@/theme';
 
 export default function SettingsScreen() {
   const progress = useProgress();
-  const [confirmReset, setConfirmReset] = useState(false);
 
   return (
     <ScrollView contentContainerStyle={styles.content}>
@@ -36,19 +35,27 @@ export default function SettingsScreen() {
 
       <Text style={styles.heading}>Reset</Text>
       <Text style={styles.muted}>
-        Deletes all XP (and with it your rank), streaks, boosts, completed lessons and review items. Your daily goal,
-        reminders, name and completed courses stay.
+        Deletes all XP (and with it your rank), streaks, boosts, completed lessons and review items. If you have an
+        online account, its XP on the leaderboards is deleted too. Your daily goal, reminders, name and completed courses
+        stay.
       </Text>
-      <Button
-        title={confirmReset ? 'Tap again to confirm' : 'Reset progress'}
-        variant={confirmReset ? 'red' : 'white'}
-        onPress={() => {
-          if (confirmReset) {
-            progress.resetProgress();
-            setConfirmReset(false);
-          } else {
-            setConfirmReset(true);
-          }
+      <ConfirmTwice
+        title="Reset progress"
+        steps={[
+          {
+            title: 'Reset all progress?',
+            message: 'Your XP, rank, streaks, completed lessons and saved mistakes will be deleted.',
+            confirm: 'Yes, continue',
+          },
+          {
+            title: 'This cannot be undone',
+            message: 'All progress is gone for good, including your XP on the leaderboards. Reset everything?',
+            confirm: 'Reset everything',
+          },
+        ]}
+        onConfirm={() => {
+          progress.resetProgress();
+          resetOnlineXp();
         }}
       />
     </ScrollView>
