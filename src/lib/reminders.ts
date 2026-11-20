@@ -1,4 +1,5 @@
 import { addDays, dateKey } from '@/lib/dates';
+import { freezesNeeded, streakOn } from '@/lib/streak';
 
 /** Times of day (24h, local) at which streak reminders can be sent. */
 export const REMINDER_TIMES = ['16:00', '20:00', '22:00', '23:45'];
@@ -17,6 +18,10 @@ interface PlanInput {
   /** Stored streak, counted up to `lastActiveDay`. */
   streak: number;
   lastActiveDay: string | null;
+  /** Missed days already covered by a streak freeze. */
+  frozenDays: string[];
+  /** Whether the rank gives a weekly streak freeze. */
+  streakFreeze: boolean;
   /** Enabled reminder times as "HH:MM". */
   times: string[];
   daysAhead?: number;
@@ -45,6 +50,13 @@ function streakMessage(streak: number, date: Date): Pick<PlannedReminder, 'title
   return { title: `Keep your ${days} going`, body: 'A short lesson or a mistake review keeps it alive today.' };
 }
 
+function freezeMessage(streak: number): Pick<PlannedReminder, 'title' | 'body'> {
+  return {
+    title: `Keep your ${streak}-day streak going`,
+    body: 'Your streak freeze would cover today, but a short lesson saves it for later.',
+  };
+}
+
 const NEW_STREAK = {
   title: 'Start a new streak today',
   body: 'One short lesson is all it takes.',
@@ -53,10 +65,19 @@ const NEW_STREAK = {
 /**
  * Plans streak reminders for today and the coming days, assuming no further activity
  * after `now` (the plan is rebuilt after every lesson and whenever the app opens).
- * Days where a streak is at risk get every enabled time; days without a streak to
- * protect get a single, gentler reminder at the first enabled time still ahead.
+ * Days where a streak is at risk get every enabled time. Days where a streak
+ * freeze would cover a skipped day, and days without a streak to protect, get a
+ * single, gentler reminder at the first enabled time still ahead.
  */
-export function planReminders({ now, streak, lastActiveDay, times, daysAhead = REMINDER_DAYS_AHEAD }: PlanInput): PlannedReminder[] {
+export function planReminders({
+  now,
+  streak,
+  lastActiveDay,
+  frozenDays,
+  streakFreeze,
+  times,
+  daysAhead = REMINDER_DAYS_AHEAD,
+}: PlanInput): PlannedReminder[] {
   const enabled = [...new Set(times)].sort();
   if (enabled.length === 0) return [];
 
@@ -68,14 +89,16 @@ export function planReminders({ now, streak, lastActiveDay, times, daysAhead = R
     const day = addDays(todayKey, k);
     if (lastActiveDay === day) continue; // already studied that day
 
-    // The streak that ends at midnight if nothing happens on `day`.
-    const atRisk = lastActiveDay === addDays(day, -1) ? streak : 0;
+    // The streak still alive on `day`, and whether it survives the day without activity.
+    const state = { streak, lastActiveDay, frozenDays };
+    const alive = streakOn(state, day, streakFreeze);
+    const survivesSkip = alive > 0 && freezesNeeded(state, addDays(day, 1), streakFreeze) !== null;
     const upcoming = enabled.map((t) => atTime(day, t)).filter((d) => d.getTime() > earliest);
 
-    if (atRisk > 0) {
-      for (const date of upcoming) plan.push({ date, ...streakMessage(atRisk, date) });
+    if (alive > 0 && !survivesSkip) {
+      for (const date of upcoming) plan.push({ date, ...streakMessage(alive, date) });
     } else if (upcoming.length > 0) {
-      plan.push({ date: upcoming[0], ...NEW_STREAK });
+      plan.push({ date: upcoming[0], ...(alive > 0 ? freezeMessage(alive) : NEW_STREAK) });
     }
   }
   return plan;

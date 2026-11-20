@@ -4,13 +4,14 @@ import type { ComponentProps } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 import { BoostCard } from '@/components/BoostCard';
+import { ProfileFrame } from '@/components/ProfileFrame';
 import { ProgressBar } from '@/components/ProgressBar';
 import { RankBadge } from '@/components/RankBadge';
 import { getCourse } from '@/content';
 import { today } from '@/lib/dates';
-import { RANK_TIERS, RANKS, rankFor, rankRewards } from '@/lib/ranks';
+import { nextRankImproving, RANK_TIERS, RANKS, rankFor, rankRewards, TIER_PERKS } from '@/lib/ranks';
 import { useOnline } from '@/store/online';
-import { currentStreak, totalXpOf, useProgress } from '@/store/progress';
+import { currentFreezeStatus, currentStreak, totalXpOf, useProgress } from '@/store/progress';
 import { colors, font, radius, space } from '@/theme';
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
@@ -27,6 +28,9 @@ export default function ProfileScreen() {
   const totalXp = totalXpOf(progress);
   const status = rankFor(totalXp);
   const { rank, next } = status;
+  const perks = TIER_PERKS[rank.tier];
+  const freeze = currentFreezeStatus(progress);
+  const freezeUnlock = nextRankImproving(status.index, 'streakFreeze');
   const records = Object.values(progress.lessons);
   const completed = Object.entries(progress.completedCourses)
     .map(([id, day]) => ({ course: getCourse(id), day }))
@@ -35,7 +39,13 @@ export default function ProfileScreen() {
   return (
     <ScrollView contentContainerStyle={styles.content} keyboardShouldPersistTaps="handled">
       <View style={styles.header}>
-        <RankBadge rank={rank} size={88} />
+        {perks.profileFrame ? (
+          <ProfileFrame size={88}>
+            <RankBadge rank={rank} size={88} />
+          </ProfileFrame>
+        ) : (
+          <RankBadge rank={rank} size={88} />
+        )}
         {online ? (
           <Text style={styles.name}>{online.displayName}</Text>
         ) : (
@@ -97,6 +107,12 @@ export default function ProfileScreen() {
       <View style={styles.stats}>
         <Stat icon="flame" color={colors.orange} label="Current streak" value={`${currentStreak(progress)} days`} />
         <Stat icon="trending-up" color={colors.orange} label="Longest streak" value={`${progress.longestStreak} days`} />
+        <Stat
+          icon="snow"
+          color={freeze === 'ready' ? colors.blue : colors.faint}
+          label={freeze === 'locked' ? `Streak freeze · ${freezeUnlock?.name ?? 'locked'}` : 'Streak freeze this week'}
+          value={freeze === 'locked' ? 'Locked' : freeze === 'ready' ? 'Ready' : 'Used'}
+        />
         <Stat icon="flash" color={colors.gold} label="XP today" value={progress.xpByDay[today()] ?? 0} />
         <Stat icon="book" color={colors.green} label="Lessons completed" value={records.length} />
         <Stat icon="star" color={colors.gold} label="Perfect lessons" value={records.filter((r) => r.bestAccuracy === 1).length} />

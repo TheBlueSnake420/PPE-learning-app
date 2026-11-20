@@ -1,13 +1,15 @@
 import type Ionicons from '@expo/vector-icons/Ionicons';
 import type { ComponentProps } from 'react';
 
+import { BOOST_DECAY_MINUTES, BOOST_MINUTES, type BoostRules } from '@/lib/boost';
+
 /**
  * The levelling system: ranks earned by total XP. "Level" already means a
  * year and tier of courses in the app (e.g. Year 1 · Basics), so these are
  * called ranks. To change the system, edit RANKS: keep it sorted by minXp,
  * starting at 0. The rank is always worked out from total XP and never
  * stored, so a new table re-ranks everyone the next time the app loads.
- * Ranks also unlock rewards: see TIER_PERKS below.
+ * Ranks also unlock rewards: see TIER_UNLOCKS below.
  */
 export type RankTier =
   | 'unranked'
@@ -107,31 +109,60 @@ export function rankFor(xp: number): RankStatus {
   };
 }
 
-/**
- * Rewards per rank tier. XP boosts and the perfect-lesson bonus are locked at
- * first and improve as the learner climbs; a tier keeps what the tier below
- * it had unless the table improves it.
- */
-export interface RankPerks {
-  /** Highest XP boost multiplier; 1 means boosts are still locked. */
-  maxBoost: number;
+/** How a player's name looks on the leaderboard. */
+export type NameStyle = 'plain' | 'red' | 'sparkle';
+const NAME_STYLE_ORDER: NameStyle[] = ['plain', 'red', 'sparkle'];
+
+/** The rewards a rank gives. */
+export interface RankPerks extends BoostRules {
   /** Extra XP (before any boost) for a lesson with 100% first-try accuracy. */
   perfectBonus: number;
+  /** One missed day per week does not break the streak (see streak.ts). */
+  streakFreeze: boolean;
+  nameStyle: NameStyle;
+  /** A decorated frame around the badge on the profile. */
+  profileFrame: boolean;
 }
 
-export const TIER_PERKS: Record<RankTier, RankPerks> = {
-  unranked: { maxBoost: 1, perfectBonus: 0 },
-  iron: { maxBoost: 4, perfectBonus: 0 },
-  bronze: { maxBoost: 4, perfectBonus: 5 },
-  silver: { maxBoost: 4, perfectBonus: 5 },
-  gold: { maxBoost: 7, perfectBonus: 5 },
-  platinum: { maxBoost: 7, perfectBonus: 10 },
-  diamond: { maxBoost: 7, perfectBonus: 10 },
-  champion: { maxBoost: 10, perfectBonus: 10 },
-  ascendant: { maxBoost: 10, perfectBonus: 15 },
-  immortal: { maxBoost: 10, perfectBonus: 15 },
-  divine: { maxBoost: 10, perfectBonus: 15 },
+/** Before any rewards: no boosts, no perfect bonus, no freeze. */
+const BASE_PERKS: RankPerks = {
+  maxBoost: 1,
+  boostMinutes: BOOST_MINUTES,
+  boostDecay: false,
+  perfectBonus: 0,
+  streakFreeze: false,
+  nameStyle: 'plain',
+  profileFrame: false,
 };
+
+/**
+ * What reaching each tier unlocks or improves. Every tier keeps the rewards of
+ * the tiers below it, so each entry only lists what changes.
+ */
+export const TIER_UNLOCKS: Record<RankTier, Partial<RankPerks>> = {
+  unranked: {},
+  iron: { maxBoost: 4 },
+  bronze: { perfectBonus: 5 },
+  silver: { streakFreeze: true },
+  gold: { maxBoost: 7 },
+  platinum: { perfectBonus: 10 },
+  diamond: { boostDecay: true },
+  champion: { maxBoost: 10 },
+  ascendant: { perfectBonus: 15 },
+  immortal: { boostMinutes: 25, nameStyle: 'red' },
+  divine: { nameStyle: 'sparkle', profileFrame: true },
+};
+
+/** The full rewards per tier, built up from TIER_UNLOCKS in rank order. */
+export const TIER_PERKS = (() => {
+  const perks = {} as Record<RankTier, RankPerks>;
+  let current = BASE_PERKS;
+  for (const tier of [...new Set(RANKS.map((r) => r.tier))]) {
+    current = { ...current, ...TIER_UNLOCKS[tier] };
+    perks[tier] = current;
+  }
+  return perks;
+})();
 
 export function perksFor(xp: number): RankPerks {
   return TIER_PERKS[RANKS[rankIndex(xp)].tier];
@@ -142,6 +173,13 @@ export function perkGains(before: RankPerks, after: RankPerks): string[] {
   const gains: string[] = [];
   if (after.maxBoost > before.maxBoost) gains.push(`XP boosts up to ${after.maxBoost}x`);
   if (after.perfectBonus > before.perfectBonus) gains.push(`+${after.perfectBonus} XP for a perfect lesson`);
+  if (after.streakFreeze && !before.streakFreeze) gains.push('A streak freeze every week');
+  if (after.boostDecay && !before.boostDecay) gains.push(`Boosts drop a step every ${BOOST_DECAY_MINUTES} minutes instead of ending`);
+  if (after.boostMinutes > before.boostMinutes) gains.push(`Boosts last ${after.boostMinutes} minutes`);
+  if (NAME_STYLE_ORDER.indexOf(after.nameStyle) > NAME_STYLE_ORDER.indexOf(before.nameStyle)) {
+    gains.push(after.nameStyle === 'sparkle' ? 'Sparkling purple name on the leaderboard' : 'Red name on the leaderboard');
+  }
+  if (after.profileFrame && !before.profileFrame) gains.push('A special profile frame');
   return gains;
 }
 
@@ -151,8 +189,8 @@ export function rankRewards(index: number): string[] {
   return perkGains(TIER_PERKS[RANKS[index - 1].tier], TIER_PERKS[RANKS[index].tier]);
 }
 
-/** The next rank above RANKS[index] that raises the given reward, if any. */
-export function nextRankImproving(index: number, perk: keyof RankPerks): Rank | undefined {
-  const current = TIER_PERKS[RANKS[index].tier][perk];
-  return RANKS.slice(index + 1).find((r) => TIER_PERKS[r.tier][perk] > current);
+/** The first rank above RANKS[index] that improves the given reward, if any. */
+export function nextRankImproving(index: number, perk: 'maxBoost' | 'perfectBonus' | 'boostMinutes' | 'streakFreeze'): Rank | undefined {
+  const current = Number(TIER_PERKS[RANKS[index].tier][perk]);
+  return RANKS.slice(index + 1).find((r) => Number(TIER_PERKS[r.tier][perk]) > current);
 }

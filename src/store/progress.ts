@@ -9,6 +9,7 @@ import { boostAfterSession, boostMultiplier, type Boost } from '@/lib/boost';
 import { addDays, today } from '@/lib/dates';
 import { perkGains, perksFor, rankFor, type Rank } from '@/lib/ranks';
 import { REMINDER_TIMES } from '@/lib/reminders';
+import { freezeStatus, pruneFrozenDays, streakAfterActivity, streakOn, type FreezeStatus } from '@/lib/streak';
 
 export const XP_PER_REVIEW_SESSION = 5;
 
@@ -63,6 +64,8 @@ export interface SessionResult {
   multiplier: number;
   /** The boost running after this session, which it started or raised; null while boosts are locked. */
   newBoost: Boost | null;
+  /** How long that boost lasts, in minutes. */
+  boostMinutes: number;
   /** The perfect-lesson bonus included in the XP (before the boost), 0 if none. */
   perfectBonus: number;
   /** Set when this session moved the learner up to a new rank. */
@@ -71,6 +74,8 @@ export interface SessionResult {
   rewards: string[];
   streak: number;
   streakExtended: boolean;
+  /** Set when a streak freeze covered missed days to keep the streak going. */
+  freezeUsed: boolean;
 }
 
 interface ProgressState {
@@ -80,6 +85,8 @@ interface ProgressState {
   streak: number;
   longestStreak: number;
   lastActiveDay: string | null;
+  /** Missed days covered by a streak freeze (recent ones only). */
+  frozenDays: string[];
   /** Keyed by `${courseId}/${lessonId}`. */
   lessons: Record<string, LessonRecord>;
   /** Keyed by `${courseId}/${exerciseId}`. */
@@ -119,6 +126,7 @@ const initialData = {
   streak: 0,
   longestStreak: 0,
   lastActiveDay: null as string | null,
+  frozenDays: [] as string[],
   lessons: {} as Record<string, LessonRecord>,
   reviews: {} as Record<string, ReviewItem>,
   remindersEnabled: true,
@@ -137,25 +145,21 @@ export const useProgress = create<ProgressState>()(
     (set, get) => {
       /**
        * Adds XP (multiplied by any running boost), starts or raises the boost and
-       * updates the streak; shared by lessons and reviews. The running boost is
-       * capped by the rank before the session, the new boost by the rank after
-       * it, so a session that unlocks a higher boost can already raise it.
+       * updates the streak; shared by lessons and reviews. The running boost and
+       * the streak freeze follow the rank before the session; the new boost
+       * follows the rank after it, so a session that unlocks better boosts can
+       * already use them.
        */
       const finishSession = (baseXp: number, perfectBonus: number): SessionResult => {
         const state = get();
         const now = Date.now();
         const day = today();
         const perksBefore = perksFor(totalXpOf(state));
-        const multiplier = boostMultiplier(state.boost, now, perksBefore.maxBoost);
+        const multiplier = boostMultiplier(state.boost, now, perksBefore);
         const xp = Math.round(baseXp * multiplier);
         const perksAfter = perksFor(totalXpOf(state) + xp);
-        const newBoost = boostAfterSession(state.boost, now, perksAfter.maxBoost);
-        let streak = state.streak;
-        let streakExtended = false;
-        if (state.lastActiveDay !== day) {
-          streak = state.lastActiveDay === addDays(day, -1) ? state.streak + 1 : 1;
-          streakExtended = true;
-        }
+        const newBoost = boostAfterSession(state.boost, now, perksAfter);
+        const { streak, frozen } = streakAfterActivity(state, day, perksBefore.streakFreeze);
         const before = rankFor(totalXpOf(state));
         const after = rankFor(totalXpOf(state) + xp);
         set({
@@ -164,17 +168,20 @@ export const useProgress = create<ProgressState>()(
           streak,
           longestStreak: Math.max(state.longestStreak, streak),
           lastActiveDay: day,
+          frozenDays: frozen.length > 0 ? pruneFrozenDays([...state.frozenDays, ...frozen], day) : state.frozenDays,
           boost: newBoost,
         });
         return {
           xpEarned: xp,
           multiplier,
           newBoost,
+          boostMinutes: perksAfter.boostMinutes,
           perfectBonus,
           rankUp: after.index > before.index ? after.rank : null,
           rewards: perkGains(perksBefore, perksAfter),
           streak,
-          streakExtended,
+          streakExtended: state.lastActiveDay !== day,
+          freezeUsed: frozen.length > 0,
         };
       };
 
@@ -266,6 +273,7 @@ export const useProgress = create<ProgressState>()(
         streak,
         longestStreak,
         lastActiveDay,
+        frozenDays,
         lessons,
         reviews,
         remindersEnabled,
@@ -281,6 +289,7 @@ export const useProgress = create<ProgressState>()(
         streak,
         longestStreak,
         lastActiveDay,
+        frozenDays,
         lessons,
         reviews,
         remindersEnabled,
@@ -299,11 +308,19 @@ export function totalXpOf(state: Pick<ProgressState, 'totalXp' | 'otherDevicesXp
   return state.totalXp + state.otherDevicesXp;
 }
 
-/** The streak as it stands today: it lapses if neither today nor yesterday had activity. */
-export function currentStreak(state: Pick<ProgressState, 'streak' | 'lastActiveDay'>): number {
-  const day = today();
-  if (state.lastActiveDay === day || state.lastActiveDay === addDays(day, -1)) return state.streak;
-  return 0;
+type StreakFields = Pick<ProgressState, 'streak' | 'lastActiveDay' | 'frozenDays' | 'totalXp' | 'otherDevicesXp'>;
+
+/**
+ * The streak as it stands today: it lapses once a lesson today could no longer
+ * continue it (a day was missed and no streak freeze can cover it).
+ */
+export function currentStreak(state: StreakFields): number {
+  return streakOn(state, today(), perksFor(totalXpOf(state)).streakFreeze);
+}
+
+/** This week's streak freeze: locked below the rank that unlocks it, ready, or used. */
+export function currentFreezeStatus(state: StreakFields): FreezeStatus {
+  return freezeStatus(state, today(), perksFor(totalXpOf(state)).streakFreeze);
 }
 
 export function dueReviews(reviews: Record<string, ReviewItem>): ReviewItem[] {

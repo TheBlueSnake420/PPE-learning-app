@@ -4,8 +4,9 @@ import { useCallback, useState } from 'react';
 import { Pressable, RefreshControl, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { JoinForm } from '@/components/OnlineForms';
+import { PlayerName } from '@/components/PlayerName';
 import { RankBadge } from '@/components/RankBadge';
-import { RANK_TIERS, rankFor } from '@/lib/ranks';
+import { RANK_TIERS, rankFor, TIER_PERKS } from '@/lib/ranks';
 import { fetchLeaderboard, friendlyError, syncNow, useOnline, type BoardRow, type Period } from '@/store/online';
 import { colors, font, radius, space } from '@/theme';
 
@@ -125,10 +126,11 @@ function Row({ row, period }: { row: BoardRow; period: Period }) {
       </View>
       <RankBadge rank={rank} size={40} />
       <View style={styles.flex}>
-        <Text style={styles.name} numberOfLines={1}>
-          {row.name}
-          {row.isMe ? ' (you)' : ''}
-        </Text>
+        <PlayerName
+          name={row.isMe ? `${row.name} (you)` : row.name}
+          nameStyle={TIER_PERKS[rank.tier].nameStyle}
+          style={styles.name}
+        />
         <Text style={[styles.rankName, { color: RANK_TIERS[rank.tier].color }]}>{rank.name}</Text>
       </View>
       <View style={styles.xpBox}>

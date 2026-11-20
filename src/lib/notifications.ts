@@ -2,8 +2,9 @@ import * as Notifications from 'expo-notifications';
 import { useEffect } from 'react';
 import { AppState, Linking, Platform } from 'react-native';
 
+import { perksFor } from '@/lib/ranks';
 import { planReminders } from '@/lib/reminders';
-import { useProgress } from '@/store/progress';
+import { totalXpOf, useProgress } from '@/store/progress';
 import { colors } from '@/theme';
 
 const CHANNEL_ID = 'streak-reminders';
@@ -83,7 +84,9 @@ export function syncReminders({ askPermission = false } = {}): Promise<void> {
     .then(async () => {
       await setup();
       await cancelStreakReminders();
-      const { remindersEnabled, reminderTimes, streak, lastActiveDay } = useProgress.getState();
+      const progress = useProgress.getState();
+      const { remindersEnabled, reminderTimes, streak, lastActiveDay, frozenDays } = progress;
+      const { streakFreeze } = perksFor(totalXpOf(progress));
       if (!remindersEnabled || reminderTimes.length === 0) return;
 
       const permission = await Notifications.getPermissionsAsync();
@@ -93,7 +96,8 @@ export function syncReminders({ askPermission = false } = {}): Promise<void> {
       }
       if (!granted) return;
 
-      for (const reminder of planReminders({ now: new Date(), streak, lastActiveDay, times: reminderTimes })) {
+      const plan = planReminders({ now: new Date(), streak, lastActiveDay, frozenDays, streakFreeze, times: reminderTimes });
+      for (const reminder of plan) {
         await Notifications.scheduleNotificationAsync({
           content: { title: reminder.title, body: reminder.body, data: { kind: REMINDER_KIND } },
           trigger: { type: Notifications.SchedulableTriggerInputTypes.DATE, date: reminder.date, channelId: CHANNEL_ID },
@@ -124,12 +128,14 @@ export async function sendTestReminder(): Promise<boolean> {
 export function useReminderSync(active: boolean): void {
   const streak = useProgress((s) => s.streak);
   const lastActiveDay = useProgress((s) => s.lastActiveDay);
+  const frozenDays = useProgress((s) => s.frozenDays);
+  const streakFreeze = useProgress((s) => perksFor(totalXpOf(s)).streakFreeze);
   const remindersEnabled = useProgress((s) => s.remindersEnabled);
   const reminderTimes = useProgress((s) => s.reminderTimes);
 
   useEffect(() => {
     if (active) syncReminders({ askPermission: true });
-  }, [active, streak, lastActiveDay, remindersEnabled, reminderTimes]);
+  }, [active, streak, lastActiveDay, frozenDays, streakFreeze, remindersEnabled, reminderTimes]);
 
   useEffect(() => {
     if (!active) return;

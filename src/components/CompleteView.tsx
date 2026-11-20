@@ -3,7 +3,6 @@ import type { ComponentProps } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-import { BOOST_MINUTES } from '@/lib/boost';
 import type { SessionResult } from '@/store/progress';
 import { colors, font, radius, space } from '@/theme';
 import { Button } from './Button';
@@ -47,11 +46,18 @@ export function CompleteView({ title, result, accuracy, onContinue }: Props) {
           </Text>
         )}
 
+        {result.freezeUsed && (
+          <View style={styles.freezeRow}>
+            <Ionicons name="snow" size={18} color={colors.blue} />
+            <Text style={styles.freezeText}>A streak freeze kept your streak going</Text>
+          </View>
+        )}
+
         {result.newBoost && (
           <View style={styles.boostBox}>
             <Ionicons name="rocket" size={22} color={colors.purple} />
             <Text style={styles.boostText}>
-              {result.newBoost.multiplier}x XP boost for the next {BOOST_MINUTES} minutes
+              {result.newBoost.multiplier}x XP boost for the next {result.boostMinutes} minutes
             </Text>
           </View>
         )}
@@ -133,6 +139,8 @@ const styles = StyleSheet.create({
   },
   tileValue: { fontSize: font.title, fontWeight: '800' },
   streakNote: { marginTop: space.md, color: colors.orange, fontWeight: '700', fontSize: font.body },
+  freezeRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  freezeText: { color: colors.blueDark, fontWeight: '700', fontSize: font.body },
   boostApplied: { color: colors.purple, fontWeight: '700', fontSize: font.body },
   boostBox: {
     flexDirection: 'row',
