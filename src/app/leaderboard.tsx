@@ -5,6 +5,7 @@ import { Pressable, RefreshControl, ScrollView, StyleSheet, Text, View } from 'r
 
 import { JoinForm } from '@/components/OnlineForms';
 import { PlayerName } from '@/components/PlayerName';
+import { ProfileFrame } from '@/components/ProfileFrame';
 import { RankBadge } from '@/components/RankBadge';
 import { RANK_TIERS, rankFor, TIER_PERKS } from '@/lib/ranks';
 import { fetchLeaderboard, friendlyError, syncNow, useOnline, type BoardRow, type Period } from '@/store/online';
@@ -118,17 +119,24 @@ export default function LeaderboardScreen() {
 
 function Row({ row, period }: { row: BoardRow; period: Period }) {
   const { rank } = rankFor(row.totalXp);
+  const perks = TIER_PERKS[rank.tier];
   const medal = row.place <= 3 ? MEDALS[row.place - 1] : null;
   return (
     <View style={[styles.row, row.isMe && styles.rowMe]}>
       <View style={[styles.place, medal ? { backgroundColor: medal } : null]}>
         <Text style={[styles.placeText, medal ? styles.placeTextMedal : null]}>{row.place}</Text>
       </View>
-      <RankBadge rank={rank} size={40} />
+      {perks.profileFrame ? (
+        <ProfileFrame size={32}>
+          <RankBadge rank={rank} size={32} />
+        </ProfileFrame>
+      ) : (
+        <RankBadge rank={rank} size={40} />
+      )}
       <View style={styles.flex}>
         <PlayerName
           name={row.isMe ? `${row.name} (you)` : row.name}
-          nameStyle={TIER_PERKS[rank.tier].nameStyle}
+          nameStyle={perks.nameStyle}
           style={styles.name}
         />
         <Text style={[styles.rankName, { color: RANK_TIERS[rank.tier].color }]}>{rank.name}</Text>
