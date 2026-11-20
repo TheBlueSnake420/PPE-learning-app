@@ -174,7 +174,7 @@ export function perkGains(before: RankPerks, after: RankPerks): string[] {
   if (after.maxBoost > before.maxBoost) gains.push(`XP boosts up to ${after.maxBoost}x`);
   if (after.perfectBonus > before.perfectBonus) gains.push(`+${after.perfectBonus} XP for a perfect lesson`);
   if (after.streakFreeze && !before.streakFreeze) gains.push('A streak freeze every week');
-  if (after.boostDecay && !before.boostDecay) gains.push(`Boosts drop a step every ${BOOST_DECAY_MINUTES} minutes instead of ending`);
+  if (after.boostDecay && !before.boostDecay) gains.push(`When a boost ends, it instead drops a step for ${BOOST_DECAY_MINUTES} minutes until dropping again`);
   if (after.boostMinutes > before.boostMinutes) gains.push(`Boosts last ${after.boostMinutes} minutes`);
   if (NAME_STYLE_ORDER.indexOf(after.nameStyle) > NAME_STYLE_ORDER.indexOf(before.nameStyle)) {
     gains.push(after.nameStyle === 'sparkle' ? 'Sparkling purple name on the leaderboard' : 'Red name on the leaderboard');
