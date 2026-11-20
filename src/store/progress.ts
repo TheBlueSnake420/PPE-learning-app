@@ -4,6 +4,7 @@ import { Platform } from 'react-native';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
+import type { Tier } from '@/content/types';
 import { boostAfterSession, boostMultiplier, type Boost } from '@/lib/boost';
 import { addDays, today } from '@/lib/dates';
 import { rankFor, type Rank } from '@/lib/ranks';
@@ -11,14 +12,20 @@ import { REMINDER_TIMES } from '@/lib/reminders';
 
 export const XP_PER_REVIEW_SESSION = 5;
 
+/** Lesson XP at 99% first-try accuracy, per tier; the range starts at LESSON_XP_MIN. */
+export const LESSON_XP_MAX: Record<Tier, number> = { basics: 20, advanced: 25 };
+export const LESSON_XP_MIN = 10;
+export const XP_PERFECT_BONUS = 10;
+
 /**
- * XP for finishing a lesson, before any boost. It rises with first-try
- * accuracy: 10 XP at 0%, up to 20 XP at 99% (one more XP per 10 points), and
- * 30 XP for a perfect lesson.
+ * XP for finishing a lesson, before any boost. It rises in a straight line
+ * with first-try accuracy, from 10 XP at 0% to 20 XP (Basics) or 25 XP
+ * (Advanced) at 99%. A perfect lesson adds 10 XP on top: 30 or 35 XP.
  */
-export function lessonXp(accuracy: number): number {
-  if (accuracy >= 1) return 30;
-  return 10 + Math.round(Math.max(0, accuracy) * 10);
+export function lessonXp(accuracy: number, tier: Tier): number {
+  const max = LESSON_XP_MAX[tier];
+  if (accuracy >= 1) return max + XP_PERFECT_BONUS;
+  return LESSON_XP_MIN + Math.round(Math.max(0, accuracy) * (max - LESSON_XP_MIN));
 }
 
 export const DAILY_GOALS = [
@@ -88,7 +95,7 @@ interface ProgressState {
 
   /** Record one answer. In a review session, correct answers promote the item. */
   recordAnswer: (courseId: string, exerciseId: string, correct: boolean, isReview: boolean) => void;
-  completeLesson: (courseId: string, lessonId: string, accuracy: number) => SessionResult;
+  completeLesson: (courseId: string, lessonId: string, tier: Tier, accuracy: number) => SessionResult;
   completeReview: (correctCount: number) => SessionResult;
   setDailyGoal: (xp: number) => void;
   setRemindersEnabled: (enabled: boolean) => void;
@@ -183,7 +190,7 @@ export const useProgress = create<ProgressState>()(
           set({ reviews });
         },
 
-        completeLesson: (courseId, lessonId, accuracy) => {
+        completeLesson: (courseId, lessonId, tier, accuracy) => {
           const key = lessonKey(courseId, lessonId);
           const prev = get().lessons[key];
           set({
@@ -196,7 +203,7 @@ export const useProgress = create<ProgressState>()(
               },
             },
           });
-          return finishSession(lessonXp(accuracy));
+          return finishSession(lessonXp(accuracy, tier));
         },
 
         completeReview: (correctCount) => finishSession(XP_PER_REVIEW_SESSION + correctCount),

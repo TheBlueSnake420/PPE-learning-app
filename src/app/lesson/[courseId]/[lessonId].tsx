@@ -34,7 +34,7 @@ export default function LessonScreen() {
 
   const onFinish = ({ total, correctFirstTry }: RunResult) => {
     const accuracy = total ? correctFirstTry / total : 1;
-    setFinished({ session: completeLesson(course.id, location.lesson.id, accuracy), accuracy });
+    setFinished({ session: completeLesson(course.id, location.lesson.id, location.tier, accuracy), accuracy });
   };
 
   return <LessonRunner items={items} isReview={false} onClose={() => router.back()} onFinish={onFinish} />;
