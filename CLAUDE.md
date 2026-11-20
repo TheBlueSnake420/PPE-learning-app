@@ -41,7 +41,7 @@ Streak reminders are local notifications (expo-notifications): `src/lib/reminder
 
 Progress is saved by zustand `persist` in `src/store/progress.ts` (storage version 1, no migrate function). Add new fields with defaults in `initialData` and `partialize`; never bump the version without writing a migration, or saved progress is lost.
 
-The XP levelling system is called "rank" in code and UI, because "level" already means a year and tier (Year 1 · Basics). The rank table is `RANKS` in `src/lib/ranks.ts`; XP boosts (duration and steps up to 10x) are in `src/lib/boost.ts`. Both are pure and can be changed freely.
+The XP levelling system is called "rank" in code and UI, because "level" already means a year and tier (Year 1 · Basics). The rank table is `RANKS` in `src/lib/ranks.ts`; XP boosts (duration and steps up to 10x) are in `src/lib/boost.ts`. Both are pure and can be changed freely. Ranks unlock rewards: `TIER_PERKS` in `ranks.ts` sets, per tier, the highest XP boost (boosts are locked below Iron) and the bonus for a perfect lesson. Lesson XP (`lessonXp` in `src/store/progress.ts`) rises with first-try accuracy, 10-20 XP for Basics and 10-25 XP for Advanced, plus the rank's perfect bonus at 100%.
 
 ## Online (leaderboards)
 

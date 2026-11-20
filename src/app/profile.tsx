@@ -8,7 +8,7 @@ import { ProgressBar } from '@/components/ProgressBar';
 import { RankBadge } from '@/components/RankBadge';
 import { getCourse } from '@/content';
 import { today } from '@/lib/dates';
-import { RANK_TIERS, RANKS, rankFor } from '@/lib/ranks';
+import { RANK_TIERS, RANKS, rankFor, rankRewards } from '@/lib/ranks';
 import { useOnline } from '@/store/online';
 import { currentStreak, totalXpOf, useProgress } from '@/store/progress';
 import { colors, font, radius, space } from '@/theme';
@@ -123,15 +123,27 @@ export default function ProfileScreen() {
       )}
 
       <Text style={styles.heading}>Ranks</Text>
-      <Text style={styles.muted}>Earn XP from lessons and reviews to climb the ranks. XP boosts get you there faster.</Text>
+      <Text style={styles.muted}>
+        Earn XP from lessons and reviews to climb the ranks. New ranks unlock rewards: XP boosts and a bonus for perfect
+        lessons.
+      </Text>
       <View style={styles.ranks}>
         {RANKS.map((r, i) => {
           const reached = i <= status.index;
           const current = i === status.index;
+          const rewards = rankRewards(i);
           return (
             <View key={r.name} style={[styles.rankRow, current && styles.rankRowCurrent]}>
               <RankBadge rank={r} size={36} dim={!reached} />
-              <Text style={[styles.rankRowName, !reached && styles.faint]}>{r.name}</Text>
+              <View style={styles.flex}>
+                <Text style={[styles.rankRowName, !reached && styles.faint]}>{r.name}</Text>
+                {rewards.map((reward) => (
+                  <View key={reward} style={styles.rewardRow}>
+                    <Ionicons name="gift" size={13} color={reached ? colors.purple : colors.faint} />
+                    <Text style={[styles.rewardText, !reached && styles.faint]}>{reward}</Text>
+                  </View>
+                ))}
+              </View>
               {current && (
                 <View style={styles.youPill}>
                   <Text style={styles.youText}>YOU</Text>
@@ -233,7 +245,9 @@ const styles = StyleSheet.create({
     borderRadius: radius.md,
   },
   rankRowCurrent: { backgroundColor: colors.surface },
-  rankRowName: { flex: 1, fontSize: font.body, fontWeight: '800', color: colors.text },
+  rankRowName: { fontSize: font.body, fontWeight: '800', color: colors.text },
+  rewardRow: { flexDirection: 'row', alignItems: 'center', gap: 4, marginTop: 1 },
+  rewardText: { fontSize: font.small, fontWeight: '700', color: colors.purple },
   rankRowXp: { fontSize: font.body - 1, fontWeight: '700', color: colors.muted, fontVariant: ['tabular-nums'] },
   youPill: { backgroundColor: colors.blue, borderRadius: radius.pill, paddingHorizontal: 8, paddingVertical: 2 },
   youText: { color: '#FFFFFF', fontSize: 11, fontWeight: '900', letterSpacing: 0.5 },

@@ -7,6 +7,7 @@ import type { ComponentProps } from 'react';
  * called ranks. To change the system, edit RANKS: keep it sorted by minXp,
  * starting at 0. The rank is always worked out from total XP and never
  * stored, so a new table re-ranks everyone the next time the app loads.
+ * Ranks also unlock rewards: see TIER_PERKS below.
  */
 export type RankTier =
   | 'unranked'
@@ -104,4 +105,54 @@ export function rankFor(xp: number): RankStatus {
     progress: (xp - rank.minXp) / (next.minXp - rank.minXp),
     xpToNext: next.minXp - xp,
   };
+}
+
+/**
+ * Rewards per rank tier. XP boosts and the perfect-lesson bonus are locked at
+ * first and improve as the learner climbs; a tier keeps what the tier below
+ * it had unless the table improves it.
+ */
+export interface RankPerks {
+  /** Highest XP boost multiplier; 1 means boosts are still locked. */
+  maxBoost: number;
+  /** Extra XP (before any boost) for a lesson with 100% first-try accuracy. */
+  perfectBonus: number;
+}
+
+export const TIER_PERKS: Record<RankTier, RankPerks> = {
+  unranked: { maxBoost: 1, perfectBonus: 0 },
+  iron: { maxBoost: 4, perfectBonus: 0 },
+  bronze: { maxBoost: 4, perfectBonus: 5 },
+  silver: { maxBoost: 4, perfectBonus: 5 },
+  gold: { maxBoost: 7, perfectBonus: 5 },
+  platinum: { maxBoost: 7, perfectBonus: 10 },
+  diamond: { maxBoost: 7, perfectBonus: 10 },
+  champion: { maxBoost: 10, perfectBonus: 10 },
+  ascendant: { maxBoost: 10, perfectBonus: 15 },
+  immortal: { maxBoost: 10, perfectBonus: 15 },
+  divine: { maxBoost: 10, perfectBonus: 15 },
+};
+
+export function perksFor(xp: number): RankPerks {
+  return TIER_PERKS[RANKS[rankIndex(xp)].tier];
+}
+
+/** Short descriptions of the rewards gained going from `before` to `after`. */
+export function perkGains(before: RankPerks, after: RankPerks): string[] {
+  const gains: string[] = [];
+  if (after.maxBoost > before.maxBoost) gains.push(`XP boosts up to ${after.maxBoost}x`);
+  if (after.perfectBonus > before.perfectBonus) gains.push(`+${after.perfectBonus} XP for a perfect lesson`);
+  return gains;
+}
+
+/** The rewards that reaching RANKS[index] unlocks, compared with the rank below it. */
+export function rankRewards(index: number): string[] {
+  if (index <= 0) return [];
+  return perkGains(TIER_PERKS[RANKS[index - 1].tier], TIER_PERKS[RANKS[index].tier]);
+}
+
+/** The next rank above RANKS[index] that raises the given reward, if any. */
+export function nextRankImproving(index: number, perk: keyof RankPerks): Rank | undefined {
+  const current = TIER_PERKS[RANKS[index].tier][perk];
+  return RANKS.slice(index + 1).find((r) => TIER_PERKS[r.tier][perk] > current);
 }

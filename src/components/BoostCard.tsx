@@ -1,39 +1,50 @@
 import Ionicons from '@expo/vector-icons/Ionicons';
 import { StyleSheet, Text, View } from 'react-native';
 
-import { activeBoost, BOOST_MINUTES, BOOST_STEPS, formatTimeLeft, MAX_BOOST } from '@/lib/boost';
+import { activeBoost, BOOST_MINUTES, BOOST_STEPS, formatTimeLeft, nextBoostStep } from '@/lib/boost';
+import { nextRankImproving, rankIndex, RANKS, TIER_PERKS } from '@/lib/ranks';
 import { useNow } from '@/lib/useNow';
-import { useProgress } from '@/store/progress';
+import { totalXpOf, useProgress } from '@/store/progress';
 import { colors, font, radius, space } from '@/theme';
 
 /**
  * The running XP boost with a countdown. Without a boost it renders nothing,
- * or (with `explainWhenInactive`) a short explanation of how to earn one.
+ * or (with `explainWhenInactive`) a short explanation of how to earn one, or
+ * which rank unlocks boosts. How high a boost goes depends on the rank.
  */
 export function BoostCard({ explainWhenInactive = false }: { explainWhenInactive?: boolean }) {
   const boost = useProgress((s) => s.boost);
+  const totalXp = useProgress(totalXpOf);
   const now = useNow(!!boost && boost.expiresAt > Date.now());
-  const active = activeBoost(boost, now);
+  const index = rankIndex(totalXp);
+  const { maxBoost } = TIER_PERKS[RANKS[index].tier];
+  const unlock = nextRankImproving(index, 'maxBoost');
+  const active = activeBoost(boost, now, maxBoost);
 
   if (!active) {
     if (!explainWhenInactive) return null;
+    const locked = maxBoost < BOOST_STEPS[0];
     return (
       <View style={[styles.card, styles.inactive]}>
         <View style={[styles.icon, { backgroundColor: colors.border }]}>
-          <Ionicons name="rocket" size={22} color="#FFFFFF" />
+          <Ionicons name={locked ? 'lock-closed' : 'rocket'} size={22} color="#FFFFFF" />
         </View>
         <View style={styles.flex}>
-          <Text style={styles.title}>No XP boost running</Text>
+          <Text style={styles.title}>{locked ? 'XP boosts locked' : 'No XP boost running'}</Text>
           <Text style={styles.muted}>
-            Finish a lesson or review to start a {BOOST_STEPS[0]}x boost for {BOOST_MINUTES} minutes. Every lesson or
-            review you finish while it runs raises it, up to {MAX_BOOST}x.
+            {locked
+              ? `Reach ${unlock?.name ?? 'a higher rank'} to unlock XP boosts.`
+              : `Finish a lesson or review to start a ${BOOST_STEPS[0]}x boost for ${BOOST_MINUTES} minutes. Every lesson or review you finish while it runs raises it, up to ${maxBoost}x at your rank.`}
           </Text>
         </View>
       </View>
     );
   }
 
-  const next = BOOST_STEPS.find((m) => m > active.multiplier);
+  const next = nextBoostStep(active.multiplier, maxBoost);
+  const atCap = unlock
+    ? `Highest boost for your rank: reach ${unlock.name} to go up to ${TIER_PERKS[unlock.tier].maxBoost}x`
+    : 'Maximum boost: finish a lesson or review to keep it going';
   return (
     <View style={[styles.card, styles.active]}>
       <View style={[styles.icon, { backgroundColor: colors.purple }]}>
@@ -42,7 +53,7 @@ export function BoostCard({ explainWhenInactive = false }: { explainWhenInactive
       <View style={styles.flex}>
         <Text style={[styles.title, { color: colors.purple }]}>{active.multiplier}x XP boost</Text>
         <Text style={styles.muted}>
-          {next ? `Finish a lesson or review to raise it to ${next}x` : 'Maximum boost: finish a lesson or review to keep it going'}
+          {next ? `Finish a lesson or review to raise it to ${next}x` : atCap}
         </Text>
       </View>
       <View style={styles.timer}>

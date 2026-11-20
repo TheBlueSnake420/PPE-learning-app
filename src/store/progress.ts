@@ -7,7 +7,7 @@ import { createJSONStorage, persist } from 'zustand/middleware';
 import type { Tier } from '@/content/types';
 import { boostAfterSession, boostMultiplier, type Boost } from '@/lib/boost';
 import { addDays, today } from '@/lib/dates';
-import { rankFor, type Rank } from '@/lib/ranks';
+import { perkGains, perksFor, rankFor, type Rank } from '@/lib/ranks';
 import { REMINDER_TIMES } from '@/lib/reminders';
 
 export const XP_PER_REVIEW_SESSION = 5;
@@ -15,16 +15,16 @@ export const XP_PER_REVIEW_SESSION = 5;
 /** Lesson XP at 99% first-try accuracy, per tier; the range starts at LESSON_XP_MIN. */
 export const LESSON_XP_MAX: Record<Tier, number> = { basics: 20, advanced: 25 };
 export const LESSON_XP_MIN = 10;
-export const XP_PERFECT_BONUS = 10;
 
 /**
  * XP for finishing a lesson, before any boost. It rises in a straight line
  * with first-try accuracy, from 10 XP at 0% to 20 XP (Basics) or 25 XP
- * (Advanced) at 99%. A perfect lesson adds 10 XP on top: 30 or 35 XP.
+ * (Advanced) at 99%. A perfect lesson earns the top amount plus
+ * `perfectBonus`, which depends on the rank (TIER_PERKS in ranks.ts).
  */
-export function lessonXp(accuracy: number, tier: Tier): number {
+export function lessonXp(accuracy: number, tier: Tier, perfectBonus: number): number {
   const max = LESSON_XP_MAX[tier];
-  if (accuracy >= 1) return max + XP_PERFECT_BONUS;
+  if (accuracy >= 1) return max + perfectBonus;
   return LESSON_XP_MIN + Math.round(Math.max(0, accuracy) * (max - LESSON_XP_MIN));
 }
 
@@ -61,10 +61,14 @@ export interface SessionResult {
   xpEarned: number;
   /** The boost multiplier applied to this session (1 if none). */
   multiplier: number;
-  /** The boost running after this session, which it started or raised. */
-  newBoost: Boost;
+  /** The boost running after this session, which it started or raised; null while boosts are locked. */
+  newBoost: Boost | null;
+  /** The perfect-lesson bonus included in the XP (before the boost), 0 if none. */
+  perfectBonus: number;
   /** Set when this session moved the learner up to a new rank. */
   rankUp: Rank | null;
+  /** Rewards the new rank unlocked, e.g. "XP boosts up to 7x". */
+  rewards: string[];
   streak: number;
   streakExtended: boolean;
 }
@@ -133,15 +137,19 @@ export const useProgress = create<ProgressState>()(
     (set, get) => {
       /**
        * Adds XP (multiplied by any running boost), starts or raises the boost and
-       * updates the streak; shared by lessons and reviews.
+       * updates the streak; shared by lessons and reviews. The running boost is
+       * capped by the rank before the session, the new boost by the rank after
+       * it, so a session that unlocks a higher boost can already raise it.
        */
-      const finishSession = (baseXp: number): SessionResult => {
+      const finishSession = (baseXp: number, perfectBonus: number): SessionResult => {
         const state = get();
         const now = Date.now();
         const day = today();
-        const multiplier = boostMultiplier(state.boost, now);
+        const perksBefore = perksFor(totalXpOf(state));
+        const multiplier = boostMultiplier(state.boost, now, perksBefore.maxBoost);
         const xp = Math.round(baseXp * multiplier);
-        const newBoost = boostAfterSession(state.boost, now);
+        const perksAfter = perksFor(totalXpOf(state) + xp);
+        const newBoost = boostAfterSession(state.boost, now, perksAfter.maxBoost);
         let streak = state.streak;
         let streakExtended = false;
         if (state.lastActiveDay !== day) {
@@ -162,7 +170,9 @@ export const useProgress = create<ProgressState>()(
           xpEarned: xp,
           multiplier,
           newBoost,
+          perfectBonus,
           rankUp: after.index > before.index ? after.rank : null,
+          rewards: perkGains(perksBefore, perksAfter),
           streak,
           streakExtended,
         };
@@ -203,10 +213,11 @@ export const useProgress = create<ProgressState>()(
               },
             },
           });
-          return finishSession(lessonXp(accuracy, tier));
+          const { perfectBonus } = perksFor(totalXpOf(get()));
+          return finishSession(lessonXp(accuracy, tier, perfectBonus), accuracy >= 1 ? perfectBonus : 0);
         },
 
-        completeReview: (correctCount) => finishSession(XP_PER_REVIEW_SESSION + correctCount),
+        completeReview: (correctCount) => finishSession(XP_PER_REVIEW_SESSION + correctCount, 0),
 
         setDailyGoal: (xp) => set({ dailyGoal: xp }),
 

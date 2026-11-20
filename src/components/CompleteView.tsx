@@ -25,7 +25,11 @@ export function CompleteView({ title, result, accuracy, onContinue }: Props) {
           <Ionicons name={pct === 100 ? 'trophy' : 'ribbon'} size={72} color={colors.gold} />
         </View>
         <Text style={styles.title}>{title}</Text>
-        {pct === 100 && <Text style={styles.subtitle}>Perfect score!</Text>}
+        {pct === 100 && (
+          <Text style={styles.subtitle}>
+            Perfect score!{result.perfectBonus > 0 ? `  +${result.perfectBonus} XP bonus` : ''}
+          </Text>
+        )}
 
         <View style={styles.tiles}>
           <Tile label="XP earned" value={`${result.xpEarned}`} icon="flash" color={colors.gold} />
@@ -55,7 +59,15 @@ export function CompleteView({ title, result, accuracy, onContinue }: Props) {
         {result.rankUp && (
           <View style={styles.rankBox}>
             <RankBadge rank={result.rankUp} size={44} />
-            <Text style={styles.rankText}>New rank: {result.rankUp.name}!</Text>
+            <View style={styles.flex}>
+              <Text style={styles.rankText}>New rank: {result.rankUp.name}!</Text>
+              {result.rewards.map((reward) => (
+                <View key={reward} style={styles.rewardRow}>
+                  <Ionicons name="gift" size={16} color={colors.purple} />
+                  <Text style={styles.rewardText}>Unlocked: {reward}</Text>
+                </View>
+              ))}
+            </View>
           </View>
         )}
       </View>
@@ -142,6 +154,9 @@ const styles = StyleSheet.create({
     borderRadius: radius.md,
     padding: space.md,
   },
-  rankText: { flex: 1, color: colors.text, fontWeight: '800', fontSize: font.large },
+  rankText: { color: colors.text, fontWeight: '800', fontSize: font.large },
+  flex: { flex: 1, gap: 2 },
+  rewardRow: { flexDirection: 'row', alignItems: 'center', gap: 6 },
+  rewardText: { flex: 1, color: colors.purple, fontWeight: '700', fontSize: font.body - 1 },
   footer: { padding: space.lg },
 });
