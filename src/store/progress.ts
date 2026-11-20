@@ -9,9 +9,17 @@ import { addDays, today } from '@/lib/dates';
 import { rankFor, type Rank } from '@/lib/ranks';
 import { REMINDER_TIMES } from '@/lib/reminders';
 
-export const XP_PER_LESSON = 10;
-export const XP_PERFECT_BONUS = 5;
 export const XP_PER_REVIEW_SESSION = 5;
+
+/**
+ * XP for finishing a lesson, before any boost. It rises with first-try
+ * accuracy: 10 XP at 0%, up to 20 XP at 99% (one more XP per 10 points), and
+ * 30 XP for a perfect lesson.
+ */
+export function lessonXp(accuracy: number): number {
+  if (accuracy >= 1) return 30;
+  return 10 + Math.round(Math.max(0, accuracy) * 10);
+}
 
 export const DAILY_GOALS = [
   { xp: 20, label: 'Casual' },
@@ -188,7 +196,7 @@ export const useProgress = create<ProgressState>()(
               },
             },
           });
-          return finishSession(XP_PER_LESSON + (accuracy === 1 ? XP_PERFECT_BONUS : 0), true);
+          return finishSession(lessonXp(accuracy), true);
         },
 
         completeReview: (correctCount) => finishSession(XP_PER_REVIEW_SESSION + correctCount, false),
