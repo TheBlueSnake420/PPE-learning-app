@@ -1,10 +1,9 @@
 /**
- * Time-limited XP boosts, earned by completing lessons. Finishing a lesson
- * starts a boost (2x) that lasts BOOST_MINUTES. Each further lesson finished
- * while it runs raises it one step and restarts the timer, up to 10x. When
- * the timer runs out the boost is gone and the next lesson starts again at 2x.
- * The boost multiplies all XP earned while it runs (lessons and reviews), but
- * only lessons raise it.
+ * Time-limited XP boosts, earned by finishing lessons and review sessions.
+ * Finishing one starts a boost (2x) that lasts BOOST_MINUTES. Each further
+ * lesson or review finished while it runs raises it one step and restarts the
+ * timer, up to 10x. When the timer runs out the boost is gone and the next
+ * session starts again at 2x. The boost multiplies all XP earned while it runs.
  */
 export const BOOST_MINUTES = 15;
 export const BOOST_STEPS = [2, 3, 4, 5, 6, 7, 8, 9, 10];
@@ -24,8 +23,8 @@ export function boostMultiplier(boost: Boost | null | undefined, now: number): n
   return activeBoost(boost, now)?.multiplier ?? 1;
 }
 
-/** The boost after completing a lesson at time `now`. */
-export function boostAfterLesson(boost: Boost | null | undefined, now: number): Boost {
+/** The boost after finishing a lesson or review session at time `now`. */
+export function boostAfterSession(boost: Boost | null | undefined, now: number): Boost {
   const current = activeBoost(boost, now);
   const step = current ? BOOST_STEPS.findIndex((m) => m > current.multiplier) : 0;
   const multiplier = step === -1 ? MAX_BOOST : BOOST_STEPS[step];

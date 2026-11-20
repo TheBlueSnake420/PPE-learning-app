@@ -1,11 +1,13 @@
-import { ScrollView, StyleSheet, Text, View } from 'react-native';
+import Ionicons from '@expo/vector-icons/Ionicons';
+import { router } from 'expo-router';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 
 import { ConfirmTwice } from '@/components/ConfirmTwice';
 import { OptionTile } from '@/components/exercises/OptionTile';
 import { ReminderSettings } from '@/components/ReminderSettings';
 import { resetOnlineXp } from '@/store/online';
 import { DAILY_GOALS, useProgress } from '@/store/progress';
-import { colors, font, space } from '@/theme';
+import { colors, font, radius, space } from '@/theme';
 
 export default function SettingsScreen() {
   const progress = useProgress();
@@ -58,6 +60,12 @@ export default function SettingsScreen() {
           resetOnlineXp();
         }}
       />
+
+      <Pressable onPress={() => router.push('/credits')} style={styles.linkCard} accessibilityRole="button">
+        <Ionicons name="heart" size={22} color={colors.red} />
+        <Text style={styles.linkTitle}>Credits</Text>
+        <Ionicons name="chevron-forward" size={20} color={colors.faint} />
+      </Pressable>
     </ScrollView>
   );
 }
@@ -67,4 +75,16 @@ const styles = StyleSheet.create({
   heading: { fontSize: font.title, fontWeight: '800', color: colors.text, marginTop: space.md },
   goals: { gap: space.sm },
   muted: { fontSize: font.body, color: colors.muted, lineHeight: 22 },
+  linkCard: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: space.md,
+    borderWidth: 2,
+    borderBottomWidth: 4,
+    borderColor: colors.border,
+    borderRadius: radius.lg,
+    padding: space.lg,
+    marginTop: space.xl,
+  },
+  linkTitle: { flex: 1, fontSize: font.large, fontWeight: '800', color: colors.text },
 });

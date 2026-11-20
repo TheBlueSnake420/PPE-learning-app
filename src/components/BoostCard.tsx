@@ -25,8 +25,8 @@ export function BoostCard({ explainWhenInactive = false }: { explainWhenInactive
         <View style={styles.flex}>
           <Text style={styles.title}>No XP boost running</Text>
           <Text style={styles.muted}>
-            Finish a lesson to start a {BOOST_STEPS[0]}x boost for {BOOST_MINUTES} minutes. Every lesson you finish while
-            it runs raises it, up to {MAX_BOOST}x.
+            Finish a lesson or review to start a {BOOST_STEPS[0]}x boost for {BOOST_MINUTES} minutes. Every lesson or
+            review you finish while it runs raises it, up to {MAX_BOOST}x.
           </Text>
         </View>
       </View>
@@ -42,7 +42,7 @@ export function BoostCard({ explainWhenInactive = false }: { explainWhenInactive
       <View style={styles.flex}>
         <Text style={[styles.title, { color: colors.purple }]}>{active.multiplier}x XP boost</Text>
         <Text style={styles.muted}>
-          {next ? `Finish a lesson to raise it to ${next}x` : 'Maximum boost: finish a lesson to keep it going'}
+          {next ? `Finish a lesson or review to raise it to ${next}x` : 'Maximum boost: finish a lesson or review to keep it going'}
         </Text>
       </View>
       <View style={styles.timer}>

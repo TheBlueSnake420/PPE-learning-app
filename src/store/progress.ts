@@ -4,7 +4,7 @@ import { Platform } from 'react-native';
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
-import { boostAfterLesson, boostMultiplier, type Boost } from '@/lib/boost';
+import { boostAfterSession, boostMultiplier, type Boost } from '@/lib/boost';
 import { addDays, today } from '@/lib/dates';
 import { rankFor, type Rank } from '@/lib/ranks';
 import { REMINDER_TIMES } from '@/lib/reminders';
@@ -54,8 +54,8 @@ export interface SessionResult {
   xpEarned: number;
   /** The boost multiplier applied to this session (1 if none). */
   multiplier: number;
-  /** The boost running after this session; set when a lesson raised it. */
-  newBoost: Boost | null;
+  /** The boost running after this session, which it started or raised. */
+  newBoost: Boost;
   /** Set when this session moved the learner up to a new rank. */
   rankUp: Rank | null;
   streak: number;
@@ -125,16 +125,16 @@ export const useProgress = create<ProgressState>()(
   persist(
     (set, get) => {
       /**
-       * Adds XP (multiplied by any running boost) and updates the streak; shared by
-       * lessons and reviews. Only lessons raise the boost.
+       * Adds XP (multiplied by any running boost), starts or raises the boost and
+       * updates the streak; shared by lessons and reviews.
        */
-      const finishSession = (baseXp: number, raisesBoost: boolean): SessionResult => {
+      const finishSession = (baseXp: number): SessionResult => {
         const state = get();
         const now = Date.now();
         const day = today();
         const multiplier = boostMultiplier(state.boost, now);
         const xp = Math.round(baseXp * multiplier);
-        const newBoost = raisesBoost ? boostAfterLesson(state.boost, now) : null;
+        const newBoost = boostAfterSession(state.boost, now);
         let streak = state.streak;
         let streakExtended = false;
         if (state.lastActiveDay !== day) {
@@ -149,7 +149,7 @@ export const useProgress = create<ProgressState>()(
           streak,
           longestStreak: Math.max(state.longestStreak, streak),
           lastActiveDay: day,
-          ...(newBoost ? { boost: newBoost } : {}),
+          boost: newBoost,
         });
         return {
           xpEarned: xp,
@@ -196,10 +196,10 @@ export const useProgress = create<ProgressState>()(
               },
             },
           });
-          return finishSession(lessonXp(accuracy), true);
+          return finishSession(lessonXp(accuracy));
         },
 
-        completeReview: (correctCount) => finishSession(XP_PER_REVIEW_SESSION + correctCount, false),
+        completeReview: (correctCount) => finishSession(XP_PER_REVIEW_SESSION + correctCount),
 
         setDailyGoal: (xp) => set({ dailyGoal: xp }),
 
